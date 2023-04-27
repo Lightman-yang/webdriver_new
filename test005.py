@@ -1,7 +1,6 @@
 #_*_ coding: UTF-8 _*_
 #开发人员  :light
 #开发时间  :2022/9/2 15:55
-#from numpy import append
 
 
 def JiaFa(self):
