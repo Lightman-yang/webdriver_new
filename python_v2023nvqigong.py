@@ -94,7 +94,7 @@ class nvqigong():
                     time.sleep(1.2 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('h')
-                    time.sleep(1.2)
+                    time.sleep(2)
                     from python_findpicture import Caozuolei1
                     if Caozuolei1().arm_xy1() is None:
                         dt.press('right')
@@ -159,7 +159,7 @@ class nvqigong():
                     time.sleep(1.01)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
                     time.sleep(0.013)  # 按下两秒
-                    dt.press('up')  # 像上按一下
+                    # dt.press('up')  # 像上按一下
                     dt.press('g')
                     time.sleep(0.45)
                     dt.press(m_button)
@@ -230,6 +230,6 @@ class nvqigong():
         dt.keyUp('a') #：模拟按键松开time.sleep(2)
         '''
 
-
-if __name__ == '__main__':
-    nvqigong().NvQiGong(309, 118, 28, 0)
+#
+# if __name__ == '__main__':
+#     nvqigong().NvQiGong(309, 118, 28, 0)

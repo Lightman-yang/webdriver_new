@@ -345,7 +345,7 @@ class Caozuolei1():
                 y2=800,
                 pic_name='FND2_47a70f.bmp',
                 delta_color='47a70f',
-                sim=0.8,
+                sim=0.88,
                 dir=1,
                 timeout=0,
                 ischick=0,

@@ -94,7 +94,7 @@ class DXCzhaohuan():
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.2)
+                    time.sleep(0.8)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     time.sleep(3)
                     dt.press('9')
@@ -196,5 +196,7 @@ class DXCzhaohuan():
         time.sleep(2) #按下两秒0
         dt.keyUp('a') #：模拟按键松开time.sleep(2)
         '''
-# if __name__ == '__main__':
-#      DXCzhaohuan().zhaohuan(309,118,30,0)
+
+
+if __name__ == '__main__':
+    DXCzhaohuan().zhaohuan(309, 118, 30, 0)

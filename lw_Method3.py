@@ -231,7 +231,7 @@ if __name__ == '__main__':
     time.sleep(3)  # 睡眠1.5秒
     from python_v2023nvqigong import nvqigong
 
-    nvqigong().NvQiGong(309, 118, 28, 0)
+    nvqigong().NvQiGong(309, 118, 30, 0)
     # '''
     # ------------------------------------------------------------------------------------------->>///
     time.sleep(2)
@@ -279,7 +279,7 @@ if __name__ == '__main__':
     # DXCzhaohuan().zhaohuan(309, 118, 30, 0)
     from python_v2023nvqigong import nvqigong
 
-    nvqigong().NvQiGong(309, 118, 28, 1)
+    nvqigong().NvQiGong(309, 118, 28, 0)
     time.sleep(3)  # 睡眠1.5秒
 
     # --------------------------------------------------------------------->///3
@@ -323,7 +323,7 @@ if __name__ == '__main__':
 
     dt.press('space')  # 单击空格操作
     time.sleep(3)  # 睡眠1.5秒
-    nvqigong().NvQiGong(309, 118, 23, 0)
+    nvqigong().NvQiGong(309, 118, 30, 0)
     # ------------------------------------------------------------------------>///
 
     # -------------------------------->/
@@ -365,7 +365,7 @@ if __name__ == '__main__':
     # from python_NaiMA import DXC_NaiMA  # 奶妈
     # DXC_NaiMA().DXCNaiMA(309, 118, 30, 0)
 
-    nvqigong().NvQiGong(309, 118, 23, 0)  # 女气功
+    nvqigong().NvQiGong(309, 118, 30, 0)  # 女气功
 
     # from DXC_zhaohuan import DXCzhaohuan #召唤
     #

@@ -185,4 +185,4 @@ class DXC_NaiMA():
 
 
 if __name__ == '__main__':
-    DXC_NaiMA().DXCNaiMA(309, 118, 26, 0)
+    DXC_NaiMA().DXCNaiMA(309, 118, 20, 0)
