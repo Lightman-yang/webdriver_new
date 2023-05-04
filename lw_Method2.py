@@ -1,8 +1,7 @@
 import os
-import random
+import sys
 import time
 from random import uniform
-from time import sleep
 
 import pydirectinput  as dt
 import win32gui
@@ -205,7 +204,7 @@ if __name__ == '__main__':
     time.sleep(0.015)
     c.LeftClick(270, 280)  # 单机两下鼠标左键
     time.sleep(1.8)
-    c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
+    # c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
 
     # ------------------------------------------------------------------------------------------>//
     # 女气功的操作流程，从选人物到进入图，在到刷图
@@ -250,7 +249,7 @@ if __name__ == '__main__':
     time.sleep(0.015)
     c.LeftClick(380, 215)  # 单机两下鼠标左键
     time.sleep(1.5)
-    c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
+    # c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
     # -------------------------------------------------------------------->//2
     # 气功师二号的操作流程，从选人物到进入图，在到刷图
     time.sleep(5)
@@ -279,6 +278,8 @@ if __name__ == '__main__':
     # from python_v2023nvqigong import nvqigong
     nvqigong().NvQiGong(309, 118, 26, 0)
     time.sleep(3)  # 睡眠1.5秒
+    sys.exit()
+    time.sleep(200000)  # 停止
 
     # --------------------------------------------------------------------->///3
     time.sleep(2)

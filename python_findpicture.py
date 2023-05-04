@@ -193,6 +193,49 @@ class Caozuolei1():
             print("没有！")
             return 1500, 1500
 
+    def Set_Dict(self, index, file):
+
+        ret = self.lw.SetDict(index, file)
+        if ret == 1:
+            print("自库设置成功！")
+        else:
+            print("自库设置失败！")
+
+    # 找字方法
+    def Find_Str(self, x1, y1, x2, y2, string, color_format, sim, isbackcolor):
+
+        ret = self.lw.FindStr(x1, y1, x2, y2, string, color_format, sim, isbackcolor)
+
+        if ret == 1:
+            self.lw.MoveTO(self.lw.x(), self.lw.y())
+            print("找到字符, 横向坐标为：", '+', (self.lw.x()), '+', "纵向坐标为：", '+', (self.lw.y()))
+            # print("找到图片, 横向坐标为："+self.lw.x() + "纵向坐标为：" + self.lw.y() + "序号为：" + self.lw.idx())
+            self.lw.LeftClick()
+            print("点击左键进入，大乱斗")
+        else:
+            print("没有字符！")
+            return 0
+
+    def Find_Strkspp(self):  # 获取"开始匹配"字符串
+        print("字符匹配中")
+        for i in range(1, 10):
+
+            aa = Caozuolei1().Find_Str(
+                x1=0,
+                y1=0,
+                x2=1000,
+                y2=1000,
+                string='开始匹配',
+                color_format="#105",
+                sim=0.95,
+                isbackcolor=0)
+            if aa is not None:
+                return aa
+            else:
+                pass
+
+    # sleep(random.randint(0, 2))  # 随机睡眠一个小会儿
+
     def selfxy(self):  # 获取人物坐标
         print("人物坐标")
         for i in range(1, 10):
@@ -345,7 +388,7 @@ class Caozuolei1():
                 y2=800,
                 pic_name='FND2_47a70f.bmp',
                 delta_color='47a70f',
-                sim=0.88,
+                sim=0.90,
                 dir=1,
                 timeout=0,
                 ischick=0,
@@ -471,25 +514,54 @@ class Caozuolei1():
 #     time.sleep(2)
 #     import pydirectinput  as dt
 #     c=Caozuolei1()
-# #
-#     dt.moveTo(c.arm_xy1()[0],c.arm_xy1()[1],duration=3)
+#     c.Set_Dict(0,"测试2.txt")
+#     for i in range (1,170):
+#         print(i)
+#         if  c.Find_Str(
+#                 x1=0,
+#                 y1=0,
+#                 x2=1000,
+#                 y2=1000,
+#             string='开始匹配',
+#                 color_format="#105",
+#                 sim=0.9,
+#                 isbackcolor=0) ==0:
+#             dt.moveTo(500,500)
+#             for z in range(1,21):
 #
+#                 dt.press('c')
+#                 for j in range(1,8):
+#                     time.sleep(0.075)
+#                     dt.press('x')  # ：模拟按键按下
+#                 dt.press('left')
+#                 for h in range(1, 8):
+#                     time.sleep(0.5)
+#                     dt.press('x')  # ：模拟按键按下
+#                 time.sleep(1)
+#                 dt.press('s')
+#                 print('i==', z)
+#         else:
+#             pass
+
+#     # dt.moveTo(c.arm_xy1()[0],c.arm_xy1()[1],duration=3)
+#     # time.sleep(2)
+#     # dt.moveTo(238,568,duration=3)
 #
 #     #c.spaceTimeBossDoor_xy()
 #     #c.spaceTimeBossDoor_xy1()
 #     #print(c.door_xy()[0],c.door_xy()[1])
-#     # i=1
-#     # while i<2:
-#     #       time.sleep(2)
-#     #       c.selfxy()
-#     #       bx,by=c.money_xy()
-#     #       if bx == 1500 or by == 1500:
-#     #           print('没值，1500')
-#     #       else:
-#     #           c.movemovemove(c.selfxy(), by)
-#     #           c.movemovemoveheng(c.selfxy(), bx)
-#     #       i+=1
-#     #       print(i)
+#     i=1
+#     while i<2:
+#           time.sleep(2)
+#           c.selfxy()
+#           bx,by=c.arm_xy1()
+#           if bx == 1500 or by == 1500:
+#               print('没值，1500')
+#           else:
+#               c.movemovemove(c.selfxy(), by)
+#               c.movemovemoveheng(c.selfxy(), bx)
+#           i+=1
+#           print(i)
 #     '''
 #     #dt.moveTo()
 #     #c.selfxy()
@@ -507,6 +579,6 @@ class Caozuolei1():
 #     #c.key_movemove(0.11,'up')
 #     time.sleep(3)
 #     '''
-#     #c.selfxy()
+# #     #c.selfxy()
 #     print(os.times())
 #     c.UnBind()  # 解除绑定
