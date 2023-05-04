@@ -10,7 +10,7 @@ from comtypes.client import CreateObject
 from win32gui import FindWindow
 
 
-class Caozuolei():
+class Caozuolei4():
     time.sleep(2)
     # 绑定窗口句柄
     # 如果函数运行期间想要停止，请把鼠标移动到屏幕得左上角（0，0）位置，
@@ -51,9 +51,9 @@ class Caozuolei():
         self.lw.BindWindow(self.hwnd, 0, 0, 0, 0, 0)
         # self.lw.EnableRealMouse(2,20,30)
         self.lw.SetDict(0, "find.txt")
-        #print("find")
+        # print("find")
 
-        #print("执行过了")
+        # print("执行过了")
 
     # 获取窗口客户区域的宽度和高度,会设置X,Y。
     def GetClientSize(self):
@@ -155,7 +155,7 @@ class Caozuolei():
 
     def Coordinate_point(self, x, y):  # 坐标点
         # x11, y11 = left + 378, top + 452,
-        x11, y11 = Caozuolei().left + x, Caozuolei().top + y,
+        x11, y11 = Caozuolei4().left + x, Caozuolei4().top + y,
         return x11, y11
 
     # 080037F840018002BFE37F8E06180C30192030406080C11F82000$行$0.0.66$15.14.15.14
@@ -191,29 +191,22 @@ class Caozuolei():
 
 if __name__ == '__main__':
     time.sleep(2)
-    c = Caozuolei()  # 注册乐玩
-    # '''
+    c = Caozuolei4()  # 注册乐玩
+
     # ------------------------------------------------------------------------------------------>/
     # point_all=[[249,249],[378,452]]
     # print('点击坐标', x11, y11, '游戏坐标', left, top, right, bottom, '鼠标停放位置', point)
     # x22, y22=c.Coordinate_point(point_all[0][0],point_all[0][1]) #定位第二个人物坐标
     # print(x22, y22)
     # dt.move(x22, y22,duration=3)
-    # time.sleep(1.5)  # 测试选人数据
-    # c.LeftClick(150, 290)  # 441, 310
-    # time.sleep(0.015)
-    # c.LeftClick(150, 290)  # 单机两下鼠标左键---
-    # time.sleep(100000)  # 测试选人数据----
-    # ------------------------------------------------
-    """"
-    # 选一个人物【】
-    time.sleep(1.5)  # 选一个任务
-    c.LeftClick(150, 290)  # 441, 310
+    time.sleep(1.5)
+    c.LeftClick(270, 280)  # 441, 310
     time.sleep(0.015)
-    c.LeftClick(150, 290)  # 单机两下鼠标左键
-    time.sleep(1.8)
+    c.LeftClick(270, 280)  # 单机两下鼠标左键
+    time.sleep(1.5)
     c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
-    # ----
+
+    # ------------------------------------------------------------------------------------------>//
     # 女气功的操作流程，从选人物到进入图，在到刷图
     time.sleep(5)
     c.movingfigur_Down(0.95)  # 向下移动，移动一秒
@@ -225,7 +218,7 @@ if __name__ == '__main__':
 
     time.sleep(1.5)  # 睡眠1.5秒
     for i in range(10):
-        time.sleep(0.45)  # 睡眠1.5秒
+        time.sleep(0.25)  # 睡眠1.5秒
         dt.press('left')  # 向上移动， 移动0.15秒，
 
     time.sleep(0.5)  # 睡眠1.5秒
@@ -238,63 +231,14 @@ if __name__ == '__main__':
     time.sleep(3)  # 睡眠1.5秒
     from python_v2023nvqigong import nvqigong
 
-    nvqigong().NvQiGong(309, 118, 29, 0)
-    # ---------------------------------------------------------------------
-
+    nvqigong().NvQiGong(309, 118, 30, 0)
+    # '''
     # ------------------------------------------------------------------------------------------->>///
     time.sleep(2)
     # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
     c.KeyPress1(27)  # 案件esc建
     # 425, 532 选人位置 424, 533
     time.sleep(3)
-    # c.LeftClick(392,444)  # 单机鼠标左键
-    c.LeftClick(390, 500)  # 单机鼠标左键
-    """
-    # ---------------------------------------------------------->/第二个人物
-    time.sleep(1.8)
-    c.LeftClick(270, 280)  # 441, 310
-    time.sleep(0.015)
-    c.LeftClick(270, 280)  # 单机两下鼠标左键
-    time.sleep(1.8)
-    # c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
-
-    # ------------------------------------------------------------------------------------------>//
-    # 女气功的操作流程，从选人物到进入图，在到刷图
-    time.sleep(5)
-    c.movingfigur_Down(0.95)  # 向下移动，移动一秒
-
-    time.sleep(0.5)  # 睡眠0.5秒
-    c.movingfigur_right(9)  # 向右移动， 移动8秒，
-
-    #c.movingfigur_up(0.15)  # 向上移动， 移动0.15秒，
-
-    time.sleep(1.5)  # 睡眠1.5秒
-    for i in range(10):
-        time.sleep(0.45)  # 睡眠1.5秒
-        dt.press('left')  # 向上移动， 移动0.15秒，
-
-    time.sleep(0.5)  # 睡眠1.5秒
-
-    dt.press('right')  # 向右移动， 移动1秒，
-
-    time.sleep(3)  # 睡眠1.5秒
-
-    dt.press('space')  # 单击空格操作
-    time.sleep(3)  # 睡眠1.5秒
-    from python_v2023nvqigong import nvqigong
-
-    nvqigong().NvQiGong(309, 118, 20, 0)
-
-    #
-
-    #
-    # ------------------------------------------------------------------------------------------->>///
-    time.sleep(2)
-    # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
-    c.KeyPress1(27)  # 案件esc建
-    # 425, 532 选人位置 424, 533
-    time.sleep(3)
-    # c.LeftClick(392,444)  # 单机鼠标左键
     c.LeftClick(390, 500)  # 单机鼠标左键
 
     # -------------------------------------------------------------------->/1
@@ -304,11 +248,11 @@ if __name__ == '__main__':
     c.LeftClick(380, 215)  # 单机鼠标左键441, 310
     time.sleep(0.015)
     c.LeftClick(380, 215)  # 单机两下鼠标左键
-    time.sleep(1.8)
-    #c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
+    time.sleep(1.5)
+    c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
 
     # -------------------------------------------------------------------->//2
-    # 狂战士的操作流程，从选人物到进入图，在到刷图
+    # 气功师二号的操作流程，从选人物到进入图，在到刷图
     time.sleep(5)
     c.movingfigur_Down(0.95)  # 向下移动，移动一秒
 
@@ -330,9 +274,13 @@ if __name__ == '__main__':
 
     dt.press('space')  # 单击空格操作
     time.sleep(3)  # 睡眠1.5秒
-    from python_2023kuangzhanshi import DXCkuangzhanshi
+    # from DXC_zhaohuan import DXCzhaohuan
+    #
+    # DXCzhaohuan().zhaohuan(309, 118, 30, 0)
+    from python_v2023nvqigong import nvqigong
 
-    DXCkuangzhanshi().kuangzhanshi(309, 118, 29, 0)
+    nvqigong().NvQiGong(309, 118, 28, 0)
+    time.sleep(3)  # 睡眠1.5秒
 
     # --------------------------------------------------------------------->///3
     time.sleep(2)
@@ -340,7 +288,6 @@ if __name__ == '__main__':
     c.KeyPress1(27)  # 案件esc建
     # 425, 532 选人位置 424, 533
     time.sleep(3)
-    # c.LeftClick(392, 444)  # 单机鼠标左键
     c.LeftClick(390, 500)  # 单机鼠标左键
 
     # ------------------------------------------------------------------------>/
@@ -350,8 +297,8 @@ if __name__ == '__main__':
     c.LeftClick(490, 215)  # 单机鼠标左键441, 310
     time.sleep(0.015)
     c.LeftClick(490, 215)  # 单机两下鼠标左键
-    time.sleep(2)
-    # c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
+    time.sleep(1.5)
+    c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
     # ------------------------------------------------------------------------->//
 
     # 女气功的操作流程，从选人物到进入图，在到刷图
@@ -376,84 +323,25 @@ if __name__ == '__main__':
 
     dt.press('space')  # 单击空格操作
     time.sleep(3)  # 睡眠1.5秒
-    from python_2023nanqigong import DXCnanqigong
-
-    DXCnanqigong().nanqigong(309, 118, 24, 0)
-
+    nvqigong().NvQiGong(309, 118, 30, 0)
     # ------------------------------------------------------------------------>///
-    # for i in range(10):
-    #     if c.FindStrFastEx(124, 848, 238, 892, "拍卖行", "#408", 1.0, 0):
-    #         c.LeftClick(c.x, c.y, 2, 2)
-    #         break
-    #     time.sleep(0.2)
+
     # -------------------------------->/
     time.sleep(2)
     c.KeyPress1(27)  # 案件esc建
     time.sleep(3)
-    # c.LeftClick(392, 444)  # 单机鼠标左键
     c.LeftClick(390, 500)  # 单机鼠标左键
-
     # -------------------------------->//
-    # 第五个选人位置
+    # 第五个选人位置   第五位  第五个选人位置   第五位
     time.sleep(1.5)
     c.LeftClick(719, 285)  # 441, 310
     time.sleep(0.015)
     c.LeftClick(719, 285)  # 单机两下鼠标左键
-    time.sleep(2)
-    # c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
-    # ------------------------------------>///
-
-    # 奶妈的操作流程，从选人物到进入图，在到刷图
-    time.sleep(5)
-    c.movingfigur_Down(0.95)  # 向下移动，移动一秒
-
-    time.sleep(0.5)  # 睡眠0.5秒
-    c.movingfigur_right(9)  # 向右移动， 移动8秒，
-
-    # c.movingfigur_up(0.15)  # 向上移动， 移动0.15秒，
-
-    time.sleep(1.5)  # 睡眠1.5秒
-    for i in range(10):
-        time.sleep(0.45)  # 睡眠1.5秒
-        dt.press('left')  # 向上移动， 移动0.15秒，
-
-    time.sleep(0.5)  # 睡眠1.5秒
-
-    dt.press('right')  # 向右移动， 移动1秒，
-
-    time.sleep(3)  # 睡眠1.5秒
-
-    dt.press('space')  # 单击空格操作
-    time.sleep(3)  # 睡眠1.5秒
-    # from python_NaiMA import DXC_NaiMA  #奶妈
-    # DXC_NaiMA().DXCNaiMA(309, 118, 16, 0)
-    from python_v2023nvqigong import nvqigong
-
-    nvqigong().NvQiGong(309, 118, 24, 0)
-
-    # for i in range(10):
-    #     if c.FindStrFastEx(124, 848, 238, 892, "拍卖行", "#408", 1.0, 0):
-    #         c.LeftClick(c.x, c.y, 2, 2)
-    #         break
-    #     time.sleep(0.2)
-    # -------------------------------->/
-    time.sleep(2)
-    c.KeyPress1(27)  # 案件esc建
-    time.sleep(3)
-    # c.LeftClick(392, 444)  # 单机鼠标左键
-    c.LeftClick(390, 500)  # 单机鼠标左键
-
-    # -------------------------------->//
-    # 第六个选人位置
     time.sleep(1.5)
-    c.LeftClick(80, 501)  # 441, 310
-    time.sleep(0.015)
-    c.LeftClick(80, 501)  # 单机两下鼠标左键
-    time.sleep(2)
     c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
     # ------------------------------------>///
 
-    # 奶妈的操作流程，从选人物到进入图，在到刷图
+    #  -奶妈的操作流程，从选人物到进入图，在到刷图-
     time.sleep(5)
     c.movingfigur_Down(0.95)  # 向下移动，移动一秒
 
@@ -475,10 +363,14 @@ if __name__ == '__main__':
 
     dt.press('space')  # 单击空格操作
     time.sleep(3)  # 睡眠1.5秒
-    from python_NaiMA import DXC_NaiMA  # 奶妈
+    # from python_NaiMA import DXC_NaiMA  # 奶妈
+    # DXC_NaiMA().DXCNaiMA(309, 118, 30, 0)
 
-    DXC_NaiMA().DXCNaiMA(309, 118, 28, 0)
-    # from python_v2023nvqigong import nvqigong
+    nvqigong().NvQiGong(309, 118, 26, 0)  # 女气功
+
+    # from DXC_zhaohuan import DXCzhaohuan #召唤
+    #
+    # DXCzhaohuan().zhaohuan(309,118,26,1)
 
     sleep(random.randint(0, 3))  # 随机睡眠一个小会儿
     c.UnBind()  # 解除绑定

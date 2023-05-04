@@ -1,8 +1,7 @@
 import os
-import random
+import sys
 import time
 from random import uniform
-from time import sleep
 
 import pydirectinput  as dt
 import win32gui
@@ -192,6 +191,7 @@ class Caozuolei():
 if __name__ == '__main__':
     time.sleep(2)
     c = Caozuolei()  # 注册乐玩
+    from python_v2023nvqigong import nvqigong
 
     # ------------------------------------------------------------------------------------------>/
     # point_all=[[249,249],[378,452]]
@@ -203,8 +203,8 @@ if __name__ == '__main__':
     c.LeftClick(270, 280)  # 441, 310
     time.sleep(0.015)
     c.LeftClick(270, 280)  # 单机两下鼠标左键
-    time.sleep(1.5)
-    c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
+    time.sleep(1.8)
+    # c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
 
     # ------------------------------------------------------------------------------------------>//
     # 女气功的操作流程，从选人物到进入图，在到刷图
@@ -229,10 +229,9 @@ if __name__ == '__main__':
 
     dt.press('space')  # 单击空格操作
     time.sleep(3)  # 睡眠1.5秒
-    from python_v2023nvqigong import nvqigong
 
-    nvqigong().NvQiGong(309, 118, 2, 0)
-    # '''
+    nvqigong().NvQiGong(309, 118, 28, 0)
+
     # ------------------------------------------------------------------------------------------->>///
     time.sleep(2)
     # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
@@ -250,7 +249,7 @@ if __name__ == '__main__':
     time.sleep(0.015)
     c.LeftClick(380, 215)  # 单机两下鼠标左键
     time.sleep(1.5)
-    c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
+    # c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
     # -------------------------------------------------------------------->//2
     # 气功师二号的操作流程，从选人物到进入图，在到刷图
     time.sleep(5)
@@ -277,8 +276,10 @@ if __name__ == '__main__':
     # from DXC_zhaohuan import DXCzhaohuan
     # DXCzhaohuan().zhaohuan(309, 118, 28, 0)
     # from python_v2023nvqigong import nvqigong
-    nvqigong().NvQiGong(309, 118, 4, 0)
+    nvqigong().NvQiGong(309, 118, 26, 0)
     time.sleep(3)  # 睡眠1.5秒
+    sys.exit()
+    time.sleep(200000)  # 停止
 
     # --------------------------------------------------------------------->///3
     time.sleep(2)
@@ -370,9 +371,8 @@ if __name__ == '__main__':
     #
     # DXC_NaiMA().DXCNaiMA(309, 118, 30, 0)
     # nvqigong().NvQiGong(309, 118,28,0)
-    from DXC_zhaohuan import DXCzhaohuan
 
-    DXCzhaohuan().zhaohuan(309, 118, 30, 0)
+    nvqigong().NvQiGong(309, 118, 30, 0)  # 女气功
 
     # -------------------------------->/
     time.sleep(2)
@@ -419,8 +419,11 @@ if __name__ == '__main__':
     # from python_NaiMA import DXC_NaiMA  # 奶妈
     #
     # DXC_NaiMA().DXCNaiMA(309, 118, 30, 0)
-    nvqigong().NvQiGong(309, 118, 28, 0)  # 女气功
+    # nvqigong().NvQiGong(309, 118, 30, 0)  # 女气功
+    from DXC_zhaohuan import DXCzhaohuan
+
     # from DXC_zhaohuan import DXCzhaohuan
+    DXCzhaohuan().zhaohuan(309, 118, 30, 0)
 
     sleep(random.randint(0, 3))  # 随机睡眠一个小会儿
     c.UnBind()  # 解除绑定
