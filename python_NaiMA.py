@@ -183,5 +183,5 @@ class DXC_NaiMA():
         # print('pass3')
         # win32gui.SetWindowPos(hwnd, win32con.HWND_NOTOPMOST, 0, 0, 0, 0,win32con.SWP_SHOWWINDOW | win32con.SWP_NOSIZE | win32con.SWP_NOMOVE)
 
-# if __name__ == '__main__':
-#     DXC_NaiMA().DXCNaiMA(309, 118, 20, 0)
+if __name__ == '__main__':
+    DXC_NaiMA().DXCNaiMA(309, 118, 16, 1)

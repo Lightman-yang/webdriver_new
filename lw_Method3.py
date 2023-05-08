@@ -231,7 +231,7 @@ if __name__ == '__main__':
     time.sleep(3)  # 睡眠1.5秒
     from python_v2023nvqigong import nvqigong
 
-    nvqigong().NvQiGong(309, 118, 20, 0)
+    nvqigong().NvQiGong(309, 118, 1, 0)
     # '''
     # ------------------------------------------------------------------------------------------->>///
     time.sleep(2)

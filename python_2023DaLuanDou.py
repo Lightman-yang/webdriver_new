@@ -22,10 +22,10 @@ for i in range(1, 140):
         for z in range(1, 21):
 
             dt.press('c')
-            for j in range(1, 8):
-                time.sleep(0.075)
+            for j in range(1, 10):
+
                 dt.press('x')  # ：模拟按键按下
-            dt.press('left')
+            #dt.press('left')
             for h in range(1, 8):
                 time.sleep(0.5)
                 dt.press('x')  # ：模拟按键按下
@@ -34,4 +34,4 @@ for i in range(1, 140):
             print('i==', z)
     else:
         pass
-os.system("shutdown -s -t 30")  # 30秒关闭电脑
+#os.system("shutdown -s -t 30")  # 30秒关闭电脑

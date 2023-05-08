@@ -58,7 +58,7 @@ class nvqigong():
                         dt.keyUp('right')  # ：模拟按键松开按键
 
                 elif j == 1:
-                    dt.press('t')
+                    dt.press('y')
                     time.sleep(1)  # 按下两秒
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
@@ -230,6 +230,6 @@ class nvqigong():
         dt.keyUp('a') #：模拟按键松开time.sleep(2)
         '''
 
-#
-# if __name__ == '__main__':
-#     nvqigong().NvQiGong(309, 118, 28, 0)
+
+if __name__ == '__main__':
+    nvqigong().NvQiGong(309, 118, 22, 0)
