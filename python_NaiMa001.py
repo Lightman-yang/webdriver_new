@@ -204,6 +204,5 @@ class NaiMa001():
         dt.keyUp('a') #：模拟按键松开time.sleep(2)
         '''
 
-
-if __name__ == '__main__':
-    NaiMa001().Naima_001(309, 118, 18, 0)
+# if __name__ == '__main__':
+#     NaiMa001().Naima_001(309, 118, 18, 0)

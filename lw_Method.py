@@ -283,7 +283,7 @@ if __name__ == '__main__':
     time.sleep(3)  # 睡眠1.5秒
     from python_v2023nvqigong import nvqigong
 
-    nvqigong().NvQiGong(309, 118, 20, 0)
+    nvqigong().NvQiGong(309, 118, 26, 0)
 
     #
 
@@ -332,7 +332,7 @@ if __name__ == '__main__':
     time.sleep(3)  # 睡眠1.5秒
     from python_2023kuangzhanshi import DXCkuangzhanshi
 
-    DXCkuangzhanshi().kuangzhanshi(309, 118, 29, 0)
+    DXCkuangzhanshi().kuangzhanshi(309, 118, 22, 0)
 
     # --------------------------------------------------------------------->///3
     time.sleep(2)
@@ -429,7 +429,7 @@ if __name__ == '__main__':
     # DXC_NaiMA().DXCNaiMA(309, 118, 16, 0)
     from python_v2023nvqigong import nvqigong
 
-    nvqigong().NvQiGong(309, 118, 24, 0)
+    nvqigong().NvQiGong(309, 118, 12, 0)
 
     # for i in range(10):
     #     if c.FindStrFastEx(124, 848, 238, 892, "拍卖行", "#408", 1.0, 0):
