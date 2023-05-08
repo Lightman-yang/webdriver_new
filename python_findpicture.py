@@ -201,7 +201,7 @@ class Caozuolei1():
         else:
             print("自库设置失败！")
 
-    # 找字方法
+    # 找字返回坐标方法
     def Find_Str(self, x1, y1, x2, y2, string, color_format, sim, isbackcolor):
 
         ret = self.lw.FindStr(x1, y1, x2, y2, string, color_format, sim, isbackcolor)
@@ -235,6 +235,16 @@ class Caozuolei1():
                 pass
 
     # sleep(random.randint(0, 2))  # 随机睡眠一个小会儿
+
+    # 找字功能
+    def Find_Ocr(self, x1, y1, x2, y2, color_format, sim, linesign, isbackcolor):
+        ret = self.lw.Ocr(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
+        if ret is not None:
+            # print(ret)
+            return ret
+        else:
+            # print(0)
+            return '非'
 
     def selfxy(self):  # 获取人物坐标
         print("人物坐标")
@@ -509,12 +519,21 @@ class Caozuolei1():
             else:
                 print('不匹配！')
                 return 0
-
+#
 # if __name__ == '__main__':
 #     time.sleep(2)
 #     import pydirectinput  as dt
 #     c=Caozuolei1()
 #     c.Set_Dict(0,"测试2.txt")
+#     c.Find_Ocr(
+#         x1=0,
+#         y1=0,
+#         x2=1200,
+#         y2=1200,
+#         color_format="#360",
+#         sim=0.95,
+#         linesign="五陵",
+#         isbackcolor=0)
 #     for i in range (1,170):
 #         print(i)
 #         if  c.Find_Str(
@@ -522,7 +541,7 @@ class Caozuolei1():
 #                 y1=0,
 #                 x2=1000,
 #                 y2=1000,
-#             string='开始匹配',
+#                 string='开始匹配',
 #                 color_format="#105",
 #                 sim=0.9,
 #                 isbackcolor=0) ==0:
