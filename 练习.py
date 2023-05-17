@@ -13,10 +13,11 @@
 #
 # a=os.system('dir')
 # print(a)
-
+from threading import Thread
 from time import sleep  # 导入时间休眠函数
 
-xxyy = ['x', 'y', 'x', 'y']
+xxyy = [1, 2, 3, 4]
+xxyy1 = []
 
 import os
 import time
@@ -590,7 +591,88 @@ class Caozuolei1():
         else:
             return 0
 
-    def Find_srt(self):
+    def FindStrex(self, x1, y1, x2, y2, string, color_format, sim, isbackcolor):  # 找字返回坐标集合
+        ret = self.lw.FindStrEx(x1, y1, x2, y2, string, color_format, sim, isbackcolor)
+        if ret != None:
+
+            ret1 = ret.split('|')
+            # print(ret1)
+            # sss=ret1.strip() #去掉前后字符串中的特殊字符'’'
+            # ret1N=[]
+            # for i in range(len(ret1)):
+            #     array1 = ret1[i].split(',')
+            #     ret1N.append(array1)
+            #     for i in range(len(ret1N)):
+            #         if int(ret1N[i][1]) > 300:
+            #             print(ret1N[i])
+            #             x=int(ret1N[i][1])
+            #             y=int(ret1N[i][2])
+            #             return x, y
+            #     else:
+            #         return
+            # print(ret1)
+            return ret1
+
+            # print('ret1=',ret2,'r=',ret1,type(ret))
+            # time.sleep(222222)
+
+        else:
+            # print(0000)
+            print("失败了吗")
+            return None
+
+    def Find_Strexxy(self):  # 其它坐标 多个坐标
+        for i in range(1, 100000):
+
+            sleep(1)
+            z = self.FindStrex(
+                x1=0,
+                y1=0,
+                x2=1200,
+                y2=1200,
+                string="开洞",
+                color_format="#380",
+                sim=0.8,
+                isbackcolor=0)
+            # print(z)
+            if z != None:
+                #
+                # ret1=z.strip() #去掉前后字符串中的特殊字符'’'
+                # print(z,"test")
+                # print(z)
+                # print(z[1],type(z[1]))
+                ret1N = []
+                for x in z:  # 第一个for循环是在list中
+                    for y in x.split(','):  # split只能在str上 所有再次for循环
+                        ret1N.append(y)
+                # print(ret1N,'?1')
+                for i in range(2, len(ret1N))[::3]:  # 跨度三个下标，从元素下标2开始取
+                    # print(ret1N[i],ret1N[i-1],"?在哪")
+                    if (int(ret1N[i - 1])) > 300:  # 判断是否X坐标大于300，大于就用，
+                        # print(ret1N[i - 1], ret1N[i],'?')
+
+                        xxyy[-2:] = int(ret1N[i - 1]), int(ret1N[i])
+                        print('人物坐标{},{},门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]), ',?')
+                        # print(xxyy)
+                        break
+                        # elif (int(ret1N[i-1])) < 300:
+                        #      print(ret1N[i-1])
+                        #      xxyy[-2:] = 3, 4
+                        #      return
+
+            else:
+                xxyy[-2:] = 2, 2
+                # print('x={},y={}'.format(0, 0))
+                continue
+
+                # x = z[0]
+                # y = z[1]
+                # xxyy1= x, y
+                # print('x={},y={}'.format(x, y))
+
+                # xxyy = 0, 0
+
+    def Find_srt(self):  # 人物坐标
         for i in range(1, 10000):
 
             sleep(1)
@@ -599,16 +681,16 @@ class Caozuolei1():
                 y1=0,
                 x2=1000,
                 y2=1000,
-                string="挑战者",
-                color_format="#422",
-                sim=0.8,
+                string="先驱者",  # "挑战者"
+                color_format="#422",  ##380
+                sim=0.75,
                 isbackcolor=0)
             print(z)
             if z != 0:
                 x = z[0] + 68
                 y = z[1] + 135
                 xxyy[0:2] = x, y
-                print('x={},y={}'.format(x, y))
+                print('人物坐标{},{},门坐标{},{}'.format(xxyy[0], xxyy[1],xxyy[2],xxyy[3]))
             else:
                 for j in range(0, 1):
                     sleep(1)
@@ -624,12 +706,119 @@ class Caozuolei1():
                     if z != 0:
                         x = z[0]
                         y = z[1] + 131
-                        print('x={},y={}'.format(x, y))
+
                         xxyy[0:2] = x, y
+                        print('人物坐标{},{},门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]), ',?')
                     else:
-                        print(0, xxyy)
-                        xxyy[0:2] = 0, 0
-                        break
+                        pass
+                        # print(0, xxyy)
+                        #
+                        # print("从新找")
+                        # continue
+
+    def Find_srt1(self):  # 其它坐标
+        for i in range(1, 100000):
+
+            sleep(1)
+            z = self.FindStr(
+                x1=0,
+                y1=0,
+                x2=1000,
+                y2=1000,
+                string="开洞",
+                color_format="#380",
+                sim=0.50,
+                isbackcolor=0)
+            # print(z)
+            if z != 0:
+                x = z[0]
+                y = z[1]
+                xxyy[-2:] = x, y
+                print('x={},y={}'.format(x, y))
+                break
+            else:
+
+                xxyy[-2:] = 0, 0
+                print('x={},y={}'.format(0, 0))
+                break
+
+    def movemovemoveheng1(self):
+        import pydirectinput  as dt
+
+        # a = aa  # 人物坐标
+        # b = bb  # 其他坐标
+        # print(a - b, abs(a - b),"进来了")
+        for i in range(1, 10):
+            a = xxyy[0]  # 人物坐标
+            b = xxyy[2]  # 其他坐标
+            if (abs(a - b)) > 10:
+                print(abs(a - b))
+                # a, b = xxyy[0],xxyy[2]
+                print(a, b, "人物坐标X")
+                time.sleep(1)
+                if b == 0 or b < abs(5):
+                    print(b, '小于5，直接退出了')
+                    return
+
+                elif a > b and (10 <= (a - b) < 50 and (a - b)):
+                    time.sleep(0.5)
+                    dt.press('left')
+                    break
+                elif a > b and (a - b) >= 50:
+                    time.sleep(0.5)
+                    c = (a - b) * 0.0001 + 0.2
+                    Caozuolei1().key_movemove(c, 'left')
+                elif b > a and (b - a) >= 50:
+                    time.sleep(0.5)
+                    c = (b - a) * 0.002 + 0.2
+                    Caozuolei1().key_movemove(c, 'right')
+                elif b > a and 50 > (b - a) >= 10:
+                    dt.press('right')
+                    break
+
+            else:
+                print("移动到当前位置")
+                break
+
+    def movemovemove2(self):  # Y轴移动
+        import pydirectinput  as dt
+        # a = aa  # 人物坐标
+        # b = bb  # 其他坐标
+        # print(a - b, abs(a - b))
+
+        for i in range(1, 10):
+            a = xxyy[1]  # 人物坐标
+            b = xxyy[3]  # 其他坐标
+            if (abs(a - b)) > 10:
+                print(a - b)
+                a, b = xxyy[1], xxyy[3]
+                print('人物坐标{},{},门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                print(a, b, "人物坐标y")
+                time.sleep(1)
+                if b == 0 or abs(b) < 5:
+                    return
+                elif a > b and (a - b) < 50 and (a - b) >= 10:
+                    dt.press('up')
+                    continue
+                elif a > b and (a - b) >= 50:
+                    time.sleep(0.5)
+                    c = (a - b) * 0.001 + 0.3
+                    Caozuolei1().key_movemove(c, 'up')
+                    continue
+                elif b > a and (b - a) >= 50:
+                    time.sleep(0.5)
+                    c = (b - a) * 0.002 + 0.3
+                    Caozuolei1().key_movemove(c, 'down')
+                    continue
+                elif b > a and 50 > (b - a) >= 10:
+                    time.sleep(0.5)
+                    dt.press('down')
+                    return
+            else:
+
+                print('没找到,或者已经结束')
+
+                return
 
 
 #
@@ -638,12 +827,25 @@ if __name__ == '__main__':
     import pydirectinput  as dt
 
     c = Caozuolei1()
+    c.lw.MoveWindow(c.hwnd, 0, 0, 0, 0)  # 移动窗口，抢两个零是xy，后两个是窗口高度和宽度，默认为0不生效
     c.Set_Dict(0, 'test3.txt')
-    # c.Find_srt()
-    c.Find_Picdoor()
+    # c.Find_srt()c
+    # c.Find_Picdoor()
+    # c.Find_Strexxy()
+    zzz = Thread(target=c.Find_Strexxy)
+    ZZZ = Thread(target=c.Find_srt)
+    zzz.start()
+    ZZZ.start()
+    # # a = xxyy[0]  # 人物坐标
+    # # b = xxyy[-2]  # 其他坐标
+    # print("测试")
+    time.sleep(10)
+    print(xxyy, xxyy[0], xxyy[-2], xxyy[1], xxyy[-1])
+    for i in range(1, 250):
+        if i > 1:
+            c.movemovemoveheng1()
+            c.movemovemove2()
 
-    #     c.Find_Ocr(
-    #         x1=0,
     #         y1=0,
     #         x2=1200,
     #         y2=1200,
