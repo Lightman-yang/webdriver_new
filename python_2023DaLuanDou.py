@@ -9,7 +9,7 @@ from python_findpicture import Caozuolei1
 bianliang = ['x', 'h', 'o', 'time']
 c = Caozuolei1()
 c.Set_Dict(0, "测试2.txt")
-for i in range(1, 170):
+for i in range(1,212):
     bianliang[0] = math.ceil(i / 2)  # 默认先执行一次（c.Find_Str()直接调用查询一次 ）成功开始匹配 进去一次 ，i-1才是执行的成功开始匹配 i是未 开始匹配
     # math.ceil 方法向上除发取整数，如1/2 =0.5 约上去为1
     if c.Find_Str(
