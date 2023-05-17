@@ -12,7 +12,7 @@ class MYthreading():
         for x in range(1, 10000):  # 遍历数组n里的x
             xxyy[0:2] = x + 1, x + 10
             time.sleep(5)
-            # print('xxyy[0:1]==========',xxyy)
+            print('xxyy[0:1]==========', xxyy)
 
     def task2(self):  # 定义任务2
 
@@ -26,7 +26,7 @@ class MYthreading():
 
 
 if __name__ == '__main__':
-    # t1 = Thread(target=MYthreading().task1)  # 定义线程t1，线程任务为调用task1函数，task1函数的参数是6
+    t1 = Thread(target=MYthreading().task1)  # 定义线程t1，线程任务为调用task1函数，task1函数的参数是6
     t2 = Thread(target=MYthreading().task2)  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
-    # t1.start()  # 开始运行t1线程
-    t2.start()  # 开始运行t2线程
+    t1.start()  # 开始运行t1线程
+    # t2.start()  # 开始运行t2线程
