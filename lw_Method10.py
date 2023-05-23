@@ -698,7 +698,7 @@ class Caozuolei(Caozuolei1):
                     else:
 
                         dt.keyDown('down')  # ：模拟按键按下 向下
-                        time.sleep(0.5 + move_seep1)
+                        time.sleep(0.8 + move_seep1)
                         dt.keyUp('down')  # ：模拟按键松开按键
 
                         time.sleep(1)  # 按下两秒
@@ -1263,7 +1263,7 @@ class Caozuolei(Caozuolei1):
             # move_seep = -0.52  # 57.7   气功4.2  40.8
             # move_seep1= -0.26
 
-            move_seep = -move_seepx
+            move_seep = move_seepx
             move_seep1 = -move_seepy
             # move_seep = -0.8  # 57.70
             # move_seep1 = -0.23
@@ -1560,7 +1560,7 @@ if __name__ == '__main__':
     c = Caozuolei()  # 注册乐玩
     c.Set_Dict(0, 'test3.txt')
     x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
-    for aa in range(2, 3):
+    for aa in range(1, 4):
         time.sleep(1.5)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441, 310
         time.sleep(0.015)
@@ -1593,9 +1593,9 @@ if __name__ == '__main__':
         dt.press('space')  # 单击空格操作
         time.sleep(1.5)  # 睡眠1.5秒gdf
         if aa == 0:
-            # c.nvQiGong(28, 0.54, 0.26, 0)#2p 睡眠不足十
-            # c.nvQiGong(26, 0.64, 0.2, 0)  # 1p 气功师很烂丶
-            c.nvQiGong(1, 0.54, 0.26, 0)  # 气功师该加强了
+            #c.nvQiGong(28, 0.54, 0.26, 0)#2p 睡眠不足十
+            c.nvQiGong(26, 0.54, 0.2, 0)  # 1p 气功师很烂丶
+            #c.nvQiGong(1, 0.54, 0.26, 0)  # 气功师该加强了
             time.sleep(2)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
             c.KeyPress1(27)  # 案件esc建
@@ -1605,9 +1605,9 @@ if __name__ == '__main__':
             c.LeftClick(390, 500)  # 单机鼠标左键
             continue
         elif aa == 1:
-            # c.zhaohuan(28, 0.05, 0.26, 0)#2p s睡眠不足s
-            # c.kuangzhanshi(26, 0.21, 0.23, 0)#1p 狂战士
-            c.nvQiGong(8, 0.48, 0.26, 0)  # 气功师该加强了
+            #c.zhaohuan(28, 0.05, 0.26, 0)#2p s睡眠不足s
+            c.kuangzhanshi(26, 0.21, 0.23, 0)#1p 狂战士
+            #c.nvQiGong(8, 0.48, 0.26, 0)  # 气功师该加强了
             time.sleep(2)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
             c.KeyPress1(27)  # 案件esc建
@@ -1617,7 +1617,7 @@ if __name__ == '__main__':
             c.LeftClick(390, 500)  # 单机鼠标左键
             continue
         elif aa == 2:
-            # c.nvQiGong(26, 0.56, 0.26, 0)  # 2p ll1ll数据i
+            #c.nvQiGong(26, 0.56, 0.26, 0)  # 2p ll1ll数据i
             c.nvQiGong(28, 0.48, 0.2, 0)  # 1p 气功师狠烂
 
             time.sleep(2)
@@ -1630,7 +1630,7 @@ if __name__ == '__main__':
             continue
         elif aa == 3:
             c.nanQiGong(28, 0)  # 1p  男气功
-            # c.nvQiGong(28,0.54,0.26,0)# 2p 睡眠不足丶
+            #c.nvQiGong(28,0.54,0.26,0)# 2p 睡眠不足丶
 
             time.sleep(2)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
