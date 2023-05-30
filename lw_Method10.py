@@ -1345,7 +1345,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.keyDown('down')  # ：模拟按键按下 向下
-                    time.sleep(0.5 + move_seep1)
+                    time.sleep(0.7 + move_seep1)
                     dt.keyUp('down')  # ：模拟按键松开按键
 
                     dt.press('9')
@@ -1399,28 +1399,64 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('s')
                     time.sleep(3)  # 按下两秒
-                    # Caozuolei().FuBen_INFO6()
-                    time.sleep(1.35)
+                    time.sleep(0.5)  # 按下两秒
+                    dt.press('right')
+                    time.sleep(0.0075)  # 按下两秒
+                    dt.keyDown('right')  # ：模拟按键按下
+                    time.sleep(0.5)
+                    dt.keyUp('right')  # ：模拟按键松开按键
+                    Caozuolei().FuBen_INFO6()
+                    time.sleep(0.5)
                     dt.press('9')
                     time.sleep(1.2)
                     Caozuolei().FuBen_INFO1()
-                    time.sleep(2)
+
+                    dt.press('left')
+                    time.sleep(0.0075)  # 按下两秒
+                    dt.keyDown('left')  # ：模拟按键按下
+                    time.sleep(3.8 + move_seep)
+                    dt.keyUp('left')  # ：模拟按键松开按键
+
+                    time.sleep(1)
+                    dt.press('y')
+                    time.sleep(0.75)
+                    dt.press('f')
+                    Caozuolei().FuBen_INFO6()
+                    dt.press('9')
+                    time.sleep(1)
+                    Caozuolei().FuBen_INFO1()
 
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(2.5 + move_seep)
+                    time.sleep(1.5 + move_seep)
+                    dt.keyUp('right')  # ：模拟按键松开按键
+
+
+
+
+
+                    #--
+                    dt.press('right')
+                    time.sleep(0.0075)  # 按下两秒
+                    dt.keyDown('right')  # ：模拟按键按下
+                    time.sleep(3.8 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
                 elif j == 4:
                     time.sleep(1)
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.1 + move_seep)
+                    time.sleep(1.45 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
+                    dt.press('y')
+                    time.sleep(0.75)
 
                     dt.press('s')
+                    time.sleep(0.75)
+                    dt.press('f')
                     time.sleep(3)
+                    dt.press('y')
 
                     time.sleep(1)
                     time.sleep(1.35)
@@ -1659,8 +1695,8 @@ if __name__ == '__main__':
 
         n = 26
         if aa == 0:
-            # c.nvQiGong(n, 0.54, 0.26, 0)#2p 睡眠不足十
-            c.nvQiGong(n, 0.54, 0.2, 0)  # 1p 气功师很烂丶
+            c.nvQiGong(n, 0.54, 0.26, 0)#2p 睡眠不足十
+            #c.nvQiGong(n, 0.54, 0.2, 0)  # 1p 气功师很烂丶
             # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
             time.sleep(2)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
@@ -1684,7 +1720,7 @@ if __name__ == '__main__':
             c.LeftClick(390, 500)  # 单机鼠标左键
             continue
         elif aa == 2:
-            c.nvQiGong(n, 0.62, 0.26, 0)  # 2p 睡眠不足丶
+            c.nvQiGong(n, 0.56, 0.26, 0)  # 2p 睡眠不足丶
             # c.nvQiGong(n, 0.48, 0.2, 0)  # 1p 气功师狠烂
 
             time.sleep(3)
