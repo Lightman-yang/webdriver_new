@@ -13,7 +13,6 @@
 #
 # a=os.system('dir')
 # print(a)
-from threading import Thread
 from time import sleep  # 导入时间休眠函数
 
 xxyy = [1, 2, 3, 4]
@@ -672,8 +671,8 @@ class Caozuolei1():
 
                 # xxyy = 0, 0
 
-    def Find_srt(self):  # 人物坐标
-        for i in range(1, 10000):
+    def Find_srt(self, usr_string1, usr_color_format1, usr_string2, usr_color_format2):  # 人物坐标
+        for i in range(1, 2):
 
             sleep(1)
             z = self.FindStr(
@@ -681,8 +680,8 @@ class Caozuolei1():
                 y1=0,
                 x2=1000,
                 y2=1000,
-                string="先驱者",  # "挑战者"
-                color_format="#422",  ##380
+                string=usr_string1,  # "先驱者",  # "挑战者"
+                color_format=usr_color_format1,  # "#422",  ##380
                 sim=0.75,
                 isbackcolor=0)
             print(z)
@@ -699,8 +698,8 @@ class Caozuolei1():
                         y1=0,
                         x2=1000,
                         y2=1000,
-                        string="不足",
-                        color_format="#422",
+                        string=usr_string2,  # "不足",
+                        color_format=usr_color_format2,  # "#422",
                         sim=0.8,
                         isbackcolor=0)
                     if z != 0:
@@ -832,19 +831,50 @@ if __name__ == '__main__':
     # c.Find_srt()c
     # c.Find_Picdoor()
     # c.Find_Strexxy()
-    zzz = Thread(target=c.Find_Strexxy)
-    ZZZ = Thread(target=c.Find_srt)
-    zzz.start()
-    ZZZ.start()
+    for i in range(1, 20):
+        c.Find_srt("熟练者", "#422", "功师", "#422")
+        print(int(xxyy[0]), (int(xxyy[0]) - 606))
+
+        if (int(xxyy[0]) - 606) < -10:
+            print((int(xxyy[0]) - 606), 'x')
+            dt.press('right')
+        elif (int(xxyy[0]) - 606) > 10:
+            print((int(xxyy[0]) - 606), 'x')
+            dt.press('left')
+        elif 11 < (int(xxyy[0]) - 606) > -11:
+            print((int(xxyy[0]) - 606), 'x')
+            continue
+        elif (int(xxyy[1]) - 449) < -10:
+            print((int(xxyy[1]) - 449), 'y')
+            dt.press('down')
+        elif (int(xxyy[1]) - 449) > 10:
+            print((int(xxyy[1]) - 449), 'y')
+            dt.press('up')
+        elif 11 < (int(xxyy[1]) - 449) > -11:
+            print((int(xxyy[1]) - 449), 'y')
+            continue
+        elif 11 < (int(xxyy[0]) - 606) > -11 and 11 < (int(xxyy[1]) - 449) > -11:
+            print((int(xxyy[1]) - 449), 'y')
+            break
+        else:
+
+            print((int(xxyy[1]) - 449), 'y', (int(xxyy[0]) - 606), 'x')
+            break
+
+    # zzz = Thread(target=c.Find_Strexxy)  #606 449 596 442
+    # ZZZ = Thread(target=c.Find_srt("先驱者","#422","不足","#422"))
+    # ZZZ = Thread(target=c.Find_srt("熟6者", "#422", "功师", "#422"))
+    # zzz.start()
+    # ZZZ.start()
     # # a = xxyy[0]  # 人物坐标
     # # b = xxyy[-2]  # 其他坐标
     # print("测试")
-    time.sleep(10)
-    print(xxyy, xxyy[0], xxyy[-2], xxyy[1], xxyy[-1])
-    for i in range(1, 250):
-        if i > 1:
-            c.movemovemoveheng1()
-            c.movemovemove2()
+    # time.sleep(10)
+    # print(xxyy, xxyy[0], xxyy[-2], xxyy[1], xxyy[-1])
+    # for i in range(1, 250):
+    #     if i > 1:
+    #         c.movemovemoveheng1()
+    #         c.movemovemove2()
 
     #         y1=0,
     #         x2=1200,
