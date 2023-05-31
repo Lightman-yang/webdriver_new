@@ -2023,7 +2023,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # 获取工作表 有三种方法
         zz1 = data.active  # 不知道表名称的 用这种
         # zz1=data['Sheet'] #知道表面的用第二种
@@ -2325,11 +2325,11 @@ if __name__ == '__main__':
     # c.forxunhuan(627,462)
     # c.Find_srt("熟练者", "#422", "功师", "#422")
     time.sleep(1)
-    pvp = 1  # 1是1P 2是2p
+    pvp = 2  # 1是1P 2是2p
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 7]]
-    for aa in range(4, 5):  # 打图设置
+    for aa in range(2, 5):  # 打图设置
 
         time.sleep(1.85)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441, 310
@@ -2370,7 +2370,7 @@ if __name__ == '__main__':
         dt.press('space')  # 单击空格操作
         time.sleep(0.5)  # 睡眠1.5秒gdf
         # aa1, bb1, cc1, dd1 = "挑战者", "#360", "师很", "#140"
-        canshu = c.excelboot01(aa + 7)  # 调用excel表数据取值# 2p是加1 1p是加7
+        canshu = c.excelboot01(aa + 1)  # 调用excel表数据取值# 2p是加1 1p是加7
         n = 22
         if aa == 0:
             if pvp == 1:
@@ -2455,10 +2455,10 @@ if __name__ == '__main__':
             continue
         elif aa == 5:
             if pvp == 1:
-                c.nanQiGong(n, 1)  # 1p  男气功
+                c.nanQiGong(n, 0)  # 1p  男气功
             else:
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
-                c.nvQiGong(n, 0.65, 0.2, 1, *canshu)  # 2p SS睡眠不足SS
+                c.nvQiGong(n, 0.65, 0.2, 0, *canshu)  # 2p SS睡眠不足SS
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p
             time.sleep(2)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
