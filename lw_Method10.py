@@ -2329,7 +2329,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 7]]
-    for aa in range(4, 5):  # 打图设置
+    for aa in range(2, 5):  # 打图设置
 
         time.sleep(1.85)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441, 310
@@ -2361,7 +2361,10 @@ if __name__ == '__main__':
 
         dt.press('right')  # 向右移动， 移动1秒，
         dt.press('right')  # 向右移动， 移动1秒，
-        dt.press('right')  # 向右移动， 移动1秒，
+        if x[aa][2]==3 and pvp == 1:
+            pass
+        else:
+           dt.press('right')  # 向右移动， 移动1秒，
         #dt.press('right')  # 向右移动， 移动1秒，
         #dt.press('right')  # 向右移动， 移动1秒，
 
@@ -2455,7 +2458,7 @@ if __name__ == '__main__':
             continue
         elif aa == 5:
             if pvp == 1:
-                c.nanQiGong(n, 1)  # 1p  男气功
+                c.nanQiGong(n, 0)  # 1p  男气功
             else:
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
                 c.nvQiGong(n, 0.65, 0.2, 1, *canshu)  # 2p SS睡眠不足SS
