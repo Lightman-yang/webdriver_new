@@ -230,6 +230,6 @@ class nvqigong():
         dt.keyUp('a') #：模拟按键松开time.sleep(2)
         '''
 
-#
-# if __name__ == '__main__':
-#     nvqigong().NvQiGong(309, 118, 28, 0)
+
+if __name__ == '__main__':
+    nvqigong().NvQiGong(309, 118, 22, 0)

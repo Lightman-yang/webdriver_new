@@ -201,5 +201,5 @@ class DXCnanqigong():
         time.sleep(2) #按下两秒0
         dt.keyUp('a') #：模拟按键松开time.sleep(2)
         '''
-# if __name__ == '__main__':
-#     DXCnanqigong().nanqigong(309,118,10,0)
+if __name__ == '__main__':
+    DXCnanqigong().nanqigong(309,118,26,0)
