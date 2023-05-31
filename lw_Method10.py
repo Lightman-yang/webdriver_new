@@ -2195,8 +2195,8 @@ if __name__ == '__main__':
         dt.press('right')  # 向右移动， 移动1秒，
         dt.press('right')  # 向右移动， 移动1秒，
         dt.press('right')  # 向右移动， 移动1秒，
-        dt.press('right')  # 向右移动， 移动1秒，
-        dt.press('right')  # 向右移动， 移动1秒，
+        # dt.press('right')  # 向右移动， 移动1秒，
+        # dt.press('right')  # 向右移动， 移动1秒，
 
         time.sleep(1.5)  # 睡眠1.5秒
 
