@@ -348,7 +348,7 @@ class Caozuolei(Caozuolei1):
         self.Use_Dict(1)
         while True:
             time.sleep(0.15)
-            aa = c.Find_Ocr(
+            aa = self.Find_Ocr(
                 x1=0,
                 y1=0,
                 x2=1200,
@@ -393,6 +393,29 @@ class Caozuolei(Caozuolei1):
             else:
                 print("0,没找到")
                 return 0
+
+    def FuBen_INFO11(self):  # 进图校验是否选择“永恒之光研究所”
+
+        self.Use_Dict(0)
+        while True:
+            time.sleep(0.15)
+            aa = self.Find_Ocr(
+                x1=31,
+                y1=245,
+                x2=260,
+                y2=33,
+                color_format="#331",
+                sim=0.8,
+                linesign=" ",
+                isbackcolor=1)
+            if "永恒之光" in aa:
+
+                print("永恒之光")
+
+                return 1
+            else:
+                dt.press('up')
+                break
 
     def FuBen_INFOxx(self, num):
 
@@ -463,6 +486,7 @@ class Caozuolei(Caozuolei1):
                 print('开洞')
                 return
             elif cc == 6 and "开洞" not in aa and b == 1:
+                dt.press('right')
                 dt.press('alt')
 
                 continue
@@ -480,10 +504,21 @@ class Caozuolei(Caozuolei1):
                 time.sleep(1)
                 continue
             else:
-
-                print("跳过")
-                self.youjian()
-                return
+                aa1 = self.Find_Ocr(
+                    x1=0,
+                    y1=0,
+                    x2=800,
+                    y2=800,
+                    color_format="#380",
+                    sim=0.88,
+                    linesign=" ",
+                    isbackcolor=0)
+                if "开洞" in aa1:
+                    print('开洞')
+                    return
+                else:
+                    self.youjian()
+                    return
 
     def nvQiGong(self, num_parameter, move_seepx, move_seepy, Restart_computer_parameter, aa1, bb1, cc1, dd1, hh1=0.75,
                  hh2=0.75):
@@ -631,7 +666,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('left')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(3.8 + move_seep)
+                    time.sleep(3.9 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
 
                     time.sleep(1)
@@ -1953,7 +1988,9 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(2.5 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
-
+                    time.sleep(0.1)  # 按下19秒
+                    dt.press('ctrl')
+                    time.sleep(0.8)  # 按下19秒
                     dt.press('g')
                     time.sleep(0.45)  # 按下19秒
                     dt.press('s')
@@ -2023,7 +2060,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # 获取工作表 有三种方法
         zz1 = data.active  # 不知道表名称的 用这种
         # zz1=data['Sheet'] #知道表面的用第二种
@@ -2041,7 +2078,7 @@ class Caozuolei(Caozuolei1):
 
             for row in zz1[i]:
                 row_list2.append(row.value)
-        print(row_list2[0:7])
+        print(row_list2[0:8])
         return row_list2[2:8]  # 取数据直接截取前6条数据 并返回给调用方
 
     def FindStr(self, x1, y1, x2, y2, string, color_format, sim, isbackcolor):
@@ -2103,11 +2140,11 @@ class Caozuolei(Caozuolei1):
                     return
                 else:
                     b = b + 1
-                    if b == 50:
+                    if b == 60:
                         self.youjian()
                         print('!!!')
                         return
-                    elif b == 30:
+                    elif 32 > b > 30:
                         dt.press('right')
                         dt.press('alt')
                         continue
@@ -2196,7 +2233,7 @@ class Caozuolei(Caozuolei1):
                     num_ss[0] = 1
                     break
 
-                elif int(x - x1) < -11 and z == 88 and num_ss[0] == 0:  # 1
+                elif int(x - x1) < -12 and z == 88 and num_ss[0] == 0:  # 1
                     # print((x - x1), 'x,1')
                     dt.press('right')
                     # time.sleep(0.1)  # 按下19秒
@@ -2205,7 +2242,7 @@ class Caozuolei(Caozuolei1):
                     # self.Find_srt("熟练者", "#422", "功师", "#422")
                     num_ss[0] = 1
                     break
-                elif int(x - x1) > 11 and z == 88 and num_ss[0] == 0:  # 2
+                elif int(x - x1) > 12 and z == 88 and num_ss[0] == 0:  # 2
                     # print((x - x1), 'x,2')
                     dt.press('left')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1],xxyy[2],xxyy[3]))
@@ -2229,14 +2266,14 @@ class Caozuolei(Caozuolei1):
                     print("down,#4")
                     num_ss[0] = 0
                     break
-                elif int(y - y1) < -11 and z == 88 and num_ss[0] == 1:  # 5
+                elif int(y - y1) < -12 and z == 88 and num_ss[0] == 1:  # 5
                     # print((y- y1), 'y1')
                     dt.press('down')
                     print("down,#5")
                     num_ss[0] = 0
                     break
 
-                elif int(y - y1) > 11 and z == 88 and num_ss[0] == 1:  # 6
+                elif int(y - y1) > 12 and z == 88 and num_ss[0] == 1:  # 6
                     # print((y- y1) , 'y2')
                     dt.press('up')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
@@ -2250,7 +2287,7 @@ class Caozuolei(Caozuolei1):
                 #     print((x - x1), 'x,3')
                 #    # continu
                 #     print((y - y1)>80)
-                elif -11 <= (x - x1) <= 11 and -11 <= (y - y1) <= 11 and z == 88:  # 7
+                elif -12 <= (x - x1) <= 12 and -12 <= (y - y1) <= 12 and z == 88:  # 7
                     # print((x-x1), 'y？？？？？？')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
                     print("up,#7")
@@ -2325,11 +2362,11 @@ if __name__ == '__main__':
     # c.forxunhuan(627,462)
     # c.Find_srt("熟练者", "#422", "功师", "#422")
     time.sleep(1)
-    pvp = 1  # 1是1P 2是2p
+    pvp = 2  # 1是1P 2是2p
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 7]]
-    for aa in range(2, 5):  # 打图设置
+    for aa in range(0, 5):  # 打图设置
 
         time.sleep(1.85)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441, 310
@@ -2351,29 +2388,32 @@ if __name__ == '__main__':
         c.movingfigur_right(7.5)  # 向右移动， 移动8秒，
 
         # c.movingfigur_up(0.5)  # 向上移动， 移动0.15秒，
+
         dt.press('up')
+        c.FuBen_INFO11()
         time.sleep(1.5)  # 睡眠1.5秒
         for i in range(10):
             time.sleep(0.25)  # 睡眠1.5秒
             dt.press('left')  # 向上移动， 移动0.15秒，
 
         time.sleep(0.5)  # 睡眠1.5秒
-
         dt.press('right')  # 向右移动， 移动1秒，
         dt.press('right')  # 向右移动， 移动1秒，
-        if x[aa][2]==3 and pvp == 1:
+        # dt.press('right')  # 向右移动， 移动1秒，
+        # dt.press('right')  # 向右移动， 移动1秒，
+        if x[aa][2] == 4 and pvp == 2:
             pass
         else:
-           dt.press('right')  # 向右移动， 移动1秒，
-        #dt.press('right')  # 向右移动， 移动1秒，
-        #dt.press('right')  # 向右移动， 移动1秒，
+            dt.press('right')  # 向右移动， 移动1秒，
+        # dt.press('right')  # 向右移动， 移动1秒，
+        # dt.press('right')  # 向右移动， 移动1秒，
 
         time.sleep(1.5)  # 睡眠1.5秒
 
         dt.press('space')  # 单击空格操作
         time.sleep(0.5)  # 睡眠1.5秒gdf
         # aa1, bb1, cc1, dd1 = "挑战者", "#360", "师很", "#140"
-        canshu = c.excelboot01(aa + 7)  # 调用excel表数据取值# 2p是加1 1p是加7
+        canshu = c.excelboot01(aa + 1)  # 调用excel表数据取值# 2p是加1 1p是加7
         n = 22
         if aa == 0:
             if pvp == 1:
@@ -2461,7 +2501,7 @@ if __name__ == '__main__':
                 c.nanQiGong(n, 0)  # 1p  男气功
             else:
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
-                c.nvQiGong(n, 0.65, 0.2, 1, *canshu)  # 2p SS睡眠不足SS
+                c.nvQiGong(n, 0.65, 0.2, 0, *canshu)  # 2p SS睡眠不足SS
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p
             time.sleep(2)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
