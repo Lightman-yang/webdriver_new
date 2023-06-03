@@ -519,7 +519,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(2.8 + move_seep)
+                    time.sleep(2.6 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('left')  # ：模拟按键按下
                     time.sleep(0.15)  # 按下两秒
@@ -631,7 +631,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('left')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(3.5 + move_seep)
+                    time.sleep(3.8 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
 
                     time.sleep(1)
