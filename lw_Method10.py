@@ -415,7 +415,42 @@ class Caozuolei(Caozuolei1):
                 return 1
             else:
                 dt.press('up')
-                break
+                continue
+
+    def FuBen_INFO12(self):  # 进图校验是否选择“永恒之光研究所”
+
+        self.Use_Dict(0)
+        while True:
+            time.sleep(0.15)
+
+            aa = self.Find_Ocr(
+                x1=12,
+                y1=140,
+                x2=760,
+                y2=333,
+                color_format="#422",
+                sim=0.8,
+                linesign=" ",
+                isbackcolor=0)
+            print(aa)
+            if "不足" in aa:
+
+                print("不足,1")
+
+                return 2
+            elif "士拉" in aa:
+
+                print("士拉,2")
+
+                return 1
+            elif "数字" in aa:
+
+                print(aa, "0110,3")
+
+                return 3
+            else:
+                print('没有找到人物pvp')
+                continue
 
     def FuBen_INFOxx(self, num):
 
@@ -604,7 +639,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1)  # 按下两秒
                     dt.press('right')
                     dt.keyDown('right')  # ：模拟按键按下 向下
-                    time.sleep(1 + move_seep)
+                    time.sleep(1.1 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     time.sleep(0.75)
                     dt.press('v')
@@ -666,7 +701,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('left')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(3.9 + move_seep)
+                    time.sleep(4.1 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
 
                     time.sleep(1)
@@ -799,7 +834,8 @@ class Caozuolei(Caozuolei1):
                     dt.press('9')
                     time.sleep(0.75)
                     self.FuBen_INFO1()
-                    time.sleep(0.5)  # 按下两秒
+                    self.forxunhuan(aa1, bb1, cc1, dd1, hh1, hh2)
+
                     # Caozuolei().FuBen_INFO1()
 
                     time.sleep(0.75)  # 按下两秒
@@ -1825,7 +1861,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('left')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(3.95 + move_seep)
+                    time.sleep(4 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
                     time.sleep(1.5)
                     self.FuBen_INFO6()
@@ -1854,10 +1890,12 @@ class Caozuolei(Caozuolei1):
 
                     dt.press('s')
                     time.sleep(0.75)
+                    dt.press('g')
+                    time.sleep(0.75)
                     dt.press('w')
 
                     time.sleep(1)
-                    dt.press('s')
+                    dt.press('g')
                     time.sleep(0.75)
                     dt.press('f')
 
@@ -2233,7 +2271,7 @@ class Caozuolei(Caozuolei1):
                     num_ss[0] = 1
                     break
 
-                elif int(x - x1) < -12 and z == 88 and num_ss[0] == 0:  # 1
+                elif int(x - x1) < -18 and z == 88 and num_ss[0] == 0:  # 1
                     # print((x - x1), 'x,1')
                     dt.press('right')
                     # time.sleep(0.1)  # 按下19秒
@@ -2242,7 +2280,7 @@ class Caozuolei(Caozuolei1):
                     # self.Find_srt("熟练者", "#422", "功师", "#422")
                     num_ss[0] = 1
                     break
-                elif int(x - x1) > 12 and z == 88 and num_ss[0] == 0:  # 2
+                elif int(x - x1) > 18 and z == 88 and num_ss[0] == 0:  # 2
                     # print((x - x1), 'x,2')
                     dt.press('left')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1],xxyy[2],xxyy[3]))
@@ -2266,14 +2304,14 @@ class Caozuolei(Caozuolei1):
                     print("down,#4")
                     num_ss[0] = 0
                     break
-                elif int(y - y1) < -12 and z == 88 and num_ss[0] == 1:  # 5
+                elif int(y - y1) < -18 and z == 88 and num_ss[0] == 1:  # 5
                     # print((y- y1), 'y1')
                     dt.press('down')
                     print("down,#5")
                     num_ss[0] = 0
                     break
 
-                elif int(y - y1) > 12 and z == 88 and num_ss[0] == 1:  # 6
+                elif int(y - y1) > 18 and z == 88 and num_ss[0] == 1:  # 6
                     # print((y- y1) , 'y2')
                     dt.press('up')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
@@ -2287,7 +2325,7 @@ class Caozuolei(Caozuolei1):
                 #     print((x - x1), 'x,3')
                 #    # continu
                 #     print((y - y1)>80)
-                elif -12 <= (x - x1) <= 12 and -12 <= (y - y1) <= 12 and z == 88:  # 7
+                elif -18 <= (x - x1) <= 18 and -18 <= (y - y1) <= 18 and z == 88:  # 7
                     # print((x-x1), 'y？？？？？？')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
                     print("up,#7")
@@ -2348,7 +2386,7 @@ if __name__ == '__main__':
     # else:
     #     pass
     c.Set_Dict(0, 'test3.txt')
-    c.Set_Dict(1, '测试2.txt')
+    # c.Set_Dict(1, '测试2.txt')
 
     # c.forxunhuan("熟练者", "#422", "功师", "#422")
     # c.forxunhuan("熟练者", "#410", "师很", "#140")
@@ -2362,23 +2400,36 @@ if __name__ == '__main__':
     # c.forxunhuan(627,462)
     # c.Find_srt("熟练者", "#422", "功师", "#422")
     time.sleep(1)
-    pvp = 2  # 1是1P 2是2p
+    pvp = c.FuBen_INFO12()  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    # print(pvp)
+    # time.sleep(1000)
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 7]]
-    for aa in range(0, 5):  # 打图设置
-
+    for aa in range(3, 6):  # 打图设置
+        c.Set_Dict(0, 'test3.txt')
+        c.Set_Dict(1, '测试2.txt')
+        time.sleep(1)
+        time.sleep(1)
         time.sleep(1.85)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441, 310
         time.sleep(0.015)
         c.LeftClick(x[aa][0], x[aa][1])  # 单机两下鼠标左键0
         time.sleep(1.8)
         c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
-
+        if pvp == 1:
+            sss = 7
+        elif pvp == 2:
+            sss = 1
+        elif pvp == 3:
+            sss = 14
+        else:
+            print('什么都不是')
+            break
         # d
         # 女气功的操作流程，从选人物到进入图，在到刷图
         time.sleep(5)
-        if x[aa][2] == 6:
+        if x[aa][2] == 6 or (pvp == 3 and x[aa][2] == 3):
             c.movingfigur_Down(0.65)  # 向下移动，移动一秒
         else:
 
@@ -2401,30 +2452,32 @@ if __name__ == '__main__':
         dt.press('right')  # 向右移动， 移动1秒，
         # dt.press('right')  # 向右移动， 移动1秒，
         # dt.press('right')  # 向右移动， 移动1秒，
-        if x[aa][2] == 4 and pvp == 2:
+        if (x[aa][2] == 4 and pvp == 2) or (pvp == 3 and x[aa][2] == 1):
             pass
         else:
             dt.press('right')  # 向右移动， 移动1秒，
         # dt.press('right')  # 向右移动， 移动1秒，
         # dt.press('right')  # 向右移动， 移动1秒，
 
-        time.sleep(1.5)  # 睡眠1.5秒
+        time.sleep(1.7)  # 睡眠1.5秒
 
         dt.press('space')  # 单击空格操作
         time.sleep(0.5)  # 睡眠1.5秒gdf
         # aa1, bb1, cc1, dd1 = "挑战者", "#360", "师很", "#140"
-        canshu = c.excelboot01(aa + 1)  # 调用excel表数据取值# 2p是加1 1p是加7
-        n = 22
+        canshu = c.excelboot01(aa + sss)  # 调用excel表数据取值# 2p是加1 1p是加7  3p是 14
+        n = 24
         if aa == 0:
             if pvp == 1:
                 c.nvQiGong(n, 0.54, 0.26, 0, *canshu)  # 1p 气功师很烂丶
 
-            else:
+            elif pvp == 2:
 
                 c.nvQiGong(n, 0.54, 0.26, 0, *canshu)  # 2p 睡眠不足十
                 # aa1, bb1, cc1, dd1 = "先驱者", "#422", "师很", "#140"
                 # aa1, bb1, cc1, dd1="熟练者", "#410", "师很", "#140"
                 # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
+            else:
+                c.nvQiGong(n, 0.48, 0.26, 0, *canshu)  #3p ll0110ll
             time.sleep(2)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
             c.KeyPress1(27)  # 案件esc建
@@ -2438,8 +2491,10 @@ if __name__ == '__main__':
                 #
                 # c.nvQiGong(n, 0.48, 0.2, 0)  # 1p 气功师很懒
                 c.nvQiGong(n, 0.48, 0.2, 0, *canshu)  # 1p 气功师狠烂
-            else:
+            elif pvp == 2:
                 c.nvQiGong(n, 0.56, 0.26, 0, *canshu)  # 2p ll1ll数据i
+            else:
+                c.nvQiGong(n, 0.56, 0.26, 0, *canshu)  # 3p 气功师废了
                 # c.nvQiGong(n, 0.48, 0.26, 0)  # 气功师该加强了
             time.sleep(3)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
@@ -2451,11 +2506,13 @@ if __name__ == '__main__':
             continue
         elif aa == 2:
             if pvp == 1:
-                c.nvQiGong(n, 0.48, 0.2, 0,*canshu)# 1p 气功师很懒
+                c.nvQiGong(n, 0.48, 0.2, 0, *canshu)  # 1p 气功师很懒
                 # c.nvQiGong(n, 0.62, 0.26, 0)  # 2p 睡眠不足丶
                 #
-            else:
+            elif pvp == 2:
                 c.nvQiGong(n, 0.62, 0.3, 0, *canshu)  # 2p 睡眠不足丶
+            else:
+                c.nvQiGong(n, 0.64, 0.4, 0, *canshu)  #3p 气功运气
             time.sleep(3)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
             c.KeyPress1(27)  # 案件esc建
@@ -2467,10 +2524,13 @@ if __name__ == '__main__':
         elif aa == 3:
             if pvp == 1:
 
-                c.kuangzhanshi(n, 0.21, 0.23, 0,*canshu)  # 1p 狂战士
-            else:
-                # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
+                c.kuangzhanshi(n, 0.21, 0.23, 0, *canshu)  # 1p 狂战士
+            elif pvp == 2:
                 c.nvQiGong(n, 0.54, 0.2, 0, *canshu)  # 2p 十睡眠不足
+            else:
+                c.nvQiGong(n, 0.52, 0.28, 0, *canshu)  # 3p 气功该加强了
+                # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
+
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p s睡眠不足s
             time.sleep(2)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
@@ -2483,11 +2543,14 @@ if __name__ == '__main__':
         elif aa == 4:
             if pvp == 1:
 
-                c.nanQiGong(n, 0,*canshu)  # 1p  男气功
+                c.nanQiGong(n, 0, *canshu)  # 1p  男气功
+            elif pvp == 2:
+                c.zhaohuan(n, 0.05, 0.21, 0, *canshu)  # 2p s睡眠不足s
             else:
+                break
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
                 # c.nvQiGong(n, 0.54, 0.2, 0, *canshu)  # 2p 十睡眠不足
-                c.zhaohuan(n, 0.05, 0.21, 0, *canshu)  # 2p s睡眠不足s
+
             time.sleep(2)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
             c.KeyPress1(27)  # 案件esc建
@@ -2498,11 +2561,13 @@ if __name__ == '__main__':
             continue
         elif aa == 5:
             if pvp == 1:
-                c.nanQiGong(n, 0)  # 1p  男气功
-            else:
+                c.nvQiGong(n, 0.65, 0.2, 0, *canshu)
+            elif pvp == 2:
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
                 c.nvQiGong(n, 0.65, 0.2, 0, *canshu)  # 2p SS睡眠不足SS
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p
+            else:
+                break
             time.sleep(2)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
             c.KeyPress1(27)  # 案件esc建
