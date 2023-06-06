@@ -818,7 +818,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.6)
                     dt.keyDown('right')  # ：模拟按键按下 向下
 
-                    time.sleep(0.8 + move_seep1)
+                    time.sleep(0.65 + move_seep1)
 
                     dt.keyUp('up')  # ：模拟按键松开按键
                     time.sleep(0.6)
@@ -2098,7 +2098,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
         zz1 = data.active  # 不知道表名称的 用这种
@@ -2491,7 +2491,7 @@ if __name__ == '__main__':
             if pvp == 1:
                 #
                 # c.nvQiGong(n, 0.48, 0.2, 0)  # 1p 气功师很懒
-                c.nvQiGong(n, 0.48, 0.2, 0, *canshu)  # 1p 气功师狠烂
+                c.nvQiGong(n, 0.48, 0.26, 0, *canshu)  # 1p 气功师狠烂
             elif pvp == 2:
                 c.nvQiGong(n, 0.56, 0.26, 0, *canshu)  # 2p ll1ll数据i
             else:
@@ -2507,7 +2507,7 @@ if __name__ == '__main__':
             continue
         elif aa == 2:
             if pvp == 1:
-                c.nvQiGong(n, 0.48, 0.2, 0, *canshu)  # 1p 气功师很懒
+                c.nvQiGong(n, 0.48, 0.26, 0, *canshu)  # 1p 气功师很懒
                 # c.nvQiGong(n, 0.62, 0.26, 0)  # 2p 睡眠不足丶
                 #
             elif pvp == 2:
@@ -2527,7 +2527,7 @@ if __name__ == '__main__':
 
                 c.kuangzhanshi(n, 0.21, 0.23, 0, *canshu)  # 1p 狂战士
             elif pvp == 2:
-                c.nvQiGong(n, 0.54, 0.2, 0, *canshu)  # 2p 十睡眠不足
+                c.nvQiGong(n, 0.54, 0.26, 0, *canshu)  # 2p 十睡眠不足
             else:
                 c.nvQiGong(n, 0.52, 0.28, 0, *canshu)  # 3p 气功该加强了
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
@@ -2562,10 +2562,10 @@ if __name__ == '__main__':
             continue
         elif aa == 5:
             if pvp == 1:
-                c.nvQiGong(n, 0.65, 0.2, 0, *canshu)
+                c.nvQiGong(n, 0.65, 0.26, 0, *canshu)
             elif pvp == 2:
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
-                c.nvQiGong(n, 0.65, 0.2, 0, *canshu)  # 2p SS睡眠不足SS
+                c.nvQiGong(n, 0.65, 0.26, 0, *canshu)  # 2p SS睡眠不足SS
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p
             else:
                 break
