@@ -268,26 +268,26 @@ class Caozuolei(Caozuolei1):
             return 0
 
     def FuBen_INFO1(self):  # 副本地图信息数据实时获取
-        time.sleep(0.4)
-        # self.Use_Dict(1)
-        # c.Set_Dict(0, "测试2.txt")
-        aa = c.Find_Ocr(
-            x1=0,
-            y1=0,
-            x2=1200,
-            y2=1200,
-            color_format="#360",
-            sim=0.85,
-            linesign=" ",
-            isbackcolor=0)
-        print("打印aa", aa)
-        if "靓仔" in aa:
-            print(aa)
-            time.sleep(30)  # 按下两秒
-            dt.press('9')
-            time.sleep(1)  # 按下两秒
-        else:
-            return
+        while True:
+            #self.Use_Dict(1)
+            # c.Set_Dict(0, "测试2.txt")
+            aa = c.Find_Ocr(
+                x1=0,
+                y1=0,
+                x2=1200,
+                y2=1200,
+                color_format="#360",
+                sim=0.85,
+                linesign=" ",
+                isbackcolor=0)
+            print("打印aa", aa)
+            if "靓仔" in aa:
+                print(aa)
+
+                dt.press('9')
+                time.sleep(1)  # 按下两秒
+            else:
+                return
 
     def FuBen_INFO2(self):  # 副本地图信息数据实时获取
         self.Use_Dict(1)
@@ -2193,7 +2193,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
         zz1 = data.active  # 不知道表名称的 用这种
