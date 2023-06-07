@@ -292,8 +292,9 @@ class Caozuolei(Caozuolei1):
     def FuBen_INFO2(self):  # 副本地图信息数据实时获取
         self.Use_Dict(1)
         # c.Set_Dict(0, "测试2.txt")
+        a = 0
         while True:
-            time.sleep(1)
+            # time.sleep(1)
             aa = c.Find_Ocr(
                 x1=0,
                 y1=0,
@@ -305,12 +306,10 @@ class Caozuolei(Caozuolei1):
                 isbackcolor=0)
             if "再次挑战" not in aa:
                 dt.press('g')
-                time.sleep(0.65)
-                dt.press('y')
-                time.sleep(0.75)  # 按下两秒
                 dt.press('d')
-                time.sleep(0.75)  # 按下19秒
+                #time.sleep(0.75)  # 按下19秒
                 dt.press('f')
+                dt.press('y')
 
 
             else:
@@ -2004,9 +2003,9 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.4 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    self.FuBen_INFO1()
-                    self.forxunhuan(aa1, bb1, cc1, dd1, hh1, hh2)
 
+                    self.forxunhuan(aa1, bb1, cc1, dd1, hh1, hh2)
+                    self.FuBen_INFO1()
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -2124,7 +2123,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('right')  # ：模拟按键松开按键
                     time.sleep(0.1)  # 按下19秒
                     dt.press('ctrl')
-                    time.sleep(0.8)  # 按下19秒
+                    time.sleep(0.7)  # 按下19秒
                     dt.press('g')
                     time.sleep(0.45)  # 按下19秒
                     dt.press('s')
