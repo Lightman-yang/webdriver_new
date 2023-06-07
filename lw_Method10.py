@@ -270,7 +270,7 @@ class Caozuolei(Caozuolei1):
     def FuBen_INFO1(self):  # 副本地图信息数据实时获取
 
         while True:
-            self.Use_Dict(1)
+            # self.Use_Dict(1)
             # c.Set_Dict(0, "测试2.txt")
             aa = c.Find_Ocr(
                 x1=0,
@@ -291,7 +291,7 @@ class Caozuolei(Caozuolei1):
                 return
 
     def FuBen_INFO2(self):  # 副本地图信息数据实时获取
-        self.Use_Dict(1)
+        # self.Use_Dict(1)
         # c.Set_Dict(0, "测试2.txt")
         a = 0
         while True:
@@ -317,7 +317,7 @@ class Caozuolei(Caozuolei1):
                 return
 
     def FuBen_INFO3(self):  # 副本地图信息如果自动存在，证明没活力点了，直接退出
-        self.Use_Dict(1)
+        # self.Use_Dict(1)
         # c.Set_Dict(0, "测试2.txt")
         while True:
             time.sleep(0.15)
@@ -345,7 +345,7 @@ class Caozuolei(Caozuolei1):
                 return 0
 
     def FuBen_INFO(self):  # 副本地图信息数据实时获取
-        self.Use_Dict(1)
+        #self.Use_Dict(1)
         while True:
             time.sleep(0.15)
             aa = self.Find_Ocr(
@@ -396,9 +396,9 @@ class Caozuolei(Caozuolei1):
 
     def FuBen_INFO11(self):  # 进图校验是否选择“永恒之光研究所”
 
-        self.Use_Dict(0)
+        #self.Use_Dict(0)
         while True:
-            time.sleep(0.15)
+            #time.sleep(0.15)
             aa = self.Find_Ocr(
                 x1=31,
                 y1=245,
@@ -419,9 +419,9 @@ class Caozuolei(Caozuolei1):
 
     def FuBen_INFO12(self):  # 进图校验是否选择“永恒之光研究所”
 
-        self.Use_Dict(0)
+        #self.Use_Dict(0)
         while True:
-            time.sleep(0.15)
+            #time.sleep(0.15)
 
             aa = self.Find_Ocr(
                 x1=12,
@@ -454,9 +454,9 @@ class Caozuolei(Caozuolei1):
 
     def FuBen_INFO13(self):  # 校验是否选择“传送门”
 
-        self.Use_Dict(0)
+        #self.Use_Dict(0)
         while True:
-            time.sleep(0.15)
+            # time.sleep(0.15)
 
             aa = self.Find_Ocr(
                 x1=0,
@@ -525,10 +525,10 @@ class Caozuolei(Caozuolei1):
             time.sleep(10)
 
     def FuBen_INFO6(self, b=0, c=1):  # 副本地图信息数据实时获取
-        self.Set_Dict(0, 'test3.txt')
-        self.Use_Dict(0)
+        # self.Set_Dict(0, 'test3.txt')
+        # self.Use_Dict(0)
         # c.Set_Dict(0, "test3.txt")
-        time.sleep(2)
+        # time.sleep(2)
         cc = c
         while True:
             cc = cc + 1
@@ -581,8 +581,8 @@ class Caozuolei(Caozuolei1):
                     return
 
     def FuBen_INFO66(self, ss=0):  # 副本地图信息数据实时获取
-        self.Set_Dict(0, 'test3.txt')
-        self.Use_Dict(0)
+        # self.Set_Dict(0, 'test3.txt')
+        # self.Use_Dict(0)
         # c.Set_Dict(0, "test3.txt")
         # cc = c
         while True:
@@ -699,7 +699,7 @@ class Caozuolei(Caozuolei1):
                         dt.keyDown('down')  # ：模拟按键按下 向下
                         time.sleep(0.5 + move_seep1)
                         dt.keyUp('down')  # ：模拟按键松开按键
-
+                        dt.press('9')
                         if self.FuBen_INFO() == 1:
 
                             self.forxunhuan(aa1, bb1, cc1, dd1, hh1, hh2)
@@ -715,7 +715,7 @@ class Caozuolei(Caozuolei1):
                 elif j == 2:
                     dt.press('y')
                     time.sleep(0.5)  # 按下两秒
-                    time.sleep(1)
+
                     dt.keyDown('down')  # ：模拟按键按下 向下
                     time.sleep(1 + move_seep1)
                     dt.keyUp('down')  # ：模拟按键松开按键
@@ -723,14 +723,12 @@ class Caozuolei(Caozuolei1):
                     dt.press('y')
                     time.sleep(0.65)
                     dt.press('g')
-                    time.sleep(1)  # 按下两秒
+                    time.sleep(0.7)  # 按下两秒
                     dt.press('right')
                     dt.keyDown('right')  # ：模拟按键按下 向下
                     time.sleep(1.1 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    time.sleep(0.75)
 
-                    dt.press('v')
                     self.FuBen_INFO66()
 
                     self.FuBen_INFO6()
@@ -771,8 +769,6 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.75)  # 按下两秒
                     dt.press('g')
                     time.sleep(0.75)  # 按下两秒
-                    dt.press('y')
-                    time.sleep(0.75)  # 按下两秒
                     dt.press('d')
 
                     dt.press('right')
@@ -784,7 +780,7 @@ class Caozuolei(Caozuolei1):
                     self.FuBen_INFO6()
                     time.sleep(0.5)
                     dt.press('9')
-                    time.sleep(1.2)
+                    time.sleep(1)
                     self.FuBen_INFO1()
                     self.forxunhuan(aa1, bb1, cc1, dd1, hh1, hh2)
 
@@ -794,7 +790,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(4.1 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
 
-                    time.sleep(1)
+                    time.sleep(0.5)
                     dt.press('y')
                     time.sleep(0.75)
                     dt.press('g')
@@ -919,7 +915,7 @@ class Caozuolei(Caozuolei1):
                         time.sleep(4.1 + move_seep)
                         dt.keyUp('left')  # ：模拟按键松开按键
 
-                        time.sleep(1)
+                        time.sleep(0.5)
                         dt.press('y')
                         time.sleep(0.75)
                         dt.press('g')
@@ -2228,12 +2224,12 @@ class Caozuolei(Caozuolei1):
 
     def Find_srt(self, usr_string1, usr_color_format1, usr_string2, usr_color_format2, usr_HH1=0.75,
                  usr_HH2=0.75):  # 人物坐标
-        self.Use_Dict(0)
+        #self.Use_Dict(0)
         print(usr_HH1, type(usr_HH1))
         b = 0
         while True:
 
-            sleep(0.15)
+            #sleep(0.15)
             z = self.FindStr(
                 x1=0,
                 y1=0,
@@ -2293,7 +2289,7 @@ class Caozuolei(Caozuolei1):
                     # continue
 
     def menzuobiao(self):  # 门坐标
-        self.Use_Dict(0)
+        #self.Use_Dict(0)
         while True:
 
             z = self.FindStr(
@@ -2504,9 +2500,9 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 7]]
-    for aa in range(0, 6):  # 打图设置
-        c.Set_Dict(0, 'test3.txt')
-        c.Set_Dict(1, '测试2.txt')
+    for aa in range(1, 6):  # 打图设置
+        # c.Set_Dict(0, 'test3.txt')
+        # c.Set_Dict(1, '测试2.txt')
 
         time.sleep(1.85)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441, 310
