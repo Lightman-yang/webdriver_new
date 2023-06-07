@@ -281,7 +281,7 @@ class Caozuolei(Caozuolei1):
                 linesign=" ",
                 isbackcolor=0)
             print("打印aa", aa)
-            if "靓仔" in aa:
+            if "靓" in aa:
                 print(aa)
 
                 dt.press('9')
