@@ -268,26 +268,27 @@ class Caozuolei(Caozuolei1):
             return 0
 
     def FuBen_INFO1(self):  # 副本地图信息数据实时获取
-        time.sleep(0.4)
-        # self.Use_Dict(1)
-        # c.Set_Dict(0, "测试2.txt")
-        aa = c.Find_Ocr(
-            x1=0,
-            y1=0,
-            x2=1200,
-            y2=1200,
-            color_format="#360",
-            sim=0.85,
-            linesign=" ",
-            isbackcolor=0)
-        print("打印aa", aa)
-        if "靓仔" in aa:
-            print(aa)
-            time.sleep(30)  # 按下两秒
-            dt.press('9')
-            time.sleep(1)  # 按下两秒
-        else:
-            return
+
+        while True:
+            self.Use_Dict(1)
+            # c.Set_Dict(0, "测试2.txt")
+            aa = c.Find_Ocr(
+                x1=0,
+                y1=0,
+                x2=1200,
+                y2=1200,
+                color_format="#360",
+                sim=0.85,
+                linesign=" ",
+                isbackcolor=0)
+            print("打印aa", aa)
+            if "靓仔" in aa:
+                print(aa)
+
+                dt.press('9')
+                time.sleep(1)  # 按下两秒
+            else:
+                return
 
     def FuBen_INFO2(self):  # 副本地图信息数据实时获取
         self.Use_Dict(1)
@@ -841,8 +842,9 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1)
                     dt.press('9')
                     time.sleep(1.2)
-                    self.FuBen_INFO1()
+
                     self.forxunhuan(aa1, bb1, cc1, dd1, hh1, hh2)
+                    self.FuBen_INFO1()
 
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
@@ -2545,7 +2547,7 @@ if __name__ == '__main__':
         time.sleep(0.5)  # 睡眠1.5秒
         dt.press('right')  # 向右移动， 移动1秒，
         dt.press('right')  # 向右移动， 移动1秒，
-        # dt.press('right')  # 向右移动， 移动1秒，
+        dt.press('right')  # 向右移动， 移动1秒，
         # dt.press('right')  # 向右移动， 移动1秒，
         if (x[aa][2] == 4 and pvp == 2) or (pvp == 3 and x[aa][2] == 1):
             pass
