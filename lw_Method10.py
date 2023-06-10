@@ -2360,6 +2360,14 @@ class Caozuolei(Caozuolei1):
                 print((x - x1), (y - y1), '----')
                 if h == 1000:
                     break
+                elif -24 <= (x - x1) <= 24 and num_ss[0] == 0 and z == 88 :  # 00
+                    num_ss[0] = 1
+                    print("# 00")
+
+                elif -24 <= (y - y1) <= 24 and z == 88 and num_ss[0] == 1:  # 01
+
+                    num_ss[0] = 0
+                    print('# 01')
                 elif (x - x1) < int(-80) and z == 88 and num_ss[0] == 0:  # 0
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
@@ -2374,7 +2382,7 @@ class Caozuolei(Caozuolei1):
                 elif int(x - x1) < -24 and z == 88 and num_ss[0] == 0:  # 1
                     # print((x - x1), 'x,1')
                     dt.press('right')
-                    time.sleep(0.1)  # 按下19秒
+                    #time.sleep(0.1)  # 按下19秒
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1],xxyy[2],xxyy[3]))
                     print("right,#1")
                     # self.Find_srt("熟练者", "#422", "功师", "#422")
@@ -2441,7 +2449,7 @@ class Caozuolei(Caozuolei1):
                     print(';')
                     break
                 else:
-                    if x > 600:  # 8
+                    if x > 600 and z == 88:  # 8
                         dt.keyDown('left')  # ：模拟按键按下
                         time.sleep(1)  # 按下19秒
                         dt.keyUp('left')  # ：模拟按键松开按键
