@@ -272,11 +272,11 @@ class Caozuolei(Caozuolei1):
         while True:
             # self.Use_Dict(1)
             # c.Set_Dict(0, "测试2.txt")
-            aa = c.Find_Ocr(
+            aa = self.Find_Ocr(
                 x1=0,
                 y1=0,
-                x2=1200,
-                y2=1200,
+                x2=800,
+                y2=600,
                 color_format="#360",
                 sim=0.85,
                 linesign=" ",
@@ -296,7 +296,7 @@ class Caozuolei(Caozuolei1):
         a = 0
         while True:
             # time.sleep(1)
-            aa = c.Find_Ocr(
+            aa = self.Find_Ocr(
                 x1=0,
                 y1=0,
                 x2=1200,
@@ -321,7 +321,7 @@ class Caozuolei(Caozuolei1):
         # c.Set_Dict(0, "测试2.txt")
         while True:
             time.sleep(0.15)
-            aa = c.Find_Ocr(
+            aa = self.Find_Ocr(
                 x1=0,
                 y1=0,
                 x2=1200,
@@ -542,6 +542,16 @@ class Caozuolei(Caozuolei1):
                 sim=0.88,
                 linesign=" ",
                 isbackcolor=0)
+            aa1 = self.Find_Ocr(
+                x1=0,
+                y1=0,
+                x2=800,
+                y2=800,
+                color_format="#380",
+                sim=0.88,
+                linesign=" ",
+                isbackcolor=0)
+            print(aa, aa1)
             if "开洞" in aa:
                 print('开洞')
                 return
@@ -563,22 +573,16 @@ class Caozuolei(Caozuolei1):
                 dt.press('y')
                 time.sleep(1)
                 continue
+
+
+
+            elif "开洞" in aa1:
+                print('开洞')
+                return
             else:
-                aa1 = self.Find_Ocr(
-                    x1=0,
-                    y1=0,
-                    x2=800,
-                    y2=800,
-                    color_format="#380",
-                    sim=0.88,
-                    linesign=" ",
-                    isbackcolor=0)
-                if "开洞" in aa1:
-                    print('开洞')
-                    return
-                else:
-                    self.youjian()
-                    return
+                print(aa1, aa, cc)
+                self.youjian()
+                break
 
     def FuBen_INFO66(self, ss=0):  # 副本地图信息数据实时获取
         # self.Set_Dict(0, 'test3.txt')
@@ -633,18 +637,27 @@ class Caozuolei(Caozuolei1):
             elif '开府' in aa2:
                 dt.press('y')
                 dt.press('g')
+                print('开府,aa2')
                 continue
             elif '德拉' in aa3:
                 dt.press('y')
                 dt.press('f')
                 dt.press('g')
+                print('德拉')
                 continue
             elif '德拉' not in aa3 and ss == 1:
                 return
+            elif '非' in aa3 and '非' in aa1 and '非' in aa2:
+                print('非')
+                self.Set_Dict(0, 'test3.txt')
+                break
+                # self.FuBen_INFO66()
+                # continue
             else:
                 dt.press('right')
-                print('FuBen_INFO66')
-                continue
+
+                print('FuBen_INFO66', aa1, aa, aa2, aa3)
+                break
 
     def nvQiGong(self, num_parameter, move_seepx, move_seepy, Restart_computer_parameter, aa1, bb1, cc1, dd1, hh1=0.75,
                  hh2=0.75):
@@ -2547,6 +2560,9 @@ if __name__ == '__main__':
         # dt.press('right')  # 向右移动， 移动1秒，
         if (x[aa][2] == 4 and pvp == 2) or (pvp == 3 and x[aa][2] == 1):
             pass
+        elif x[aa][2] == 6 and pvp == 1:
+            dt.press('right')  # 向右移动， 移动1秒，
+            dt.press('right')  # 向右移动， 移动1秒，
         else:
             dt.press('right')  # 向右移动， 移动1秒，
         # dt.press('right')  # 向右移动， 移动1秒，
