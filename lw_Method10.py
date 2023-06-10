@@ -272,7 +272,7 @@ class Caozuolei(Caozuolei1):
         while True:
             # self.Use_Dict(1)
             # c.Set_Dict(0, "测试2.txt")
-            aa = c.Find_Ocr(
+            aa = self.Find_Ocr(
                 x1=0,
                 y1=0,
                 x2=1200,
@@ -293,10 +293,10 @@ class Caozuolei(Caozuolei1):
     def FuBen_INFO2(self):  # 副本地图信息数据实时获取
         # self.Use_Dict(1)
         # c.Set_Dict(0, "测试2.txt")
-        a = 0
+        #a = 0
         while True:
             # time.sleep(1)
-            aa = c.Find_Ocr(
+            aa = self.Find_Ocr(
                 x1=0,
                 y1=0,
                 x2=1200,
@@ -314,14 +314,15 @@ class Caozuolei(Caozuolei1):
 
 
             else:
+
                 return
 
     def FuBen_INFO3(self):  # 副本地图信息如果自动存在，证明没活力点了，直接退出
         # self.Use_Dict(1)
         # c.Set_Dict(0, "测试2.txt")
         while True:
-            time.sleep(0.15)
-            aa = c.Find_Ocr(
+            #time.sleep(0.15)
+            aa = self.Find_Ocr(
                 x1=0,
                 y1=0,
                 x2=1200,
@@ -347,7 +348,7 @@ class Caozuolei(Caozuolei1):
     def FuBen_INFO(self):  # 副本地图信息数据实时获取
         #self.Use_Dict(1)
         while True:
-            time.sleep(0.15)
+            #time.sleep(0.15)
             aa = self.Find_Ocr(
                 x1=0,
                 y1=0,
@@ -542,8 +543,17 @@ class Caozuolei(Caozuolei1):
                 sim=0.88,
                 linesign=" ",
                 isbackcolor=0)
+            aa1 = self.Find_Ocr(
+                x1=0,
+                y1=0,
+                x2=800,
+                y2=600,
+                color_format="#380",
+                sim=0.88,
+                linesign=" ",
+                isbackcolor=0)
             if "开洞" in aa:
-                print('开洞')
+                print('开洞',cc)
                 return
             elif cc == 6 and "开洞" not in aa and b == 1:
                 dt.press('right')
@@ -562,23 +572,16 @@ class Caozuolei(Caozuolei1):
                 time.sleep(0.075)
                 dt.press('y')
                 time.sleep(1)
+
                 continue
+
+            elif "开洞" in aa1:
+                print('开洞',cc,aa1)
+                return
             else:
-                aa1 = self.Find_Ocr(
-                    x1=0,
-                    y1=0,
-                    x2=800,
-                    y2=800,
-                    color_format="#380",
-                    sim=0.88,
-                    linesign=" ",
-                    isbackcolor=0)
-                if "开洞" in aa1:
-                    print('开洞')
-                    return
-                else:
-                    self.youjian()
-                    return
+                print('FuBen_INFO6 #000') #000
+                self.youjian()
+                break
 
     def FuBen_INFO66(self, ss=0):  # 副本地图信息数据实时获取
         # self.Set_Dict(0, 'test3.txt')
@@ -628,23 +631,32 @@ class Caozuolei(Caozuolei1):
                 print('开洞')
                 return
             elif "开洞" in aa1:
-                dt.press('right')
-                continue
+                if ss==7:
+                    return
+                else:
+                    dt.press('right')
+                    continue
             elif '开府' in aa2:
                 dt.press('y')
                 dt.press('g')
                 continue
-            elif '德拉' in aa3:
+            elif '德拉' in aa3 or '防护罩' in aa3:
                 dt.press('y')
                 dt.press('f')
                 dt.press('g')
                 continue
+            elif '非' in aa3 and '非' in aa and '非' in aa2 and '非' in aa1:
+                print('非')
+                self.Set_Dict(0, 'test3.txt')
+                continue
+
             elif '德拉' not in aa3 and ss == 1:
                 return
+
             else:
                 dt.press('right')
                 print('FuBen_INFO66')
-                continue
+                break
 
     def nvQiGong(self, num_parameter, move_seepx, move_seepy, Restart_computer_parameter, aa1, bb1, cc1, dd1, hh1=0.75,
                  hh2=0.75):
@@ -961,26 +973,21 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('up')  # ：模拟按键松开按键
                     dt.press('y')
                     time.sleep(0.75)  # 按下19秒
-                    dt.press('right')
-                    time.sleep(0.013)  # 按下两秒
-                    dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.5 + move_seep)  # 按下19秒
-                    dt.keyUp('right')  # ：模拟按键松开按键
-
                     dt.press('g')
                     time.sleep(1)
                     time.sleep(0.7)  # 按下19秒
                     dt.press('y')
                     time.sleep(0.75)  # 按下19秒
                     dt.press('d')
-
-                    time.sleep(1.2)
+                    self.FuBen_INFO66(7)
+                    dt.press('right')
+                    time.sleep(0.013)  # 按下两秒
+                    dt.keyDown('right')  # ：模拟按键按下
+                    time.sleep(1.5 + move_seep)  # 按下19秒
+                    dt.keyUp('right')  # ：模拟按键松开按键
                     self.FuBen_INFO1()
-
-                    time.sleep(1.5)
-
+                    time.sleep(1)
                     # self.forxunhuan(aa1, bb1, cc1, dd1)
-
                     dt.press('9')
                     time.sleep(0.5)
                     dt.press('right')
@@ -1879,6 +1886,7 @@ class Caozuolei(Caozuolei1):
                         print('测试')
                         break
                     else:
+                        self.FuBen_INFO66()
                         self.FuBen_INFO6()
                         dt.keyDown('down')  # ：模拟按键按下 向下
                         time.sleep(0.5 + move_seep1)
@@ -1891,6 +1899,7 @@ class Caozuolei(Caozuolei1):
                             self.forxunhuan(aa1, bb1, cc1, dd1, hh1, hh2)
                             time.sleep(1)  # 按下两秒
                             dt.keyDown('right')  # ：模拟按键按下 向下
+                            print('移动')
                             time.sleep(2 + move_seep1)
                             dt.keyUp('right')  # ：模拟按键松开按键
                         else:
@@ -1898,24 +1907,24 @@ class Caozuolei(Caozuolei1):
 
                 elif j == 2:
 
-                    time.sleep(1)
+                    time.sleep(0.5)
                     dt.keyDown('down')  # ：模拟按键按下 向下
                     time.sleep(1 + move_seep1)
                     dt.keyUp('down')  # ：模拟按键松开按键
                     dt.press('s')
-                    time.sleep(3)
-                    time.sleep(1.35)
+
 
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(0.8 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
+                    self.FuBen_INFO66()
                     self.FuBen_INFO6()
                     dt.press('9')
                     time.sleep(1.2)
                     self.FuBen_INFO1()
-                    time.sleep(2)
+                    time.sleep(1)
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -1938,13 +1947,14 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('s')
-                    time.sleep(1)  # 按下两秒
+
 
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(0.4 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
+                    self.FuBen_INFO66()
                     # Caozuolei().FuBen_INFO6(
                     dt.press('9')
                     time.sleep(1.2)
@@ -1957,6 +1967,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(4 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
                     time.sleep(1.5)
+                    self.FuBen_INFO66()
                     self.FuBen_INFO6()
 
                     self.forxunhuan(aa1, bb1, cc1, dd1, hh1, hh2)
@@ -1986,13 +1997,8 @@ class Caozuolei(Caozuolei1):
                     dt.press('g')
                     time.sleep(0.75)
                     dt.press('w')
+                    self.FuBen_INFO66()
 
-                    time.sleep(1)
-                    dt.press('g')
-                    time.sleep(0.75)
-                    dt.press('f')
-
-                    time.sleep(1)
                     time.sleep(1.35)
                     dt.press('9')
                     time.sleep(1.2)
@@ -2028,7 +2034,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1.14 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
                     dt.press('r')
-                    time.sleep(1.35)
+                    self.FuBen_INFO66()
                     self.forxunhuan(aa1, bb1, cc1, dd1, hh1, hh2)
                     dt.press('9')
 
@@ -2050,12 +2056,11 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.6)
                     dt.keyUp('right')
                     dt.press('s')
-                    time.sleep(1)
-                    time.sleep(1.35)
+                    self.FuBen_INFO66()
                     dt.press('9')
                     time.sleep(1.2)
                     self.FuBen_INFO1()
-                    time.sleep(2)
+
 
                     time.sleep(1.5)  # 按下两秒
                     dt.press('right')
@@ -2191,7 +2196,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
         zz1 = data.active  # 不知道表名称的 用这种
@@ -2263,7 +2268,7 @@ class Caozuolei(Caozuolei1):
                     isbackcolor=0)
                 if z != 0:
                     x = z[0]
-                    y = z[1] + 104
+                    y = z[1] + 114
                     # xxyy[5] = 999
                     xxyy[0] = x
                     xxyy[1] = y
@@ -2321,13 +2326,14 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1)
                     dt.keyUp('right')  # ：模拟按键松开按键
+                    print("9988")
                     return
                 else:
                     return
 
     # 人物移动到地图某一个x，y坐标点
     def forxunhuan(self, aa, bb, cc, dd, hh1=0.75, hh2=0.75):  # ,aa,bb,cc,dd
-        # self.Use_Dict(0)
+        #self.Use_Dict(0)
         a = [1]
         num_ss = [0]
         while '真' not in a:
@@ -2347,7 +2353,7 @@ class Caozuolei(Caozuolei1):
                 print(num_ss[0])
                 self.menzuobiao()
                 # self.Find_srt(aa1, bb1, cc1, dd1)
-                # time.sleep(1)
+                #time.sleep(0.5)
 
                 x, y, x1, y1, z, h = xxyy
                 print(xxyy)
@@ -2368,7 +2374,7 @@ class Caozuolei(Caozuolei1):
                 elif int(x - x1) < -24 and z == 88 and num_ss[0] == 0:  # 1
                     # print((x - x1), 'x,1')
                     dt.press('right')
-                    # time.sleep(0.1)  # 按下19秒
+                    time.sleep(0.1)  # 按下19秒
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1],xxyy[2],xxyy[3]))
                     print("right,#1")
                     # self.Find_srt("熟练者", "#422", "功师", "#422")
@@ -2500,8 +2506,8 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 7]]
-    for aa in range(1, 6):  # 打图设置
-        # c.Set_Dict(0, 'test3.txt')
+    for aa in range(5, 6):  # 打图设置dddd
+        c.Set_Dict(0, 'test3.txt')
         # c.Set_Dict(1, '测试2.txt')
 
         time.sleep(1.85)  # 选一个任务
@@ -2544,9 +2550,14 @@ if __name__ == '__main__':
         dt.press('right')  # 向右移动， 移动1秒，
         dt.press('right')  # 向右移动， 移动1秒，
         dt.press('right')  # 向右移动， 移动1秒，
+        #dt.press('right')  # 向右移动， 移动1秒
         # dt.press('right')  # 向右移动， 移动1秒，
         if (x[aa][2] == 4 and pvp == 2) or (pvp == 3 and x[aa][2] == 1):
             pass
+        elif x[aa][2] == 6 and pvp == 2:
+            dt.press('right')  # 向右移动， 移动1秒，
+            dt.press('right')  # 向右移动， 移动1秒，
+            dt.press('right')  # 向右移动， 移动1秒，
         else:
             dt.press('right')  # 向右移动， 移动1秒，
         # dt.press('right')  # 向右移动， 移动1秒，

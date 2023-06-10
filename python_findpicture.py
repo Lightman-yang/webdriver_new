@@ -9,7 +9,7 @@ from win32gui import FindWindow
 
 
 class Caozuolei1():
-    time.sleep(2)
+    #time.sleep(2)
     # 绑定窗口句柄
     # 如果函数运行期间想要停止，请把鼠标移动到屏幕得左上角（0，0）位置，
     # 这触发pyautogui.FaailSafeException异常，从而终止程序运行。
