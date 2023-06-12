@@ -563,7 +563,7 @@ class Caozuolei(Caozuolei1):
             elif (cc == 20 or cc == 25) and "开洞" not in aa:
                 dt.press('alt')
                 continue
-            elif 20 > cc > 7 and "开洞" not in aa:
+            elif 50 > cc > 7 and "开洞" not in aa:
                 dt.press('right')
                 continue
             elif cc <= 7 and "开洞" not in aa:
@@ -747,12 +747,12 @@ class Caozuolei(Caozuolei1):
                     dt.press('9')
                     time.sleep(1)
                     self.FuBen_INFO1()
-                    time.sleep(1)  # 按下两秒
+                    #time.sleep(1)  # 按下两秒
                     print('二操作9成功')
                     # time.sleep(1.2)
                     # Caozuolei().FuBen_INFO1()
 
-                    time.sleep(1)
+                    #time.sleep(1)
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -839,14 +839,14 @@ class Caozuolei(Caozuolei1):
                     dt.press('d')
                     time.sleep(0.75)  # 按下两秒
                     dt.press('f')
-                    self.FuBen_INFO66(1)
+                    self.FuBen_INFO66()
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.45 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
-                    self.FuBen_INFO6()
+                    self.FuBen_INFO6(0,6)
                     time.sleep(1)
                     dt.press('9')
                     time.sleep(1.2)
@@ -889,7 +889,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('9')
                     time.sleep(0.75)
                     self.FuBen_INFO1()
-                    time.sleep(1)
+                    #time.sleep(1)
                     time.sleep(0.56)
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(0.95 + move_seep1)
@@ -986,7 +986,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1.5 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
                     self.FuBen_INFO1()
-                    time.sleep(1)
+                    #time.sleep(1)
                     # self.forxunhuan(aa1, bb1, cc1, dd1)
                     dt.press('9')
                     time.sleep(0.5)
@@ -1249,13 +1249,13 @@ class Caozuolei(Caozuolei1):
                     dt.press('y')
                     time.sleep(0.8)  # 按下两秒
 
-
+                    self.FuBen_INFO66()
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.3 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    self.FuBen_INFO66()
+
                     self.FuBen_INFO6()
                     dt.press('9')
                     time.sleep(1)  # 按下两秒
@@ -1541,7 +1541,7 @@ class Caozuolei(Caozuolei1):
                     # time.sleep(1.2)
                     # Caozuolei().FuBen_INFO1()
 
-                    time.sleep(1)
+                    #time.sleep(1)
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -1675,11 +1675,14 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('left')  # ：模拟按键按下
                     time.sleep(0.8 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
+                    dt.press('t')
+                    time.sleep(0.8)
+                    dt.press('c')
 
                     self.FuBen_INFO66()
                     self.FuBen_INFO1()
                     self.forxunhuan(aa1, bb1, cc1, dd1, hh1, hh2)
-                    time.sleep(0.7)
+                    #time.sleep(0.7)
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(0.85 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
@@ -1709,7 +1712,7 @@ class Caozuolei(Caozuolei1):
                     self.FuBen_INFO1()
                     self.forxunhuan(aa1, bb1, cc1, dd1, hh1, hh2)
 
-                    time.sleep(0.5)  # 按下两秒
+                    #time.sleep(0.5)  # 按下两秒
                     dt.press('right')
                     time.sleep(0.0175)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -2363,11 +2366,8 @@ class Caozuolei(Caozuolei1):
                 elif -24 <= (x - x1) <= 24 and num_ss[0] == 0 and z == 88 :  # 00
                     num_ss[0] = 1
                     print("# 00")
+                    pass
 
-                elif -24 <= (y - y1) <= 24 and z == 88 and num_ss[0] == 1:  # 01
-
-                    num_ss[0] = 0
-                    print('# 01')
                 elif (x - x1) < int(-80) and z == 88 and num_ss[0] == 0:  # 0
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
@@ -2439,7 +2439,7 @@ class Caozuolei(Caozuolei1):
                     print("up,#7")
 
                     a.append("真")
-                    break
+                    return
                 elif num_ss[0] == 1:
                     num_ss[0] = 0
                     print(';;')
@@ -2514,7 +2514,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 7]]
-    for aa in range(5, 6):  # 打图设置dddd
+    for aa in range(1, 6):  # 打图设置dddd
         c.Set_Dict(0, 'test3.txt')
         # c.Set_Dict(1, '测试2.txt')
 
@@ -2564,8 +2564,8 @@ if __name__ == '__main__':
             pass
         elif x[aa][2] == 6 and pvp == 2:
             dt.press('right')  # 向右移动， 移动1秒，
-            dt.press('right')  # 向右移动， 移动1秒，
-            dt.press('right')  # 向右移动， 移动1秒，
+            #dt.press('right')  # 向右移动， 移动1秒，
+            #dt.press('right')  # 向右移动， 移动1秒，
         else:
             dt.press('right')  # 向右移动， 移动1秒，
         # dt.press('right')  # 向右移动， 移动1秒，
