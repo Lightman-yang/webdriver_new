@@ -240,7 +240,7 @@ class Caozuolei1():
     def Find_Ocr(self, x1, y1, x2, y2, color_format, sim, linesign, isbackcolor):
         ret = self.lw.Ocr(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
         if ret is not None:
-            # print(ret)
+            print(ret)
             return ret
         else:
             # print(0)
