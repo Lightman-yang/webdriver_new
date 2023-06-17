@@ -284,6 +284,11 @@ class Caozuolei(Caozuolei1):
             print("打印aa", aa)
             if "靓仔" in aa:
                 print(aa)
+                b = time.strftime("%y-%m-%d_%H$%M$%S", time.localtime())
+
+                img = pyautogui.screenshot(region=[48, 84, 848, 684])
+                img = Image.fromarray(np.uint8(img))
+                img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
 
                 dt.press('9')
                 time.sleep(1)  # 按下两秒
@@ -670,7 +675,7 @@ class Caozuolei(Caozuolei1):
             # move_seep = -0.52  # 57.7   气功4.2  40.8
             # move_seep1= -0.26
 
-            move_seep = -move_seepx
+            move_seep = -move_seepx - 0.1
             move_seep1 = -move_seepy
             # move_seep = -0.8  # 57.70
             # move_seep1 = -0.23
@@ -876,7 +881,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1.55 + move_seep1)
                     dt.keyUp('up')  # ：模拟按键松开按
                     dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(0.65 + move_seep)
+                    time.sleep(1 + move_seep1)
                     dt.keyUp('left')  # ：模拟按键松开按键
                     dt.press('t')
                     time.sleep(1.5)
@@ -1014,8 +1019,8 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.89)  # 按下19秒
                     dt.press('e')
                     time.sleep(0.89)  # 按下19秒
-                    dt.press('r')
-                    time.sleep(0.75)  # 按下两秒
+                    dt.press('w')
+                    time.sleep(1.5)  # 按下两秒
                     self.FuBen_INFO2()
                     dt.press('0')
 
@@ -1880,7 +1885,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(2.8 + move_seep)
+                    time.sleep(2.7 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     if self.FuBen_INFO3() == 1:
@@ -2199,7 +2204,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
         zz1 = data.active  # 不知道表名称的 用这种
@@ -2514,7 +2519,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 7]]
-    for aa in range(1, 6):  # 打图设置dddd
+    for aa in range(5, 6):  # 打图设置dddd
         c.Set_Dict(0, 'test3.txt')
         # c.Set_Dict(1, '测试2.txt')
 
@@ -2523,7 +2528,7 @@ if __name__ == '__main__':
         time.sleep(0.015)
         c.LeftClick(x[aa][0], x[aa][1])  # 单机两下鼠标左键0
         time.sleep(1.8)
-        c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
+        # c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
         if pvp == 1:
             sss = 7
         elif pvp == 2:
@@ -2546,7 +2551,8 @@ if __name__ == '__main__':
         c.movingfigur_right(7.5)  # 向右移动， 移动8秒，
 
         # c.movingfigur_up(0.5)  # 向上移动， 移动0.15秒，
-
+        c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
+        time.sleep(0.01)  # 睡眠0.5秒
         dt.press('up')
         c.FuBen_INFO11()
         time.sleep(1.5)  # 睡眠1.5秒
@@ -2577,7 +2583,7 @@ if __name__ == '__main__':
         time.sleep(0.5)  # 睡眠1.5秒gdf
         # aa1, bb1, cc1, dd1 = "挑战者", "#360", "师很", "#140"
         canshu = c.excelboot01(aa + sss)  # 调用excel表数据取值# 2p是加1 1p是加7  3p是 14
-        n = 24
+        n = 8
         if aa == 0:
             if pvp == 1:
                 c.nvQiGong(n, 0.54, 0.26, 0, *canshu)  # 1p 气功师很烂丶
@@ -2657,7 +2663,7 @@ if __name__ == '__main__':
 
                 c.nanQiGong(n, 0, *canshu)  # 1p  男气功
             elif pvp == 2:
-                c.zhaohuan(n, 0.05, 0.21, 0, *canshu)  # 2p s睡眠不足s
+                c.zhaohuan(n, 0.25, 0.24, 0, *canshu)  # 2p s睡眠不足s
             else:
                 break
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
@@ -2676,7 +2682,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.65, 0.26, 0, *canshu)
             elif pvp == 2:
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
-                c.nvQiGong(n, 0.65, 0.26, 0, *canshu)  # 2p SS睡眠不足SS
+                c.nvQiGong(n, 0.74, 0.26, 1, *canshu)  # 2p SS睡眠不足SS
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p
             else:
                 break
