@@ -36,7 +36,6 @@
 
 
 # print(re)
-import time
 
 # aa1= ["熟练者", "#422", "功师", 422]
 # aa1, bb1, cc1, dd1 = "熟练者", "#422", "功师", "#422"
@@ -47,10 +46,28 @@ import time
 #     print()
 #     aa1 = ["熟练者", "#422", 422,]
 #     aad(*aa1)
-a = [1, 3, 4, 6, 7, 9]
-for i in (1,10):
-  if i==1 :
-      print(1)
-      continue
-  elif i==1:
-      print(2)
+# class zz():
+a = []
+
+
+def aaa():
+    for i in range(1, 10):
+        if i == 1:
+            # print(1)
+            a.append(i)
+        else:
+            # print(2)
+            # print(i)
+            a.append(i)
+
+    return a
+
+
+if __name__ == '__main__':
+    aa = []
+    print(aaa())
+    print(type(aaa()))
+    if 1 in aaa():
+        print(1)
+    else:
+        print(0)
