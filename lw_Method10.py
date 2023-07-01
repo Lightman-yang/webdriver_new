@@ -1943,27 +1943,19 @@ class Caozuolei(Caozuolei1):
                 elif j == 7:  # 奇数 反之偶数
                     time.sleep(0.75)
                     dt.keyDown('up')  # ：模拟按键按下 向下
-                    time.sleep(1.7 + move_seep1)
+                    time.sleep(1.5 + move_seep1)
                     dt.keyUp('up')  # ：模拟按键松开按键
-                    dt.press('f')
-                    # time.sleep(0.75)  # 按下19秒
-
-                    time.sleep(1)
-                    dt.press('d')
-                    time.sleep(0.7)  # 按下19秒
-                    dt.press('y')
-                    time.sleep(0.75)  # 按下19秒
-                    dt.press('g')
-                    time.sleep(0.75)  # 按下19秒
-                    dt.press('ctrl')
-                    self.FuBen_INFO66(7)
 
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.5 + move_seep)  # 按下19秒
+                    time.sleep(1.3 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    time.sleep(4)  # 按下19秒
+                    dt.press('ctrl')
+                    dt.press('ctrl')
+                    time.sleep(1.3)  # 按下19秒
+                    self.FuBen_INFO66()
+                    self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     self.FuBen_INFO1()
                     # time.sleep(1)
                     # self.forxunhuan(aa1, bb1, cc1, dd1)
@@ -1984,33 +1976,32 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.6 + move_seep)  # 按下19秒
+                    time.sleep(1.5 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.press('y')
                     time.sleep(0.65)  # 按下19秒
                     dt.press('f')
-                    time.sleep(0.75)  # 按下19秒
+                    time.sleep(0.7)  # 按下19秒
                     dt.press('g')
-                    time.sleep(0.89)  # 按下19秒
+                    time.sleep(0.7)  # 按下19秒
                     dt.press('e')
-                    time.sleep(1.5)  # 按下19秒
+                    time.sleep(1.2)  # 按下19秒
                     dt.press('q')
-                    time.sleep(0.55)  # 按下19秒
+                    time.sleep(0.5)  # 按下19秒
                     dt.press('w')
-                    time.sleep(0.55)  # 按下19秒
+                    time.sleep(0.7)  # 按下19秒
                     dt.press('w')
                     dt.press('w')
                     time.sleep(1.5)  # 按下两秒
-
-                    dt.press('r')
-                    time.sleep(0.75)  # 按下19秒
-                    dt.press('c')
-                    time.sleep(0.5)  # 按下19秒
                     dt.press('h')
-                    time.sleep(0.75)  # 按下19秒
-                    dt.press('q')
-                    time.sleep(0.3)  # 按下19秒
+                    time.sleep(0.7)  # 按下19秒
+                    dt.press('h')
+                    time.sleep(0.6)  # 按下19秒
+                    dt.press('r')
+                    time.sleep(0.7)  # 按下19秒
+                    dt.press('c')
+                    time.sleep(0.6)  #
                     dt.press('t')
 
                     time.sleep(0.8)  # 按下19秒
@@ -3230,7 +3221,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
         zz1 = data.active  # 不知道表名称的 用这种
@@ -3562,7 +3553,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8]]
-    for aa in range(1, 8):  # 打图设置ddddg
+    for aa in range(0, 8):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         time.sleep(1.85)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441, 310
@@ -3617,8 +3608,7 @@ if __name__ == '__main__':
             dt.press('right')  # 向右移动， 移动1秒，
             # dt.press('right')  # 向右移动， 移动1秒，
             # dt.press('right')  # 向右移动， 移动1秒，
-        elif x[aa][2] == 5 and pvp == 2 or (x[aa][2] == 7 and pvp == 2) or (x[aa][2] == 4 and pvp == 1) \
-                or (x[aa][2] == 5 and pvp == 1) or (x[aa][2] == 7 and pvp == 1): # or  (x[aa][2] == 3 and pvp ==2)
+        elif x[aa][2] == 5 and pvp == 2 or (x[aa][2] == 7 and pvp == 2):  # or  (x[aa][2] == 3 and pvp ==2)
             dt.press('left')  # 向右移动， 移动1秒，
             dt.press('left')  # 向右移动， 移动1秒，
         else:
