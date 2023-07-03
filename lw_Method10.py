@@ -295,10 +295,10 @@ class Caozuolei(Caozuolei1):
             else:
                 return
 
-    def FuBen_INFO2(self):  # 副本地图信息数据实时获取
+    def FuBen_INFO2(self, oopp=0):  # 副本地图信息数据实时获取
         # self.Use_Dict(1)
         # c.Set_Dict(0, "测试2.txt")
-        #a = 0
+        # a = 0
         while True:
             # time.sleep(1)
             aa = self.Find_Ocr(
@@ -310,14 +310,20 @@ class Caozuolei(Caozuolei1):
                 sim=0.85,
                 linesign=" ",
                 isbackcolor=0)
-            if "再次挑战" not in aa:
+            if "再次挑战" not in aa and oopp == 0:
                 dt.press('g')
                 dt.press('d')
-                #time.sleep(0.75)  # 按下19秒
+                # time.sleep(0.75)  # 按下19秒
                 dt.press('f')
                 dt.press('y')
-
-
+            elif "再次挑战" not in aa and oopp == 1:
+                dt.press('d')
+                dt.press('q')
+                time.sleep(1)  # 按下两秒
+                dt.press('f')
+                dt.press('w')
+                time.sleep(0.7)  # 按下两秒
+                dt.press('w')
             else:
 
                 return
@@ -859,6 +865,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)
                     dt.press('x')
                     time.sleep(0.5)
+                    dt.press('e')
                     time.sleep(0.7)
                     dt.press('f')
                     time.sleep(0.1)  # 按下两秒
@@ -907,6 +914,9 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1 + move_seep1)
                     dt.keyUp('left')  # ：模拟按键松开按键
                     dt.press('f')
+                    time.sleep(0.1)  # 按下两秒
+                    dt.press('w')
+                    dt.press('d')
                     time.sleep(0.1)  # 按下两秒
                     dt.press('w')
 
@@ -1021,23 +1031,31 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('up')  # ：模拟按键按下 向下
                     time.sleep(1.8 + move_seep1)
                     dt.keyUp('up')  # ：模拟按键松开按键
-                    dt.press('q')
-                    time.sleep(0.75)  # 按下19秒
-                    dt.press('w')
-
-                    time.sleep(0.7)  # 按下19秒
-                    dt.press('d')
-                    time.sleep(0.1)  # 按下两秒
-                    dt.press('q')
-                    self.FuBen_INFO66(7)
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.5 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
+                    dt.press('q')
+                    time.sleep(0.75)  # 按下19秒
+                    dt.press('w')
+                    time.sleep(0.75)  # 按下19秒
+                    dt.press('d')
+                    time.sleep(0.1)  # 按下两秒
+                    dt.press('w')
+                    time.sleep(0.7)  # 按下19秒
+                    dt.press('w')
+                    time.sleep(0.7)  # 按下两秒
+                    dt.press('q')
+                    time.sleep(0.7)  # 按下两秒
+                    dt.keyDown('right')  # ：模拟按键按下
+                    time.sleep(1.5 + move_seep)  # 按下19秒
+                    dt.keyUp('right')  # ：模拟按键松开按键
+                    self.FuBen_INFO66(2)
+
                     self.FuBen_INFO1()
                     # time.sleep(1)
-                    # self.forxunhuan(aa1, bb1, cc1, dd1)
+                    self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     dt.press('9')
                     time.sleep(0.5)
                     dt.press('right')
@@ -1062,6 +1080,8 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.75)  # 按下19秒
                     dt.press('e')
                     time.sleep(0.89)  # 按下19秒
+                    dt.press('ctrl')
+                    time.sleep(0.89)  # 按下19秒
                     dt.press('f')
                     time.sleep(0.1)  # 按下两秒
                     dt.press('w')
@@ -1071,8 +1091,9 @@ class Caozuolei(Caozuolei1):
                     dt.press('q')
                     time.sleep(1)  # 按下两秒
                     dt.press('alt')
+                    dt.press('alt')
                     time.sleep(1)  # 按下两秒
-                    self.FuBen_INFO2()
+                    self.FuBen_INFO2(1)
                     dt.press('0')
 
                     time.sleep(1)  # 按下两秒
@@ -1951,8 +1972,8 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.3 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    dt.press('ctrl')
-                    dt.press('ctrl')
+                    dt.press('alt')
+                    dt.press('alt')
                     time.sleep(1.3)  # 按下19秒
                     self.FuBen_INFO66()
                     self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
@@ -1978,7 +1999,8 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.5 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
-
+                    dt.press('q')
+                    time.sleep(0.6)  # 按下19秒
                     dt.press('y')
                     time.sleep(0.65)  # 按下19秒
                     dt.press('f')
@@ -1987,12 +2009,13 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)  # 按下19秒
                     dt.press('e')
                     time.sleep(1.2)  # 按下19秒
-                    dt.press('q')
-                    time.sleep(0.5)  # 按下19秒
+
                     dt.press('w')
                     time.sleep(0.7)  # 按下19秒
                     dt.press('w')
                     dt.press('w')
+                    dt.press('q')
+                    dt.press('q')
                     time.sleep(1.5)  # 按下两秒
                     dt.press('h')
                     time.sleep(0.7)  # 按下19秒
@@ -2000,8 +2023,9 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.6)  # 按下19秒
                     dt.press('r')
                     time.sleep(0.7)  # 按下19秒
-                    dt.press('c')
-                    time.sleep(0.6)  #
+                    dt.press('ctrl')
+                    dt.press('ctrl')
+                    time.sleep(1.2)  # 按下19秒
                     dt.press('t')
 
                     time.sleep(0.8)  # 按下19秒
@@ -3151,9 +3175,23 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('right')  # ：模拟按键松开按键
                     time.sleep(0.1)  # 按下19秒
                     dt.press('q')
+                    dt.press('q')
                     time.sleep(0.7)  # 按下19秒
                     dt.press('g')
+                    time.sleep(0.7)  # 按下19秒ff
+                    dt.press('ctrl')
+                    time.sleep(0.7)  # 按下19秒
+                    dt.press('w')
                     time.sleep(0.45)  # 按下19秒
+                    for zz in range(1, 8):
+                        dt.keyDown('up')  # ：模拟按键按下
+                        time.sleep(1.5 + move_seep)  # 按下19秒
+                        dt.keyUp('up')  # ：模拟按键松开按键
+                        dt.press('s')
+                        time.sleep(3)  # 按下19秒
+                        dt.keyDown('down')  # ：模拟按键按下
+                        time.sleep(1.5 + move_seep)  # 按下19秒
+                        dt.keyUp('down')  # ：模拟按键松开按键
                     dt.press('s')
                     time.sleep(2)  # 按下两秒
                     self.FuBen_INFO2()
@@ -3553,8 +3591,8 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8]]
-    for aa in range(0, 8):  # 打图设置ddddg
-        # c.Set_Dict(1, '测试2.txt')
+    for aa in range(0, 7):  # 打图设置ddddg
+        # c.Set_Dict(1, '测试2.txt')g
         time.sleep(1.85)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441, 310
         time.sleep(0.015)
@@ -3601,7 +3639,9 @@ if __name__ == '__main__':
         dt.press('right')  # 向右移动， 移动1秒，
         dt.press('right')  # 向右移动， 移动1秒
         dt.press('right')  # 向右移动， 移动1秒，
-        if (x[aa][2] == 4 and pvp == 2) or (pvp == 3 and x[aa][2] == 11) or (pvp == 2 and x[aa][2] == 8):
+        # if (x[aa][2] == 4 and pvp == 2) or (pvp == 3 and x[aa][2] == 11) or (pvp == 2 and x[aa][2] == 8):
+        if (pvp == 3 and x[aa][2] == 11) or (pvp == 2 and x[aa][2] == 8):
+
             dt.press('left')  # 向右移动， 移动1秒，
             pass
         elif x[aa][2] == 6 and pvp == 2:
@@ -3609,6 +3649,8 @@ if __name__ == '__main__':
             # dt.press('right')  # 向右移动， 移动1秒，
             # dt.press('right')  # 向右移动， 移动1秒，
         elif x[aa][2] == 5 and pvp == 2 or (x[aa][2] == 7 and pvp == 2):  # or  (x[aa][2] == 3 and pvp ==2)
+            dt.press('left')  # 向右移动， 移动1秒，
+            dt.press('left')  # 向右移动， 移动1秒，
             dt.press('left')  # 向右移动， 移动1秒，
             dt.press('left')  # 向右移动， 移动1秒，
         else:
@@ -3667,7 +3709,7 @@ if __name__ == '__main__':
                 # c.nvQiGong(n, 0.62, 0.26, 0)  # 2p 睡眠不足丶
                 #
             elif pvp == 2:
-                c.nvQiGong(n, 0.52, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
+                c.nvQiGong(n, 0.52, 0.3, 1, 0, *canshu)  # 2p 睡眠不足丶
             else:
                 c.nvQiGong(n, 0.64, 0.4, 0, 0, *canshu)  #3p 气功运气
             time.sleep(3)
