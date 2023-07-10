@@ -1287,6 +1287,8 @@ class Caozuolei(Caozuolei1):
                     # self.Find_srt("熟练者", "#422", "功师", "#422")
                     dt.press('f')
                     time.sleep(0.7)  # 按下两秒
+                    dt.press('r')
+                    time.sleep(0.7)  # 按下两秒
                     dt.press('right')
                     dt.keyDown('right')  # ：模拟按键按下 向下
                     time.sleep(1 + move_seep)
@@ -1330,7 +1332,8 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('f')
                     time.sleep(0.75)  # 按下两秒
-
+                    dt.press('r')
+                    time.sleep(0.7)  # 按下两秒
                     dt.press('d')
                     time.sleep(0.7)  # 按下两秒
                     dt.press('g')
@@ -1354,10 +1357,10 @@ class Caozuolei(Caozuolei1):
                     time.sleep(4.1 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
                     dt.press('y')
-                    time.sleep(0.5)
-                    dt.press('x')
-                    time.sleep(0.75)
+                    time.sleep(0.65)
                     dt.press('f')
+                    time.sleep(0.75)
+                    dt.press('r')
 
                     time.sleep(0.7)  # 按下两秒
                     dt.press('d')
@@ -1443,7 +1446,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('left')  # ：模拟按键按下
                     time.sleep(1 + move_seep1)
                     dt.keyUp('left')  # ：模拟按键松开按键
-                    dt.press('f')
+                    dt.press('r')
                     time.sleep(0.63)  # 按下两秒
                     dt.press('y')
                     time.sleep(0.53)  # 按下两秒
@@ -1495,6 +1498,8 @@ class Caozuolei(Caozuolei1):
 
                     time.sleep(0.68)
                     dt.press('y')
+                    time.sleep(0.7)  # 按下两秒
+                    dt.press('r')
 
                     time.sleep(0.85)
                     # self.Find_srt(aa1, bb1, cc1, dd1)
@@ -1576,7 +1581,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1.75 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('e')
-                    time.sleep(3.1)  # 按下19秒
+                    time.sleep(3.75)  # 按下19秒
 
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
@@ -4462,10 +4467,10 @@ if __name__ == '__main__':
             continue
         elif aa == 8:
             if pvp == 1:
-                c.naiMa(n, 0.5, 0.26, 0, 0, *canshu)  # 1p 奇特木偶 光明骑士
+                c.naiMa(n, 0.48, 0.26, 0, 0, *canshu)  # 1p 奇特木偶 光明骑士
             elif pvp == 2:
 
-                c.naiMa(n, 0.5, 0.26, 0, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
+                c.naiMa(n, 0.48, 0.26, 0, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
 
             else:
                 break
