@@ -616,6 +616,7 @@ class Caozuolei(Caozuolei1):
         # self.Use_Dict(0)
         # c.Set_Dict(0, "test3.txt")
         # cc = c
+        sss=ss
         while True:
             # cc = cc + 1
 
@@ -659,13 +660,13 @@ class Caozuolei(Caozuolei1):
                 print('开洞')
                 return
             elif "开洞" in aa1:
-                if ss == 7:
+                if sss == 7:
                     return
                 else:
                     dt.press('right')
                     continue
             elif '开府' in aa2:
-                if ss == 2:
+                if sss == 2:
                     dt.press('d')
                     dt.press('q')
                     continue
@@ -683,7 +684,7 @@ class Caozuolei(Caozuolei1):
                 self.Set_Dict(0, 'test3.txt')
                 continue
 
-            elif '德拉' not in aa3 and ss == 1:
+            elif '德拉' not in aa3 and sss == 1:
                 return
 
             else:
@@ -1582,6 +1583,12 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(0.95 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
+                    time.sleep(3.1)  # 按下19秒
+                    dt.press('right')
+                    time.sleep(0.013)  # 按下两秒
+                    dt.keyDown('right')  # ：模拟按键按下
+                    time.sleep(0.75 + move_seep)  # 按下19秒
+                    dt.keyUp('right')  # ：模拟按键松开按键
                     self.FuBen_INFO6(7)
 
                     self.FuBen_INFO1()
@@ -1620,7 +1627,7 @@ class Caozuolei(Caozuolei1):
 
                     time.sleep(0.65)  # 按下两秒
                     for oalt in range(1, 13):
-                        dt.press('alt')
+                        dt.press('ctrl')
                         dt.press('y')
                         dt.press('f')
                         dt.press('d')
