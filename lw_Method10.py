@@ -1582,7 +1582,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(0.95 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    self.FuBen_INFO66(2)
+                    self.FuBen_INFO6(7)
 
                     self.FuBen_INFO1()
                     # time.sleep(1)
