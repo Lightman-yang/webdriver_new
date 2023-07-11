@@ -2540,7 +2540,9 @@ class Caozuolei(Caozuolei1):
                     dt.press('alt')
                     dt.press('alt')
                     time.sleep(1.3)  # 按下19秒
+
                     self.FuBen_INFO66()
+                    self.FuBen_INFO6(7)
                     dt.press('9')
                     time.sleep(1)
                     self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
@@ -4243,7 +4245,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(8, 9):  # 打图设置ddddg
+    for aa in range(0, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')g
         time.sleep(1.85)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441 , 310
@@ -4471,7 +4473,7 @@ if __name__ == '__main__':
                 c.naiMa(n, 0.48, 0.26, 0, 0, *canshu)  # 1p 奇特木偶 光明骑士
             elif pvp == 2:
 
-                c.naiMa(n, 0.48, 0.26, 0, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
+                c.naiMa(n, 0.50, 0.26, 1, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
 
             else:
                 break
