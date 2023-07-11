@@ -2437,9 +2437,9 @@ class Caozuolei(Caozuolei1):
                     self.FuBen_INFO66()
                     self.FuBen_INFO6()
 
-                    if self.forxunhuan(6, aa1, bb1, cc1, dd1, hh1, hh2,10) == 7:
+                    if self.forxunhuan(6, aa1, bb1, cc1, dd1, hh1, hh2,15) == 7:
                         print('结束')
-                    elif self.forxunhuan(6, aa1, bb1, cc1, dd1, hh1, hh2) == 77:
+                    elif self.forxunhuan(6, aa1, bb1, cc1, dd1, hh1, hh2,15) == 77:
 
                         dt.keyDown('left')  # ：模拟按键按下
                         time.sleep(0.5)
@@ -4275,7 +4275,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(4, 9):  # 打图设置ddddg
+    for aa in range(5, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')g
         time.sleep(1.85)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441 , 310
