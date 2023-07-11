@@ -616,7 +616,7 @@ class Caozuolei(Caozuolei1):
         # self.Use_Dict(0)
         # c.Set_Dict(0, "test3.txt")
         # cc = c
-        sss=ss
+        sss2 = ss
         while True:
             # cc = cc + 1
 
@@ -660,13 +660,13 @@ class Caozuolei(Caozuolei1):
                 print('开洞')
                 return
             elif "开洞" in aa1:
-                if sss == 7:
+                if sss2 == 7:
                     return
                 else:
                     dt.press('right')
                     continue
             elif '开府' in aa2:
-                if sss == 2:
+                if sss2 == 2:
                     dt.press('d')
                     dt.press('q')
                     continue
@@ -684,7 +684,7 @@ class Caozuolei(Caozuolei1):
                 self.Set_Dict(0, 'test3.txt')
                 continue
 
-            elif '德拉' not in aa3 and sss == 1:
+            elif '德拉' not in aa3 and sss2 == 1:
                 return
 
             else:
