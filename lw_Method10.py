@@ -2437,7 +2437,7 @@ class Caozuolei(Caozuolei1):
                     self.FuBen_INFO66()
                     self.FuBen_INFO6()
 
-                    if self.forxunhuan(6, aa1, bb1, cc1, dd1, hh1, hh2) == 7:
+                    if self.forxunhuan(6, aa1, bb1, cc1, dd1, hh1, hh2,10) == 7:
                         print('结束')
                     elif self.forxunhuan(6, aa1, bb1, cc1, dd1, hh1, hh2) == 77:
 
@@ -3064,7 +3064,7 @@ class Caozuolei(Caozuolei1):
         for i in range(1, 60):
             time.sleep(2)
             num = num_parameter  # num不能是奇数 运行几次
-            move_seep = -0.3 # 57.7
+            move_seep = -0.42 # 57.7
             m_button = 'h'
             print(move_seep)
             Restart_computer = Restart_computer_parameter  # Restart_computer为0或者1，0关闭电脑，1不关闭电脑
@@ -3297,7 +3297,7 @@ class Caozuolei(Caozuolei1):
                         # time.sleep(0.7)
 
                         dt.keyDown('right')  # ：模拟按键按下
-                        time.sleep(0.85 + move_seep)
+                        time.sleep(0.95 + move_seep)
                         dt.keyUp('right')  # ：模拟按键松开按键
 
                 elif j == 6:
@@ -3378,7 +3378,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(0.9)  # 按下19秒
+                    time.sleep(1.2)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     time.sleep(1)
@@ -3392,7 +3392,7 @@ class Caozuolei(Caozuolei1):
 
                     time.sleep(1.2)
                     self.FuBen_INFO66()
-
+                    self.FuBen_INFO6()
                     dt.press('9')
                     time.sleep(1)  # 按下两秒
                     self.FuBen_INFO1()
@@ -3410,7 +3410,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.15)  # 按下19秒
+                    time.sleep(1.05)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
 
 
@@ -3426,48 +3426,67 @@ class Caozuolei(Caozuolei1):
                         dt.press('q')
                         time.sleep(0.55)  # 按下两秒
                         dt.press('ctrl')
+                        time.sleep(0.55)  # 按下两0秒
+                        dt.press('alt')
                         time.sleep(0.55)  # 按下两秒
-                    self.FuBen_INFO2()
+                        dt.press('t')
+                        time.sleep(0.65)  # 按下19秒
+                    if self.FuBen_INFO2()!=100:
 
-                    dt.press('0')
-                    time.sleep(1)  # 按下两秒
-                    for ii in range(1, 4):
-                        num_num = num // 2
-                        if i == num_num or i == 10 or i == num:
-                            time.sleep(5)  # 按下两秒
-                            #from python_findpicture import Caozuolei1
-                            self.sellGoods_xy()  # 点击一键出售按钮
-                            print('等待5')
-                            time.sleep(1.5)  # 按下两秒
-                            dt.press('a')
-                            time.sleep(1)  # 按下两秒
-                            dt.press('space')
-                            time.sleep(1)
-                            dt.press('left')
-                            time.sleep(1)
-                            dt.press('space')
-                            break
+                        dt.press('0')
+                        time.sleep(1)  # 按下两秒
+                        for ii in range(1, 4):
+                            num_num = num // 2
+                            if i == num_num or i == 10 or i == num:
+                                time.sleep(5)  # 按下两秒
+                                #from python_findpicture import Caozuolei1
+                                self.sellGoods_xy()  # 点击一键出售按钮
+                                print('等待5')
+                                time.sleep(1.5)  # 按下两秒
+                                dt.press('a')
+                                time.sleep(1)  # 按下两秒
+                                dt.press('space')
+                                time.sleep(1)
+                                dt.press('left')
+                                time.sleep(1)
+                                dt.press('space')
+                                break
+                            else:
+                                break
+                        time.sleep(5)  # 按下两秒
+                        dt.press('esc')
+
+                        # print('0')
+                        # print(i)
+
+                        time.sleep(2)
+
+                        if i == num:
+                            dt.press('.')
+                            dt.press('f12')
+                            time.sleep(0.75)
                         else:
-                            break
-                    time.sleep(5)  # 按下两秒
-                    dt.press('esc')
-
-                    # print('0')
-                    # print(i)
-
-                    time.sleep(2)
-
-                    if i == num:
-                        dt.press('.')
-                        dt.press('f12')
-                        time.sleep(0.75)
+                            dt.press('f10')
+                        time.sleep(3)
+                        # print('方法5运行{}'.format(j))
                     else:
-                        dt.press('f10')
-                    time.sleep(3)
-                    # print('方法5运行{}'.format(j))
+                        j = 9
+                        print(9)
+                        self.youjian()
+                        time.sleep(600)
+                        print(10)
+                        self.movingfigur_right(2.5)  # 向右移动， 移动8秒，
 
-                time.sleep(0.5)
-                # print('大循环{}'.format(j))
+                        # c.movingfigur_up(0.5)  # 向上移动， 移动0.15秒，
+                        self.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
+                        time.sleep(0.01)  # 睡眠0.5秒
+                        dt.press('up')
+                        self.FuBen_INFO11()
+                        time.sleep(1.5)  # 睡眠1.5秒
+                        dt.press('space')  # 单击空格操作
+                        time.sleep(0.45)  # 睡眠1.5秒gdf
+                    time.sleep(0.5)
+                    # print('大循环{}'.format(j))
             sss = i * 6
             if i == num and Restart_computer == 0:
                 # os.system("shutdown -s -t 30")
@@ -3829,60 +3848,74 @@ class Caozuolei(Caozuolei1):
                     dt.press('ctrl')
                     time.sleep(1.3)  # 按下19秒
                     dt.press('w')
+                    if  self.FuBen_INFO2(2) != 100:
+                        for zz in range(1, 9):
 
-                    for zz in range(1, 9):
-                        if self.FuBen_INFO2(2) == 1:
-                            dt.keyDown('up')  # ：模拟按键按下
-                            time.sleep(1.5 + move_seep)  # 按下19秒
-                            dt.keyUp('up')  # ：模拟按键松开按键
+                                dt.keyDown('up')  # ：模拟按键按下
+                                time.sleep(1.5 + move_seep)  # 按下19秒
+                                dt.keyUp('up')  # ：模拟按键松开按键
 
-                            dt.press('y')
-                            time.sleep(3)  # 按下19秒
-                            dt.keyDown('down')  # ：模拟按键按下
-                            time.sleep(1.5 + move_seep)  # 按下19秒
-                            dt.keyUp('down')  # ：模拟按键松开按键
-                            dt.press('ctrl')
+                                dt.press('y')
+                                time.sleep(3)  # 按下19秒
+                                dt.keyDown('down')  # ：模拟按键按下
+                                time.sleep(1.5 + move_seep)  # 按下19秒
+                                dt.keyUp('down')  # ：模拟按键松开按键
+                                dt.press('ctrl')
+
+                        time.sleep(1)  # 按下两秒
+
+                        dt.press('0')
+
+                        time.sleep(1)  # 按下两秒
+                        for ii in range(1, 4):
+                            num_num = num // 2
+                            if i == num_num or i == 10 or i == num:
+                                time.sleep(5)  # 按下两秒
+
+                                self.sellGoods_xy()  # 点击一键出售按钮
+                                print('等待6')
+                                time.sleep(1.5)  # 按下两秒
+                                dt.press('a')
+                                time.sleep(1)  # 按下两秒
+                                dt.press('space')
+                                time.sleep(1)
+                                dt.press('left')
+                                time.sleep(1)
+                                dt.press('space')
+                                break
+                            else:
+                                break
+                        time.sleep(5)  # 按下两秒
+                        dt.press('esc')
+
+                        # print('0')
+                        # print(i)
+
+                        time.sleep(2)
+
+                        if i == num:
+                            dt.press('.')
+                            dt.press('f12')
                         else:
-                            zz = 8
-                    time.sleep(1)  # 按下两秒
-
-                    dt.press('0')
-
-                    time.sleep(1)  # 按下两秒
-                    for ii in range(1, 4):
-                        num_num = num // 2
-                        if i == num_num or i == 10 or i == num:
-                            time.sleep(5)  # 按下两秒
-
-                            self.sellGoods_xy()  # 点击一键出售按钮
-                            print('等待6')
-                            time.sleep(1.5)  # 按下两秒
-                            dt.press('a')
-                            time.sleep(1)  # 按下两秒
-                            dt.press('space')
-                            time.sleep(1)
-                            dt.press('left')
-                            time.sleep(1)
-                            dt.press('space')
-                            break
-                        else:
-                            break
-                    time.sleep(5)  # 按下两秒
-                    dt.press('esc')
-
-                    # print('0')
-                    # print(i)
-
-                    time.sleep(2)
-
-                    if i == num:
-                        dt.press('.')
-                        dt.press('f12')
+                            dt.press('f10')
+                        time.sleep(3)
+                        # print('方法5运行{}'.format(j))
                     else:
-                        dt.press('f10')
-                    time.sleep(3)
-                    # print('方法5运行{}'.format(j))
+                        j = 9
+                        print(9)
+                        self.youjian()
+                        time.sleep(600)
+                        print(10)
+                        self.movingfigur_right(2.5)  # 向右移动， 移动8秒，
 
+                        # c.movingfigur_up(0.5)  # 向上移动， 移动0.15秒，
+                        self.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
+                        time.sleep(0.01)  # 睡眠0.5秒
+                        dt.press('up')
+                        self.FuBen_INFO11()
+                        time.sleep(1.5)  # 睡眠1.5秒
+                        dt.press('space')  # 单击空格操作
+                        time.sleep(0.45)  # 睡眠1.5秒gdf
                 time.sleep(0.5)
                 # print('大循环{}'.format(j))
             sss = i * 6
@@ -4237,12 +4270,12 @@ if __name__ == '__main__':
     # c.Find_srt("熟练者", "#422", "功师", "#422")
     time.sleep(1)
     pvp = c.FuBen_INFO12()  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
-    # print(pvp)
+    print(pvp)
     # time.sleep(1000)
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(8, 9):  # 打图设置ddddg
+    for aa in range(4, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')g
         time.sleep(1.85)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441 , 310
@@ -4251,11 +4284,11 @@ if __name__ == '__main__':
         time.sleep(1.8)
         # c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
         if pvp == 1:
-            sss = 10  # 气功师很烂丶
+            sss1 = 10  # 气功师很烂丶
         elif pvp == 2:
-            sss = 1  #睡眠不足十
+            sss1 = 1  #睡眠不足十
         elif pvp == 3:
-            sss = 19  #ll0110ll
+            sss1 = 19  #ll0110ll
         else:
             print('什么都不是')
             break
@@ -4317,8 +4350,9 @@ if __name__ == '__main__':
         dt.press('space')  # 单击空格操作
         time.sleep(0.5)  # 睡眠1.5秒gdf
         # aa1, bb1, cc1, dd1 = "挑战者", "#360", "师很", "#140"
-        canshu = c.excelboot01(aa + sss)  # 调用excel表数据取值# 2p是加1 1p是加7  3p是 14
+        canshu = c.excelboot01(aa + sss1)  # 调用excel表数据取值# 2p是加1 1p是加7  3p是 14
         n =24
+        print(aa,sss1,'    sss')
         if aa == 0:
             if pvp == 1:
                 c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
