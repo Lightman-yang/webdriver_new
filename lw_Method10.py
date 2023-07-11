@@ -616,7 +616,7 @@ class Caozuolei(Caozuolei1):
         # self.Use_Dict(0)
         # c.Set_Dict(0, "test3.txt")
         # cc = c
-        sss=ss
+        sss2 = ss
         while True:
             # cc = cc + 1
 
@@ -660,13 +660,13 @@ class Caozuolei(Caozuolei1):
                 print('开洞')
                 return
             elif "开洞" in aa1:
-                if sss == 7:
+                if sss2 == 7:
                     return
                 else:
                     dt.press('right')
                     continue
             elif '开府' in aa2:
-                if sss == 2:
+                if sss2 == 2:
                     dt.press('d')
                     dt.press('q')
                     continue
@@ -684,7 +684,7 @@ class Caozuolei(Caozuolei1):
                 self.Set_Dict(0, 'test3.txt')
                 continue
 
-            elif '德拉' not in aa3 and sss == 1:
+            elif '德拉' not in aa3 and sss2 == 1:
                 return
 
             else:
@@ -3943,7 +3943,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
         zz1 = data.active  # 不知道表名称的 用这种
