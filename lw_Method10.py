@@ -681,11 +681,7 @@ class Caozuolei(Caozuolei1):
                 continue
             elif '非' in aa3 and '非' in aa and '非' in aa2 and '非' in aa1:
                 print('非')
-                dt.press('right')
-                time.sleep(0.0075)  # 按下两秒
-                dt.keyDown('right')  # ：模拟按键按下
-                time.sleep(0.5)
-                dt.keyUp('right')  # ：模拟按键松开按键
+
                 self.Set_Dict(0, 'test3.txt')
                 continue
 
@@ -694,10 +690,6 @@ class Caozuolei(Caozuolei1):
 
             else:
                 dt.press('right')
-                time.sleep(0.0075)  # 按下两秒
-                dt.keyDown('right')  # ：模拟按键按下
-                time.sleep(0.5)
-                dt.keyUp('right')  # ：模拟按键松开按键
                 print('FuBen_INFO66')
                 continue
 
@@ -4066,7 +4058,7 @@ class Caozuolei(Caozuolei1):
             print(z, 'z')
             if z != 0:
                 xxyy[2] = z[0] - 140
-                xxyy[3] = z[1] + 50 + renwuzuobiao  # 65
+                xxyy[3] = z[1] + 60 + renwuzuobiao  # 65
                 xxyy[4] = 88  # 找到数据传88
                 # xxyy[2:2] = x, y
                 print('开洞', z[0], '-', 140, '=', xxyy[2])
@@ -4285,8 +4277,10 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(0, 9):  # 打图设置ddddg
+    for aa in range(2, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')g
+        if aa==3 and pvp==1:
+            aa=aa+1
         time.sleep(1.85)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441 , 310
         time.sleep(0.015)
