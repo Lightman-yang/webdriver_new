@@ -676,7 +676,7 @@ class Caozuolei(Caozuolei1):
                     continue
             elif '德拉' in aa3 or '防护罩' in aa3:
                 dt.press('y')
-                dt.press('f')
+
                 dt.press('g')
                 continue
             elif '非' in aa3 and '非' in aa and '非' in aa2 and '非' in aa1:
@@ -690,7 +690,7 @@ class Caozuolei(Caozuolei1):
             else:
                 dt.press('right')
                 print('FuBen_INFO66')
-                break
+                continue
 
     def yuren(self, num_parameter, move_seepx, move_seepy, Restart_computer_parameter, sss, aa1, bb1, cc1, dd1,
               hh1=0.75, hh2=0.75):
@@ -893,7 +893,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('f')
                     time.sleep(0.01)  # 按下两秒
                     dt.press('w')
-                    self.FuBen_INFO66(2)
+                    self.FuBen_INFO66(1)
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -1401,7 +1401,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)
                     dt.press('g')
 
-                    self.FuBen_INFO66(2)
+                    self.FuBen_INFO66(1)
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -2391,7 +2391,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('f')
                     time.sleep(0.75)  # 按下两秒
                     dt.press('h')
-                    self.FuBen_INFO66()
+                    self.FuBen_INFO66(1)
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -4275,7 +4275,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(5, 9):  # 打图设置ddddg
+    for aa in range(0, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')g
         time.sleep(1.85)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441 , 310
