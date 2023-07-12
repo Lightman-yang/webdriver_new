@@ -681,6 +681,11 @@ class Caozuolei(Caozuolei1):
                 continue
             elif '非' in aa3 and '非' in aa and '非' in aa2 and '非' in aa1:
                 print('非')
+                dt.press('right')
+                time.sleep(0.0075)  # 按下两秒
+                dt.keyDown('right')  # ：模拟按键按下
+                time.sleep(0.5)
+                dt.keyUp('right')  # ：模拟按键松开按键
                 self.Set_Dict(0, 'test3.txt')
                 continue
 
@@ -689,8 +694,12 @@ class Caozuolei(Caozuolei1):
 
             else:
                 dt.press('right')
+                time.sleep(0.0075)  # 按下两秒
+                dt.keyDown('right')  # ：模拟按键按下
+                time.sleep(0.5)
+                dt.keyUp('right')  # ：模拟按键松开按键
                 print('FuBen_INFO66')
-                break
+                continue
 
     def yuren(self, num_parameter, move_seepx, move_seepy, Restart_computer_parameter, sss, aa1, bb1, cc1, dd1,
               hh1=0.75, hh2=0.75):
@@ -2369,6 +2378,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.5 + move_seep)
+                    time.sleep(1.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.press('right')
@@ -2391,7 +2401,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('f')
                     time.sleep(0.75)  # 按下两秒
                     dt.press('h')
-                    self.FuBen_INFO66()
+                    self.FuBen_INFO66(1)
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -3943,7 +3953,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
         zz1 = data.active  # 不知道表名称的 用这种
@@ -4275,7 +4285,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(5, 9):  # 打图设置ddddg
+    for aa in range(0, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')g
         time.sleep(1.85)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441 , 310
