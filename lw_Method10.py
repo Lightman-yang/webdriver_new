@@ -681,6 +681,11 @@ class Caozuolei(Caozuolei1):
                 continue
             elif '非' in aa3 and '非' in aa and '非' in aa2 and '非' in aa1:
                 print('非')
+                dt.press('right')
+                time.sleep(0.0075)  # 按下两秒
+                dt.keyDown('right')  # ：模拟按键按下
+                time.sleep(0.5)
+                dt.keyUp('right')  # ：模拟按键松开按键
                 self.Set_Dict(0, 'test3.txt')
                 continue
 
@@ -689,6 +694,10 @@ class Caozuolei(Caozuolei1):
 
             else:
                 dt.press('right')
+                time.sleep(0.0075)  # 按下两秒
+                dt.keyDown('right')  # ：模拟按键按下
+                time.sleep(0.5)
+                dt.keyUp('right')  # ：模拟按键松开按键
                 print('FuBen_INFO66')
                 continue
 
@@ -2369,6 +2378,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.5 + move_seep)
+                    time.sleep(1.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.press('right')
@@ -2437,9 +2447,9 @@ class Caozuolei(Caozuolei1):
                     self.FuBen_INFO66()
                     self.FuBen_INFO6()
 
-                    if self.forxunhuan(6, aa1, bb1, cc1, dd1, hh1, hh2,10) == 7:
+                    if self.forxunhuan(6, aa1, bb1, cc1, dd1, hh1, hh2,15) == 7:
                         print('结束')
-                    elif self.forxunhuan(6, aa1, bb1, cc1, dd1, hh1, hh2) == 77:
+                    elif self.forxunhuan(6, aa1, bb1, cc1, dd1, hh1, hh2,15) == 77:
 
                         dt.keyDown('left')  # ：模拟按键按下
                         time.sleep(0.5)
@@ -3943,7 +3953,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
         zz1 = data.active  # 不知道表名称的 用这种
