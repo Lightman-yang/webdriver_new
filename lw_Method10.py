@@ -697,6 +697,7 @@ class Caozuolei(Caozuolei1):
                 return
 
             else:
+
                 dt.press('right')
 
                 print('FuBen_INFO66')
@@ -2402,6 +2403,8 @@ class Caozuolei(Caozuolei1):
                     dt.press('f')
                     time.sleep(0.75)  # 按下两秒
                     dt.press('h')
+                    time.sleep(0.75)  # 按下两秒
+                    dt.press('e')
                     self.FuBen_INFO66(1)
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
@@ -2490,7 +2493,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('9')
                     time.sleep(0.75)
                     self.FuBen_INFO1()
-                    self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
+                    self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 20)
                     if self.FuBen_INFO13() == 0:
                         dt.press('left')
                         time.sleep(0.0075)  # 按下两秒
@@ -2509,7 +2512,7 @@ class Caozuolei(Caozuolei1):
                         dt.press('9')
                         time.sleep(1)
                         self.FuBen_INFO1()
-                        self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
+                        self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 20)
 
                         dt.press('right')
                         time.sleep(0.0075)  # 按下两秒
@@ -3828,7 +3831,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1.35)
                     dt.press('9')
                     time.sleep(1.2)
-                    self.FuBen_INFO66()
+                    self.FuBen_INFO66(7)
                     self.FuBen_INFO1()
                     self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 25)
 
@@ -3954,7 +3957,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
         zz1 = data.active  # 不知道表名称的 用这种
@@ -4287,13 +4290,13 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(2, 9):  # 打图设置ddddg
+    for aa in range(3, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')g
-        if aa==3 and pvp==1:
-            aa=4
-        elif aa==6 and pvp==1:
+        if aa == 3 and pvp == 1:
+            aa = 4
+        elif aa == 6 and pvp == 1:
             aa = 7
-        elif aa==7 and pvp==2:
+        elif aa == 7 and pvp == 2:
             aa = 8
         time.sleep(1.85)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441 , 310
