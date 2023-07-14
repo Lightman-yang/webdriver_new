@@ -4287,13 +4287,13 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(0, 9):  # 打图设置ddddg
+    for aa in range(2, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')g
-        if aa==3 and pvp==2:
+        if aa==3 and pvp==1:
             aa=4
-        elif aa==6 and pvp==2:
+        elif aa==6 and pvp==1:
             aa = 7
-        elif aa==7 and pvp==1:
+        elif aa==7 and pvp==2:
             aa = 8
         time.sleep(1.85)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441 , 310
