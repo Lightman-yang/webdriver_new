@@ -659,8 +659,12 @@ class Caozuolei(Caozuolei1):
             if "开洞" in aa:
                 print('开洞')
                 return
-            elif "开洞" in aa1 and "开洞" not in  aa:
+            elif "开洞" in aa1 and "开洞" not in aa:
                 if sss2 == 7:
+                    dt.press('right')
+                    dt.keyDown('right')  # ：模拟按键按下 向下
+                    time.sleep(1)
+                    dt.keyUp('right')  # ：模拟按键松开按键
                     return
                 else:
                     dt.press('right')
@@ -680,12 +684,23 @@ class Caozuolei(Caozuolei1):
 
                 dt.press('g')
                 continue
-            elif '非' in aa3 and '非' in aa and '非' in aa2 and '非' in aa1 and sss2==7:
+            elif '德拉' not in aa3 and '开洞' not in aa and '开洞' not in aa2 and '开洞' not in aa1 and sss2 == 7:
                 print('非')
                 dt.press('right')
                 dt.keyDown('right')  # ：模拟按键按下 向下
                 time.sleep(0.5)
                 dt.keyUp('right')  # ：模拟按键松开按键
+                print('----------')
+                sss2 = +1
+                continue
+            elif '非' in aa3 and '非' in aa and '非' in aa2 and '非' in aa1 and sss2 == 7:
+                print('非')
+                dt.press('right')
+                dt.keyDown('right')  # ：模拟按键按下 向下
+                time.sleep(0.5)
+                dt.keyUp('right')  # ：模拟按键松开按键
+                print('----------')
+                sss2 = +1
                 continue
             elif '非' in aa3 and '非' in aa and '非' in aa2 and '非' in aa1:
                 print('非')
@@ -695,6 +710,7 @@ class Caozuolei(Caozuolei1):
 
             elif '德拉' not in aa3 and sss2 == 1:
                 return
+
 
             else:
 
@@ -1437,7 +1453,7 @@ class Caozuolei(Caozuolei1):
                 elif j == 5:
                     time.sleep(0.05)
                     dt.keyDown('down')  # ：模拟按键按下 向下
-                    time.sleep(0.75 + move_seep1)
+                    time.sleep(0.77 + move_seep1)
                     dt.keyUp('down')  # ：模拟按键松开按键
 
                     dt.press('y')
@@ -1446,10 +1462,12 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)  # 按下两秒
                     dt.press('g')
                     time.sleep(0.7)  # 按下两秒
+                    dt.press('r')
+                    time.sleep(0.7)  # 按下两秒
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.28 + move_seep)
+                    time.sleep(1.32 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.keyDown('up')  # ：模拟按键按下 向下
@@ -1606,7 +1624,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(0.75 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    self.FuBen_INFO6(7)
+                    self.FuBen_INFO6(0, 7)
 
                     self.FuBen_INFO1()
                     # time.sleep(1)
@@ -2979,6 +2997,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.5)  # 按下两秒
                     dt.press('9')
                     time.sleep(1.2)
+                    self.FuBen_INFO66(7)
                     self.FuBen_INFO1()
                     time.sleep(1)  # 按下两秒
 
@@ -3568,7 +3587,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     if self.FuBen_INFO3() == 1:
-                        j = 8
+                        j = 9
                         i = num
                         print('测试')
                         break
@@ -3670,12 +3689,14 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
+                    dt.press('up')
                     time.sleep(3.1 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
                 elif j == 4:
                     time.sleep(1)
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
+
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
@@ -3816,7 +3837,8 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.9 + move_seep1)
                     dt.keyUp('up')  # ：模拟按键松开按键
                     time.sleep(0.5)  # 按下两秒
-
+                    dt.press('s')
+                    time.sleep(0.7)
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -3830,18 +3852,14 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.8)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
 
-                    dt.press('s')
-                    time.sleep(1)
+                    dt.press('g')
+
                     time.sleep(1.35)
                     dt.press('9')
                     time.sleep(1.2)
                     self.FuBen_INFO66(7)
                     self.FuBen_INFO1()
-                    self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 25)
-
-
-                    dt.press('9')
-                    time.sleep(1.2)
+                    self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
 
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
@@ -4476,7 +4494,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.65, 0.26, 1, 0, *canshu)
             elif pvp == 2:
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
-                c.nvQiGong(n, 0.69, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
+                c.nvQiGong(n, 0.69, 0.26, 1, 0, *canshu)  # 2p SS睡眠不足SS
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p
             else:
                 break
@@ -4529,7 +4547,7 @@ if __name__ == '__main__':
                 c.naiMa(n, 0.48, 0.26, 0, 0, *canshu)  # 1p 奇特木偶 光明骑士
             elif pvp == 2:
 
-                c.naiMa(n, 0.48, 0.26, 0, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
+                c.naiMa(n, 0.51, 0.26, 0, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
 
             else:
                 break
