@@ -1086,7 +1086,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.75 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    dt.press('q')
+                    dt.press('h')
                     time.sleep(0.75)  # 按下19秒
                     dt.press('w')
                     time.sleep(0.75)  # 按下19秒
@@ -1275,7 +1275,7 @@ class Caozuolei(Caozuolei1):
                         if self.FuBen_INFO() == 1:
 
                             self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
-                            time.sleep(1)  # 按下两秒
+                            time.sleep(0.5)  # 按下两秒
                             dt.keyDown('right')  # ：模拟按键按下 向下
                             time.sleep(1.5 + move_seep1)
                             dt.keyUp('right')  # ：模拟按键松开按键
@@ -1298,12 +1298,13 @@ class Caozuolei(Caozuolei1):
                     # self.Find_srt("熟练者", "#422", "功师", "#422")
                     dt.press('f')
                     time.sleep(0.7)  # 按下两秒
-                    dt.press('r')
-                    time.sleep(0.7)  # 按下两秒
+
                     dt.press('right')
                     dt.keyDown('right')  # ：模拟按键按下 向下
                     time.sleep(1 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
+                    dt.press('r')
+                    time.sleep(0.1)  # 按下两秒
 
                     self.FuBen_INFO66(2)
 
@@ -3428,22 +3429,25 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('right')  # ：模拟按键松开按键
 
 
-                    dt.press('e')
-                    time.sleep(0.65)  # 按下19秒
-                    dt.press('s')
-                    time.sleep(0.65)  # 按下19秒
-                    dt.press('f')
-                    time.sleep(0.65)  # 按下19秒
-                    dt.press('a')
-                    time.sleep(0.85)  # 按下两秒
+                    # dt.press('e')
+                    # time.sleep(0.65)  # 按下19秒
+                    # dt.press('s')
+                    # time.sleep(0.65)  # 按下19秒
+                    # dt.press('f')
+                    # time.sleep(0.65)  # 按下19秒
+                    # dt.press('a')
+                    # time.sleep(0.85)  # 按下两秒
                     for dazhao in range(1,10):
-                        dt.press('q')
-                        time.sleep(0.55)  # 按下两秒
+
                         dt.press('ctrl')
                         time.sleep(0.55)  # 按下两0秒
+                        dt.press('q')
+                        time.sleep(0.55)  # 按下两秒
                         dt.press('alt')
                         time.sleep(0.55)  # 按下两秒
                         dt.press('t')
+                        time.sleep(0.65)  # 按下19秒
+                        dt.press('e')
                         time.sleep(0.65)  # 按下19秒
                     if self.FuBen_INFO2()!=100:
 
@@ -3957,7 +3961,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
         zz1 = data.active  # 不知道表名称的 用这种
@@ -4290,7 +4294,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(3, 9):  # 打图设置ddddg
+    for aa in range(0, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')g
         if aa == 3 and pvp == 1:
             aa = 4
@@ -4469,7 +4473,7 @@ if __name__ == '__main__':
             continue
         elif aa == 5:
             if pvp == 1:
-                c.nvQiGong(n, 0.65, 0.26, 0, 0, *canshu)
+                c.nvQiGong(n, 0.65, 0.26, 1, 0, *canshu)
             elif pvp == 2:
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
                 c.nvQiGong(n, 0.69, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
