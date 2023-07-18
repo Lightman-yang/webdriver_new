@@ -3430,12 +3430,12 @@ class Caozuolei(Caozuolei1):
                     dt.press('9')
                     time.sleep(1)  # 按下两秒
                     self.FuBen_INFO1()
-                    self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2,15)
+                    self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2,5)
                     time.sleep(0.1)  # 按下两秒
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.1)  # 按下19秒
+                    time.sleep(1.15)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                 elif j == 8:  # 奇数 反之偶数
@@ -3465,6 +3465,7 @@ class Caozuolei(Caozuolei1):
                         dt.press('alt')
                         time.sleep(0.55)  # 按下两秒
                         dt.press('t')
+                        dt.press('g')
                         time.sleep(0.65)  # 按下19秒
                         dt.press('e')
                         time.sleep(0.65)  # 按下19秒
@@ -4312,7 +4313,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(0, 9):  # 打图设置ddddg
+    for aa in range(8, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')g
         if aa == 3 and pvp == 1:
             aa = 4
@@ -4338,7 +4339,7 @@ if __name__ == '__main__':
         # d
         # 女气功的操作流程，从选人物到进入图，在到刷图
         time.sleep(5)
-        if x[aa][2] == 6 or x[aa][2] == 7 or (pvp == 3 and x[aa][2] == 3) or (pvp == 2 and x[aa][2] == 8) or (
+        if x[aa][2] == 6 or x[aa][2] == 7  or (x[aa][2] == 8 and pvp==1) or (pvp == 3 and x[aa][2] == 3) or (pvp == 2 and x[aa][2] == 8) or (
                 pvp == 2 and x[aa][2] == 4):
             c.movingfigur_Down(0.65)  # 向下移动，移动一秒
         else:
@@ -4494,7 +4495,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.65, 0.26, 1, 0, *canshu)
             elif pvp == 2:
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
-                c.nvQiGong(n, 0.69, 0.26, 1, 0, *canshu)  # 2p SS睡眠不足SS
+                c.nvQiGong(n, 0.69, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p
             else:
                 break
