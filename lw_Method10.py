@@ -2401,7 +2401,8 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1.5 + move_seep)
                     time.sleep(1.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
-
+                    self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
+                    print('<---')
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -4115,6 +4116,105 @@ class Caozuolei(Caozuolei1):
                 else:
                     return
 
+    def menzuobiao1(self, renwuzuobiao):  # 门坐标
+        # self.Use_Dict(0)
+        while True:
+
+            z = self.FindStr(
+                x1=0,
+                y1=158,
+                x2=121,
+                y2=438,
+                string="开洞",  # "先驱者",  # "挑战者"
+                color_format="#380",  # "#422",  ##380
+                sim=0.8,
+                isbackcolor=0)
+            print(z, 'z')
+            if z != 0:
+                xxyy[2] = z[0] - 140
+                xxyy[3] = z[1] + 50 + renwuzuobiao  # 65
+                xxyy[4] = 88  # 找到数据传88
+                # xxyy[2:2] = x, y
+                print('开洞', z[0], '-', 140, '=', xxyy[2])
+                print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                return
+            else:
+                print('测试', xxyy[0])
+                if xxyy[3] == 4 and xxyy[0] > 500:
+
+                    return
+                elif xxyy[3] == 4 and xxyy[0] < 90:
+                    dt.press('right')
+                    time.sleep(0.0075)  # 按下两秒
+                    dt.keyDown('right')  # ：模拟按键按下
+                    time.sleep(1)
+                    dt.keyUp('right')  # ：模拟按键松开按键
+                    print("9988")
+                    return
+                else:
+                    return
+    # 人物移动到地图某一个x，y坐标点
+    def forxunhuanY(self, sss, aa, bb, cc, dd, hh1=0.75, hh2=0.75, renwuzuobiao=0):  # ,aa,bb,cc,dd
+        # self.Use_Dict(0)
+            print('--->')
+            a = [1]
+            num_ss = [0]
+            self.Find_srt(aa, bb, cc, dd, hh1, hh2)
+            # self.Find_srt("先驱者","#422", "不足", "#422")
+            # # self.menzuobiao()
+            # x, y, x1, y1, z, h = xxyy
+            # # print('x=',x,'y=',y,x1,y1,z,h)
+            # if -11 < (x-x1) < 11 and -11 < (y- y1)  < 11 and z==88 :
+            #
+            #     print((x-x1), 'y','外层循环')
+            #     return
+            # else:
+            for j in range(1, 2):
+                print(num_ss[0])
+                self.menzuobiao1(renwuzuobiao)
+                # self.Find_srt(aa1, bb1, cc1, dd1)
+                #time.sleep(0.5)
+
+                x, y, x1, y1, z, h = xxyy
+                print(xxyy)
+                print((x - x1), (y - y1), '----')
+                if h == 1000:
+                    print(1000)
+                    break
+
+
+
+                elif int(y - y1) < -10 and z == 88 :  # 5
+                    # print((y- y1), 'y1')
+                    dt.press('down')
+                    print("down,#5 int(y - y1) < -16 and z == 88 ")
+                    num_ss[0] = 0
+                    return
+
+                elif int(y - y1) > 10 and z == 88 :  # 6
+                    # print((y- y1) , 'y2')
+                    dt.press('up')
+                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                    print("up,#6  int(y - y1) > 16 and z == 88 " )
+                    num_ss[0] = 0
+                    return
+                # elif 11 < int(y- y1) > -11 and z==88:
+                #     print((y- y1) , 'y3')
+                #    # continue
+                # elif 11 > int(x - x1) > -11 and z==88:
+                #     print((x - x1), 'x,3')
+                #    # continu
+                #     print((y - y1)>80)
+                elif -24 <= (x - x1) <= 24 and -16 <= (y - y1) <= 16 and z == 88:  # 7
+                    # print((x-x1), 'y？？？？？？')
+                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                    print("up,#7")
+
+                    a.append("真")
+                    return
+                else:
+                    print('????')
+
     # 人物移动到地图某一个x，y坐标点
     def forxunhuan(self, sss, aa, bb, cc, dd, hh1=0.75, hh2=0.75, renwuzuobiao=0):  # ,aa,bb,cc,dd
         # self.Use_Dict(0)
@@ -4313,7 +4413,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(8, 9):  # 打图设置ddddg
+    for aa in range(1, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')g
         if aa == 3 and pvp == 1:
             aa = 4
