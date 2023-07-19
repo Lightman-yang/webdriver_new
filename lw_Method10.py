@@ -3783,7 +3783,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(0.45 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按
-                    self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
+                    self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, -15)
                     if self.FuBen_INFO13() == 0:
                         dt.press('left')
                         time.sleep(0.0075)  # 按下两秒
@@ -3801,7 +3801,7 @@ class Caozuolei(Caozuolei1):
                         dt.press('9')
                         time.sleep(1)
                         self.FuBen_INFO1()
-                        self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
+                        self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, -15)
 
                         dt.press('right')
                         time.sleep(0.0075)  # 按下两秒
@@ -3855,7 +3855,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1.2)
                     self.FuBen_INFO66(7)
                     self.FuBen_INFO1()
-                    self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
+                    self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 5)
 
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
@@ -3880,20 +3880,27 @@ class Caozuolei(Caozuolei1):
                     dt.press('ctrl')
                     time.sleep(1.3)  # 按下19秒
                     dt.press('w')
-                    if  self.FuBen_INFO2(2) != 100:
-                        for zz in range(1, 9):
+                    if self.FuBen_INFO2(2) != 100:
+                        mm = 2
+                        for zz in range(1, mm):
 
-                                dt.keyDown('up')  # ：模拟按键按下
-                                time.sleep(1.5 + move_seep)  # 按下19秒
-                                dt.keyUp('up')  # ：模拟按键松开按键
+                            dt.keyDown('up')  # ：模拟按键按下
+                            time.sleep(1.5 + move_seep)  # 按下19秒
+                            dt.keyUp('up')  # ：模拟按键松开按键
 
-                                dt.press('y')
-                                time.sleep(3)  # 按下19秒
-                                dt.keyDown('down')  # ：模拟按键按下
-                                time.sleep(1.5 + move_seep)  # 按下19秒
-                                dt.keyUp('down')  # ：模拟按键松开按键
-                                dt.press('ctrl')
-
+                            dt.press('y')
+                            dt.press('g')
+                            dt.press('ctrl')
+                            dt.press('alt')
+                            dt.press('a')
+                            time.sleep(1)  # 按下19秒
+                            dt.keyDown('down')  # ：模拟按键按下
+                            time.sleep(1.5 + move_seep)  # 按下19秒
+                            dt.keyUp('down')  # ：模拟按键松开按键
+                            if self.FuBen_INFO2() != 100:
+                                mm = +1
+                            else:
+                                mm = 1
                         time.sleep(1)  # 按下两秒
 
                         dt.press('0')
@@ -4308,7 +4315,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(0, 9):  # 打图设置ddddg
+    for aa in range(6, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')g
         if aa == 3 and pvp == 1:
             aa = 4
@@ -4490,7 +4497,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.65, 0.26, 0, 0, *canshu)
             elif pvp == 2:
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
-                c.nvQiGong(n, 0.69, 0.26, 1, 0, *canshu)  # 2p SS睡眠不足SS
+                c.nvQiGong(n, 0.69, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p
             else:
                 break
