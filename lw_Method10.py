@@ -3397,7 +3397,7 @@ class Caozuolei(Caozuolei1):
                         dt.keyDown('right')  # ：模拟按键按下
                         time.sleep(1.1 + move_seep)
                         dt.keyUp('right')  # ：模拟按键松开按
-
+                        time.sleep(1)  # 按下两秒
                     # c=1
 
 
@@ -3981,8 +3981,9 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
+        #r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
         zz1 = data.active  # 不知道表名称的 用这种
         # zz1=data['Sheet'] #知道表面的用第二种
