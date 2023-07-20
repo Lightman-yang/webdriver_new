@@ -3883,7 +3883,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('w')
                     if  self.FuBen_INFO2(2) != 100:
                         for zz in range(1, 9):
-
+                                dt.press('w')
                                 dt.keyDown('up')  # ：模拟按键按下
                                 time.sleep(1.5 + move_seep)  # 按下19秒
                                 dt.keyUp('up')  # ：模拟按键松开按键
@@ -4309,7 +4309,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(8, 9):  # 打图设置ddddg
+    for aa in range(5, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')g
         if aa == 3 and pvp == 1:
             aa = 4
