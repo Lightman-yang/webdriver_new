@@ -4334,7 +4334,7 @@ class Caozuolei(Caozuolei1):
                     # self.Find_srt("熟练者", "#422", "功师", "#422")
                     num_ss[0] = 1
                     break
-                elif (int(x - x1) < -34 and z == 88 and num_ss[0] == 0) and (
+                elif (int(x - x1) < -24 and z == 88 and num_ss[0] == 0) and (
                         int(y - y1) < -24 and z == 88 and num_ss[0] == 0):  # 1
                     # print((x - x1), 'x,1')
                     dt.press('right')
@@ -4346,7 +4346,7 @@ class Caozuolei(Caozuolei1):
                     num_ss[0] = 1
                     break
 
-                elif int(x - x1) < -34 and z == 88 and num_ss[0] == 0:  # 1
+                elif int(x - x1) < -24 and z == 88 and num_ss[0] == 0:  # 1
                     # print((x - x1), 'x,1')
                     dt.press('right')
                     # time.sleep(0.1)  # 按下19秒
