@@ -6,6 +6,7 @@ import time
 from email.header import Header
 from email.mime.text import MIMEText
 from random import uniform
+from threading import Thread  # 导入线程函数
 from time import sleep  # 导入时间休眠函数
 
 import numpy as np
@@ -17,7 +18,7 @@ from comtypes.client import CreateObject
 from win32gui import FindWindow
 
 from python_findpicture import Caozuolei1
-from threading import Thread  # 导入线程函数
+
 
 # 继承Caozuolei1函数。
 class Caozuolei(Caozuolei1):
@@ -2330,7 +2331,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)  # 按下两秒
                     dt.press('right')
                     dt.keyDown('right')  # ：模拟按键按下 向下
-                    time.sleep(1.1 + move_seep)
+                    time.sleep(1.25 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     self.FuBen_INFO66()
@@ -2403,14 +2404,14 @@ class Caozuolei(Caozuolei1):
                     self.FuBen_INFO66()
                     self.FuBen_INFO6(1)
                     dt.press('9')
-                    time.sleep(1)
+                    time.sleep(0.7)
                     self.FuBen_INFO1()
                     #self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.5 + move_seep)
+
                     time.sleep(1.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
@@ -2576,7 +2577,7 @@ class Caozuolei(Caozuolei1):
                 elif j == 7:  # 奇数 反之偶数
                     time.sleep(0.75)
                     dt.keyDown('up')  # ：模拟按键按下 向下
-                    time.sleep(1.5 + move_seep1)
+                    time.sleep(1.1 + move_seep1)
                     dt.keyUp('up')  # ：模拟按键松开按键
 
                     dt.press('right')
@@ -2589,7 +2590,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1.3)  # 按下19秒
                     self.FuBen_INFO66(7)
                     self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2,15)
-                    self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
+                    # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     self.FuBen_INFO1()
                     # time.sleep(1)
                     # self.forxunhuan(aa1, bb1, cc1, dd1)
@@ -4048,7 +4049,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         #r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -4318,7 +4319,7 @@ class Caozuolei(Caozuolei1):
                 elif sss == 6 and self.FuBen_INFO() == 77:
 
                     return 77
-                elif -24 <= (x - x1) <= 24 and num_ss[0] == 0 and z == 88:  # 00
+                elif -24 <= (x - x1) <= 34 and num_ss[0] == 0 and z == 88:  # 00
                     num_ss[0] = 1
                     print("# 00", sss)
                     continue
@@ -4333,7 +4334,7 @@ class Caozuolei(Caozuolei1):
                     # self.Find_srt("熟练者", "#422", "功师", "#422")
                     num_ss[0] = 1
                     break
-                elif (int(x - x1) < -24 and z == 88 and num_ss[0] == 0) and (
+                elif (int(x - x1) < -34 and z == 88 and num_ss[0] == 0) and (
                         int(y - y1) < -24 and z == 88 and num_ss[0] == 0):  # 1
                     # print((x - x1), 'x,1')
                     dt.press('right')
@@ -4345,7 +4346,7 @@ class Caozuolei(Caozuolei1):
                     num_ss[0] = 1
                     break
 
-                elif int(x - x1) < -24 and z == 88 and num_ss[0] == 0:  # 1
+                elif int(x - x1) < -34 and z == 88 and num_ss[0] == 0:  # 1
                     # print((x - x1), 'x,1')
                     dt.press('right')
                     # time.sleep(0.1)  # 按下19秒
@@ -4354,7 +4355,7 @@ class Caozuolei(Caozuolei1):
                     # self.Find_srt("熟练者", "#422", "功师", "#422")
                     num_ss[0] = 1
                     break
-                elif int(x - x1) > 24 and z == 88 and num_ss[0] == 0:  # 2
+                elif int(x - x1) > 34 and z == 88 and num_ss[0] == 0:  # 2
                     # print((x - x1), 'x,2')
                     dt.press('left')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1],xxyy[2],xxyy[3]))
@@ -4399,7 +4400,7 @@ class Caozuolei(Caozuolei1):
                 #     print((x - x1), 'x,3')
                 #    # continu
                 #     print((y - y1)>80)
-                elif -24 <= (x - x1) <= 24 and -24 <= (y - y1) <= 24 and z == 88:  # 7
+                elif -24 <= (x - x1) <= 34 and -24 <= (y - y1) <= 24 and z == 88:  # 7
                     # print((x-x1), 'y？？？？？？')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
                     print("up,#7")
@@ -4585,7 +4586,7 @@ class Caozuolei(Caozuolei1):
                 #     print("# 00", sss)
                 #     continue
 
-                elif (x - x1) < int(-80) and z == 88 :  # 0
+                elif (x - x1) < int(-80) and z == 88:  # 0
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -4595,7 +4596,7 @@ class Caozuolei(Caozuolei1):
                     # self.Find_srt("熟练者", "#422", "功师", "#422")
 
                     continue
-                elif int(x - x1) > 80 and z == 88:  # 2
+                elif int(x - x1) > 90 and z == 88:  # 2
                     # print((x - x1), 'x,2')
                     dt.press('left')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1],xxyy[2],xxyy[3]))
@@ -4606,8 +4607,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.3)  # 按下19秒
                     dt.keyUp('left')  # ：模拟按键松开按键
                     continue
-                elif (x - x1) < int(-45) and z == 88 :  # 0
-
+                elif (x - x1) < int(-55) and z == 88:  # 0
 
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(0.3)  # 按下两秒
@@ -4618,7 +4618,7 @@ class Caozuolei(Caozuolei1):
                     continue
 
 
-                elif int(x - x1) > 45 and z == 88:  # 2
+                elif int(x - x1) > 55 and z == 88:  # 2
                     # print((x - x1), 'x,2')
                     dt.press('left')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1],xxyy[2],xxyy[3]))
@@ -4630,7 +4630,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('left')  # ：模拟按键松开按键
                     # self.Find_srt("熟练者", "#422", "功师", "#422")
                     continue
-                elif (int(x - x1) < -24 ) and z == 88 :
+                elif (int(x - x1) < -24) and z == 88:
                     # print((x - x1), 'x,1')
                     dt.press('right')
                     # time.sleep(0.1)  # 按下19秒
@@ -4639,7 +4639,7 @@ class Caozuolei(Caozuolei1):
                     # self.Find_srt("熟练者", "#422", "功师", "#422")
 
                     continue
-                elif int(x - x1) > 24 and z == 88:  # 2
+                elif int(x - x1) > 34 and z == 88:  # 2
                     # print((x - x1), 'x,2')
                     dt.press('left')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1],xxyy[2],xxyy[3]))
@@ -4655,7 +4655,7 @@ class Caozuolei(Caozuolei1):
                 #     print((x - x1), 'x,3')
                 #    # continu
                 #     print((y - y1)>80)
-                elif -24 <= (x - x1) <= 24 and z == 88:  # 7
+                elif -24 <= (x - x1) <= 34 and z == 88:  # 7
                     # print((x-x1), 'y？？？？？？')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
                     print("up,#7")
