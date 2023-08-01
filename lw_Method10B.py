@@ -369,7 +369,7 @@ class Caozuolei(Caozuolei1):
     def FuBen_INFO(self):  # 副本地图信息数据实时获取
         # self.Use_Dict(0)
         while True:
-            #time.sleep(0.15)
+            # time.sleep(0.15)
             aa = self.Find_Ocr(
                 x1=0,
                 y1=0,
@@ -425,9 +425,9 @@ class Caozuolei(Caozuolei1):
 
     def FuBen_INFO11(self):  # 进图校验是否选择“永恒之光研究所”
 
-        #self.Use_Dict(0)
+        # self.Use_Dict(0)
         while True:
-            #time.sleep(0.15)
+            # time.sleep(0.15)
             aa = self.Find_Ocr(
                 x1=31,
                 y1=245,
@@ -448,9 +448,9 @@ class Caozuolei(Caozuolei1):
 
     def FuBen_INFO12(self):  # 进图校验是否选择“永恒之光研究所”
 
-        #self.Use_Dict(0)
+        # self.Use_Dict(0)
         while True:
-            #time.sleep(0.15)
+            # time.sleep(0.15)
 
             aa = self.Find_Ocr(
                 x1=12,
@@ -483,7 +483,7 @@ class Caozuolei(Caozuolei1):
 
     def FuBen_INFO13(self):  # 校验是否选择“传送门”
 
-        #self.Use_Dict(0)
+        # self.Use_Dict(0)
         while True:
             # time.sleep(0.15)
 
@@ -581,7 +581,7 @@ class Caozuolei(Caozuolei1):
                 linesign=" ",
                 isbackcolor=0)
             if "开洞" in aa:
-                print('开洞',cc)
+                print('开洞', cc)
                 return
 
             elif cc == 6 and "开洞" not in aa and b == 1:
@@ -605,11 +605,11 @@ class Caozuolei(Caozuolei1):
                 continue
 
             elif "开洞" in aa1:
-                print('开洞',cc,aa1)
+                print('开洞', cc, aa1)
                 return
             else:
-                print('FuBen_INFO6 #000') #000
-                #self.youjian()
+                print('FuBen_INFO6 #000')  # 000
+                # self.youjian()
                 break
 
     def FuBen_INFO66(self, ss=0):  # 副本地图信息数据实时获取
@@ -1660,7 +1660,6 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.75)  # 按下19秒
                     dt.press('f')
 
-
                     time.sleep(0.65)  # 按下两秒
                     for oalt in range(1, 13):
                         dt.press('ctrl')
@@ -1734,7 +1733,6 @@ class Caozuolei(Caozuolei1):
         time.sleep(2) #按下两秒0
         dt.keyUp('a') #：模拟按键松开time.sleep(2)
         '''
-
 
     def gongjianshou(self, num_parameter, move_seepx, move_seepy, Restart_computer_parameter, sss, aa1, bb1, cc1, dd1,
                      hh1=0.75, hh2=0.75):
@@ -2228,7 +2226,7 @@ class Caozuolei(Caozuolei1):
         # 定位坐标[606,401,75,499, 502,481, 460,481, 360,454]
         # self.forxunhuan(460,481)
 
-        #----》》测试
+        # ----》》测试
         # t1 = Thread(target=c.forxunhuanB,
         #             args=(sss, aa1, bb1, cc1, dd1, hh1, hh2,))  # 定义线程t1，线程任务为调用task1函数，task1函数的参数是6
         # t2 = Thread(target=self.forxunhuanA,
@@ -2236,7 +2234,7 @@ class Caozuolei(Caozuolei1):
         # t1.start()  # 开始运行t1线程
         # t2.start()  # 开始运行t2线程0
         # time.sleep(10000)
-        #-------------》
+        # -------------》
         for i in range(1, 60):
             time.sleep(0.5)
             num = num_parameter  # num不能是奇数 运行几次
@@ -2291,7 +2289,6 @@ class Caozuolei(Caozuolei1):
                         dt.press('9')
                         if self.FuBen_INFO() == 1:
 
-
                             self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                             print('成功')
 
@@ -2340,12 +2337,12 @@ class Caozuolei(Caozuolei1):
                     dt.press('9')
                     time.sleep(0.5)
                     self.FuBen_INFO1()
-                    #time.sleep(1)  # 按下两秒
+                    # time.sleep(1)  # 按下两秒
                     print('二操作9成功')
                     # time.sleep(1.2)
                     # Caozuolei().FuBen_INFO1()
 
-                    #time.sleep(1)
+                    # time.sleep(1)
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -2387,7 +2384,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('9')
                     time.sleep(0.6)
                     self.FuBen_INFO1()
-                    #self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
+                    # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     dt.press('left')
                     time.sleep(0.0075)  # 按下两秒
@@ -2414,11 +2411,7 @@ class Caozuolei(Caozuolei1):
 
                     time.sleep(1.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
-
-                    t3 = Thread(target=self.forxunhuanY,
-                                args=(sss, aa1, bb1, cc1, dd1, hh1, hh2,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
-                    t3.start()  # 开始运行t1线程
-                    # self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
+                    self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     print('<---')
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
@@ -2454,7 +2447,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('9')
                     time.sleep(0.6)
                     self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2)
-                    #self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
+                    # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     self.FuBen_INFO1()
 
                     dt.press('right')
@@ -2488,9 +2481,9 @@ class Caozuolei(Caozuolei1):
                     self.FuBen_INFO66()
                     self.FuBen_INFO6()
 
-                    if self.forxunhuan(6, aa1, bb1, cc1, dd1, hh1, hh2,15) == 7:
+                    if self.forxunhuan(6, aa1, bb1, cc1, dd1, hh1, hh2, 15) == 7:
                         print('结束')
-                    elif self.forxunhuan(6, aa1, bb1, cc1, dd1, hh1, hh2,15) == 77:
+                    elif self.forxunhuan(6, aa1, bb1, cc1, dd1, hh1, hh2, 15) == 77:
 
                         dt.keyDown('left')  # ：模拟按键按下
                         time.sleep(0.5)
@@ -2530,7 +2523,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.75)
                     self.FuBen_INFO1()
                     self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2)
-                    #self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 20)
+                    # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 20)
                     if self.FuBen_INFO13() == 0:
                         dt.press('left')
                         time.sleep(0.0075)  # 按下两秒
@@ -2550,7 +2543,7 @@ class Caozuolei(Caozuolei1):
                         time.sleep(0.85)
                         self.FuBen_INFO1()
                         self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2)
-                        #self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 20)
+                        # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 20)
 
                         dt.press('right')
                         time.sleep(0.0075)  # 按下两秒
@@ -2593,7 +2586,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('alt')
                     time.sleep(1.3)  # 按下19秒
                     self.FuBen_INFO66(7)
-                    self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2,15)
+                    self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
                     # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     self.FuBen_INFO1()
                     # time.sleep(1)
@@ -2760,10 +2753,6 @@ class Caozuolei(Caozuolei1):
 
                     dt.press('left')
 
-
-
-
-
                     if self.FuBen_INFO3() == 1:
                         j = 8
                         i = num
@@ -2827,7 +2816,6 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('down')  # ：模拟按键按下 向下
                     time.sleep(0.68 + move_seep1)
                     dt.keyUp('down')  # ：模拟按键松开按键
-
 
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
@@ -3167,11 +3155,21 @@ class Caozuolei(Caozuolei1):
     def nanQiGong(self, num_parameter, Restart_computer_parameter, sss, aa1, bb1, cc1, dd1, hh1=0.75,
                   hh2=0.75):
         # 男气功
+        # self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
 
+        print('<---------------')
+
+        dt.press('right')
+        time.sleep(0.0075)  # 按下两秒
+        dt.keyDown('right')  # ：模拟按键按下
+        time.sleep(3.5 - 0.42)
+        dt.keyUp('right')  # ：模拟按键松开按键
+
+        time.sleep(10000)
         for i in range(1, 60):
             time.sleep(2)
             num = num_parameter  # num不能是奇数 运行几次
-            move_seep = -0.42 # 57.7
+            move_seep = -0.42  # 57.7
             m_button = 'h'
             print(move_seep)
             Restart_computer = Restart_computer_parameter  # Restart_computer为0或者1，0关闭电脑，1不关闭电脑
@@ -3192,11 +3190,8 @@ class Caozuolei(Caozuolei1):
                     time.sleep(2.85 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
-
-
                     dt.press('left')
                     dt.press('y')
-
 
                     if self.FuBen_INFO3() == 1:
                         j = 8
@@ -3251,7 +3246,7 @@ class Caozuolei(Caozuolei1):
                     # time.sleep(1.2)
                     # Caozuolei().FuBen_INFO1()
 
-                    #time.sleep(1)
+                    # time.sleep(1)
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -3319,13 +3314,8 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
-
-                    t3 = Thread(target=self.forxunhuanY,
-                                args=(sss, aa1, bb1, cc1, dd1, hh1, hh2,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
-                    t3.start()  # 开始运行t1线程
-                    # self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
-                    # print('<---')
-
+                    self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
+                    print('<---')
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -3528,7 +3518,6 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1.05)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
 
-
                     # dt.press('e')
                     # time.sleep(0.65)  # 按下19秒
                     # dt.press('s')
@@ -3537,8 +3526,7 @@ class Caozuolei(Caozuolei1):
                     # time.sleep(0.65)  # 按下19秒
                     # dt.press('a')
                     # time.sleep(0.85)  # 按下两秒
-                    for dazhao in range(1,10):
-
+                    for dazhao in range(1, 10):
                         dt.press('ctrl')
                         time.sleep(0.55)  # 按下两0秒
                         dt.press('q')
@@ -3550,7 +3538,7 @@ class Caozuolei(Caozuolei1):
                         time.sleep(0.65)  # 按下19秒
                         dt.press('e')
                         time.sleep(0.65)  # 按下19秒
-                    if self.FuBen_INFO2()!=100:
+                    if self.FuBen_INFO2() != 100:
 
                         dt.press('0')
                         time.sleep(1)  # 按下两秒
@@ -3558,7 +3546,7 @@ class Caozuolei(Caozuolei1):
                             num_num = num // 2
                             if i == num_num or i == 10 or i == num:
                                 time.sleep(5)  # 按下两秒
-                                #from python_findpicture import Caozuolei1
+                                # from python_findpicture import Caozuolei1
                                 self.sellGoods_xy()  # 点击一键出售按钮
                                 print('等待5')
                                 time.sleep(1.5)  # 按下两秒
@@ -3701,7 +3689,6 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('down')  # ：模拟按键松开按键
                     dt.press('s')
 
-
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -3735,7 +3722,6 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('s')
-
 
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
@@ -3966,19 +3952,18 @@ class Caozuolei(Caozuolei1):
                     dt.press('ctrl')
                     time.sleep(1.3)  # 按下19秒
                     dt.press('w')
-                    if  self.FuBen_INFO2(2) != 100:
+                    if self.FuBen_INFO2(2) != 100:
                         for zz in range(1, 9):
+                            dt.keyDown('up')  # ：模拟按键按下
+                            time.sleep(1.5 + move_seep)  # 按下19秒
+                            dt.keyUp('up')  # ：模拟按键松开按键
 
-                                dt.keyDown('up')  # ：模拟按键按下
-                                time.sleep(1.5 + move_seep)  # 按下19秒
-                                dt.keyUp('up')  # ：模拟按键松开按键
-
-                                dt.press('y')
-                                time.sleep(3)  # 按下19秒
-                                dt.keyDown('down')  # ：模拟按键按下
-                                time.sleep(1.5 + move_seep)  # 按下19秒
-                                dt.keyUp('down')  # ：模拟按键松开按键
-                                dt.press('ctrl')
+                            dt.press('y')
+                            time.sleep(3)  # 按下19秒
+                            dt.keyDown('down')  # ：模拟按键按下
+                            time.sleep(1.5 + move_seep)  # 按下19秒
+                            dt.keyUp('down')  # ：模拟按键松开按键
+                            dt.press('ctrl')
 
                         time.sleep(1)  # 按下两秒
 
@@ -4062,8 +4047,8 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
-        #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
-        #r"D:\webdriver_new\lw\game_name.xlsx"
+        # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
+        # r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
         zz1 = data.active  # 不知道表名称的 用这种
         # zz1=data['Sheet'] #知道表面的用第二种
@@ -4095,12 +4080,12 @@ class Caozuolei(Caozuolei1):
 
     def Find_srt(self, usr_string1, usr_color_format1, usr_string2, usr_color_format2, usr_HH1=0.75,
                  usr_HH2=0.75):  # 人物坐标
-        #self.Use_Dict(0)
+        # self.Use_Dict(0)
         print(usr_HH1, type(usr_HH1))
         b = 0
         while True:
 
-            #sleep(0.15)
+            # sleep(0.15)
             z = self.FindStr(
                 x1=0,
                 y1=0,
@@ -4144,7 +4129,7 @@ class Caozuolei(Caozuolei1):
                 else:
                     b = b + 1
                     if b == 60:
-                        #self.youjian()
+                        # self.youjian()
                         print('!!!')
                         return
                     elif 32 > b > 30:
@@ -4234,77 +4219,78 @@ class Caozuolei(Caozuolei1):
                     return
                 else:
                     return
+
     # 人物移动到地图某一个x，y坐标点
     def forxunhuanY(self, sss, aa, bb, cc, dd, hh1=0.75, hh2=0.75, renwuzuobiao=0):  # ,aa,bb,cc,dd
         # self.Use_Dict(0)
-            print('--->')
-            a = [1]
-            num_ss = [0]
-            self.Find_srt(aa, bb, cc, dd, hh1, hh2)
-            # self.Find_srt("先驱者","#422", "不足", "#422")
-            # # self.menzuobiao()
-            # x, y, x1, y1, z, h = xxyy
-            # # print('x=',x,'y=',y,x1,y1,z,h)
-            # if -11 < (x-x1) < 11 and -11 < (y- y1)  < 11 and z==88 :
-            #
-            #     print((x-x1), 'y','外层循环')
-            #     return
-            # else:
-            for j in range(1, 2):
-                print(num_ss[0])
-                self.menzuobiao1(renwuzuobiao)
-                # self.Find_srt(aa1, bb1, cc1, dd1)
-                #time.sleep(0.5)
+        print('--->')
+        a = [1]
+        num_ss = [0]
+        self.Find_srt(aa, bb, cc, dd, hh1, hh2)
+        # self.Find_srt("先驱者","#422", "不足", "#422")
+        # # self.menzuobiao()
+        # x, y, x1, y1, z, h = xxyy
+        # # print('x=',x,'y=',y,x1,y1,z,h)
+        # if -11 < (x-x1) < 11 and -11 < (y- y1)  < 11 and z==88 :
+        #
+        #     print((x-x1), 'y','外层循环')
+        #     return
+        # else:
+        for j in range(1, 2):
+            print(num_ss[0])
+            self.menzuobiao1(renwuzuobiao)
+            # self.Find_srt(aa1, bb1, cc1, dd1)
+            # time.sleep(0.5)
 
-                x, y, x1, y1, z, h = xxyy
-                print(xxyy)
-                print((x - x1), (y - y1), '----')
-                if h == 1000:
-                    print(1000)
-                    break
+            x, y, x1, y1, z, h = xxyy
+            print(xxyy)
+            print((x - x1), (y - y1), '----')
+            if h == 1000:
+                print(1000)
+                break
 
-                elif int(y - y1) > 40 and z == 88:  # 6
-                    # print((y- y1) , 'y2')
-                    # dt.press('up')
-                    # dt.press('up')
-                    dt.keyDown('up')  # ：模拟按键按下
-                    time.sleep(0.35)
-                    dt.keyUp('up')  # ：模拟按键松开按键
-                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    print("up,#6  int(y - y1) > 16 and z == 88 ")
-                    num_ss[0] = 0
-                    return
+            elif int(y - y1) > 40 and z == 88:  # 6
+                # print((y- y1) , 'y2')
+                # dt.press('up')
+                # dt.press('up')
+                dt.keyDown('up')  # ：模拟按键按下
+                time.sleep(0.35)
+                dt.keyUp('up')  # ：模拟按键松开按键
+                # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                print("up,#6  int(y - y1) > 16 and z == 88 ")
+                num_ss[0] = 0
+                return
 
-                elif int(y - y1) < -10 and z == 88:  # 5
-                    # print((y- y1), 'y1')
-                    dt.press('down')
-                    print("down,#5 int(y - y1) < -16 and z == 88 ")
-                    num_ss[0] = 0
-                    return
+            elif int(y - y1) < -10 and z == 88:  # 5
+                # print((y- y1), 'y1')
+                dt.press('down')
+                print("down,#5 int(y - y1) < -16 and z == 88 ")
+                num_ss[0] = 0
+                return
 
-                elif int(y - y1) > 10 and z == 88:  # 6
-                    # print((y- y1) , 'y2')
-                    dt.press('up')
-                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    print("up,#6  int(y - y1) > 16 and z == 88 " )
-                    num_ss[0] = 0
-                    return
-                # elif 11 < int(y- y1) > -11 and z==88:
-                #     print((y- y1) , 'y3')
-                #    # continue
-                # elif 11 > int(x - x1) > -11 and z==88:
-                #     print((x - x1), 'x,3')
-                #    # continu
-                #     print((y - y1)>80)
-                elif -24 <= (x - x1) <= 24 and -16 <= (y - y1) <= 16 and z == 88:  # 7
-                    # print((x-x1), 'y？？？？？？')
-                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    print("up,#7")
+            elif int(y - y1) > 10 and z == 88:  # 6
+                # print((y- y1) , 'y2')
+                dt.press('up')
+                # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                print("up,#6  int(y - y1) > 16 and z == 88 ")
+                num_ss[0] = 0
+                return
+            # elif 11 < int(y- y1) > -11 and z==88:
+            #     print((y- y1) , 'y3')
+            #    # continue
+            # elif 11 > int(x - x1) > -11 and z==88:
+            #     print((x - x1), 'x,3')
+            #    # continu
+            #     print((y - y1)>80)
+            elif -24 <= (x - x1) <= 24 and -16 <= (y - y1) <= 16 and z == 88:  # 7
+                # print((x-x1), 'y？？？？？？')
+                # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                print("up,#7")
 
-                    a.append("真")
-                    return
-                else:
-                    print('????')
+                a.append("真")
+                return
+            else:
+                print('????')
 
     # 人物移动到地图某一个x，y坐标点
     def forxunhuan(self, sss, aa, bb, cc, dd, hh1=0.75, hh2=0.75, renwuzuobiao=0):  # ,aa,bb,cc,dd
@@ -4328,7 +4314,7 @@ class Caozuolei(Caozuolei1):
                 print(num_ss[0])
                 self.menzuobiao(renwuzuobiao)
                 # self.Find_srt(aa1, bb1, cc1, dd1)
-                #time.sleep(0.5)
+                # time.sleep(0.5)
 
                 x, y, x1, y1, z, h = xxyy
                 print(xxyy)
@@ -4456,271 +4442,272 @@ class Caozuolei(Caozuolei1):
 
                         print("up,#100")
                         break
+
     def forxunhuanB(self, sss, aa, bb, cc, dd, hh1=0.75, hh2=0.75, renwuzuobiao=0):  # ,aa,bb,cc,dd
         # self.Use_Dict(0)
         a = [1]
         num_ss = [0]
-        while True :
+        while True:
 
-                print(' else #10', (a))
-                self.Find_srt(aa, bb, cc, dd, hh1, hh2)
-                # self.Find_srt("先驱者","#422", "不足", "#422")
-                # # self.menzuobiao()
-                # x, y, x1, y1, z, h = xxyy
-                # # print('x=',x,'y=',y,x1,y1,z,h)
-                # if -11 < (x-x1) < 11 and -11 < (y- y1)  < 11 and z==88 :
-                #
-                #     print((x-x1), 'y','外层循环')
-                #     return
-                # else:
+            print(' else #10', (a))
+            self.Find_srt(aa, bb, cc, dd, hh1, hh2)
+            # self.Find_srt("先驱者","#422", "不足", "#422")
+            # # self.menzuobiao()
+            # x, y, x1, y1, z, h = xxyy
+            # # print('x=',x,'y=',y,x1,y1,z,h)
+            # if -11 < (x-x1) < 11 and -11 < (y- y1)  < 11 and z==88 :
+            #
+            #     print((x-x1), 'y','外层循环')
+            #     return
+            # else:
 
-                print(num_ss[0])
-                self.menzuobiao(renwuzuobiao)
-                # self.Find_srt(aa1, bb1, cc1, dd1)
-                #time.sleep(0.5)
+            print(num_ss[0])
+            self.menzuobiao(renwuzuobiao)
+            # self.Find_srt(aa1, bb1, cc1, dd1)
+            # time.sleep(0.5)
 
-                x, y, x1, y1, z, h = xxyy
-                print(xxyy)
-                print((x - x1), (y - y1), '----')
-                if h == 1000:
-                    print(1000)
-                    break
-                elif sss == 6 and self.FuBen_INFO() == 7:
-                    print(7)
-                    return 7
-                elif sss == 6 and self.FuBen_INFO() == 77:
-                    print(77)
-                    return 77
+            x, y, x1, y1, z, h = xxyy
+            print(xxyy)
+            print((x - x1), (y - y1), '----')
+            if h == 1000:
+                print(1000)
+                break
+            elif sss == 6 and self.FuBen_INFO() == 7:
+                print(7)
+                return 7
+            elif sss == 6 and self.FuBen_INFO() == 77:
+                print(77)
+                return 77
 
-                elif int(y - y1) < -80 and z == 88 :
-                    dt.keyDown('down')  # ：模拟按键按下
-                    time.sleep(0.4)  # 按下19秒
-                    dt.keyUp('down')  # ：模拟按键松开按键
+            elif int(y - y1) < -80 and z == 88:
+                dt.keyDown('down')  # ：模拟按键按下
+                time.sleep(0.4)  # 按下19秒
+                dt.keyUp('down')  # ：模拟按键松开按键
+                # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                print("down,#3")
+                continue
+            elif int(y - y1) < -45 and z == 88:
+                dt.keyDown('down')  # ：模拟按键按下
+                time.sleep(0.2)  # 按下19秒
+                dt.keyUp('down')  # ：模拟按键松开按键
+                # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                print("down,#3")
+                continue
+            elif int(y - y1) > 80 and z == 88:  # 4
+                dt.keyDown('up')  # ：模拟按键按下
+                time.sleep(0.4)  # 按下19秒
+                dt.keyUp('up')  # ：模拟按键松开按键
+                print("down,#4")
+
+                continue
+            elif int(y - y1) > 45 and z == 88:  # 4
+                dt.keyDown('up')  # ：模拟按键按下
+                time.sleep(0.2)  # 按下19秒
+                dt.keyUp('up')  # ：模拟按键松开按键
+                print("down,#4")
+
+                continue
+            elif int(y - y1) < -24 and z == 88:  # 5
+                # print((y- y1), 'y1')
+                dt.press('down')
+                print("down,#5")
+
+                continue
+
+            elif int(y - y1) > 24 and z == 88:  # 6
+                # print((y- y1) , 'y2')
+                dt.press('up')
+                # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                print("up,#6")
+
+                continue
+            # elif 11 < int(y- y1) > -11 and z==88:
+            #     print((y- y1) , 'y3')
+            #    # continue
+            # elif 11 > int(x - x1) > -11 and z==88:
+            #     print((x - x1), 'x,3')
+            #    # continu
+            #     print((y - y1)>80)
+            elif (-24 <= (y - y1) <= 24) and z == 88:  # 7
+                # print((x-x1), 'y？？？？？？')
+                # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                print("up,#7")
+
+                a.append("真")
+
+                return 1
+
+
+            else:
+                if x > 600 and z == 88:  # 8
+                    # dt.keyDown('left')  # ：模拟按键按下
+                    # time.sleep(1)  # 按下19秒
+                    # dt.keyUp('left')  # ：模拟按键松开按键
+                    # print((x-x1) , 'x', (y- y1), 'y','怎么回事')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    print("down,#3")
+                    print("up,#8")
                     continue
-                elif int(y - y1) < -45 and z == 88 :
-                    dt.keyDown('down')  # ：模拟按键按下
-                    time.sleep(0.2)  # 按下19秒
-                    dt.keyUp('down')  # ：模拟按键松开按键
-                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    print("down,#3")
-                    continue
-                elif int(y - y1) > 80 and z == 88 :  # 4
-                    dt.keyDown('up')  # ：模拟按键按下
-                    time.sleep(0.4)  # 按下19秒
-                    dt.keyUp('up')  # ：模拟按键松开按键
-                    print("down,#4")
-
-                    continue
-                elif int(y - y1) > 45 and z == 88 :  # 4
-                    dt.keyDown('up')  # ：模拟按键按下
-                    time.sleep(0.2)  # 按下19秒
-                    dt.keyUp('up')  # ：模拟按键松开按键
-                    print("down,#4")
-
-                    continue
-                elif int(y - y1) < -24 and z == 88 :  # 5
-                    # print((y- y1), 'y1')
-                    dt.press('down')
-                    print("down,#5")
-
-                    continue
-
-                elif int(y - y1) > 24 and z == 88 :  # 6
-                    # print((y- y1) , 'y2')
-                    dt.press('up')
-                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    print("up,#6")
-
-                    continue
-                # elif 11 < int(y- y1) > -11 and z==88:
-                #     print((y- y1) , 'y3')
-                #    # continue
-                # elif 11 > int(x - x1) > -11 and z==88:
-                #     print((x - x1), 'x,3')
-                #    # continu
-                #     print((y - y1)>80)
-                elif  (-24 <= (y - y1) <= 24) and z == 88:  # 7
-                    # print((x-x1), 'y？？？？？？')
-                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    print("up,#7")
-
-                    a.append("真")
-
-                    return 1
 
 
                 else:
-                    if x > 600 and z == 88:  # 8
-                        #dt.keyDown('left')  # ：模拟按键按下
-                       # time.sleep(1)  # 按下19秒
-                        #dt.keyUp('left')  # ：模拟按键松开按键
-                        # print((x-x1) , 'x', (y- y1), 'y','怎么回事')
-                        # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                        print("up,#8")
-                        continue
+                    print(xxyy)
+                    # self.youjian()
+                    # dt.press('right')
+                    # dt.press('alt')
+                    print("up,#100")
+                    continue
 
-
-                    else:
-                        print(xxyy)
-                        # self.youjian()
-                        # dt.press('right')
-                        #dt.press('alt')
-                        print("up,#100")
-                        continue
     def forxunhuanA(self, sss, aa, bb, cc, dd, hh1=0.75, hh2=0.75, renwuzuobiao=0):  # ,aa,bb,cc,dd
         # self.Use_Dict(0)
         a = [1]
         num_ss = [0]
-        while True :
+        while True:
 
-                print(' else #10', (a))
-                self.Find_srt(aa, bb, cc, dd, hh1, hh2)
-                # self.Find_srt("先驱者","#422", "不足", "#422")
-                # # self.menzuobiao()
-                # x, y, x1, y1, z, h = xxyy
-                # # print('x=',x,'y=',y,x1,y1,z,h)
-                # if -11 < (x-x1) < 11 and -11 < (y- y1)  < 11 and z==88 :
-                #
-                #     print((x-x1), 'y','外层循环')
-                #     return
-                # else:
+            print(' else #10', (a))
+            self.Find_srt(aa, bb, cc, dd, hh1, hh2)
+            # self.Find_srt("先驱者","#422", "不足", "#422")
+            # # self.menzuobiao()
+            # x, y, x1, y1, z, h = xxyy
+            # # print('x=',x,'y=',y,x1,y1,z,h)
+            # if -11 < (x-x1) < 11 and -11 < (y- y1)  < 11 and z==88 :
+            #
+            #     print((x-x1), 'y','外层循环')
+            #     return
+            # else:
 
-                print(num_ss[0])
-                self.menzuobiao(renwuzuobiao)
-                # self.Find_srt(aa1, bb1, cc1, dd1)
-                #time.sleep(0.5)
+            print(num_ss[0])
+            self.menzuobiao(renwuzuobiao)
+            # self.Find_srt(aa1, bb1, cc1, dd1)
+            # time.sleep(0.5)
 
-                x, y, x1, y1, z, h = xxyy
-                print(xxyy)
-                print((x - x1), (y - y1), '----')
-                if h == 1000:
-                    break
-                elif sss == 6 and self.FuBen_INFO() == 7:
+            x, y, x1, y1, z, h = xxyy
+            print(xxyy)
+            print((x - x1), (y - y1), '----')
+            if h == 1000:
+                break
+            elif sss == 6 and self.FuBen_INFO() == 7:
 
-                    return 7
-                elif sss == 6 and self.FuBen_INFO() == 77:
+                return 7
+            elif sss == 6 and self.FuBen_INFO() == 77:
 
-                    return 77
-                # elif -24 <= (x - x1) <= 24 and z == 88:  # 00
-                #     num_ss[0] = 1
-                #     print("# 00", sss)
-                #     continue
+                return 77
+            # elif -24 <= (x - x1) <= 24 and z == 88:  # 00
+            #     num_ss[0] = 1
+            #     print("# 00", sss)
+            #     continue
 
-                elif (x - x1) < int(-80) and z == 88:  # 0
-                    dt.press('right')
-                    time.sleep(0.013)  # 按下两秒
-                    dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(0.075)  # 按下19秒
-                    dt.keyUp('right')  # ：模拟按键松开按键
-                    print('#0,人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    # self.Find_srt("熟练者", "#422", "功师", "#422")
+            elif (x - x1) < int(-80) and z == 88:  # 0
+                dt.press('right')
+                time.sleep(0.013)  # 按下两秒
+                dt.keyDown('right')  # ：模拟按键按下
+                time.sleep(0.075)  # 按下19秒
+                dt.keyUp('right')  # ：模拟按键松开按键
+                print('#0,人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                # self.Find_srt("熟练者", "#422", "功师", "#422")
 
-                    continue
-                elif int(x - x1) > 90 and z == 88:  # 2
-                    # print((x - x1), 'x,2')
-                    dt.press('left')
-                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1],xxyy[2],xxyy[3]))
-                    print("left,#2")
-                    dt.press('left')
-                    time.sleep(0.013)  # 按下两秒
-                    dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(0.3)  # 按下19秒
-                    dt.keyUp('left')  # ：模拟按键松开按键
-                    continue
-                elif (x - x1) < int(-55) and z == 88:  # 0
+                continue
+            elif int(x - x1) > 90 and z == 88:  # 2
+                # print((x - x1), 'x,2')
+                dt.press('left')
+                # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1],xxyy[2],xxyy[3]))
+                print("left,#2")
+                dt.press('left')
+                time.sleep(0.013)  # 按下两秒
+                dt.keyDown('left')  # ：模拟按键按下
+                time.sleep(0.3)  # 按下19秒
+                dt.keyUp('left')  # ：模拟按键松开按键
+                continue
+            elif (x - x1) < int(-55) and z == 88:  # 0
 
-                    dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(0.3)  # 按下两秒
-                    dt.keyUp('right')  # ：模拟按键松开按键
-                    print('#0,人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    # self.Find_srt("熟练者", "#422", "功师", "#422")
+                dt.keyDown('right')  # ：模拟按键按下
+                time.sleep(0.3)  # 按下两秒
+                dt.keyUp('right')  # ：模拟按键松开按键
+                print('#0,人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                # self.Find_srt("熟练者", "#422", "功师", "#422")
 
-                    continue
+                continue
 
 
-                elif int(x - x1) > 55 and z == 88:  # 2
-                    # print((x - x1), 'x,2')
-                    dt.press('left')
-                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1],xxyy[2],xxyy[3]))
+            elif int(x - x1) > 55 and z == 88:  # 2
+                # print((x - x1), 'x,2')
+                dt.press('left')
+                # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1],xxyy[2],xxyy[3]))
 
-                    dt.press('left')
-                    time.sleep(0.013)  # 按下两秒
-                    dt.keyDown('left')  # ：模拟按键按下
+                dt.press('left')
+                time.sleep(0.013)  # 按下两秒
+                dt.keyDown('left')  # ：模拟按键按下
 
-                    dt.keyUp('left')  # ：模拟按键松开按键
-                    # self.Find_srt("熟练者", "#422", "功师", "#422")
-                    continue
-                elif (int(x - x1) < -24) and z == 88:
-                    # print((x - x1), 'x,1')
-                    dt.press('right')
-                    # time.sleep(0.1)  # 按下19秒
-                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1],xxyy[2],xxyy[3]))
-                    print("right,#1")
-                    # self.Find_srt("熟练者", "#422", "功师", "#422")
+                dt.keyUp('left')  # ：模拟按键松开按键
+                # self.Find_srt("熟练者", "#422", "功师", "#422")
+                continue
+            elif (int(x - x1) < -24) and z == 88:
+                # print((x - x1), 'x,1')
+                dt.press('right')
+                # time.sleep(0.1)  # 按下19秒
+                # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1],xxyy[2],xxyy[3]))
+                print("right,#1")
+                # self.Find_srt("熟练者", "#422", "功师", "#422")
 
-                    continue
-                elif int(x - x1) > 34 and z == 88:  # 2
-                    # print((x - x1), 'x,2')
-                    dt.press('left')
-                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1],xxyy[2],xxyy[3]))
-                    print("left,#2")
-                    # self.Find_srt("熟练者", "#422", "功师", "#422")
+                continue
+            elif int(x - x1) > 34 and z == 88:  # 2
+                # print((x - x1), 'x,2')
+                dt.press('left')
+                # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1],xxyy[2],xxyy[3]))
+                print("left,#2")
+                # self.Find_srt("熟练者", "#422", "功师", "#422")
 
-                    continue
+                continue
 
-                # elif 11 < int(y- y1) > -11 and z==88:
-                #     print((y- y1) , 'y3')
-                #    # continue
-                # elif 11 > int(x - x1) > -11 and z==88:
-                #     print((x - x1), 'x,3')
-                #    # continu
-                #     print((y - y1)>80)
-                elif -24 <= (x - x1) <= 34 and z == 88:  # 7
-                    # print((x-x1), 'y？？？？？？')
+            # elif 11 < int(y- y1) > -11 and z==88:
+            #     print((y- y1) , 'y3')
+            #    # continue
+            # elif 11 > int(x - x1) > -11 and z==88:
+            #     print((x - x1), 'x,3')
+            #    # continu
+            #     print((y - y1)>80)
+            elif -24 <= (x - x1) <= 34 and z == 88:  # 7
+                # print((x-x1), 'y？？？？？？')
+                # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                print("up,#7")
+
+                a.append("真")
+
+                return 1
+
+            else:
+                if x > 600 and z == 88:  # 8
+                    # dt.keyDown('left')  # ：模拟按键按下
+                    # time.sleep(1)  # 按下19秒
+                    # dt.keyUp('left')  # ：模拟按键松开按键
+                    # print((x-x1) , 'x', (y- y1), 'y','怎么回事')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    print("up,#7")
+                    print("up,#8")
+                    continue
 
-                    a.append("真")
-
-                    return 1
 
                 else:
-                    if x > 600 and z == 88:  # 8
-                        # dt.keyDown('left')  # ：模拟按键按下
-                        # time.sleep(1)  # 按下19秒
-                        # dt.keyUp('left')  # ：模拟按键松开按键
-                        # print((x-x1) , 'x', (y- y1), 'y','怎么回事')
-                        # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                        print("up,#8")
-                        continue
-
-
-                    else:
-                        print(xxyy)
-                        # self.youjian()
-                        # dt.press('right')
-                        #dt.press('alt')
-                        print("up,#100")
-                        continue
+                    print(xxyy)
+                    # self.youjian()
+                    # dt.press('right')
+                    # dt.press('alt')
+                    print("up,#100")
+                    continue
 
     def forxunhuanC(self, sss, aa1, bb1, cc1, dd1, hh1=0.75, hh2=0.75, renwuzuobiao=0):
 
-
-            t1 = Thread(target=self.forxunhuanB,
-                        args=(sss, aa1, bb1, cc1, dd1, hh1, hh2,))  # 定义线程t1，线程任务为调用task1函数，task1函数的参数是6
-            t2 = Thread(target=self.forxunhuanA,
-                        args=(sss, aa1, bb1, cc1, dd1, hh1, hh2,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
-            t1.start()  # 开始运行t1线程
-            t2.start()  #
-            print(t1,t2,'t1,t2')
-            t1.join()
-            t2.join()
-            if t1 ==1 and t2==1:
-                return 1
-            else:
-                print('没有找到没有找到没有找到')
+        t1 = Thread(target=self.forxunhuanB,
+                    args=(sss, aa1, bb1, cc1, dd1, hh1, hh2,))  # 定义线程t1，线程任务为调用task1函数，task1函数的参数是6
+        t2 = Thread(target=self.forxunhuanA,
+                    args=(sss, aa1, bb1, cc1, dd1, hh1, hh2,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
+        t1.start()  # 开始运行t1线程
+        t2.start()  #
+        print(t1, t2, 't1,t2')
+        t1.join()
+        t2.join()
+        if t1 == 1 and t2 == 1:
+            return 1
+        else:
+            print('没有找到没有找到没有找到')
 
 
 if __name__ == '__main__':
@@ -4733,7 +4720,7 @@ if __name__ == '__main__':
     # 睡眠不足十62.5%
 
     time.sleep(1.5)
-    c=Caozuolei()  # 注册乐玩
+    c = Caozuolei()  # 注册乐玩
     # dt.press('alt')
     print(1)
     # time.sleep(1000)
@@ -4764,19 +4751,19 @@ if __name__ == '__main__':
     # c.Find_srt("熟练者", "#422", "功师", "#422")
     time.sleep(1)
 
-    # canshu = c.excelboot01(22)
-    # n = 24
+    canshu = c.excelboot01(22)
+    n = 24
+    c.nanQiGong(n, 0, 0, *canshu)  # 1p  男气功
     # c.nvQiGong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
-
-    # time.sleep(1000)
+    time.sleep(1000)
 
     pvp = c.FuBen_INFO12()  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     print(pvp)
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(0, 9):  # 打图设置ddddg
+    for aa in range(4, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')g
         # c.Set_Dict(0, 'test3.txt')
         if aa == 11 and pvp == 1:  # aa
@@ -4795,9 +4782,9 @@ if __name__ == '__main__':
         if pvp == 1:
             sss1 = 10  # 气功师很烂丶
         elif pvp == 2:
-            sss1 = 1  #睡眠不足十
+            sss1 = 1  # 睡眠不足十
         elif pvp == 3:
-            sss1 = 19  #ll0110ll
+            sss1 = 19  # ll0110ll
         else:
             print('什么都不是')
             break
@@ -4862,8 +4849,8 @@ if __name__ == '__main__':
         time.sleep(0.5)  # 睡眠1.5秒gdf
         # aa1, bb1, cc1, dd1 = "挑战者", "#360", "师很", "#140"
         canshu = c.excelboot01(aa + sss1)  # 调用excel表数据取值# 2p是加1 1p是加7  3p是 14
-        n =24
-        print(aa,sss1,'    sss')
+        n = 24
+        print(aa, sss1, '    sss')
         if aa == 0:
             if pvp == 1:
                 c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
@@ -4875,7 +4862,7 @@ if __name__ == '__main__':
                 # aa1, bb1, cc1, dd1="熟练者", "#410", "师很", "#140"
                 # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
             else:
-                c.nvQiGong(n, 0.48, 0.22, 0, 0, *canshu)  #3p ll0110ll
+                c.nvQiGong(n, 0.48, 0.22, 0, 0, *canshu)  # 3p ll0110ll
             time.sleep(2)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
             c.KeyPress1(27)  # 案件esc建
@@ -4910,7 +4897,7 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.49, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
             else:
-                c.nvQiGong(n, 0.64, 0.4, 0, 0, *canshu)  #3p 气功运气
+                c.nvQiGong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
             time.sleep(3)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
             c.KeyPress1(27)  # 案件esc建
@@ -4977,7 +4964,7 @@ if __name__ == '__main__':
         elif aa == 6:
             if pvp == 1:
 
-                c.yuren(n, 0.5, 0.26, 0, 0, *canshu) #1p
+                c.yuren(n, 0.5, 0.26, 0, 0, *canshu)  # 1p
             elif pvp == 2:
 
                 c.yuren(n, 0.5, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
