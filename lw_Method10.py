@@ -4722,15 +4722,15 @@ class Caozuolei(Caozuolei1):
                     args=(sss, aa1, bb1, cc1, dd1, hh1, hh2, -15))  # 定义线程t1，线程任务为调用task1函数，task1函数的参数是6
         t2 = Thread(target=self.forxunhuanA,
                     args=(sss, aa1, bb1, cc1, dd1, hh1, hh2, -15))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
-            t1.start()  # 开始运行t1线程
-            t2.start()  #
-            print(t1,t2,'t1,t2')
-            t1.join()
-            t2.join()
-            if t1 ==1 and t2==1:
-                return 1
-            else:
-                print('没有找到没有找到没有找到')
+        t1.start()  # 开始运行t1线程
+        t2.start()  #
+        print(t1, t2, 't1,t2')
+        t1.join()
+        t2.join()
+        if t1 == 1 and t2 == 1:
+            return 1
+        else:
+            print('没有找到没有找到没有找到')
 
 
 if __name__ == '__main__':
