@@ -351,6 +351,7 @@ class Caozuolei(Caozuolei1):
             if "靓仔" in aa and zzz == 1:
                 dt.press('9')
                 time.sleep(1)
+                ret_values.append(2)
                 return 2
             elif "再次挑战" in aa:
 
@@ -359,11 +360,13 @@ class Caozuolei(Caozuolei1):
                 dt.press('.')
                 time.sleep(2)
                 print("再次挑战", 1)
+                ret_values.append(1)
                 return 1
 
 
             else:
                 print("再次挑战", 0)
+                ret_values.append(0)
                 return 0
 
     def FuBen_INFO(self):  # 副本地图信息数据实时获取
@@ -2266,8 +2269,13 @@ class Caozuolei(Caozuolei1):
                 # print('right开始按下{}次'.format(j))
                 # a_error = 0
                 if j == 1:
+                    global ret_values
+                    ret_values = []
                     time.sleep(0.25)  # 按下两秒
                     dt.press('a')
+                    t13 = Thread(target=self.FuBen_INFO3,
+                                 args=(1,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
+                    t13.start()  # 开始运行t1线程
                     time.sleep(0.65)  # 按下两秒
                     dt.press('y')
                     time.sleep(0.68)  # 按下两秒
@@ -2283,16 +2291,21 @@ class Caozuolei(Caozuolei1):
                     dt.press('left')  # ：模拟按键按下
                     time.sleep(0.15)  # 按下两秒
                     dt.press('y')
-
-                    if self.FuBen_INFO3(1) == 1:
+                    # time.sleep(3)  # 按下两秒
+                    # if self.FuBen_INFO3(1) == 1:
+                    print(ret_values)
+                    print(xxyy)
+                    if ret_values[0] == 1:
                         j = 8
                         i = num
-                        print('测试')
+                        print('测试', t13)
                         break
-                    elif self.FuBen_INFO3() == 2:
+                    # elif self.FuBen_INFO3() == 2:
+                    elif ret_values[0] == 2:
                         j = 8
                         break
                     else:
+                        print('测试', t13)
                         self.FuBen_INFO66()
 
                         self.FuBen_INFO6()
@@ -2519,6 +2532,7 @@ class Caozuolei(Caozuolei1):
 
 
                 elif j == 6:
+
                     time.sleep(0.75)
                     dt.keyDown('up')  # ：模拟按键按下 向下
                     time.sleep(0.77)
@@ -2535,13 +2549,15 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下 向下
                     time.sleep(0.6 + move_seep1)
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    self.FuBen_INFO66()
-                    self.FuBen_INFO6(c=6)
+                    t31 = Thread(target=self.FuBen_INFO66())  # 定义线程t2，
+                    t31.start()  # 开始运行t1线程
+                    dt.press('down')
+                    self.FuBen_INFO6(0, 6)
                     dt.press('9')
                     time.sleep(0.75)
                     self.FuBen_INFO1()
                     self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2)
-                    #self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 20)
+                    # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 20)
                     if self.FuBen_INFO13() == 0:
                         dt.press('left')
                         time.sleep(0.0075)  # 按下两秒
@@ -2604,7 +2620,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('alt')
                     #time.sleep(1.3)  # 按下19秒
                     self.FuBen_INFO66(7)
-                    self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2,15)
+                    self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2, -15)
                     # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     self.FuBen_INFO1()
                     # time.sleep(1)
@@ -4274,7 +4290,7 @@ class Caozuolei(Caozuolei1):
                     print(1000)
                     break
 
-                elif int(y - y1) > 105 and z == 88:  # 6
+                elif int(y - y1) > 125 and z == 88:  # 6
                     # print((y- y1) , 'y2')
                     # dt.press('up')
                     # dt.press('up')
@@ -4286,7 +4302,7 @@ class Caozuolei(Caozuolei1):
                     num_ss[0] = 0
                     return
 
-                elif int(y - y1) < -10 and z == 88:  # 5
+                elif int(y - y1) < -20 and z == 88:  # 5
                     # print((y- y1), 'y1')
                     dt.press('down')
                     print("down,#5 int(y - y1) < -16 and z == 88 ")
@@ -4735,6 +4751,8 @@ class Caozuolei(Caozuolei1):
 
 if __name__ == '__main__':
     global xxyy
+    # global ret_values
+    # ret_values = [9]
     xxyy = [1, 2, 3, 4, 99, 6]
     # 定位坐标[606,401,75,499,502,481,460,481,360,454]
     # c.forxunhuan(606, 401)
@@ -4743,7 +4761,7 @@ if __name__ == '__main__':
     # 睡眠不足十62.5%
 
     time.sleep(1.5)
-    c=Caozuolei()  # 注册乐玩
+    c = Caozuolei()  # 注册乐玩
     # dt.press('alt')
     print(1)
     # time.sleep(1000)
@@ -5022,7 +5040,7 @@ if __name__ == '__main__':
             continue
         elif aa == 8:
             if pvp == 1:
-                c.naiMa(n, 0.5, 0.26, 0, 0, *canshu)  # 1p 奇特木偶 光明骑士
+                c.naiMa(n, 0.5, 0.26, 1, 0, *canshu)  # 1p 奇特木偶 光明骑士
             elif pvp == 2:
 
                 c.naiMa(n, 0.49, 0.26, 1, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
