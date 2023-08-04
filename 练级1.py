@@ -1,15 +1,12 @@
-#_*_ coding: UTF-8 _*_
-#开发人员  :light
-#开发时间  :2021/4/7 15:45
-import os
+# _*_ coding: UTF-8 _*_
+# 开发人员  :light
+# 开发时间  :2021/4/7 15:45
+import time
+from threading import Thread
+
 import win32api
-import time
-import win32gui
-#65900|Shell_TrayWnd
-import win32com
-import win32clipboard as w
+# 65900|Shell_TrayWnd
 import win32con
-import time
 
 # u=pyautogui.size()
 # print(u)
@@ -115,18 +112,39 @@ def release_keys(*args):
             [release_keys(n) for n in i]
         elif isinstance(i, tuple):
             [press_keys(n) for n in i]
-if __name__ == '__main__':
-    print(time.strftime("%Y/%m/%d %H:%M:%S"))
-    print(time.localtime())
-    A = os.system(r'"C:\Program Files (x86)\Huawei\HDPClient\CloudClient.exe"')
 
-    #B=os.system(r'"D:\软件文件包\Dict\YoudaoDict.exe"')
+
+def adfadf(ss):
+    while True:
+        if ss == 3:
+            print(ss)
+            bbb.append(ss)
+            print(bbb)
+            return
+        else:
+            print(ss)
+            bbb.append(4)
+            print(bbb)
+            return
+
+
+if __name__ == '__main__':
+    bbb = []
+    t13 = Thread(target=adfadf,
+                 args=(1,))  # 定义线程t2，线程任务为调用task2函数
+    t13.start()  # 开始运行t1线程
+    print(bbb, 'www')
+    # print(time.strftime("%Y/%m/%d %H:%M:%S"))
+    # print(time.localtime())
+    # A = os.system(r'"C:\Program Files (x86)\Huawei\HDPClient\CloudClient.exe"')
+
+    # B=os.system(r'"D:\软件文件包\Dict\YoudaoDict.exe"')
 
     # time.sleep(4)
 
     # FrameClass = "QWidget"
     # FrameTitle = "地址管理"
-    #hwnd = win32gui.FindWindow(1837274, FrameTitle)
+    # hwnd = win32gui.FindWindow(1837274, FrameTitle)
     # hwnd = win32gui.FindWindow(70208,"网易有道词典")
     # 65900  197706,"Shell_TrayWnd "QWidget","地址管理"
     # handle.win32gui.SetForegroundWindow()
@@ -135,13 +153,12 @@ if __name__ == '__main__':
     # k.press_key(k.alt_key)# 按住alt键
     # k.press_key('l')# 模拟键盘按l键
     # k.release_key(k.alt_key)   # 松开alt键
-    time.sleep(4)
-    release_keys('ALT',"L")
-    pressKey('L')
-
+    # time.sleep(4)
+    # release_keys('ALT',"L")
+    # pressKey('L')
 
     # win32gui.ShowWindow(handle,win32con.SW_MAXIMIZE)
-    #hwnd.press_keys(18,76)
+    # hwnd.press_keys(18,76)
     # press_and_release_key(13)
     # pressKey(76)
     # release_key(18)
