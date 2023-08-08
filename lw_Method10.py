@@ -1266,8 +1266,13 @@ class Caozuolei(Caozuolei1):
                 # print('right开始按下{}次'.format(j))
                 # a_error = 0
                 if j == 1:
+                    global ret_values
+                    ret_values = []
                     time.sleep(0.65)  # 按下两秒
                     dt.press('h')
+                    t13 = Thread(target=self.FuBen_INFO3,
+                                 args=(1,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
+                    t13.start()  # 开始运行t1线程
                     time.sleep(0.65)  # 按下两秒
                     dt.press('y')
                     time.sleep(0.7)  # 按下两秒
@@ -1285,11 +1290,20 @@ class Caozuolei(Caozuolei1):
 
                     dt.press('y')
                     time.sleep(0.2)  # 按下两秒
-                    if self.FuBen_INFO3() == 1:
+                    if ret_values[0] == 1:
                         j = 8
                         i = num
-                        print('测试')
+                        print('测试', t13)
                         break
+                    # elif self.FuBen_INFO3() == 2:
+                    elif ret_values[0] == 2:
+                        j = 8
+                        break
+                    # if self.FuBen_INFO3() == 1:
+                    #     j = 8
+                    #     i = num
+                    #     print('测试')
+                    #     break
                     else:
                         self.FuBen_INFO66()
 
@@ -2625,6 +2639,7 @@ class Caozuolei(Caozuolei1):
                     self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2, -15)
                     # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     self.FuBen_INFO1()
+                    dt.press('up')
                     # time.sleep(1)
                     # self.forxunhuan(aa1, bb1, cc1, dd1)
                     dt.press('9')
@@ -2777,8 +2792,13 @@ class Caozuolei(Caozuolei1):
             for j in range(1, 9):
                 # print('right开始按下{}次'.format(j))
                 if j == 1:
+                    global ret_values
+                    ret_values = []
+                    t13 = Thread(target=self.FuBen_INFO3, args=(1,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
+                    t13.start()  # 开始运行t1线程
                     time.sleep(0.3)  # 按下两秒
                     dt.press('h')
+
                     time.sleep(0.54)  # 按下两秒
                     dt.press('d')
                     time.sleep(0.54)  # 按下两秒
@@ -2787,23 +2807,29 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(2.85 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
-
+                    # time.sleep(3)  # 按下两秒
                     dt.press('left')
-
-
-
-
-
-                    if self.FuBen_INFO3() == 1:
+                    print(ret_values)
+                    print(xxyy)
+                    if ret_values[0] == 1:
                         j = 8
                         i = num
-                        print('测试')
+                        print('测试', t13)
                         break
+                        # elif self.FuBen_INFO3() == 2:
+                    elif ret_values[0] == 2:
+                        j = 8
+                        break
+                    # if self.FuBen_INFO3() == 1:
+                    #     j = 8
+                    #     i = num
+                    #     print('测试')
+                    #     break
                     else:
                         self.FuBen_INFO66()
                         self.FuBen_INFO6()
                         dt.press('9')
-                        time.sleep(1.5)
+                        time.sleep(0.75)
                         dt.keyDown('down')  # ：模拟按键按下 向下
                         time.sleep(0.76 + move_seep1)
                         dt.keyUp('down')  # ：模拟按键松开按键
@@ -2839,7 +2865,7 @@ class Caozuolei(Caozuolei1):
                     self.FuBen_INFO66()
                     self.FuBen_INFO6()
                     dt.press('9')
-                    time.sleep(1)
+                    time.sleep(0.75)
                     self.FuBen_INFO1()
 
                     time.sleep(1)
@@ -2994,15 +3020,15 @@ class Caozuolei(Caozuolei1):
                         dt.keyUp('right')  # ：模拟按键松开按键
 
                 elif j == 6:
-                    time.sleep(1)
+                    time.sleep(0.75)
                     dt.keyDown('up')  # ：模拟按键按下 向下
                     time.sleep(0.6)
                     dt.keyDown('right')  # ：模拟按键按下 向下
 
-                    time.sleep(0.95 + move_seep1)
+                    time.sleep(1 + move_seep1)
 
                     dt.keyUp('up')  # ：模拟按键松开按键
-                    time.sleep(0.6)
+                    time.sleep(0.7)
                     dt.keyUp('right')
                     dt.press('y')
 
@@ -3208,9 +3234,14 @@ class Caozuolei(Caozuolei1):
             for j in range(1, 9):
                 # print('right开始按下{}次'.format(j))
                 if j == 1:
+                    global ret_values
+                    ret_values = []
                     dt.press('t')
                     time.sleep(0.75)  # 按下两秒
                     dt.press('h')
+                    t13 = Thread(target=self.FuBen_INFO3,
+                                 args=(1,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
+                    t13.start()  # 开始运行t1线程
                     time.sleep(0.75)  # 按下两秒
                     dt.press('s')
                     time.sleep(0.75)  # 按下两秒
@@ -3227,12 +3258,20 @@ class Caozuolei(Caozuolei1):
                     dt.press('left')
                     dt.press('y')
 
-
-                    if self.FuBen_INFO3() == 1:
+                    if ret_values[0] == 1:
                         j = 8
                         i = num
-                        print('测试')
+                        print('测试', t13)
                         break
+                        # elif self.FuBen_INFO3() == 2:
+                    elif ret_values[0] == 2:
+                        j = 8
+                        break
+                    # if self.FuBen_INFO3() == 1:
+                    #     j = 8
+                    #     i = num
+                    #     print('测试')
+                    #     break
                     else:
                         self.FuBen_INFO66()
                         self.FuBen_INFO6()
@@ -3678,8 +3717,13 @@ class Caozuolei(Caozuolei1):
             for j in range(1, 9):
                 # print('right开始按下{}次'.format(j))
                 if j == 1:
+                    global ret_values
+                    ret_values = []
                     time.sleep(0.35)  # 按下两秒
                     dt.press('t')
+                    t13 = Thread(target=self.FuBen_INFO3,
+                                 args=(1,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
+                    t13.start()  # 开始运行t1线程
                     time.sleep(0.75)  # 按下两秒
                     dt.press('s')
                     time.sleep(0.75)  # 按下两秒
@@ -3697,12 +3741,20 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(2.7 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
-
-                    if self.FuBen_INFO3() == 1:
-                        j = 9
+                    if ret_values[0] == 1:
+                        j = 8
                         i = num
-                        print('测试')
+                        print('测试', t13)
                         break
+                        # elif self.FuBen_INFO3() == 2:
+                    elif ret_values[0] == 2:
+                        j = 8
+                        break
+                    # if self.FuBen_INFO3() == 1:
+                    #     j = 9
+                    #     i = num
+                    #     print('测试')
+                    #     break
                     else:
                         self.FuBen_INFO66()
                         self.FuBen_INFO6()
@@ -3740,9 +3792,9 @@ class Caozuolei(Caozuolei1):
                     self.FuBen_INFO66()
                     self.FuBen_INFO6()
                     dt.press('9')
-                    time.sleep(1.2)
+                    time.sleep(0.75)
                     self.FuBen_INFO1()
-                    time.sleep(1)
+
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -3784,13 +3836,13 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('left')  # ：模拟按键按下
                     time.sleep(4 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
-                    time.sleep(1.5)
+
                     self.FuBen_INFO66()
                     self.FuBen_INFO6()
 
                     self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
                     dt.press('9')
-                    time.sleep(1)
+                    time.sleep(0.75)
 
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
@@ -3805,7 +3857,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(3.1 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
                 elif j == 4:
-                    time.sleep(1)
+                    time.sleep(0.75)
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
 
@@ -3825,13 +3877,13 @@ class Caozuolei(Caozuolei1):
 
                     time.sleep(1.35)
                     dt.press('9')
-                    time.sleep(1.2)
+                    time.sleep(0.75)
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.4 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    time.sleep(1)
+
                     self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
                     self.FuBen_INFO1()
                     dt.press('right')
@@ -3877,7 +3929,7 @@ class Caozuolei(Caozuolei1):
                         dt.keyUp('right')  # ：模拟按键松开按键
 
                 elif j == 6:
-                    time.sleep(1)
+                    time.sleep(0.75)
                     dt.keyDown('up')  # ：模拟按键按下 向下
                     time.sleep(0.6)
                     dt.keyDown('right')  # ：模拟按键按下 向下
@@ -3890,10 +3942,9 @@ class Caozuolei(Caozuolei1):
                     dt.press('s')
                     self.FuBen_INFO66()
                     dt.press('9')
-                    time.sleep(1)
+                    time.sleep(0.7)
                     self.FuBen_INFO1()
 
-                    time.sleep(1)  # 按下两秒
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -3915,7 +3966,7 @@ class Caozuolei(Caozuolei1):
                         self.FuBen_INFO66()
                         self.FuBen_INFO6(1)
                         dt.press('9')
-                        time.sleep(1)
+                        time.sleep(0.75)
                         self.FuBen_INFO1()
                         self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
 
@@ -4807,7 +4858,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(0, 9):  # 打图设置ddddg
+    for aa in range(4, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')g
         # c.Set_Dict(0, 'test3.txt')
         if aa == 11 and pvp == 1:  # aa
