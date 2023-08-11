@@ -2333,6 +2333,7 @@ class Caozuolei(Caozuolei1):
                     # if self.FuBen_INFO3(1) == 1:
                     print(ret_values)
                     print(xxyy)
+                    t13.join()
                     if ret_values[0] == 1:
                         j = 8
                         i = num
