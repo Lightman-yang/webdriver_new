@@ -778,6 +778,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('x')  # ：模拟按键按下
                     time.sleep(0.15)  # 按下两秒
                     dt.press('y')
+                    t13.join()
                     if ret_values[0] == 1:
                         j = 8
                         i = num
@@ -1313,6 +1314,7 @@ class Caozuolei(Caozuolei1):
 
                     dt.press('y')
                     time.sleep(0.2)  # 按下两秒
+                    t13.join()
                     if ret_values[0] == 1:
                         j = 8
                         i = num
@@ -3787,6 +3789,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(2.7 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
+                    t13.join()
                     if ret_values[0] == 1:
                         j = 8
                         i = num
