@@ -357,7 +357,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.85,
                 linesign=" ",
                 isbackcolor=0)
-            if ("靓仔" in aa and zzz) == 1 or ("靓丽" in aa and zzz == 1):
+            if ("靓仔" in aa and zzz == 1) or ("靓丽" in bb and zzz == 1):
                 dt.press('9')
                 time.sleep(1)
                 ret_values.append(2)
@@ -366,7 +366,7 @@ class Caozuolei(Caozuolei1):
 
                 dt.press('f12')
                 time.sleep(1)
-                dt.press('.')
+                # dt.press('.')
                 time.sleep(2)
                 print("再次挑战", 1)
                 ret_values.append(1)
@@ -2832,6 +2832,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('left')
                     print(ret_values)
                     print(xxyy)
+                    t13.join()
                     if ret_values[0] == 1:
                         j = 8
                         i = 24
@@ -3300,7 +3301,7 @@ class Caozuolei(Caozuolei1):
 
                     dt.press('left')
                     dt.press('y')
-
+                    t13.join()
                     if ret_values[0] == 1:
                         j = 8
                         i = num
@@ -4407,7 +4408,7 @@ class Caozuolei(Caozuolei1):
                     num_ss[0] = 0
                     return
 
-                elif int(y - y1) > 10 and z == 88:  # 6
+                elif int(y - y1) > 15 and z == 88:  # 6
                     # print((y- y1) , 'y2')
                     dt.press('up')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
@@ -4421,16 +4422,17 @@ class Caozuolei(Caozuolei1):
                 #     print((x - x1), 'x,3')
                 #    # continu
                 #     print((y - y1)>80)
-                elif -24 <= (x - x1) <= 24 and -16 <= (y - y1) <= 16 and z == 88:  # 7
-                    # print((x-x1), 'y？？？？？？')
-                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    print("up,#7")
-
-                    a.append("真")
-                    return
+                # elif -24 <= (x - x1) <= 24 and -16 <= (y - y1) <= 16 and z == 88:  # 7
+                #     # print((x-x1), 'y？？？？？？')
+                #     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                #     print("up,#7")
+                #
+                #     a.append("真")
+                #     return
                 else:
-                    print('????')
 
+                    print('????')
+                    return
     # 人物移动到地图某一个x，y坐标点
     def forxunhuan(self, sss, aa, bb, cc, dd, hh1=0.75, hh2=0.75, renwuzuobiao=0):  # ,aa,bb,cc,dd
         # self.Use_Dict(0)
@@ -4901,7 +4903,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(8, 9):  # 打图设置ddddg
+    for aa in range(0, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.txt')
         if aa == 11 and pvp == 1:  # aa
@@ -5012,7 +5014,7 @@ if __name__ == '__main__':
             if pvp == 1:
                 #
                 # c.nvQiGong(n, 0.48, 0.2, 0)  # 1p 气功师很懒
-                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
+                c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
             elif pvp == 2:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
             else:
@@ -5028,7 +5030,7 @@ if __name__ == '__main__':
             continue
         elif aa == 2:
             if pvp == 1:
-                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 1p 气功师很懒
+                c.nvQiGong(n, 0.52, 0.26, 0, 0, *canshu)  # 1p 气功师很懒
                 # c.nvQiGong(n, 0.62, 0.26, 0)  # 2p 睡眠不足丶
                 #
             elif pvp == 2:
