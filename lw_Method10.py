@@ -752,7 +752,7 @@ class Caozuolei(Caozuolei1):
             print(move_seep)
             a_error = 0
             Restart_computer = Restart_computer_parameter  # Restart_computer为0或者1，0关闭电脑，1不关闭电脑
-            for j in range(1, 9):
+            for j in range(7, 9):
                 # print('right开始按下{}次'.format(j))
                 # a_error = 0
                 if j == 1:
@@ -815,13 +815,14 @@ class Caozuolei(Caozuolei1):
                             pass
 
                 elif j == 2:
+                    time.sleep(0.3)  # 按下两秒
                     dt.press('w')
                     time.sleep(0.6)  # 按下两秒
                     dt.press('e')
                     time.sleep(0.7)  # 按下两秒
 
                     dt.keyDown('down')  # ：模拟按键按下 向下
-                    time.sleep(1 + move_seep1)
+                    time.sleep(0.8 + move_seep1)
                     dt.keyUp('down')  # ：模拟按键松开按键
                     # self.Find_srt("熟练者", "#422", "功师", "#422")
                     dt.press('q')
@@ -850,7 +851,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.35 + move_seep)
+                    time.sleep(1.45 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
 
@@ -863,7 +864,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.66 + move_seep1)
                     dt.keyUp('down')  # ：模拟按键松开按键
 
-                    time.sleep(0.1)  # 按下两秒
+                    # time.sleep(0.1)  # 按下两秒
                     dt.press('w')
                     time.sleep(0.5)  # 按下两
                     dt.press('right')
@@ -1308,7 +1309,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(2.6 + move_seep)
-                    dt.keyUp('right')  # ：模拟按键松开按键
+                    dt.keyUp('right')  # ：模拟按键松开按键fy
                     time.sleep(0.15)  # 按下两秒
                     dt.press('left')  # ：模拟按键松开按键
 
@@ -4907,7 +4908,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(0, 9):  # 打图设置ddddg
+    for aa in range(7, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.txt')
         if aa == 11 and pvp == 1:  # aa
