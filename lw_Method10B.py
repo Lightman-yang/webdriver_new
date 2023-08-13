@@ -351,6 +351,7 @@ class Caozuolei(Caozuolei1):
             if "靓仔" in aa and zzz == 1:
                 dt.press('9')
                 time.sleep(1)
+                ret_values.append(2)
                 return 2
             elif "再次挑战" in aa:
 
@@ -358,12 +359,17 @@ class Caozuolei(Caozuolei1):
                 time.sleep(1)
                 dt.press('.')
                 time.sleep(2)
-                print("再次挑战", 1)
+                print("再次挑战", )
+                ret_values.append(1)
+                print(ret_values)
+
                 return 1
 
 
             else:
                 print("再次挑战", 0)
+                ret_values.append(0)
+                print(ret_values)
                 return 0
 
     def FuBen_INFO(self):  # 副本地图信息数据实时获取
@@ -2253,6 +2259,19 @@ class Caozuolei(Caozuolei1):
                 # print('right开始按下{}次'.format(j))
                 # a_error = 0
                 if j == 1:
+                    global ret_values
+                    ret_values = []
+                    time.sleep(0.25)  # 按下两秒
+                    dt.press('a')
+                    print(ret_values)
+                    t13 = Thread(target=self.FuBen_INFO3,
+                                 args=(1,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
+                    t13.start()  # 开始运行t1线程
+                    time.sleep(2)  # 按下两秒
+                    print(ret_values, '等等')
+                    ret_values = []
+                    print(ret_values, '等i等')
+                    time.sleep(1000)  # 按下两秒
                     time.sleep(0.25)  # 按下两秒
                     dt.press('a')
                     time.sleep(0.65)  # 按下两秒
@@ -4753,8 +4772,8 @@ if __name__ == '__main__':
 
     canshu = c.excelboot01(22)
     n = 24
-    c.nanQiGong(n, 0, 0, *canshu)  # 1p  男气功
-    # c.nvQiGong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
+    # c.nanQiGong(n, 0, 0, *canshu)  # 1p  男气功
+    c.nvQiGong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
     time.sleep(1000)
 
