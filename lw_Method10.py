@@ -354,13 +354,13 @@ class Caozuolei(Caozuolei1):
                 ret_values.append(2)
                 return 2
             elif "再次挑战" in aa:
-
+                ret_values.append(1)
                 dt.press('f12')
                 time.sleep(1)
                 dt.press('.')
                 time.sleep(2)
                 print("再次挑战", 1)
-                ret_values.append(1)
+
                 return 1
 
 
@@ -2309,6 +2309,7 @@ class Caozuolei(Caozuolei1):
                     # if self.FuBen_INFO3(1) == 1:
                     print(ret_values)
                     print(xxyy)
+                    t13.join()
                     if ret_values[0] == 1:
                         j = 8
                         i = num
@@ -2540,7 +2541,7 @@ class Caozuolei(Caozuolei1):
                         time.sleep(0.75)
                         self.FuBen_INFO1()
                         # time.sleep(1)
-                        dt.keyDown('up')  # ：模拟按键按下 向下
+                        dt.press('up')  # ：模拟按键按下 向下
                         time.sleep(0.56)
                         dt.keyDown('right')  # ：模拟按键按下
                         time.sleep(0.95 + move_seep1)
@@ -2551,10 +2552,10 @@ class Caozuolei(Caozuolei1):
 
                     time.sleep(0.75)
                     dt.keyDown('up')  # ：模拟按键按下 向下
-                    time.sleep(0.77)
+                    time.sleep(0.65)
                     dt.keyDown('right')  # ：模拟按键按下 向下
 
-                    time.sleep(0.55 + move_seep1)
+                    time.sleep(0.5 + move_seep1)
 
                     dt.keyUp('up')  # ：模拟按键松开按键
                     time.sleep(0.6)
@@ -2636,7 +2637,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('alt')
                     #time.sleep(1.3)  # 按下19秒
                     self.FuBen_INFO66(7)
-                    self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2, -15)
+                    self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2, -5)
                     # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     self.FuBen_INFO1()
                     dt.press('up')
@@ -2644,7 +2645,7 @@ class Caozuolei(Caozuolei1):
                     # self.forxunhuan(aa1, bb1, cc1, dd1)
                     dt.press('9')
                     time.sleep(0.5)
-                    dt.press('up')
+                    #dt.press('up')
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -2656,11 +2657,11 @@ class Caozuolei(Caozuolei1):
 
                 elif j == 8:  # 奇数 反之偶数
 
-                    time.sleep(1)
+                    time.sleep(0.55)
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.5 + move_seep)  # 按下19秒
+                    time.sleep(1.3 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('q')
                     time.sleep(0.6)  # 按下19秒
@@ -2683,14 +2684,12 @@ class Caozuolei(Caozuolei1):
                     dt.press('h')
                     time.sleep(0.7)  # 按下19秒
                     dt.press('h')
-                    time.sleep(0.6)  # 按下19秒
-                    dt.press('r')
                     time.sleep(0.8)  # 按下19秒
                     dt.press('ctrl')
                     dt.press('ctrl')
                     time.sleep(1.2)  # 按下19秒
                     dt.press('left')
-                    dt.press('t')
+
 
                     time.sleep(0.8)  # 按下19秒
                     if self.FuBen_INFO2() != 100:
@@ -4356,14 +4355,14 @@ class Caozuolei(Caozuolei1):
                     num_ss[0] = 0
                     return
 
-                elif int(y - y1) < -20 and z == 88:  # 5
+                elif int(y - y1) < -30 and z == 88:  # 5
                     # print((y- y1), 'y1')
                     dt.press('down')
                     print("down,#5 int(y - y1) < -16 and z == 88 ")
                     num_ss[0] = 0
                     return
 
-                elif int(y - y1) > 50 and z == 88:  # 6
+                elif int(y - y1) > 13 and z == 88:  # 6
                     # print((y- y1) , 'y2')
                     dt.press('up')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
@@ -4858,7 +4857,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(4, 9):  # 打图设置ddddg
+    for aa in range(2, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')g
         # c.Set_Dict(0, 'test3.txt')
         if aa == 11 and pvp == 1:  # aa
@@ -4957,7 +4956,7 @@ if __name__ == '__main__':
                 # aa1, bb1, cc1, dd1="熟练者", "#410", "师很", "#140"
                 # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
             else:
-                c.nvQiGong(n, 0.48, 0.22, 0, 0, *canshu)  #3p ll0110ll
+                c.nvQiGong(n, 0.52, 0.22, 0, 0, *canshu)  #3p ll0110ll
             time.sleep(2)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
             c.KeyPress1(27)  # 案件esc建
@@ -5008,7 +5007,7 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  # 2p 十睡眠不足
             else:
-                c.nvQiGong(n, 0.48, 0.22, 0, 0, *canshu)  # 3p 气功该加强了
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
 
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p s睡眠不足s
