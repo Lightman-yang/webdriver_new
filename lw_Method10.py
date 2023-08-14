@@ -4941,9 +4941,9 @@ if __name__ == '__main__':
             break
         # d
         # 女气功的操作流程，从选人物到进入图，在到刷图
-        time.sleep(5)
-        if x[aa][2] == 6 or x[aa][2] == 7 or (x[aa][2] == 8 and pvp == 1) or (pvp == 3 and x[aa][2] == 3) or (
-                pvp == 2 and x[aa][2] == 4) or (pvp == 1 and x[aa][2] == 8):
+        time.sleep(5)           #pvp==2 是睡眠不足
+        if  (x[aa][2] == 7 and pvp == 1) or x[aa][2] == 8  or (pvp == 3 and x[aa][2] == 3) or (
+                pvp == 2 and x[aa][2] == 4) or (pvp == 1 and x[aa][2] == 6) or (pvp == 2 and x[aa][2] == 5):
             c.movingfigur_Down(0.65)  # 向下移动，移动一秒
         else:
 
@@ -5080,7 +5080,8 @@ if __name__ == '__main__':
 
                 c.nanQiGong(n, 0, 0, *canshu)  # 1p  男气功
             elif pvp == 2:
-                c.zhaohuan(n, 0.26, 0.22, 0, 0, *canshu)  # 2p s睡眠不足s
+                #c.zhaohuan(n, 0.26, 0.22, 0, 0, *canshu)  # 2p s睡眠不足s
+                c.nvQiGong(n, 0.69, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
             else:
                 break
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
@@ -5098,8 +5099,9 @@ if __name__ == '__main__':
             if pvp == 1:
                 c.nvQiGong(n, 0.69, 0.26, 0, 0, *canshu) #气功师很烂
             elif pvp == 2:
+                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
-                c.nvQiGong(n, 0.69, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
+                #c.nvQiGong(n, 0.69, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p
             else:
                 break
@@ -5116,8 +5118,8 @@ if __name__ == '__main__':
 
                 c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu) #1p 气功师很猛
             elif pvp == 2:
-
-                c.yuren(n, 0.5, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
+                c.zhaohuan(n, 0.26, 0.22, 0, 0, *canshu)  # 2p s睡眠不足s
+                #c.yuren(n, 0.5, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
 
             else:
                 break
@@ -5134,9 +5136,9 @@ if __name__ == '__main__':
                 c.yuren(n, 0.5, 0.26, 0, 0, *canshu)  # 1p 悟空师很烂 缪斯
 
             elif pvp == 2:
-
+                c.yuren(n, 0.5, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
                 # c.gongjianshou(n, 0.68, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
-                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊
+                #c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊
             else:
                 break
             time.sleep(2)
