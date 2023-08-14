@@ -2479,9 +2479,9 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
-                    t3 = Thread(target=self.forxunhuanY,
-                                args=(sss, aa1, bb1, cc1, dd1, hh1, hh2))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
-                    t3.start()  # 开始运行t1线程
+                    # t3 = Thread(target=self.forxunhuanY,
+                    #             args=(sss, aa1, bb1, cc1, dd1, hh1, hh2))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
+                    # t3.start()  # 开始运行t1线程
                     time.sleep(0.3)
                     # self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     print('<---')
@@ -4191,7 +4191,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         #r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -4392,6 +4392,13 @@ class Caozuolei(Caozuolei1):
                 if h == 1000:
                     print(1000)
                     break
+                elif int(y - y1) > 15 and z == 88:  # 6
+                    # print((y- y1) , 'y2')
+                    dt.press('up')
+                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                    print("up,#6  int(y - y1) > 16 and z == 88 ")
+                    num_ss[0] = 0
+                    return
 
                 elif int(y - y1) > 125 and z == 88:  # 6
                     # print((y- y1) , 'y2')
@@ -4418,13 +4425,7 @@ class Caozuolei(Caozuolei1):
                     num_ss[0] = 0
                     return
 
-                elif int(y - y1) > 15 and z == 88:  # 6
-                    # print((y- y1) , 'y2')
-                    dt.press('up')
-                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    print("up,#6  int(y - y1) > 16 and z == 88 ")
-                    num_ss[0] = 0
-                    return
+
                 # elif 11 < int(y- y1) > -11 and z==88:
                 #     print((y- y1) , 'y3')
                 #    # continue
@@ -4913,7 +4914,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(5, 9):  # 打图设置ddddg
+    for aa in range(1, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.txt')
         if aa == 11 and pvp == 1:  # aa
