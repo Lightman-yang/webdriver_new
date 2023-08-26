@@ -5112,7 +5112,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(8, 10):  # 打图设置ddddg
+    for aa in range(7, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.txt')
         if aa == 11 and pvp == 1:  # aa
@@ -5137,10 +5137,10 @@ if __name__ == '__main__':
         else:
             print('什么都不是')
             break
-        # d9
+        # d
         # 女气功的操作流程，从选人物到进入图，在到刷图
         time.sleep(5)           #pvp==2 是睡眠不足
-        if (x[aa][2] == 9 and pvp == 1) or x[aa][2] == 8 or (pvp == 3 and x[aa][2] == 3) or (
+        if (x[aa][2] == 9 and pvp == 1) or (x[aa][2] == 8 and pvp == 2) or (pvp == 3 and x[aa][2] == 3) or (
                 pvp == 2 and x[aa][2] == 4) or (pvp == 1 and x[aa][2] == 6) or (pvp == 2 and x[aa][2] == 5):
             c.movingfigur_Down(0.65)  # 向下移动，移动一秒
         else:
@@ -5171,16 +5171,16 @@ if __name__ == '__main__':
         dt.press('right')  # 向右移动， 移动1秒
         dt.press('right')  # 向右移动， 移动1秒，
         # if (x[aa][2] == 4 and pvp == 2) or (pvp == 3 and x[aa][2] == 11) or (pvp == 2 and x[aa][2] == 8):
-        if (pvp == 3 and x[aa][2] == 11) or (pvp == 2 and x[aa][2] == 11):
+        if (pvp == 3 and x[aa][2] == 12) or (pvp == 2 and x[aa][2] == 12):
 
             dt.press('left')  # 向右移动， 移动1秒，
             pass
-        elif x[aa][2] == 6 and pvp == 2:
+        elif x[aa][2] == 12 and pvp == 2:
             dt.press('right')  # 向右移动， 移动1秒，
             # dt.press('right')  # 向右移动， 移动1秒，
             # dt.press('right')  # 向右移动， 移动1秒，
         # elif x[aa][2] == 5 and pvp == 2 or (x[aa][2] == 7 and pvp == 2):  # or  (x[aa][2] == 3 and pvp ==2)
-        elif x[aa][2] == 11 and pvp == 2:  # or  (x[aa][2] == 3 and pvp ==2)
+        elif x[aa][2] == 12 and pvp == 2:  # or  (x[aa][2] == 3 and pvp ==2)
 
             dt.press('left')  # 向右移动， 移动1秒，
             dt.press('left')  # 向右移动， 移动1秒，
