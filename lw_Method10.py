@@ -1417,7 +1417,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(0.7)
+                    time.sleep(0.5)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     self.FuBen_INFO66(2)
                     self.FuBen_INFO6()
@@ -1710,12 +1710,11 @@ class Caozuolei(Caozuolei1):
                     dt.press('t')
                     time.sleep(0.73)  # 按下19秒
                     dt.press('s')
-                    time.sleep(0.75)  # 按下19秒
-                    dt.press('f')
 
 
                     time.sleep(0.65)  # 按下两秒
                     for oalt in range(1, 13):
+                        dt.press('ctrl')
                         dt.press('ctrl')
                         dt.press('y')
                         dt.press('f')
@@ -2487,9 +2486,9 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
-                    # t3 = Thread(target=self.forxunhuanY,
-                    #             args=(sss, aa1, bb1, cc1, dd1, hh1, hh2))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
-                    # t3.start()  # 开始运行t1线程
+                    t3 = Thread(target=self.forxunhuanY,
+                                args=(sss, aa1, bb1, cc1, dd1, hh1, hh2))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
+                    t3.start()  # 开始运行t1线程
                     time.sleep(0.3)
                     # self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     print('<---')
@@ -5074,7 +5073,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9]]
-    for aa in range(7, 9):  # 打图设置ddddg
+    for aa in range(1, 9):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.txt')
         if aa == 11 and pvp == 1:  # aa
@@ -5133,7 +5132,7 @@ if __name__ == '__main__':
         dt.press('right')  # 向右移动， 移动1秒
         dt.press('right')  # 向右移动， 移动1秒，
         # if (x[aa][2] == 4 and pvp == 2) or (pvp == 3 and x[aa][2] == 11) or (pvp == 2 and x[aa][2] == 8):
-        if (pvp == 3 and x[aa][2] == 11) or (pvp == 2 and x[aa][2] == 8):
+        if (pvp == 3 and x[aa][2] == 11) or (pvp == 2 and x[aa][2] == 11):
 
             dt.press('left')  # 向右移动， 移动1秒，
             pass
@@ -5314,7 +5313,7 @@ if __name__ == '__main__':
                 c.naiMa(n, 0.5, 0.26, 1, 0, *canshu)  # 1p 奇特木偶 光明骑士
             elif pvp == 2:
 
-                c.naiMa(n, 0.49, 0.26, 1, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
+                c.naiMa(n, 0.51, 0.26, 1, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
 
             else:
                 break
