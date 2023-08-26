@@ -2714,6 +2714,8 @@ class Caozuolei(Caozuolei1):
 
                 elif j == 8:  # 奇数 反之偶数
                     # gg_values[0]=7
+                    global zjyz
+                    zjyz = [9]  # zjyz意思为 “总经验值”
                     print(gg_values[0])
                     time.sleep(0.5)
                     if i == 1:
@@ -2727,7 +2729,8 @@ class Caozuolei(Caozuolei1):
                         dt.press('down')
                     else:
                         pass
-
+                    t360 = Thread(target=self.FuBen_INFO99)  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
+                    t360.start()  # 开始运行t1线程
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -2743,31 +2746,29 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)  # 按下19秒
                     dt.press('e')
                     time.sleep(1.2)  # 按下19秒
-
                     dt.press('w')
                     time.sleep(0.7)  # 按下19秒
                     dt.press('w')
-                    dt.press('w')
-                    dt.press('q')
-                    dt.press('q')
-                    time.sleep(1.5)  # 按下两秒
-                    dt.press('h')
-                    time.sleep(0.7)  # 按下19秒
-                    dt.press('h')
-                    time.sleep(0.6)  # 按下19秒
-                    dt.press('r')
-                    time.sleep(0.8)  # 按下19秒
-                    dt.press('ctrl')
-                    dt.press('ctrl')
-                    time.sleep(1.2)  # 按下19秒
-                    dt.press('left')
-                    dt.press('t')
 
-                    time.sleep(0.8)  # 按下19秒
-                    if self.FuBen_INFO2() != 100:
+                    for i in range(1, 20):
+                        if zjyz[0] == 1:
+                            break
+                        else:
+                            dt.press('q')
+                            dt.press('q')
+                            dt.press('h')
+                            dt.press('r')
+                            dt.press('ctrl')
+                            dt.press('f')
+                            dt.press('ctrl')
+                            dt.press('g')
+                            continue
+
+                    time.sleep(0.5)  # 按下19秒
+                    if self.FuBen_INFO2() != 100 or zjyz[0] == 1:
                         dt.press('0')
 
-                        time.sleep(1)  # 按下两秒
+                        time.sleep(0.5)  # 按下两秒
                         for ii in range(1, 4):
                             num_num = num // 2
                             if i == num_num or i == 10 or i == num:
@@ -5112,7 +5113,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(7, 10):  # 打图设置ddddg
+    for aa in range(1, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.txt')
         if aa == 11 and pvp == 1:  # aa
