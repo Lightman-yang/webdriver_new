@@ -2750,7 +2750,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)  # 按下19秒
                     dt.press('w')
 
-                    for i in range(1, 20):
+                    for iiit in range(1, 20):
                         if zjyz[0] == 1:
                             break
                         else:
@@ -5202,7 +5202,7 @@ if __name__ == '__main__':
         print(aa,sss1,'    sss')
         if aa == 0:
             if pvp == 1:
-                c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
+                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
 
             elif pvp == 2:
 
@@ -5224,7 +5224,7 @@ if __name__ == '__main__':
             if pvp == 1:
                 #
                 # c.nvQiGong(n, 0.48, 0.2, 0)  # 1p 气功师很懒
-                c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
+                c.nvQiGong(n, 0.51, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
             elif pvp == 2:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
             else:
@@ -5260,9 +5260,9 @@ if __name__ == '__main__':
 
                 c.kuangzhanshi(n, 0.4, 0.23, 0, 0, *canshu)  # 1p 狂战士
             elif pvp == 2:
-                c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  # 2p 十睡眠不足
+                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 2p 十睡眠不足
             else:
-                c.nvQiGong(n, 0.62, 0.22, 0, 0, *canshu)  # 3p 气功该加强了
+                c.nvQiGong(n, 0.6, 0.22, 0, 0, *canshu)  # 3p 气功该加强了
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
 
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p s睡眠不足s
@@ -5315,7 +5315,7 @@ if __name__ == '__main__':
         elif aa == 6:
             if pvp == 1:
 
-                c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu) #1p 气功师很猛
+                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 1p 气功师很猛
             elif pvp == 2:
                 c.zhaohuan(n, 0.26, 0.22, 0, 0, *canshu)  # 2p s睡眠不足s
                 #c.yuren(n, 0.5, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
