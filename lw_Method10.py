@@ -853,7 +853,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)  # 按下两秒
                     dt.press('right')
                     dt.keyDown('right')  # ：模拟按键按下 向下
-                    time.sleep(1 + move_seep)
+                    time.sleep(1.3 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     self.FuBen_INFO66(2)
@@ -1064,13 +1064,13 @@ class Caozuolei(Caozuolei1):
                 elif j == 6:
                     #time.sleep(0.65)
                     dt.keyDown('up')  # ：模拟按键按下 向下
-                    time.sleep(0.75)
+                    time.sleep(0.6)
                     dt.keyDown('right')  # ：模拟按键按下 向下
 
                     time.sleep(0.58 + move_seep1)
 
                     dt.keyUp('up')  # ：模拟按键松开按键
-                    time.sleep(0.63)
+                    time.sleep(0.5)
                     dt.press('f')
                     dt.keyUp('right')
 
@@ -5113,7 +5113,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(7, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.txt')
         if aa == 11 and pvp == 1:  # aa
@@ -5335,7 +5335,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  # 1p 气功师很屌
 
             elif pvp == 2:
-                c.yuren(n, 0.5, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
+                c.yuren(n, 0.54, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
                 # c.gongjianshou(n, 0.68, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
                 #c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊
             else:
