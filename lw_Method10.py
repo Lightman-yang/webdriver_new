@@ -996,17 +996,17 @@ class Caozuolei(Caozuolei1):
                 elif j == 5:
                     time.sleep(0.05)
                     dt.keyDown('down')  # ：模拟按键按下 向下
-                    time.sleep(0.75 + move_seep1)
+                    time.sleep(0.78 + move_seep1)
                     dt.press('d')
                     dt.keyUp('down')  # ：模拟按键松开按键
 
                     time.sleep(0.07)  # 按下两秒
                     dt.press('w')
-                    time.sleep(0.67)  # 按下两秒
+                    time.sleep(0.87)  # 按下两秒
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.4 + move_seep)
+                    time.sleep(1.47 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.keyDown('up')  # ：模拟按键按下 向下
@@ -5136,7 +5136,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(8, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.txt')
         if aa == 11 and pvp == 1:  # aa
@@ -5164,7 +5164,8 @@ if __name__ == '__main__':
         # d
         # 女气功的操作流程，从选人物到进入图，在到刷图
         time.sleep(5)           #pvp==2 是睡眠不足
-        if (x[aa][2] == 1 and pvp == 3) or (x[aa][2] == 9 and pvp == 1) or (x[aa][2] == 8 and pvp == 2) or (
+        if (x[aa][2] == 1 and pvp == 3) or (x[aa][2] == 7 and pvp == 1) or (x[aa][2] == 9 and pvp == 1) or (
+                x[aa][2] == 8 and pvp == 2) or (
                 pvp == 3 and x[aa][2] == 3) or (
                 pvp == 2 and x[aa][2] == 4) or (pvp == 1 and x[aa][2] == 6) or (pvp == 2 and x[aa][2] == 5):
             c.movingfigur_Down(0.65)  # 向下移动，移动一秒
