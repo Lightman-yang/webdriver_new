@@ -5252,7 +5252,7 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
             else:
-                c.nvQiGong(n, 0.48, 0.22, 0, 0, *canshu)  # 3p 气功师废了
+                c.nvQiGong(n, 0.48, 0.24, 0, 0, *canshu)  # 3p 气功师废了
                 # c.nvQiGong(n, 0.48, 0.26, 0)  # 气功师该加强了
             time.sleep(3)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
@@ -5270,7 +5270,7 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.48, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
             else:
-                c.nvQiGong(n, 0.54, 0.4, 0, 0, *canshu)  #3p 气功运气
+                c.nvQiGong(n, 0.5, 0.4, 0, 0, *canshu)  #3p 气功运气
             time.sleep(3)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
             c.KeyPress1(27)  # 案件esc建
@@ -5286,7 +5286,7 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.548, 0.26, 0, 0, *canshu)  # 2p 十睡眠不足
             else:
-                c.nvQiGong(n, 0.54, 0.22, 0, 0, *canshu)  # 3p 气功该加强了
+                c.nvQiGong(n, 0.51, 0.22, 0, 0, *canshu)  # 3p 气功该加强了
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
 
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p s睡眠不足s
