@@ -3860,8 +3860,8 @@ class Caozuolei(Caozuolei1):
                     dt.press('f')
                     time.sleep(0.75)  # 按下两秒
                     dt.press('y')
-                    time.sleep(1.75)  # 按下两秒
-                    dt.press('y')
+                    # time.sleep(1.75)  # 按下两秒
+                    # dt.press('y')
                     time.sleep(0.75)  # 按下两秒
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
@@ -3909,7 +3909,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('down')  # ：模拟按键按下 向下
                     time.sleep(1 + move_seep1)
                     dt.keyUp('down')  # ：模拟按键松开按键
-                    dt.press('s')
+                    #dt.press('s')
 
 
                     dt.press('right')
@@ -3926,7 +3926,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.15 + move_seep)
+                    time.sleep(1.25 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
 
@@ -3938,7 +3938,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.66 + move_seep1)
                     dt.keyUp('down')  # ：模拟按键松开按键
 
-                    time.sleep(0.5)
+                    time.sleep(0.1)
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -3955,7 +3955,7 @@ class Caozuolei(Caozuolei1):
                     self.FuBen_INFO66()
                     # Caozuolei().FuBen_INFO6(
                     dt.press('9')
-                    time.sleep(1.2)
+                    time.sleep(0.7)
                     self.FuBen_INFO1()
                     self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
 
@@ -3982,10 +3982,10 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     dt.press('up')
-                    time.sleep(3.1 + move_seep)
+                    time.sleep(3.05 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
                 elif j == 4:
-                    time.sleep(0.75)
+                    time.sleep(0.55)
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
 
@@ -4000,12 +4000,12 @@ class Caozuolei(Caozuolei1):
                     dt.press('w')
                     time.sleep(0.85)
                     dt.press('ctrl')
-                    time.sleep(1)
+                    time.sleep(0.5)
                     self.FuBen_INFO66(1)
 
-                    time.sleep(1.35)
+                    #time.sleep(1.35)
                     dt.press('9')
-                    time.sleep(0.75)
+                    time.sleep(0.7)
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -4051,8 +4051,9 @@ class Caozuolei(Caozuolei1):
                         dt.press('9')
 
                         self.FuBen_INFO1()
+
+                        time.sleep(0.36)
                         dt.press('up')
-                        time.sleep(0.56)
                         dt.keyDown('right')  # ：模拟按键按下
                         time.sleep(1.05 + move_seep1)
                         dt.keyUp('right')  # ：模拟按键松开按键
@@ -4070,8 +4071,8 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('right')
                     dt.press('s')
                     self.FuBen_INFO66()
-                    dt.press('9')
-                    time.sleep(0.7)
+                    # dt.press('9')
+                    # time.sleep(0.7)
                     self.FuBen_INFO1()
 
                     dt.press('right')
@@ -4094,8 +4095,8 @@ class Caozuolei(Caozuolei1):
 
                         self.FuBen_INFO66()
                         self.FuBen_INFO6(1)
-                        dt.press('9')
-                        time.sleep(0.75)
+                        # dt.press('9')
+                        # time.sleep(0.75)
                         self.FuBen_INFO1()
                         self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
 
@@ -4118,13 +4119,14 @@ class Caozuolei(Caozuolei1):
                         dt.keyDown('right')  # ：模拟按键按下
                         time.sleep(1 + move_seep)
                         dt.keyUp('right')  # ：模拟按键松开按
+                        time.sleep(1)
                         # c=1
 
 
 
                 elif j == 7:  # 奇数 反之偶数
 
-                    time.sleep(1)
+                    time.sleep(0.5)
                     dt.keyDown('up')  # ：模拟按键按下 向下
                     time.sleep(0.9 + move_seep1)
                     dt.keyUp('up')  # ：模拟按键松开按键
@@ -4146,9 +4148,9 @@ class Caozuolei(Caozuolei1):
 
                     dt.press('g')
 
-                    time.sleep(1.35)
+                    time.sleep(0.7)
                     dt.press('9')
-                    time.sleep(1.2)
+                    time.sleep(0.7)
                     self.FuBen_INFO66(7)
                     self.FuBen_INFO1()
                     self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
@@ -4162,7 +4164,7 @@ class Caozuolei(Caozuolei1):
                 elif j == 8:  # 奇数 反之偶数
                     global zjyz
                     zjyz = [9]  # zjyz意思为 “总经验值”
-                    time.sleep(0.75)
+                    time.sleep(0.55)
 
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
@@ -4220,7 +4222,7 @@ class Caozuolei(Caozuolei1):
                                 break
                             else:
                                 break
-                        time.sleep(5)  # 按下两秒
+                        time.sleep(3)  # 按下两秒
                         dt.press('esc')
 
                         # print('0')
@@ -4278,7 +4280,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         #r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -5136,7 +5138,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(7, 10):  # 打图设置ddddg
+    for aa in range(2, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.txt')
         if aa == 11 and pvp == 1:  # aa
@@ -5253,7 +5255,7 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
             else:
-                c.nvQiGong(n, 0.48, 0.22, 0, 0, *canshu)  # 3p 气功师废了
+                c.nvQiGong(n, 0.48, 0.24, 0, 0, *canshu)  # 3p 气功师废了
                 # c.nvQiGong(n, 0.48, 0.26, 0)  # 气功师该加强了
             time.sleep(3)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
@@ -5271,7 +5273,7 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.48, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
             else:
-                c.nvQiGong(n, 0.54, 0.4, 0, 0, *canshu)  #3p 气功运气
+                c.nvQiGong(n, 0.5, 0.4, 0, 0, *canshu)  #3p 气功运气
             time.sleep(3)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
             c.KeyPress1(27)  # 案件esc建
@@ -5287,7 +5289,7 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.548, 0.26, 0, 0, *canshu)  # 2p 十睡眠不足
             else:
-                c.nvQiGong(n, 0.54, 0.22, 0, 0, *canshu)  # 3p 气功该加强了
+                c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
 
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p s睡眠不足s
