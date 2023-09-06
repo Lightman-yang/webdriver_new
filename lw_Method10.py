@@ -474,11 +474,25 @@ class Caozuolei(Caozuolei1):
                 linesign=" ",
                 isbackcolor=0)
             print(aa)
+            bb = self.Find_Ocr(
+                x1=12,
+                y1=140,
+                x2=760,
+                y2=333,
+                color_format="#360",
+                sim=0.79,
+                linesign=" ",
+                isbackcolor=0)
             if "不足" in aa:
 
                 print("不足,1")
 
                 return 2
+            elif "一二" in bb:
+
+                print("一二,4")
+
+                return 4
             elif "士拉" in aa:
 
                 print("士拉,2")
@@ -4009,7 +4023,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.4 + move_seep)
+                    time.sleep(1.85 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
@@ -4280,7 +4294,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         #r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -5138,7 +5152,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(6, 10):  # 打图设置ddddg
+    for aa in range(1, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.txt')
         if aa == 11 and pvp == 1:  # aa
@@ -5160,13 +5174,15 @@ if __name__ == '__main__':
             sss1 = 1  #睡眠不足十
         elif pvp == 3:
             sss1 = 20  #ll0110ll
+        elif pvp == 4:
+            sss1 = 24  # 快递员
         else:
             print('什么都不是')
             break
         # d
         # 女气功的操作流程，从选人物到进入图，在到刷图
         time.sleep(5)           #pvp==2 是睡眠不足
-        if (x[aa][2] == 1 and pvp == 3) or (x[aa][2] == 7 and pvp == 1) or (x[aa][2] == 9 and pvp == 1) or (
+        if (x[aa][2] == 1 and pvp == 4) or(x[aa][2] == 1 and pvp == 3) or (x[aa][2] == 7 and pvp == 1) or (x[aa][2] == 9 and pvp == 1) or (
                 x[aa][2] == 8 and pvp == 2) or (
                 pvp == 3 and x[aa][2] == 3) or (
                 pvp == 2 and x[aa][2] == 4) or (pvp == 1 and x[aa][2] == 6) or (pvp == 2 and x[aa][2] == 5):
@@ -5237,6 +5253,8 @@ if __name__ == '__main__':
                 # aa1, bb1, cc1, dd1 = "先驱者", "#422", "师很", "#140"
                 # aa1, bb1, cc1, dd1="熟练者", "#410", "师很", "#140"
                 # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
+            elif pvp ==4:
+                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 4p 气功师很水
             else:
                 c.nvQiGong(n, 0.48, 0.22, 0, 0, *canshu)  #3p ll0110ll
             time.sleep(2)
@@ -5254,6 +5272,10 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.51, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
             elif pvp == 2:
                 c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
+            elif pvp == 4:
+                break
+                #c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 4p 快递员
+
             else:
                 c.nvQiGong(n, 0.48, 0.24, 0, 0, *canshu)  # 3p 气功师废了
                 # c.nvQiGong(n, 0.48, 0.26, 0)  # 气功师该加强了
@@ -5325,7 +5347,7 @@ if __name__ == '__main__':
             if pvp == 1:
                 c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  #气功师很烂
             elif pvp == 2:
-                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊
+                c.nvQiGong(n, 0.42, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
                 #c.nvQiGong(n, 0.69, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p
