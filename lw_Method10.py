@@ -2391,7 +2391,7 @@ class Caozuolei(Caozuolei1):
                         print('测试', t13)
                         self.FuBen_INFO66()
 
-                        self.FuBen_INFO6()
+                        #self.FuBen_INFO6()
                         # dt.keyDown('down')  # ：模拟按键按下 向下
                         # time.sleep(0.5 + move_seep1)
                         # dt.keyUp('down')  # ：模拟按键松开按键
@@ -2444,7 +2444,7 @@ class Caozuolei(Caozuolei1):
 
                     self.FuBen_INFO66()
 
-                    self.FuBen_INFO6()
+                    #self.FuBen_INFO6()
                     dt.press('9')
                     time.sleep(0.5)
                     self.FuBen_INFO1()
@@ -2490,7 +2490,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.5)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     self.FuBen_INFO66()
-                    self.FuBen_INFO6()
+                    #self.FuBen_INFO6()
                     #time.sleep(0.5)
                     dt.press('9')
                     time.sleep(0.6)
@@ -2595,7 +2595,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('c')
 
                     self.FuBen_INFO66()
-                    self.FuBen_INFO6()
+                    ##self.FuBen_INFO6()
 
                     if self.forxunhuan(6, aa1, bb1, cc1, dd1, hh1, hh2,15) == 7:
                         print('结束')
@@ -2658,7 +2658,7 @@ class Caozuolei(Caozuolei1):
                         dt.press('g')
                         time.sleep(0.75)
                         dt.press('f')
-                        self.FuBen_INFO66()
+                        ##self.FuBen_INFO66()
                         self.FuBen_INFO6(1)
                         dt.press('9')
                         time.sleep(0.85)
@@ -2687,14 +2687,14 @@ class Caozuolei(Caozuolei1):
                         dt.keyDown('right')  # ：模拟按键按下
                         time.sleep(1.5 + move_seep)
                         dt.keyUp('right')  # ：模拟按键松开按
-                        time.sleep(1.5)  # 按下两秒
+                        time.sleep(1.6)  # 按下两秒
 
                     # c=1
 
 
 
                 elif j == 7:  # 奇数 反之偶数
-                    time.sleep(0.75)
+                    time.sleep(0.35)
 
                     dt.keyDown('up')  # ：模拟按键按下 向下
                     time.sleep(1.1 + move_seep1)
@@ -2731,7 +2731,7 @@ class Caozuolei(Caozuolei1):
                     global zjyz
                     zjyz = [9]  # zjyz意思为 “总经验值”
                     print(gg_values[0])
-                    time.sleep(0.5)
+                    time.sleep(0.35)
                     if i == 1:
 
                         t38 = Thread(target=self.forxunhuanKF,
@@ -5152,7 +5152,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(1, 10):  # 打图设置ddddg
+    for aa in range(0, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.txt')
         if aa == 11 and pvp == 1:  # aa
