@@ -17,6 +17,7 @@ from PIL import Image
 from comtypes.client import CreateObject
 from win32gui import FindWindow
 
+
 from python_findpicture import Caozuolei1
 
 
@@ -2500,7 +2501,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('left')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(3.7 + move_seep)
+                    time.sleep(3.5 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
 
                     time.sleep(0.5)
@@ -2581,7 +2582,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.43 + move_seep)
+                    time.sleep(1.33 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.keyDown('up')  # ：模拟按键按下 向下
@@ -2628,7 +2629,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.55 + move_seep1)
 
                     dt.keyUp('up')  # ：模拟按键松开按键
-                    time.sleep(0.6)
+                    time.sleep(0.66)
                     dt.keyUp('right')
                     dt.press('g')
                     time.sleep(0.7)
@@ -2649,7 +2650,7 @@ class Caozuolei(Caozuolei1):
                         dt.press('left')
                         time.sleep(0.0075)  # 按下两秒
                         dt.keyDown('left')  # ：模拟按键按下
-                        time.sleep(3.65 + move_seep)
+                        time.sleep(3.56 + move_seep)
                         dt.keyUp('left')  # ：模拟按键松开按键
 
                         time.sleep(0.5)
@@ -2675,7 +2676,7 @@ class Caozuolei(Caozuolei1):
                         dt.press('right')
                         time.sleep(0.0075)  # 按下两秒
                         dt.keyDown('right')  # ：模拟按键按下
-                        time.sleep(3.4 + move_seep)
+                        time.sleep(3.25 + move_seep)
                         dt.keyUp('right')  # ：模拟按键松开按键
 
                     else:
@@ -4294,7 +4295,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         #r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -4495,11 +4496,14 @@ class Caozuolei(Caozuolei1):
                 if h == 1000:
                     print(1000)
                     break
-                elif int(y - y1) > 15 and z == 88:  # 6
+                elif y == 0 or y1 ==0:
+                    print('y=',y,' y1=',y1)
+                    return
+                elif int(y - y1) > 50 and z == 88:  # 6
                     # print((y- y1) , 'y2')
-                    dt.press('up')
+                    dt.press('down')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    print("up,#6  int(y - y1) > 16 and z == 88 ")
+                    print('y=',y,' y1=',(y-y1),"up,#6  int(y - y1) > 16 and z == 88 ")
                     num_ss[0] = 0
                     return
 
@@ -4507,9 +4511,9 @@ class Caozuolei(Caozuolei1):
                     # print((y- y1) , 'y2')
                     # dt.press('up')
                     # dt.press('up')
-                    dt.keyDown('up')  # ：模拟按键按下
+                    dt.keyDown('down')  # ：模拟按键按下
                     time.sleep(0.25)
-                    dt.keyUp('up')  # ：模拟按键松开按键
+                    dt.keyUp('down')  # ：模拟按键松开按键
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
                     print("up,#6  int(y - y1) > 16 and z == 88 ")
                     num_ss[0] = 0
@@ -4523,7 +4527,7 @@ class Caozuolei(Caozuolei1):
 
                 elif int(y - y1) < -33 and z == 88:  # 5
                     # print((y- y1), 'y1')
-                    dt.press('down')
+                    dt.press('up')
                     print("down,#5 int(y - y1) < -16 and z == 88 ")
                     num_ss[0] = 0
                     return
@@ -5159,7 +5163,7 @@ if __name__ == '__main__':
             # if aa == 3 and pvp. == 1:# aa
             aa = 4
         # elif aa == 6 and pvp == 1:
-        #     aa = 7
+        #     aa = 7gdfy
         elif aa == 13 and pvp == 2:
             aa = 14
         time.sleep(1.85)  # 选一个任务
