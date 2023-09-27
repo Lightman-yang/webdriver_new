@@ -17,7 +17,6 @@ from PIL import Image
 from comtypes.client import CreateObject
 from win32gui import FindWindow
 
-
 from python_findpicture import Caozuolei1
 
 
@@ -2582,7 +2581,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.23 + move_seep)
+                    time.sleep(1.21 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.keyDown('up')  # ：模拟按键按下 向下
@@ -2676,7 +2675,7 @@ class Caozuolei(Caozuolei1):
                         dt.press('right')
                         time.sleep(0.0075)  # 按下两秒
                         dt.keyDown('right')  # ：模拟按键按下
-                        time.sleep(3.25 + move_seep)
+                        time.sleep(3.1 + move_seep)
                         dt.keyUp('right')  # ：模拟按键松开按键
 
                     else:
@@ -2698,13 +2697,13 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.35)
 
                     dt.keyDown('up')  # ：模拟按键按下 向下
-                    time.sleep(1.1 + move_seep1)
+                    time.sleep(1.05 + move_seep1)
                     dt.keyUp('up')  # ：模拟按键松开按键
 
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.3 + move_seep)  # 按下19秒
+                    time.sleep(1.25 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('alt')
                     dt.press('alt')
@@ -2721,7 +2720,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.3 + move_seep)  # 按下19秒
+                    time.sleep(1.25 + move_seep)  # 按下19秒
                     # time.sleep(1.8 + move_seep)  # 按下19秒
 
                     dt.keyUp('right')  # ：模拟按键松开按键
@@ -4295,7 +4294,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         #r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -4413,6 +4412,7 @@ class Caozuolei(Caozuolei1):
                 xxyy[4] = 88  # 找到数据传88
                 # xxyy[2:2] = x, y
                 print('开洞', z[0], '-', 140, '=', xxyy[2])
+                print('开洞yy', z[0], '+50+renwuzuobiao', 140, renwuzuobiao, '=', xxyy[2], '(开洞Y坐标)')
                 print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
                 return
             else:
@@ -4496,41 +4496,42 @@ class Caozuolei(Caozuolei1):
                 if h == 1000:
                     print(1000)
                     break
-                elif y == 0 or y1 ==0:
-                    print('y=',y,' y1=',y1)
+                elif y == 0 or y1 == 0:
+                    print('y=', y, ' y1=', y1)
                     return
-                elif int(y - y1) > 50 and z == 88:  # 6
+                elif int(y - y1) > 140 and z == 88:  # 6
                     # print((y- y1) , 'y2')
-                    dt.press('down')
+                    dt.press('up')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    print('y=',y,' y1=',(y-y1),"up,#6  int(y - y1) > 16 and z == 88 ")
+                    print('y=', y, ' y1=', (y - y1), "up,#6  int(y - y1) > 16 and z == 88 ")
                     num_ss[0] = 0
                     return
 
-                elif int(y - y1) > 125 and z == 88:  # 6
+                elif int(y - y1) > 22 and z == 88:  # 6
                     # print((y- y1) , 'y2')
                     # dt.press('up')
                     # dt.press('up')
-                    dt.keyDown('down')  # ：模拟按键按下
-                    time.sleep(0.25)
-                    dt.keyUp('down')  # ：模拟按键松开按键
+                    dt.keyDown('up')  # ：模拟按键按下
+                    time.sleep(0.1)
+                    dt.keyUp('up')  # ：模拟按键松开按键
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
                     print("up,#6  int(y - y1) > 16 and z == 88 ")
                     num_ss[0] = 0
                     return
-                elif int(y - y1) > -150 and z == 88:  # 6
-                    # print((y- y1) , 'y2')
-                    # dt.press('up')
-                    # dt.press('up')
-                    print('不动，数据不名称，', (y - y1), '> -150 ')
-                    return
-
-                elif int(y - y1) < -33 and z == 88:  # 5
+                elif int(y - y1) < -110 and z == 88:  # 5
                     # print((y- y1), 'y1')
-                    dt.press('up')
+                    dt.press('down')
                     print("down,#5 int(y - y1) < -16 and z == 88 ")
                     num_ss[0] = 0
                     return
+                elif 33 > int(y - y1) > -60 and z == 88:  # 6
+                    # print((y- y1) , 'y2')
+                    # dt.press('up')
+                    # dt.press('down')
+                    print('不动，数据不名称，', (y - y1), '> -150 ')
+                    return
+
+
 
 
                 # elif 11 < int(y- y1) > -11 and z==88:
@@ -5163,12 +5164,12 @@ if __name__ == '__main__':
             # if aa == 3 and pvp. == 1:# aa
             aa = 4
         # elif aa == 6 and pvp == 1:
-        #     aa = 7gdfy
+        #     aa = 7gdfyhe
         elif aa == 13 and pvp == 2:
             aa = 14
         time.sleep(1.85)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441 , 310
-        time.sleep(0.015)
+        time.slfeep(0.015)
         c.LeftClick(x[aa][0], x[aa][1])  # 单机两下鼠标左键0
         time.sleep(1.8)
         # c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
@@ -5249,7 +5250,7 @@ if __name__ == '__main__':
         print(aa,sss1,'    sss')
         if aa == 0:
             if pvp == 1:
-                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
+                c.nvQiGong(n, 0.55, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
 
             elif pvp == 2:
 
