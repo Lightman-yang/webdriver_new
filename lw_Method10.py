@@ -17,6 +17,7 @@ from PIL import Image
 from comtypes.client import CreateObject
 from win32gui import FindWindow
 
+
 from python_findpicture import Caozuolei1
 
 
@@ -289,7 +290,7 @@ class Caozuolei(Caozuolei1):
 
                 img = pyautogui.screenshot(region=[48, 84, 848, 684])
                 img = Image.fromarray(np.uint8(img))
-                img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
+                #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
 
                 dt.press('9')
                 time.sleep(1)  # 按下两秒
@@ -900,7 +901,7 @@ class Caozuolei(Caozuolei1):
 
                     # time.sleep(0.1)  # 按下两秒
                     dt.press('w')
-                    time.sleep(1)  # 按下两
+                    time.sleep(0.5)  # 按下两
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -1285,7 +1286,7 @@ class Caozuolei(Caozuolei1):
 
                 img = pyautogui.screenshot(region=[48, 84, 848, 684])
                 img = Image.fromarray(np.uint8(img))
-                img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
+                #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
                 time.sleep(1)
                 print(b)
                 break
@@ -1809,7 +1810,7 @@ class Caozuolei(Caozuolei1):
 
                 img = pyautogui.screenshot(region=[48, 84, 848, 684])
                 img = Image.fromarray(np.uint8(img))
-                img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
+                #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
                 time.sleep(1)
                 print(b)
                 break
@@ -2295,7 +2296,7 @@ class Caozuolei(Caozuolei1):
 
                 img = pyautogui.screenshot(region=[48, 84, 848, 684])
                 img = Image.fromarray(np.uint8(img))
-                img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
+                #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
                 time.sleep(1)
                 print(b)
                 break
@@ -2337,9 +2338,9 @@ class Caozuolei(Caozuolei1):
             # move_seep = -0.52  # 57.7   气功4.2  40.8
             # move_seep1= -0.26
 
-            move_seep = -move_seepx - 0.25
+            move_seep = -move_seepx - 0.05
             move_seep1 = -move_seepy
-            # move_seep = -0.95  # 57.70
+            # move_seep = -0.8  # 57.70
             # move_seep1 = -0.23
             m_button = 'h'
             print(move_seep)
@@ -2500,7 +2501,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('left')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(3.75 + move_seep)
+                    time.sleep(3.7 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
 
                     time.sleep(0.5)
@@ -2532,7 +2533,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(3.5 + move_seep)
+                    time.sleep(3.3 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
                 elif j == 4:
                     time.sleep(0.5)
@@ -2581,7 +2582,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.4 + move_seep)
+                    time.sleep(1.43 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.keyDown('up')  # ：模拟按键按下 向下
@@ -2614,7 +2615,7 @@ class Caozuolei(Caozuolei1):
 
                         time.sleep(0.56)
                         dt.keyDown('right')  # ：模拟按键按下
-                        time.sleep(0.95 + move_seep1)
+                        time.sleep(1.15 + move_seep1)
                         dt.keyUp('right')  # ：模拟按键松开按键
 
 
@@ -2634,7 +2635,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)
                     # self.Find_srt(aa1, bb1, cc1, dd1)
                     dt.keyDown('right')  # ：模拟按键按下 向下
-                    time.sleep(0.6 + move_seep1)
+                    time.sleep(0.65 + move_seep1)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     t31 = Thread(target=self.FuBen_INFO66())  # 定义线程t2，
                     t31.start()  # 开始运行t1线程
@@ -2649,7 +2650,7 @@ class Caozuolei(Caozuolei1):
                         dt.press('left')
                         time.sleep(0.0075)  # 按下两秒
                         dt.keyDown('left')  # ：模拟按键按下
-                        time.sleep(3.7 + move_seep)
+                        time.sleep(3.65 + move_seep)
                         dt.keyUp('left')  # ：模拟按键松开按键
 
                         time.sleep(0.5)
@@ -2764,7 +2765,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)  # 按下19秒
                     dt.press('w')
 
-                    for iiit in range(1, 80):
+                    for iiit in range(1, 100):
                         if zjyz[0] == 1:
                             break
                         else:
@@ -2842,7 +2843,7 @@ class Caozuolei(Caozuolei1):
 
                 img = pyautogui.screenshot(region=[48, 84, 848, 684])
                 img = Image.fromarray(np.uint8(img))
-                img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
+                #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
                 time.sleep(1)
                 print(b)
                 break
@@ -2995,7 +2996,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('left')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(4.4 + move_seep)
+                    time.sleep(4.0 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
 
                     time.sleep(0.5)
@@ -3053,7 +3054,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(2.2 + move_seep)
+                    time.sleep(2.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     self.FuBen_INFO6(0, 6)
@@ -3143,7 +3144,7 @@ class Caozuolei(Caozuolei1):
                         dt.press('left')
                         time.sleep(0.0075)  # 按下两秒
                         dt.keyDown('left')  # ：模拟按键按下
-                        time.sleep(4.4 + move_seep)
+                        time.sleep(4.0 + move_seep)
                         dt.keyUp('left')  # ：模拟按键松开按键
 
                         time.sleep(0.5)
@@ -3330,7 +3331,7 @@ class Caozuolei(Caozuolei1):
 
                 img = pyautogui.screenshot(region=[48, 84, 848, 684])
                 img = Image.fromarray(np.uint8(img))
-                img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
+                #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
                 time.sleep(1)
                 print(b)
                 break
@@ -3352,7 +3353,7 @@ class Caozuolei(Caozuolei1):
         for i in range(1, 60):
             time.sleep(2)
             num = num_parameter  # num不能是奇数 运行几次
-            move_seep = -0.52 - 0.06  # 57.7
+            move_seep = -0.52-0.06 # 57.7
             m_button = 'h'
             print(move_seep)
             Restart_computer = Restart_computer_parameter  # Restart_computer为0或者1，0关闭电脑，1不关闭电脑
@@ -3494,7 +3495,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('left')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(3.9 + move_seep)
+                    time.sleep(3.5 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
 
                     dt.press('f')
@@ -3552,7 +3553,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.63 + move_seep)
+                    time.sleep(1.65 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     self.FuBen_INFO66()
                     self.FuBen_INFO6()
@@ -3578,14 +3579,14 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.2 + move_seep)
+                    time.sleep(1.25 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.keyDown('up')  # ：模拟按键按下 向下
                     time.sleep(1.6)
                     dt.keyUp('up')  # ：模拟按键松开按键
                     dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(0.8 + move_seep)
+                    time.sleep(0.95 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
                     dt.press('t')
                     time.sleep(0.8)
@@ -3610,7 +3611,7 @@ class Caozuolei(Caozuolei1):
                         # time.sleep(1)
                         dt.press('up')
                         dt.keyDown('right')  # ：模拟按键按下
-                        time.sleep(1.15 + move_seep)
+                        time.sleep(0.95 + move_seep)
                         dt.keyUp('right')  # ：模拟按键松开按键
 
                 elif j == 6:
@@ -3620,9 +3621,9 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')
                     time.sleep(0.48)
                     dt.keyUp('up')  # ：模拟按键松开按键
-                    time.sleep(0.6)
+                    time.sleep(0.45)
                     dt.keyUp('right')  # ：模拟按键松开按
-                    time.sleep(0.35)  # 按下两秒
+                    time.sleep(0.85)  # 按下两秒
                     dt.press('e')
                     time.sleep(0.0075)  # 按下两秒
                     dt.press('e')
@@ -3642,7 +3643,7 @@ class Caozuolei(Caozuolei1):
                         dt.press('left')
                         time.sleep(0.0075)  # 按下两秒
                         dt.keyDown('left')  # ：模拟按键按下
-                        time.sleep(4.0 + move_seep)
+                        time.sleep(3.8 + move_seep)
                         dt.keyUp('left')  # ：模拟按键松开按键
 
                         time.sleep(0.5)
@@ -3823,7 +3824,7 @@ class Caozuolei(Caozuolei1):
 
                 img = pyautogui.screenshot(region=[48, 84, 848, 684])
                 img = Image.fromarray(np.uint8(img))
-                img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
+                #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
                 time.sleep(1)
                 print(b)
                 break
@@ -4276,7 +4277,7 @@ class Caozuolei(Caozuolei1):
 
                 img = pyautogui.screenshot(region=[48, 84, 848, 684])
                 img = Image.fromarray(np.uint8(img))
-                img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
+                #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
                 time.sleep(1)
                 print(b)
                 break
@@ -4294,7 +4295,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         #r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -4303,7 +4304,7 @@ class Caozuolei(Caozuolei1):
         # zz1=data.get_sheet_by_name('Sheet1') #第三种不知道和第二种有什么区别
         # 获取表A1数据
         # z_max=zz1.max_row #获取最大行数
-        # z_min=zz1.min_row #获取最小行数
+        # z_min=zz1.min_row #获取最小行数f'y
         # c_min=zz1.max_column #获取最大数列
         # c_min = zz1.min_column  # 获取最小数列
         # cell.coordinate 定位数据
@@ -4495,7 +4496,7 @@ class Caozuolei(Caozuolei1):
                 if h == 1000:
                     print(1000)
                     break
-                elif int(y - y1) > 11 and z == 88:  # 6
+                elif int(y - y1) > 15 and z == 88:  # 6
                     # print((y- y1) , 'y2')
                     dt.press('up')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
@@ -5152,7 +5153,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(5, 10):  # 打图设置ddddg
+    for aa in range(3, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.txt')
         if aa == 11 and pvp == 1:  # aa
@@ -5245,7 +5246,7 @@ if __name__ == '__main__':
         print(aa,sss1,'    sss')
         if aa == 0:
             if pvp == 1:
-                c.nvQiGong(n, 0.53, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
+                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
 
             elif pvp == 2:
 
@@ -5256,7 +5257,7 @@ if __name__ == '__main__':
             elif pvp ==4:
                 c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 4p 气功师很水
             else:
-                c.nvQiGong(n, 0.48, 0.22, 0, 0, *canshu)  #3p ll0110ll
+                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  #3p ll0110ll
             time.sleep(2)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
             c.KeyPress1(27)  # 案件esc建
@@ -5277,7 +5278,7 @@ if __name__ == '__main__':
                 #c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 4p 快递员
 
             else:
-                c.nvQiGong(n, 0.48, 0.24, 0, 0, *canshu)  # 3p 气功师废了
+                c.nvQiGong(n, 0.42, 0.26, 0, 0, *canshu)  # 3p 气功师废了
                 # c.nvQiGong(n, 0.48, 0.26, 0)  # 气功师该加强了
             time.sleep(3)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
@@ -5295,7 +5296,7 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.48, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
             else:
-                c.nvQiGong(n, 0.5, 0.4, 0, 0, *canshu)  #3p 气功运气
+                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  #3p 气功运气
             time.sleep(3)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
             c.KeyPress1(27)  # 案件esc建
@@ -5311,7 +5312,7 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.548, 0.26, 0, 0, *canshu)  # 2p 十睡眠不足
             else:
-                c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
 
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p s睡眠不足s
@@ -5345,7 +5346,7 @@ if __name__ == '__main__':
             continue
         elif aa == 5:
             if pvp == 1:
-                c.nvQiGong(n, 0.53, 0.26, 0, 0, *canshu)  # 气功师很烂
+                c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  #气功师很烂
             elif pvp == 2:
                 c.nvQiGong(n, 0.42, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
@@ -5399,7 +5400,7 @@ if __name__ == '__main__':
             continue
         elif aa == 8:
             if pvp == 1:
-                c.yuren(n, 0.525, 0.26, 0, 0, *canshu)  # 1p 悟空师很烂 缪斯
+                c.yuren(n, 0.52, 0.26, 0, 0, *canshu)  # 1p 悟空师很烂 缪斯
             elif pvp == 2:
 
                 c.naiMa(n, 0.49, 0.26, 1, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
