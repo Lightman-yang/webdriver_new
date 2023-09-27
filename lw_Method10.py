@@ -2582,7 +2582,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.33 + move_seep)
+                    time.sleep(1.23 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.keyDown('up')  # ：模拟按键按下 向下
@@ -4295,7 +4295,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         #r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -4499,7 +4499,7 @@ class Caozuolei(Caozuolei1):
                 elif y == 0 or y1 ==0:
                     print('y=',y,' y1=',y1)
                     return
-                elif int(y - y1) > 50 and z == 88:  # 6
+                elif 124 > (y - y1) > 50 and z == 88:  # 6
                     # print((y- y1) , 'y2')
                     dt.press('down')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
@@ -4510,10 +4510,10 @@ class Caozuolei(Caozuolei1):
                 elif int(y - y1) > 125 and z == 88:  # 6
                     # print((y- y1) , 'y2')
                     # dt.press('up')
-                    # dt.press('up')
-                    dt.keyDown('down')  # ：模拟按键按下
-                    time.sleep(0.25)
-                    dt.keyUp('down')  # ：模拟按键松开按键
+                    dt.press('up')
+                    # dt.keyDown('down')  # ：模拟按键按下
+                    # time.sleep(0.25)
+                    # dt.keyUp('down')  # ：模拟按键松开按键
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
                     print("up,#6  int(y - y1) > 16 and z == 88 ")
                     num_ss[0] = 0
@@ -5260,7 +5260,7 @@ if __name__ == '__main__':
             elif pvp ==4:
                 c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 4p 气功师很水
             else:
-                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  #3p ll0110ll
+                c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  #3p ll0110ll
             time.sleep(2)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
             c.KeyPress1(27)  # 案件esc建
