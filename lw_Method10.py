@@ -5248,7 +5248,7 @@ if __name__ == '__main__':
         time.sleep(0.5)  # 睡眠1.5秒gdf
         # aa1, bb1, cc1, dd1 = "挑战者", "#360", "师很", "#140"
         canshu = c.excelboot01(aa + sss1)  # 调用excel表数据取值# 2p是加1 1p是加7  3p是 14
-        n =1
+        n = 60
         print(aa,sss1,'    sss')
         if aa == 0:
             if pvp == 1:
