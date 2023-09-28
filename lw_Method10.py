@@ -4294,7 +4294,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         #r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -5157,7 +5157,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(1, 10):  # 打图设置ddddg
+    for aa in range(2, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.txt')
         if aa == 11 and pvp == 1:  # aa
@@ -5169,7 +5169,7 @@ if __name__ == '__main__':
             aa = 14
         time.sleep(1.85)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441 , 310
-        time.slfeep(0.015)
+        time.sleep(0.015)
         c.LeftClick(x[aa][0], x[aa][1])  # 单机两下鼠标左键0
         time.sleep(1.8)
         # c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
@@ -5276,7 +5276,7 @@ if __name__ == '__main__':
                 # c.nvQiGong(n, 0.48, 0.2, 0)  # 1p 气功师很懒
                 c.nvQiGong(n, 0.51, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
             elif pvp == 2:
-                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
+                c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
             elif pvp == 4:
                 break
                 #c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 4p 快递员
@@ -5298,7 +5298,7 @@ if __name__ == '__main__':
                 # c.nvQiGong(n, 0.62, 0.26, 0)  # 2p 睡眠不足丶
                 #
             elif pvp == 2:
-                c.nvQiGong(n, 0.48, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
+                c.nvQiGong(n, 0.56, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
             else:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  #3p 气功运气
             time.sleep(3)
