@@ -2500,7 +2500,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('left')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(3.5 + move_seep)
+                    time.sleep(3.45 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
 
                     time.sleep(0.5)
@@ -2539,7 +2539,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.8 + move_seep)
+                    time.sleep(1.75 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('y')
 
@@ -2628,7 +2628,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.55 + move_seep1)
 
                     dt.keyUp('up')  # ：模拟按键松开按键
-                    time.sleep(0.66)
+                    time.sleep(0.75)
                     dt.keyUp('right')
                     dt.press('g')
                     time.sleep(0.7)
@@ -2649,7 +2649,7 @@ class Caozuolei(Caozuolei1):
                         dt.press('left')
                         time.sleep(0.0075)  # 按下两秒
                         dt.keyDown('left')  # ：模拟按键按下
-                        time.sleep(3.56 + move_seep)
+                        time.sleep(3.5 + move_seep)
                         dt.keyUp('left')  # ：模拟按键松开按键
 
                         time.sleep(0.5)
@@ -2675,7 +2675,7 @@ class Caozuolei(Caozuolei1):
                         dt.press('right')
                         time.sleep(0.0075)  # 按下两秒
                         dt.keyDown('right')  # ：模拟按键按下
-                        time.sleep(3.1 + move_seep)
+                        time.sleep(3.05 + move_seep)
                         dt.keyUp('right')  # ：模拟按键松开按键
 
                     else:
@@ -4294,7 +4294,8 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        #data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         #r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -5157,9 +5158,9 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(3, 10):  # 打图设置ddddg
+    for aa in range(6, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
-        # c.Set_Dict(0, 'test3.txt')
+        # c.Set_Dict(0, 'test3.t1xt')
         if aa == 11 and pvp == 1:  # aa
             # if aa == 3 and pvp. == 1:# aa
             aa = 4
@@ -5246,7 +5247,7 @@ if __name__ == '__main__':
         time.sleep(0.5)  # 睡眠1.5秒gdf
         # aa1, bb1, cc1, dd1 = "挑战者", "#360", "师很", "#140"
         canshu = c.excelboot01(aa + sss1)  # 调用excel表数据取值# 2p是加1 1p是加7  3p是 14
-        n =24
+        n =1
         print(aa,sss1,'    sss')
         if aa == 0:
             if pvp == 1:
@@ -5276,13 +5277,13 @@ if __name__ == '__main__':
                 # c.nvQiGong(n, 0.48, 0.2, 0)  # 1p 气功师很懒
                 c.nvQiGong(n, 0.51, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
             elif pvp == 2:
-                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
             elif pvp == 4:
                 break
                 #c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 4p 快递员
 
             else:
-                c.nvQiGong(n, 0.42, 0.26, 0, 0, *canshu)  # 3p 气功师废了
+                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 3p 气功师废了
                 # c.nvQiGong(n, 0.48, 0.26, 0)  # 气功师该加强了
             time.sleep(3)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
@@ -5294,13 +5295,13 @@ if __name__ == '__main__':
             continue
         elif aa == 2:
             if pvp == 1:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师很懒
+                c.nvQiGong(n, 0.52, 0.26, 0, 0, *canshu)  # 1p 气功师很懒
                 # c.nvQiGong(n, 0.62, 0.26, 0)  # 2p 睡眠不足丶
                 #
             elif pvp == 2:
-                c.nvQiGong(n, 0.48, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
+                c.nvQiGong(n, 0.56, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
             else:
-                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  #3p 气功运气
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #3p 气功运气
             time.sleep(3)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
             c.KeyPress1(27)  # 案件esc建
@@ -5314,9 +5315,9 @@ if __name__ == '__main__':
 
                 c.kuangzhanshi(n, 0.4, 0.23, 0, 0, *canshu)  # 1p 狂战士
             elif pvp == 2:
-                c.nvQiGong(n, 0.548, 0.26, 0, 0, *canshu)  # 2p 十睡眠不足
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p 十睡眠不足
             else:
-                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
+                c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
 
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p s睡眠不足s
@@ -5334,8 +5335,9 @@ if __name__ == '__main__':
                 c.nanQiGong(n, 0, 0, *canshu)  # 1p  男气功
             elif pvp == 2:
                 #c.zhaohuan(n, 0.26, 0.22, 0, 0, *canshu)  # 2p s睡眠不足s
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
+                c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
             else:
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师很送
                 break
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
                 # c.nvQiGong(n, 0.54, 0.2, 0, *canshu)  # 2p 十睡眠不足
@@ -5352,7 +5354,7 @@ if __name__ == '__main__':
             if pvp == 1:
                 c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  #气功师很烂
             elif pvp == 2:
-                c.nvQiGong(n, 0.42, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊
+                c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
                 #c.nvQiGong(n, 0.69, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p
@@ -5371,7 +5373,7 @@ if __name__ == '__main__':
 
                 c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 1p 气功师很猛
             elif pvp == 2:
-                c.zhaohuan(n, 0.24, 0.23, 0, 0, *canshu)  # 2p s睡眠不足s
+                c.zhaohuan(n, 0.18, 0.24, 0, 0, *canshu)  # 2p s睡眠不足s
                 #c.yuren(n, 0.5, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
 
             else:
