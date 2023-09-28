@@ -5157,7 +5157,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(1, 10):  # 打图设置ddddg
+    for aa in range(3, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.txt')
         if aa == 11 and pvp == 1:  # aa
@@ -5169,7 +5169,7 @@ if __name__ == '__main__':
             aa = 14
         time.sleep(1.85)  # 选一个任务
         c.LeftClick(x[aa][0], x[aa][1])  # 441 , 310
-        time.slfeep(0.015)
+        time.sleep(0.015)
         c.LeftClick(x[aa][0], x[aa][1])  # 单机两下鼠标左键0
         time.sleep(1.8)
         # c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
@@ -5294,7 +5294,7 @@ if __name__ == '__main__':
             continue
         elif aa == 2:
             if pvp == 1:
-                c.nvQiGong(n, 0.52, 0.26, 0, 0, *canshu)  # 1p 气功师很懒
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师很懒
                 # c.nvQiGong(n, 0.62, 0.26, 0)  # 2p 睡眠不足丶
                 #
             elif pvp == 2:
