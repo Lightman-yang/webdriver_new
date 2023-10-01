@@ -2521,6 +2521,9 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
 
                     time.sleep(1.5 + move_seep)
+                    xxyy[1]=2
+                    xxyy[3] = 4
+                    #xxyy = [1, 2, 3, 4, 99, 6]
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     t3 = Thread(target=self.forxunhuanY,
@@ -3053,7 +3056,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(2.05 + move_seep)
+                    time.sleep(2.2 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     self.FuBen_INFO6(0, 6)
@@ -4295,8 +4298,8 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        #data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         #r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -4498,7 +4501,7 @@ class Caozuolei(Caozuolei1):
                 if h == 1000:
                     print(1000)
                     break
-                elif y == 0 or y1 == 0:
+                elif y == 0 or y1 == 0 or y==2 or y1== 4:
                     print('y=', y, ' y1=', y1)
                     return
                 elif int(y - y1) > 140 and z == 88:  # 6
@@ -4517,20 +4520,20 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.1)
                     dt.keyUp('up')  # ：模拟按键松开按键
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    print("up,#6  int(y - y1) > 16 and z == 88 ")
+                    print("up,#6  int(y - y1) > 16 and z == 88 ",'y分别为',y,'y1分别为',y1)
                     num_ss[0] = 0
                     return
                 elif int(y - y1) < -110 and z == 88:  # 5
                     # print((y- y1), 'y1')
                     dt.press('down')
-                    print("down,#5 int(y - y1) < -16 and z == 88 ")
+                    print("down,#5 int(y - y1) < -16 and z == 88 ",'y分别为',y,'y1分别为',y1)
                     num_ss[0] = 0
                     return
                 elif 33 > int(y - y1) > -60 and z == 88:  # 6
                     # print((y- y1) , 'y2')
                     # dt.press('up')
                     # dt.press('down')
-                    print('不动，数据不名称，', (y - y1), '> -150 ')
+                    print('不动，数据不名称，', (y - y1), '> -150 ','y分别为',y,'y1分别为',y1)
                     return
 
 
@@ -5150,7 +5153,7 @@ if __name__ == '__main__':
 
     # canshu = c.excelboot01(22)
     # n = 24
-    # c.nvQiGong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
+    # c.nvQiGgdfyong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
     # time.sleep(1000)
 
@@ -5159,7 +5162,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(1, 10):  # 打图设置ddddg 0
+    for aa in range(0, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
         if aa == 11 and pvp == 1:  # aa
@@ -5252,7 +5255,7 @@ if __name__ == '__main__':
         print(aa,sss1,'    sss')
         if aa == 0:
             if pvp == 1:
-                c.nvQiGong(n, 0.55, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
+                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
 
             elif pvp == 2:
 
@@ -5276,7 +5279,7 @@ if __name__ == '__main__':
             if pvp == 1:
                 #
                 # c.nvQiGong(n, 0.48, 0.2, 0)  # 1p 气功师很懒
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
+                c.nvQiGong(n, 0.53, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
             elif pvp == 2:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
             elif pvp == 4:
@@ -5296,7 +5299,7 @@ if __name__ == '__main__':
             continue
         elif aa == 2:
             if pvp == 1:
-                c.nvQiGong(n, 0.57, 0.26, 0, 0, *canshu)  # 1p 气功师很懒
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师很懒
                 # c.nvQiGong(n, 0.62, 0.26, 0)  # 2p 睡眠不足丶
                 #
             elif pvp == 2:
