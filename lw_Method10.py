@@ -483,7 +483,11 @@ class Caozuolei(Caozuolei1):
                 sim=0.79,
                 linesign=" ",
                 isbackcolor=0)
-            if "不足" in aa:
+            if "最叼" in bb or "最" in bb:
+                print("最,1")
+
+                return 5
+            elif  "不足" in aa:
 
                 print("不足,1")
 
@@ -3056,7 +3060,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(2.2 + move_seep)
+                    time.sleep(2.05+ move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     self.FuBen_INFO6(0, 6)
@@ -4504,7 +4508,7 @@ class Caozuolei(Caozuolei1):
                 elif y == 0 or y1 == 0 or y==2 or y1== 4:
                     print('y=', y, ' y1=', y1)
                     return
-                elif int(y - y1) > 140 and z == 88:  # 6
+                elif int(y - y1) > 60 and z == 88:  # 6
                     # print((y- y1) , 'y2')
                     dt.press('up')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
@@ -5186,6 +5190,8 @@ if __name__ == '__main__':
             sss1 = 20  #ll0110ll
         elif pvp == 4:
             sss1 = 24  # 快递员
+        elif pvp == 5:
+             sss1 = 27  # 能量不足了 19129832 QQ
         else:
             print('什么都不是')
             break
@@ -5263,10 +5269,13 @@ if __name__ == '__main__':
                 # aa1, bb1, cc1, dd1 = "先驱者", "#422", "师很", "#140"
                 # aa1, bb1, cc1, dd1="熟练者", "#410", "师很", "#140"
                 # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
-            elif pvp ==4:
+            elif pvp == 4:
                 c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 4p 气功师很水
+            elif pvp == 5:
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p
+
             else:
-                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  #3p ll0110ll
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #3p ll0110ll
             time.sleep(2)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
             c.KeyPress1(27)  # 案件esc建
@@ -5279,13 +5288,17 @@ if __name__ == '__main__':
             if pvp == 1:
                 #
                 # c.nvQiGong(n, 0.48, 0.2, 0)  # 1p 气功师很懒
-                c.nvQiGong(n, 0.53, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
             elif pvp == 2:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
+            # elif pvp == 4:
+            #     break
+            #     #c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 4p 快递员
             elif pvp == 4:
-                break
-                #c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 4p 快递员
-
+                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 3p 气功师废了
+            elif pvp == 5:
+                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 5p 史上最菜气功
+                #break
             else:
                 c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 3p 气功师废了
                 # c.nvQiGong(n, 0.48, 0.26, 0)  # 气功师该加强了
@@ -5304,6 +5317,9 @@ if __name__ == '__main__':
                 #
             elif pvp == 2:
                 c.nvQiGong(n, 0.56, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
+            elif pvp == 5:
+                c.naiMa(n, 0.49, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
+                break
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #3p 气功运气
             time.sleep(3)
