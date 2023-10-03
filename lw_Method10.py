@@ -289,7 +289,7 @@ class Caozuolei(Caozuolei1):
 
                 img = pyautogui.screenshot(region=[48, 84, 848, 684])
                 img = Image.fromarray(np.uint8(img))
-                img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
+                #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
 
                 dt.press('9')
                 time.sleep(1)  # 按下两秒
@@ -1285,7 +1285,7 @@ class Caozuolei(Caozuolei1):
 
                 img = pyautogui.screenshot(region=[48, 84, 848, 684])
                 img = Image.fromarray(np.uint8(img))
-                img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
+                #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
                 time.sleep(1)
                 print(b)
                 break
@@ -1809,7 +1809,7 @@ class Caozuolei(Caozuolei1):
 
                 img = pyautogui.screenshot(region=[48, 84, 848, 684])
                 img = Image.fromarray(np.uint8(img))
-                img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
+                #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
                 time.sleep(1)
                 print(b)
                 break
@@ -2295,7 +2295,7 @@ class Caozuolei(Caozuolei1):
 
                 img = pyautogui.screenshot(region=[48, 84, 848, 684])
                 img = Image.fromarray(np.uint8(img))
-                img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
+                #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
                 time.sleep(1)
                 print(b)
                 break
@@ -2842,7 +2842,7 @@ class Caozuolei(Caozuolei1):
 
                 img = pyautogui.screenshot(region=[48, 84, 848, 684])
                 img = Image.fromarray(np.uint8(img))
-                img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
+                #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
                 time.sleep(1)
                 print(b)
                 break
@@ -3330,7 +3330,7 @@ class Caozuolei(Caozuolei1):
 
                 img = pyautogui.screenshot(region=[48, 84, 848, 684])
                 img = Image.fromarray(np.uint8(img))
-                img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
+                #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
                 time.sleep(1)
                 print(b)
                 break
@@ -3823,7 +3823,7 @@ class Caozuolei(Caozuolei1):
 
                 img = pyautogui.screenshot(region=[48, 84, 848, 684])
                 img = Image.fromarray(np.uint8(img))
-                img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
+                #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
                 time.sleep(1)
                 print(b)
                 break
@@ -4276,7 +4276,7 @@ class Caozuolei(Caozuolei1):
 
                 img = pyautogui.screenshot(region=[48, 84, 848, 684])
                 img = Image.fromarray(np.uint8(img))
-                img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
+                #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
                 time.sleep(1)
                 print(b)
                 break
@@ -4294,7 +4294,7 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         #r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -5152,9 +5152,9 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(2, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
-        # c.Set_Dict(0, 'test3.txt')
+        # c.Set_Dict(0, 'test3.txt')q
         if aa == 11 and pvp == 1:  # aa
             # if aa == 3 and pvp. == 1:# aa
             aa = 4
