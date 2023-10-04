@@ -5166,7 +5166,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(1, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
         if aa == 11 and pvp == 1:  # aa
@@ -5189,9 +5189,9 @@ if __name__ == '__main__':
         elif pvp == 3:
             sss1 = 20  #ll0110ll
         elif pvp == 4:
-            sss1 = 24  # 快递员
+            sss1 = 25  # 快递员 气功师很水
         elif pvp == 5:
-             sss1 = 27  # 能量不足了 19129832 QQ
+             sss1 = 28  # 能量不足了 19129832 QQ
         else:
             print('什么都不是')
             break
@@ -5270,7 +5270,7 @@ if __name__ == '__main__':
                 # aa1, bb1, cc1, dd1="熟练者", "#410", "师很", "#140"
                 # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
             elif pvp == 4:
-                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 4p 气功师很水
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 气功师很水 快递员
             elif pvp == 5:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p
 
@@ -5295,7 +5295,7 @@ if __name__ == '__main__':
             #     break
             #     #c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 4p 快递员
             elif pvp == 4:
-                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 3p 气功师废了
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 气功师很丶
             elif pvp == 5:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 5p 史上最菜气功
                 #break
@@ -5317,9 +5317,12 @@ if __name__ == '__main__':
                 #
             elif pvp == 2:
                 c.nvQiGong(n, 0.56, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
+            elif pvp == 4:
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 快递员
+                break
             elif pvp == 5:
                 c.naiMa(n, 0.49, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
-                break
+
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #3p 气功运气
             time.sleep(3)
@@ -5336,6 +5339,9 @@ if __name__ == '__main__':
                 c.kuangzhanshi(n, 0.4, 0.23, 0, 0, *canshu)  # 1p 狂战士
             elif pvp == 2:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p 十睡眠不足
+            elif pvp == 5:
+                c.naiMa(n, 0.49, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
+                break
             else:
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
