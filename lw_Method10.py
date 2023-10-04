@@ -483,7 +483,10 @@ class Caozuolei(Caozuolei1):
                 sim=0.79,
                 linesign=" ",
                 isbackcolor=0)
-            if "最叼" in bb or "最" in bb:
+            if "造就师" in bb :
+                print("造就师,6")
+                return 6
+            elif "最叼" in bb or "最" in bb:
                 print("最,1")
 
                 return 5
@@ -5166,7 +5169,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(1, 10):  # 打图设置ddddg
+    for aa in range(0, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
         if aa == 11 and pvp == 1:  # aa
@@ -5191,6 +5194,8 @@ if __name__ == '__main__':
         elif pvp == 4:
             sss1 = 25  # 快递员 气功师很水
         elif pvp == 5:
+             sss1 = 28  # 能量不足了 19129832 QQ
+        elif pvp == 6:
              sss1 = 28  # 能量不足了 19129832 QQ
         else:
             print('什么都不是')
