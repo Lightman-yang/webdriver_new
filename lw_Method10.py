@@ -495,7 +495,7 @@ class Caozuolei(Caozuolei1):
                 print("不足,1")
 
                 return 2
-            elif "一二" in bb:
+            elif "一二" in bb or "快递员" in bb:
 
                 print("一二,4")
 
