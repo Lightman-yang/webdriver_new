@@ -2355,7 +2355,11 @@ class Caozuolei(Caozuolei1):
                 # print('right开始按下{}次'.format(j))
                 # a_error = 0
                 if j == 1:
+
                     global ret_values
+                    dt.keyUp('right')
+                    dt.keyUp('up')
+                    dt.keyUp('down')
                     ret_values = []
                     time.sleep(0.25)  # 按下两秒
                     dt.press('a')
@@ -5272,7 +5276,7 @@ if __name__ == '__main__':
             elif pvp == 3:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p ll0110ll
             elif pvp == 4:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 气功师很水 快递员
+                c.nvQiGong(n, 0.62, 0.26, 0, 0, *canshu)  # 4p 气功师很水 快递员
             elif pvp == 5:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p
 
