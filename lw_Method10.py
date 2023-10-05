@@ -4298,10 +4298,10 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
-        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
-        #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
-        #r"D:\webdriver_new\lw\game_name.xlsx"
+        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
+        # r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
         zz1 = data.active  # 不知道表名称的 用这种
         # zz1=data['Sheet'] #知道表面的用第二种
@@ -4501,14 +4501,14 @@ class Caozuolei(Caozuolei1):
                 if h == 1000:
                     print(1000)
                     break
-                elif y == 0 or y1 == 0 or y==2 or y1== 4:
+                elif y == 0 or y1 == 0 or y == 2 or y1 == 4:
                     print('y=', y, ' y1=', y1)
                     return
-                elif int(y - y1) > 140 and z == 88:  # 6
+                elif int(y - y1) > 65 and z == 88:  # 6
                     # print((y- y1) , 'y2')
-                    dt.press('up')
+                    dt.press('down')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    print('y=', y, ' y1=', (y - y1), "up,#6  int(y - y1) > 16 and z == 88 ")
+                    print('y=', y, ' y1=', (y - y1), "99999999(y - y1) > 65 and z == 88:是？ ")
                     num_ss[0] = 0
                     return
 
@@ -5164,8 +5164,8 @@ if __name__ == '__main__':
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
     for aa in range(0, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
-        # c.Set_Dict(0, 'test3.t1xt')
-        if aa == 11 and pvp == 1:  # aa
+        # c.Set_Dict(0, 'test3.t1xt')gdfy
+        if aa == 11 and pvp == 1:  # afygdfa
             # if aa == 3 and pvp. == 1:# aa
             aa = 4
         # elif aa == 6 and pvp == 1:
@@ -5255,7 +5255,7 @@ if __name__ == '__main__':
         print(aa,sss1,'    sss')
         if aa == 0:
             if pvp == 1:
-                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
 
             elif pvp == 2:
 
@@ -5279,7 +5279,7 @@ if __name__ == '__main__':
             if pvp == 1:
                 #
                 # c.nvQiGong(n, 0.48, 0.2, 0)  # 1p 气功师很懒
-                c.nvQiGong(n, 0.53, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
             elif pvp == 2:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
             elif pvp == 4:
