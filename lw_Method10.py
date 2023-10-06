@@ -475,15 +475,18 @@ class Caozuolei(Caozuolei1):
                 isbackcolor=0)
             print(aa)
             bb = self.Find_Ocr(
-                x1=12,
-                y1=140,
+                x1=0,
+                y1=0,
                 x2=760,
-                y2=333,
+                y2=433,
                 color_format="#360",
                 sim=0.79,
                 linesign=" ",
                 isbackcolor=0)
-            if "最叼" in bb or "最" in bb:
+            if "造就师" in bb or '造就师' in aa:
+                print("造就师,6")
+                return 6
+            elif "最叼" in bb or "最" in bb:
                 print("最,1")
 
                 return 5
@@ -492,7 +495,7 @@ class Caozuolei(Caozuolei1):
                 print("不足,1")
 
                 return 2
-            elif "一二" in bb:
+            elif "一二" in bb or "快递员" in bb:
 
                 print("一二,4")
 
@@ -2355,7 +2358,11 @@ class Caozuolei(Caozuolei1):
                 # print('right开始按下{}次'.format(j))
                 # a_error = 0
                 if j == 1:
+
                     global ret_values
+                    dt.keyUp('right')
+                    dt.keyUp('up')
+                    dt.keyUp('down')
                     ret_values = []
                     time.sleep(0.25)  # 按下两秒
                     dt.press('a')
@@ -5184,14 +5191,22 @@ if __name__ == '__main__':
         # c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
         if pvp == 1:
             sss1 = 10  # 气功师很烂丶
+            print('pvp=', pvp)
         elif pvp == 2:
             sss1 = 1  #睡眠不足十
+            print('pvp=', pvp)
         elif pvp == 3:
             sss1 = 20  #ll0110ll
+            print('pvp=', pvp)
         elif pvp == 4:
             sss1 = 25  # 快递员 气功师很水
+            print('pvp=', pvp)
         elif pvp == 5:
              sss1 = 28  # 能量不足了 19129832 QQ
+             print('pvp=', pvp)
+        elif pvp == 6:
+             sss1 = 32  # 造就师很狂
+             print('pvp=',pvp)
         else:
             print('什么都不是')
             break
@@ -5272,9 +5287,12 @@ if __name__ == '__main__':
             elif pvp == 3:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p ll0110ll
             elif pvp == 4:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 气功师很水 快递员
+                c.nvQiGong(n, 0.62, 0.26, 0, 0, *canshu)  # 4p 气功师很水 快递员
             elif pvp == 5:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p
+            elif pvp == 6:
+                c.nvQiGong(n, 0.51, 0.26, 0, 0, *canshu)  # 6p 造就师很狂
+                break
 
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
@@ -5303,6 +5321,7 @@ if __name__ == '__main__':
             elif pvp == 5:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 5p 史上最菜气功
                 #break
+
             else:
                 c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  #
                 # c.nvQiGong(n, 0.48, 0.26, 0)  # 气功师该加强了
