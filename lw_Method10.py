@@ -5203,10 +5203,10 @@ if __name__ == '__main__':
             sss1 = 27  # 快递员 气功师很水
             print('pvp=', pvp)
         elif pvp == 5:
-            sss1 = 30  # 能量不足了 19129832 QQ
+             sss1 = 30  # 能量不足了 19129832 QQ ?
              print('pvp=', pvp)
         elif pvp == 6:
-            sss1 = 34  # 造就师很狂
+            sss1 = 34  # 造就师很狂 ?
              print('pvp=',pvp)
         else:
             print('什么都不是')
