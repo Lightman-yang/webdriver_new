@@ -5276,7 +5276,7 @@ if __name__ == '__main__':
         print(aa,sss1,'    sss')
         if aa == 0:
             if pvp == 1:
-                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
 
             elif pvp == 2:
 
@@ -5323,7 +5323,7 @@ if __name__ == '__main__':
                 #break
 
             else:
-                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  #
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 # c.nvQiGong(n, 0.48, 0.26, 0)  # 气功师该加强了
             time.sleep(3)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
@@ -5392,7 +5392,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
             elif pvp == 3:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师很送
-                break
+                #break
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 break
@@ -5412,6 +5412,9 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  #气功师很烂
             elif pvp == 2:
                 c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊
+            elif pvp == 3:
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师很水丨
+                break
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
                 #c.nvQiGong(n, 0.69, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p
