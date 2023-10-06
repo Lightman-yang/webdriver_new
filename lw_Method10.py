@@ -473,7 +473,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.8,
                 linesign=" ",
                 isbackcolor=0)
-            print(aa)
+            print("aa:", aa)
             bb = self.Find_Ocr(
                 x1=0,
                 y1=0,
@@ -483,6 +483,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.79,
                 linesign=" ",
                 isbackcolor=0)
+            print("bb:", bb)
             if "造就师" in bb or '造就师' in aa:
                 print("造就师,6")
                 return 6
@@ -490,7 +491,7 @@ class Caozuolei(Caozuolei1):
                 print("最,1")
 
                 return 5
-            elif  "不足" in aa:
+            elif "不足" in aa:
 
                 print("不足,1")
 
@@ -4308,9 +4309,9 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        #data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
-        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         #r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -5173,7 +5174,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(8, 10):  # 打图设置ddddg
+    for aa in range(9, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
         if aa == 11 and pvp == 1:  # aa
@@ -5190,22 +5191,22 @@ if __name__ == '__main__':
         time.sleep(1.8)
         # c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
         if pvp == 1:
-            sss1 = 10  # 气功师很烂丶
+            sss1 = 12  # 气功师很烂丶
             print('pvp=', pvp)
         elif pvp == 2:
             sss1 = 1  #睡眠不足十
             print('pvp=', pvp)
         elif pvp == 3:
-            sss1 = 20  #ll0110ll
+            sss1 = 22  #ll0110ll
             print('pvp=', pvp)
         elif pvp == 4:
-            sss1 = 25  # 快递员 气功师很水
+            sss1 = 27  # 快递员 气功师很水
             print('pvp=', pvp)
         elif pvp == 5:
-             sss1 = 28  # 能量不足了 19129832 QQ
+            sss1 = 30  # 能量不足了 19129832 QQ
              print('pvp=', pvp)
         elif pvp == 6:
-             sss1 = 32  # 造就师很狂
+            sss1 = 34  # 造就师很狂
              print('pvp=',pvp)
         else:
             print('什么都不是')
@@ -5465,7 +5466,8 @@ if __name__ == '__main__':
             continue
         elif aa == 8:
             if pvp == 1:
-                c.yuren(n, 0.52, 0.26, 0, 0, *canshu)  # 1p 悟空师很烂 缪斯
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师很懒
+                #c.yuren(n, 0.52, 0.26, 0, 0, *canshu)  # 1p 悟空师很烂 缪斯
             elif pvp == 2:
                 c.zhaohuan(n, 0.18, 0.24, 0, 0, *canshu)  # 2p s睡眠不足s
 
