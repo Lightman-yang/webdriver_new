@@ -5203,15 +5203,15 @@ if __name__ == '__main__':
             sss1 = 27  # 快递员 气功师很水
             print('pvp=', pvp)
         elif pvp == 5:
-             sss1 = 30  # 能量不足了 19129832 QQ ?
-             print('pvp=', pvp)
+            sss1 = 30  # 能量不足了 19129832 QQ ?
+            print('pvp=', pvp)
         elif pvp == 6:
             sss1 = 34  # 造就师很狂 ?
-             print('pvp=',pvp)
+            print('pvp=', pvp)
         else:
             print('什么都不是')
             break
-        # d
+            # d
         # 女气功的操作流程，从选人物到进入图，在到刷图
         time.sleep(5)           #pvp==2 是睡眠不足
         if (x[aa][2] == 1 and pvp == 4) or(x[aa][2] == 1 and pvp == 3) or (x[aa][2] == 7 and pvp == 1) or (x[aa][2] == 9 and pvp == 1) or  (
