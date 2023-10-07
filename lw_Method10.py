@@ -5203,10 +5203,10 @@ if __name__ == '__main__':
             sss1 = 27  # 快递员 气功师很水
             print('pvp=', pvp)
         elif pvp == 5:
-            sss1 = 30  # 能量不足了 19129832 QQ ?
+            sss1 = 32  # 能量不足了 19129832 QQ ?
             print('pvp=', pvp)
         elif pvp == 6:
-            sss1 = 34  # 造就师很狂 ?
+            sss1 = 36  # 造就师很狂 ?
             print('pvp=', pvp)
         else:
             print('什么都不是')
@@ -5344,7 +5344,7 @@ if __name__ == '__main__':
                  c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功运气
             elif pvp == 4:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 快递员
-                break
+                #break
             elif pvp == 5:
                 c.naiMa(n, 0.49, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
 
@@ -5366,6 +5366,8 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p 十睡眠不足
             elif pvp == 3:
                 c.nvQiGong(n, 0.75, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
+            elif pvp == 4:
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p l11l
 
             elif pvp == 5:
                 c.naiMa(n, 0.49, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
@@ -5393,6 +5395,9 @@ if __name__ == '__main__':
             elif pvp == 3:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师很送
                 #break
+            elif pvp == 4:
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 气功师很水i
+                break
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 break
