@@ -4527,13 +4527,13 @@ class Caozuolei(Caozuolei1):
                     print("up,#6  int(y - y1) > 16 and z == 88 ",'y分别为',y,'y1分别为',y1)
                     num_ss[0] = 0
                     return
-                elif int(y - y1) < -110 and z == 88:  # 5
+                elif int(y - y1) < -40 and z == 88:  # 5
                     # print((y- y1), 'y1')
                     dt.press('down')
                     print("down,#5 int(y - y1) < -16 and z == 88 ",'y分别为',y,'y1分别为',y1)
                     num_ss[0] = 0
                     return
-                elif 33 > int(y - y1) > -60 and z == 88:  # 6
+                elif 33 > int(y - y1) < -100 and z == 88:  # 6
                     # print((y- y1) , 'y2')
                     # dt.press('up')
                     # dt.press('down')
@@ -5166,7 +5166,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(2, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
         if aa == 11 and pvp == 1:  # aa
@@ -5319,7 +5319,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
             elif pvp == 5:
                 c.naiMa(n, 0.49, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
-                break
+
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #3p 气功运气
             time.sleep(3)
@@ -5336,6 +5336,9 @@ if __name__ == '__main__':
                 c.kuangzhanshi(n, 0.4, 0.23, 0, 0, *canshu)  # 1p 狂战士
             elif pvp == 2:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p 十睡眠不足
+            elif pvp == 5:
+                c.naiMa(n, 0.49, 0.26, 0, 0, *canshu)  # 5P 爷的圣光最混
+                break
             else:
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
