@@ -473,7 +473,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.8,
                 linesign=" ",
                 isbackcolor=0)
-            print(aa)
+            print("aa:", aa)
             bb = self.Find_Ocr(
                 x1=0,
                 y1=0,
@@ -483,6 +483,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.79,
                 linesign=" ",
                 isbackcolor=0)
+            print("bb:", bb)
             if "造就师" in bb or '造就师' in aa:
                 print("造就师,6")
                 return 6
@@ -490,7 +491,7 @@ class Caozuolei(Caozuolei1):
                 print("最,1")
 
                 return 5
-            elif  "不足" in aa:
+            elif "不足" in aa:
 
                 print("不足,1")
 
@@ -627,6 +628,69 @@ class Caozuolei(Caozuolei1):
                 continue
             elif 50 > cc > 7 and "开洞" not in aa:
                 dt.press('right')
+                continue
+            elif cc <= 7 and "开洞" not in aa:
+                print("9等待9")
+                dt.press('g')
+                time.sleep(0.075)
+                dt.press('y')
+                time.sleep(1)
+
+                continue
+
+            elif "开洞" in aa1:
+                print('开洞', cc, aa1)
+                return
+            else:
+                print('FuBen_INFO6 #000')  # 000
+                # self.youjian()
+                break
+
+    def FuBen_INFO666(self, b=0, c=1):  # 副本地图信息数据实时获取
+        # self.Set_Dict(0, 'test3.txt')
+        # self.Use_Dict(0)
+        # c.Set_Dict(0, "test3.txt")
+        # time.sleep(2)
+        cc = c
+        while True:
+            cc = cc + 1
+
+            aa = self.Find_Ocr(
+                x1=392,
+                y1=63,
+                x2=853,
+                y2=574,
+                color_format="#380",
+                sim=0.88,
+                linesign=" ",
+                isbackcolor=0)
+            aa1 = self.Find_Ocr(
+                x1=0,
+                y1=0,
+                x2=800,
+                y2=600,
+                color_format="#380",
+                sim=0.88,
+                linesign=" ",
+                isbackcolor=0)
+            if "开洞" in aa:
+                print('开洞', cc)
+                return
+
+            elif cc == 6 and "开洞" not in aa and b == 1:
+                dt.press('right')
+                dt.press('alt')
+
+                continue
+            elif (cc == 25 or cc == 51) and "开洞" not in aa:
+                dt.press('alt')
+                continue
+            elif 50 > cc > 7 and "开洞" not in aa:
+                dt.press('right')
+                time.sleep(0.013)  # 按下两秒
+                dt.keyDown('right')  # ：模拟按键按下
+                time.sleep(0.19)  # 按下19秒
+                dt.keyUp('right')  # ：模拟按键松开按键
                 continue
             elif cc <= 7 and "开洞" not in aa:
                 print("9等待9")
@@ -1446,7 +1510,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.5 + move_seep)
+                    time.sleep(1.45 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('f')
                     time.sleep(0.75)  # 按下两秒
@@ -1473,7 +1537,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('left')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(4.1 + move_seep)
+                    time.sleep(3.9 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
                     dt.press('y')
                     time.sleep(0.65)
@@ -1567,10 +1631,10 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.keyDown('up')  # ：模拟按键按下 向下
-                    time.sleep(1.55 + move_seep1)
+                    time.sleep(1.53 + move_seep1)
                     dt.keyUp('up')  # ：模拟按键松开按
                     dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(1 + move_seep1)
+                    time.sleep(0.88 + move_seep1)
                     dt.keyUp('left')  # ：模拟按键松开按键
                     dt.press('r')
                     time.sleep(0.63)  # 按下两秒
@@ -1648,7 +1712,7 @@ class Caozuolei(Caozuolei1):
                         dt.keyDown('left')  # ：模拟按键按下
                         time.sleep(0.02)
                         dt.press('up')
-                        time.sleep(3.75 + move_seep)
+                        time.sleep(3.4 + move_seep)
                         dt.keyUp('left')  # ：模拟按键松开按键
 
                         time.sleep(0.1)
@@ -1693,47 +1757,48 @@ class Caozuolei(Caozuolei1):
 
 
                 elif j == 7:  # 奇数 反之偶数
-                    time.sleep(0.75 - mmmm)
+                    time.sleep(0.65 - mmmm)
                     dt.keyDown('up')  # ：模拟按键按下 向下
-                    time.sleep(1.8 + move_seep1 - mmmm)
+                    time.sleep(1.75 + move_seep1 - mmmm)
                     dt.keyUp('up')  # ：模拟按键松开按键
 
                     dt.press('w')
                     time.sleep(0.1)  # 按下两秒
                     dt.press('w')
-                    time.sleep(0.7)  # 按下19秒
+                    time.sleep(0.65)  # 按下19秒
 
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.75 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    dt.press('e')
-                    time.sleep(3.75)  # 按下19秒
+                    dt.press('s')
+                    time.sleep(0.75)  # 按下19秒
 
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(0.95 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    time.sleep(3.1)  # 按下19秒
+                    time.sleep(1.1)  # 按下19秒
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(0.75 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    self.FuBen_INFO6(0, 7)
+                    #self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, -15)
+                    self.FuBen_INFO666(0, 7)
                     self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2, -15)
                     self.FuBen_INFO1()
                     # time.sleep(1)
                     # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     dt.press('9')
-                    time.sleep(0.6)  # 按下19秒
+                    time.sleep(0.5) # 按下19秒
 
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.8 + move_seep)  # 按下19秒
+                    time.sleep(1.3 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
 
 
@@ -2569,7 +2634,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.65 + move_seep)
+                    time.sleep(1.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     self.FuBen_INFO6(0, 6)
@@ -2723,7 +2788,8 @@ class Caozuolei(Caozuolei1):
                     dt.press('alt')
                     #time.sleep(1.3)  # 按下19秒
                     self.FuBen_INFO66(7)
-                    self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
+                    self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2, -15)
+                    #self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2, -5)
                     # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     self.FuBen_INFO1()
                     dt.press('up')
@@ -3225,7 +3291,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     self.FuBen_INFO66(7)
-                    self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2,-5)
+                    self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2 - 5)
                     # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     self.FuBen_INFO1()
                     dt.press('9')
@@ -3508,7 +3574,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('left')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(3.5 + move_seep)
+                    time.sleep(3.65 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
 
                     dt.press('f')
@@ -4311,8 +4377,8 @@ class Caozuolei(Caozuolei1):
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
-        #r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
-        #r"D:\webdriver_new\lw\game_name.xlsx"
+        # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
+        # r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
         zz1 = data.active  # 不知道表名称的 用这种
         # zz1=data['Sheet'] #知道表面的用第二种
@@ -5173,7 +5239,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(1, 10):  # 打图设置ddddg
+    for aa in range(0, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
         if aa == 11 and pvp == 1:  # aa
@@ -5190,33 +5256,32 @@ if __name__ == '__main__':
         time.sleep(1.8)
         # c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
         if pvp == 1:
-            sss1 = 10  # 气功师很烂丶
+            sss1 = 12  # 气功师很烂丶
             print('pvp=', pvp)
         elif pvp == 2:
             sss1 = 1  #睡眠不足十
             print('pvp=', pvp)
         elif pvp == 3:
-            sss1 = 20  #ll0110ll
+            sss1 = 22  #ll0110ll
             print('pvp=', pvp)
         elif pvp == 4:
-            sss1 = 25  # 快递员 气功师很水
+            sss1 = 27  # 快递员 气功师很水
             print('pvp=', pvp)
         elif pvp == 5:
-             sss1 = 28  # 能量不足了 19129832 QQ
-             print('pvp=', pvp)
+            sss1 = 32  # 能量不足了 19129832 QQ ?
+            print('pvp=', pvp)
         elif pvp == 6:
-             sss1 = 32  # 造就师很狂
-             print('pvp=',pvp)
+            sss1 = 41  # 造就师很狂 ?
+            print('pvp=', pvp)
         else:
             print('什么都不是')
             break
-        # d
+            # d
         # 女气功的操作流程，从选人物到进入图，在到刷图
         time.sleep(5)           #pvp==2 是睡眠不足
-        if (x[aa][2] == 1 and pvp == 4) or(x[aa][2] == 1 and pvp == 3) or (x[aa][2] == 7 and pvp == 1) or (x[aa][2] == 9 and pvp == 1) or (
-                x[aa][2] == 8 and pvp == 2) or (
-                pvp == 3 and x[aa][2] == 3) or (
-                pvp == 2 and x[aa][2] == 4) or (pvp == 1 and x[aa][2] == 6) or (pvp == 2 and x[aa][2] == 5):
+        if (x[aa][2] == 1 and pvp == 4) or(x[aa][2] == 1 and pvp == 3) or (x[aa][2] == 7 and pvp == 1) or (x[aa][2] == 9 and pvp == 1) or  (
+                pvp == 3 and x[aa][2] == 3)  or (
+                pvp == 2 and x[aa][2] == 4)  or (pvp == 4 and x[aa][2] == 3) or (pvp == 1 and x[aa][2] == 6) or (pvp == 2 and x[aa][2] == 5):
             c.movingfigur_Down(0.65)  # 向下移动，移动一秒
         else:
 
@@ -5276,7 +5341,7 @@ if __name__ == '__main__':
         print(aa,sss1,'    sss')
         if aa == 0:
             if pvp == 1:
-                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
 
             elif pvp == 2:
 
@@ -5287,7 +5352,7 @@ if __name__ == '__main__':
             elif pvp == 3:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p ll0110ll
             elif pvp == 4:
-                c.nvQiGong(n, 0.62, 0.26, 0, 0, *canshu)  # 4p 气功师很水 快递员
+                c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 4p 气功师很水 快递员
             elif pvp == 5:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p
             elif pvp == 6:
@@ -5323,7 +5388,7 @@ if __name__ == '__main__':
                 #break
 
             else:
-                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  #
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 # c.nvQiGong(n, 0.48, 0.26, 0)  # 气功师该加强了
             time.sleep(3)
             # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
@@ -5365,13 +5430,13 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p 十睡眠不足
             elif pvp == 3:
-                c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
+                c.nvQiGong(n, 0.75, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
             elif pvp == 4:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 快递员
-                break
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p l11l
+
             elif pvp == 5:
-                c.naiMa(n, 0.49, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
-                break
+                c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
+
             else:
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  #
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
@@ -5394,7 +5459,12 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
             elif pvp == 3:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师很送
+                #break
+            elif pvp == 4:
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 气功师很水i
                 break
+            elif pvp == 5:
+                c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的太阳最混
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 break
@@ -5414,6 +5484,11 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  #气功师很烂
             elif pvp == 2:
                 c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊
+            elif pvp == 3:
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师很水丨
+                break
+            elif pvp == 5:
+                c.naiMa(n, 0.56, 0.26, 0, 0, *canshu)  # 5P 爷的曙光最混
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
                 #c.nvQiGong(n, 0.69, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p
@@ -5432,9 +5507,11 @@ if __name__ == '__main__':
 
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师很猛
             elif pvp == 2:
-                c.zhaohuan(n, 0.18, 0.24, 0, 0, *canshu)  # 2p s睡眠不足s
+                #c.zhaohuan(n, 0.18, 0.24, 0, 0, *canshu)  # 2p s睡眠不足s
                 #c.yuren(n, 0.5, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
-
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p 睡眠不足风
+            elif pvp == 5:
+                c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最香
             else:
                 break
             time.sleep(2)
@@ -5450,9 +5527,11 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师很屌
 
             elif pvp == 2:
-                c.yuren(n, 0.51, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
-                # c.gongjianshou(n, 0.68, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
-                #c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊啊
+                #c.yuren(n, 0.51, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
+            elif pvp == 5:
+                c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的曙光最叼
+
             else:
                 break
             time.sleep(2)
@@ -5465,10 +5544,14 @@ if __name__ == '__main__':
             continue
         elif aa == 8:
             if pvp == 1:
-                c.yuren(n, 0.52, 0.26, 0, 0, *canshu)  # 1p 悟空师很烂 缪斯
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师很懒
+                #c.yuren(n, 0.52, 0.26, 0, 0, *canshu)  # 1p 悟空师很烂 缪斯
             elif pvp == 2:
-
-                c.naiMa(n, 0.49, 0.26, 1, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
+                c.zhaohuan(n, 0.18, 0.24, 0, 0, *canshu)  # 2p s睡眠不足s
+            elif pvp == 5:
+                c.naiMa(n, 0.56, 0.26, 0, 0, *canshu)  # 5P 爷的太阳最叼
+                break
+                #c.naiMa(n, 0.49, 0.26, 1, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
 
             else:
                 break
@@ -5484,9 +5567,9 @@ if __name__ == '__main__':
             if pvp == 1:
                 c.naiMa(n, 0.5, 0.26, 1, 0, *canshu)  # 1p 奇特木偶 光明骑士
             elif pvp == 2:
-                break
-                # c.naiMa(n, 0.49, 0.26, 1, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
 
+                c.naiMa(n, 0.49, 0.26, 1, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
+                break
             else:
                 break
             time.sleep(2)
