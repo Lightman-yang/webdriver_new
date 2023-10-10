@@ -2723,7 +2723,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('alt')
                     #time.sleep(1.3)  # 按下19秒
                     self.FuBen_INFO66(7)
-                    self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2, -5)
+                    self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
                     # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     self.FuBen_INFO1()
                     dt.press('up')
@@ -3225,7 +3225,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     self.FuBen_INFO66(7)
-                    self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2 - 5)
+                    self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2,-5)
                     # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     self.FuBen_INFO1()
                     dt.press('9')
@@ -5173,7 +5173,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(1, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
         if aa == 11 and pvp == 1:  # aa
@@ -5344,7 +5344,7 @@ if __name__ == '__main__':
                  c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功运气
             elif pvp == 4:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 快递员
-                break
+                #break
             elif pvp == 5:
                 c.naiMa(n, 0.49, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
 
@@ -5366,7 +5366,9 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p 十睡眠不足
             elif pvp == 3:
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
-
+            elif pvp == 4:
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 快递员
+                break
             elif pvp == 5:
                 c.naiMa(n, 0.49, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
                 break
