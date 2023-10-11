@@ -484,7 +484,10 @@ class Caozuolei(Caozuolei1):
                 linesign=" ",
                 isbackcolor=0)
             print("bb:", bb)
-            if "造就师" in bb or '造就师' in aa:
+            if "水水" in aa:
+                print("色彩不足啊 是：风花雪月 账号,6")
+                return 7
+            elif "造就师" in bb or '造就师' in aa:
                 print("造就师,6")
                 return 6
             elif "最叼" in bb or "最" in bb:
@@ -5257,22 +5260,25 @@ if __name__ == '__main__':
         # c.KeyPress1(190)  # 案件‘.’建，功能是隐藏技能和血功能
         if pvp == 1:
             sss1 = 12  # 气功师很烂丶
-            print('pvp=', pvp)
+            print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 2:
             sss1 = 1  #睡眠不足十
-            print('pvp=', pvp)
+            print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 3:
             sss1 = 22  #ll0110ll
-            print('pvp=', pvp)
+            print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 4:
             sss1 = 27  # 快递员 气功师很水
-            print('pvp=', pvp)
+            print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 5:
             sss1 = 32  # 能量不足了 19129832 QQ ?
-            print('pvp=', pvp)
+            print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 6:
             sss1 = 41  # 造就师很狂 ?
-            print('pvp=', pvp)
+            print('pvp=', pvp, 'excel=>', sss1)
+        elif pvp == 7:
+            sss1 = 43  # 风化雪月  色彩不足啊
+            print('pvp=', pvp,'excel=>', sss1)
         else:
             print('什么都不是')
             break
@@ -5357,6 +5363,9 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p
             elif pvp == 6:
                 c.nvQiGong(n, 0.51, 0.26, 0, 0, *canshu)  # 6p 造就师很狂
+                break
+            elif pvp == 7:
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 6p 造就师很狂
                 break
 
             else:
