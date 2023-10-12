@@ -4106,7 +4106,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.85 + move_seep)
+                    time.sleep(1.7 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
@@ -5476,7 +5476,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 气功师很水i
                 break
             elif pvp == 5:
-                c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的太阳最混
+                c.naiMa(n, 0.48, 0.26, 0, 0, *canshu) #5P 爷的太阳最混
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 break
