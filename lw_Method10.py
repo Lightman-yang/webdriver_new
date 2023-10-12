@@ -5277,7 +5277,7 @@ if __name__ == '__main__':
             sss1 = 41  # 造就师很狂 ?
             print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 7:
-            sss1 = 43  # 风化雪月  色彩不足啊
+            sss1 = 44  # 风化雪月  色彩不足啊
             print('pvp=', pvp,'excel=>', sss1)
         else:
             print('什么都不是')
@@ -5362,7 +5362,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p
             elif pvp == 6:
                 c.nvQiGong(n, 0.51, 0.26, 0, 0, *canshu)  # 6p 造就师很狂
-                break
+
             elif pvp == 7:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 7p 色彩不足
 
@@ -5394,6 +5394,9 @@ if __name__ == '__main__':
             elif pvp == 5:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 5p 史上最菜气功
                 #break
+            elif pvp == 6:
+                c.nvQiGong(n, 0.51, 0.26, 0, 0, *canshu)  # 6p 狗头师很差
+
             elif pvp == 7:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 7p 炼狱不足钢
 
@@ -5422,6 +5425,9 @@ if __name__ == '__main__':
                 #break
             elif pvp == 5:
                 c.naiMa(n, 0.49, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
+            elif pvp == 6:
+                c.nvQiGong(n, 0.51, 0.26, 0, 0, *canshu)  # 6p 建筑师很牛
+                break
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足金
                 break
