@@ -5232,18 +5232,18 @@ if __name__ == '__main__':
     # n = 24
     # c.nvQiGgdfyong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
-    # time.sleep(1000)
+    # time.sleep(1000)g
 
     pvp = c.FuBen_INFO12()  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     print(pvp)
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(4, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
         if aa == 11 and pvp == 1:  # aa
-            # if aa == 3 and pvp. == 1:# aa
+            # if aa == 3 and pvp. ==w 1:# aa
             aa = 4
         # elif aa == 6 and pvp == 1:
         #     aa = 7gdfyhe
@@ -5464,7 +5464,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 气功师很水i
                 break
             elif pvp == 5:
-                c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的太阳最混
+                c.naiMa(n, 0.48, 0.26, 0, 0, *canshu) #5P 爷的太阳最混
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 break
