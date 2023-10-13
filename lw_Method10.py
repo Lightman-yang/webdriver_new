@@ -5271,13 +5271,13 @@ if __name__ == '__main__':
             sss1 = 30  # 快递员 气功师很水
             print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 5:
-            sss1 = 34  # 能量不足了 19129832 QQ ?
+            sss1 = 35  # 能量不足了 19129832 QQ ?
             print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 6:
-            sss1 = 43  # 造就师很狂 ?
+            sss1 = 44 # 造就师很狂 ?
             print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 7:
-            sss1 = 46  # 风化雪月  色彩不足啊
+            sss1 = 47  # 风化雪月  色彩不足啊
             print('pvp=', pvp,'excel=>', sss1)
         else:
             print('什么都不是')
