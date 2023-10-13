@@ -5268,16 +5268,16 @@ if __name__ == '__main__':
             sss1 = 22  #ll0110ll
             print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 4:
-            sss1 = 27  # 快递员 气功师很水
+            sss1 = 30  # 快递员 气功师很水
             print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 5:
-            sss1 = 32  # 能量不足了 19129832 QQ ?
+            sss1 = 34  # 能量不足了 19129832 QQ ?
             print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 6:
-            sss1 = 41  # 造就师很狂 ?
+            sss1 = 43  # 造就师很狂 ?
             print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 7:
-            sss1 = 44  # 风化雪月  色彩不足啊
+            sss1 = 46  # 风化雪月  色彩不足啊
             print('pvp=', pvp,'excel=>', sss1)
         else:
             print('什么都不是')
@@ -5508,7 +5508,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊
             elif pvp == 3:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师很水丨
-                break
+
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu)  # 5P 爷的曙光最混
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
@@ -5532,6 +5532,9 @@ if __name__ == '__main__':
                 #c.zhaohuan(n, 0.18, 0.24, 0, 0, *canshu)  # 2p s睡眠不足s
                 #c.yuren(n, 0.5, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p 睡眠不足风
+            elif pvp == 3:
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 睡眠不足巛
+
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最香
             else:
@@ -5550,6 +5553,9 @@ if __name__ == '__main__':
 
             elif pvp == 2:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊啊
+            elif pvp == 3:
+                c.naiMa(n, 0.56, 0.26, 0, 0, *canshu)  # 5P 爷的奶无敌了 
+                break
                 #c.yuren(n, 0.51, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的曙光最叼
