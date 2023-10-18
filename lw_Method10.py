@@ -484,7 +484,7 @@ class Caozuolei(Caozuolei1):
                 linesign=" ",
                 isbackcolor=0)
             print("bb:", bb)
-            if "水水" in aa:
+            if "水水" in aa and "快递员" not in aa:
                 print("色彩不足啊 是：风花雪月 账号,6")
                 return 7
             elif "造就师" in bb or '造就师' in aa:
@@ -5235,14 +5235,14 @@ if __name__ == '__main__':
     # n = 24
     # c.nvQiGgdfyong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
-    # time.sleep(1000)
+    # time.sleep(10030)
 
     pvp = c.FuBen_INFO12()  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     print(pvp)
-    # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
+    # x = [[150, 290 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(4, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
         if aa == 11 and pvp == 1:  # aa
