@@ -484,7 +484,10 @@ class Caozuolei(Caozuolei1):
                 linesign=" ",
                 isbackcolor=0)
             print("bb:", bb)
-            if "水水" in aa and "快递员" not in aa:
+            if "冒险师" in aa and "快递员" not in aa:
+                print("力气师很大 是：曌飂飏  账号,8")
+                return 8
+            elif "水水" in aa and "快递员" not in aa:
                 print("色彩不足啊 是：风花雪月 账号,6")
                 return 7
             elif "造就师" in bb or '造就师' in aa:
@@ -5279,6 +5282,9 @@ if __name__ == '__main__':
         elif pvp == 7:
             sss1 = 52  # 风化雪月  色彩不足啊
             print('pvp=', pvp,'excel=>', sss1)
+        elif pvp == 8:
+            sss1 = 61  # 柳杨  力气师很大
+            print('pvp=', pvp,'excel=>', sss1)
         else:
             print('什么都不是')
             break
@@ -5370,7 +5376,9 @@ if __name__ == '__main__':
 
             elif pvp == 7:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 7p 色彩不足
-
+            elif pvp == 8:
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 力气师很大
+                break
 
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
