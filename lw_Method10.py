@@ -470,7 +470,7 @@ class Caozuolei(Caozuolei1):
                 x2=760,
                 y2=333,
                 color_format="#422",
-                sim=0.8,
+                sim=0.75,
                 linesign=" ",
                 isbackcolor=0)
             print("aa:", aa)
@@ -484,9 +484,12 @@ class Caozuolei(Caozuolei1):
                 linesign=" ",
                 isbackcolor=0)
             print("bb:", bb)
-            if "水水" in aa:
-                print("色彩不足啊 是：风花雪月 账号,6")
-                return 7
+            if "造就师" in bb or '造就师' in aa:
+                print("造就师,6")
+                return 6
+            # if "水水" in aa:
+            #     print("色彩不足啊 是：风花雪月 账号,6")
+            #     return 7
             elif "造就师" in bb or '造就师' in aa:
                 print("造就师,6")
                 return 6
@@ -503,7 +506,7 @@ class Caozuolei(Caozuolei1):
 
                 print("一二,4")
 
-                return 4
+                return 6
             elif "士拉" in aa:
 
                 print("士拉,2")
@@ -515,7 +518,8 @@ class Caozuolei(Caozuolei1):
 
                 return 3
             else:
-                print('没有找到人物pvp')
+                return 6
+                print('没有找到人物pvp' ,'返回值 6')
                 continue
 
     def FuBen_INFO13(self):  # 校验是否选择“传送门”
@@ -4378,8 +4382,8 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
