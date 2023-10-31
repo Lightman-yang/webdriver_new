@@ -484,7 +484,10 @@ class Caozuolei(Caozuolei1):
                 linesign=" ",
                 isbackcolor=0)
             print("bb:", bb)
-            if "水水" in aa and "快递员" not in aa:
+            if "冒险师" in aa and "快递员" not in aa:
+                print("力气师很大 是：曌飂飏  账号,8")
+                return 8
+            elif "水水" in aa and "快递员" not in aa:
                 print("色彩不足啊 是：风花雪月 账号,6")
                 return 7
             elif "造就师" in bb or '造就师' in aa:
@@ -5242,7 +5245,7 @@ if __name__ == '__main__':
     # x = [[150, 290 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(3, 10):  # 打图设置ddddg
+    for aa in range(2, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
         if aa == 11 and pvp == 1:  # aa
@@ -5278,6 +5281,9 @@ if __name__ == '__main__':
             print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 7:
             sss1 = 52  # 风化雪月  色彩不足啊
+            print('pvp=', pvp,'excel=>', sss1)
+        elif pvp == 8:
+            sss1 = 61  # 柳杨  力气师很大
             print('pvp=', pvp,'excel=>', sss1)
         else:
             print('什么都不是')
@@ -5331,7 +5337,7 @@ if __name__ == '__main__':
         #     dt.press('left')  # 向右移动， 移动1秒，
         #     dt.press('left')  # 向右移动， 移动1秒，
         #     dt.press('left')  # 向右移动， 移动1秒，
-        elif (x[aa][2] == 2 and pvp == 6) or (x[aa][2] == 3 and pvp == 6) :  # or  (x[aa][2] == 3 and pvp ==2)
+        elif (x[aa][2] == 2 and pvp == 8) or (x[aa][2] == 3 and pvp == 8) :  # or  (x[aa][2] == 3 and pvp ==2)
             dt.press('left')  # 向右移动， 移动1秒，
             dt.press('left')  # 向右移动， 移动1秒，
             dt.press('left')  # 向右移动， 移动1秒，
@@ -5370,6 +5376,8 @@ if __name__ == '__main__':
 
             elif pvp == 7:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 7p 色彩不足
+            elif pvp == 8:
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 力气师很大
 
 
             else:
@@ -5404,6 +5412,8 @@ if __name__ == '__main__':
 
             elif pvp == 7:
                 c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 7p 炼狱不足钢
+            elif pvp == 8:
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 冒险师很帅
 
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
@@ -5435,7 +5445,9 @@ if __name__ == '__main__':
                 break
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足金
-
+            elif pvp == 8:
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 冒险师很坏
+                break
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
             time.sleep(3)
