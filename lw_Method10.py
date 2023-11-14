@@ -5245,7 +5245,7 @@ if __name__ == '__main__':
     # x = [[150, 290 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(2, 10):  # 打图设置ddddg
+    for aa in range(4, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
         if aa == 11 and pvp == 1:  # aa
@@ -5372,7 +5372,7 @@ if __name__ == '__main__':
             elif pvp == 5:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p
             elif pvp == 6:
-                c.nvQiGong(n, 0.51, 0.26, 0, 0, *canshu)  # 6p 造就师很狂
+                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 造就师很狂
 
             elif pvp == 7:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 7p 色彩不足
@@ -5408,7 +5408,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 5p 史上最菜气功
                 #break
             elif pvp == 6:
-                c.nvQiGong(n, 0.51, 0.26, 0, 0, *canshu)  # 6p 狗头师很差
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 6p 建筑师很牛
 
             elif pvp == 7:
                 c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 7p 炼狱不足钢
@@ -5441,7 +5441,7 @@ if __name__ == '__main__':
             elif pvp == 5:
                 c.naiMa(n, 0.49, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
             elif pvp == 6:
-                c.nvQiGong(n, 0.51, 0.26, 0, 0, *canshu)  # 6p 建筑师很牛
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 6p 狗头师很差
                 break
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足金
