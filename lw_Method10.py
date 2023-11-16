@@ -5250,7 +5250,7 @@ if __name__ == '__main__':
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
     for aa in range(0, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
-        # c.Set_gqqDict(0, 'test3.t1xt')
+        # c.Set_Dict(0, 'test3.t1xt')
         if aa == 11 and pvp == 1:  # aa
             # if aa == 3 and pvp. == 1:# aa
             aa = 4
@@ -5382,7 +5382,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 造就师很狂
 
             elif pvp == 7:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 7p 色彩不足
+                c.nvQiGong(n, 0.68, 0.26, 0, 0, *canshu)  # 7p 色彩不足S
             elif pvp == 8:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 力气师很大
             elif pvp == 9:
