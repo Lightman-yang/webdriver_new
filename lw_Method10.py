@@ -484,7 +484,13 @@ class Caozuolei(Caozuolei1):
                 linesign=" ",
                 isbackcolor=0)
             print("bb:", bb)
-            if "水水" in aa:
+            if "无敌" in aa and "快递员" not in aa:
+                print("无敌师很酷 是：超越起跑线  账号,9")
+                return 9
+            elif "冒险师" in aa and "快递员" not in aa:
+                print("力气师很大 是：曌飂飏  账号,8")
+                return 8
+            elif "水水" in aa and "快递员" not in aa:
                 print("色彩不足啊 是：风花雪月 账号,6")
                 return 7
             elif "造就师" in bb or '造就师' in aa:
@@ -4378,8 +4384,8 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -5235,11 +5241,11 @@ if __name__ == '__main__':
     # n = 24
     # c.nvQiGgdfyong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
-    # time.sleep(1000)
+    # time.sleep(10030)
 
     pvp = c.FuBen_INFO12()  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     print(pvp)
-    # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
+    # x = [[150, 290 1], [270, 280, 2], [380, 215, 3], [49dyg0, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
     for aa in range(0, 10):  # 打图设置ddddgt
@@ -5271,13 +5277,19 @@ if __name__ == '__main__':
             sss1 = 30  # 快递员 气功师很水
             print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 5:
-            sss1 = 35  # 能量不足了 19129832 QQ ?
+            sss1 = 40  # 能量不足了 19129832 QQ ?
             print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 6:
-            sss1 = 44 # 造就师很狂 ?
+            sss1 = 49 # 造就师很狂 ?
             print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 7:
-            sss1 = 47  # 风化雪月  色彩不足啊
+            sss1 = 52  # 风化雪月  色彩不足啊
+            print('pvp=', pvp,'excel=>', sss1)
+        elif pvp == 8:
+            sss1 = 61  # 柳杨  力气师很大
+            print('pvp=', pvp,'excel=>', sss1)
+        elif pvp == 9:
+            sss1 = 71  # 超越起跑线  无敌师很猛
             print('pvp=', pvp,'excel=>', sss1)
         else:
             print('什么都不是')
@@ -5287,7 +5299,8 @@ if __name__ == '__main__':
         time.sleep(5)           #pvp==2 是睡眠不足
         if (x[aa][2] == 1 and pvp == 4) or(x[aa][2] == 1 and pvp == 3) or (x[aa][2] == 7 and pvp == 1) or (x[aa][2] == 9 and pvp == 1) or  (
                 pvp == 3 and x[aa][2] == 3)  or (
-                pvp == 2 and x[aa][2] == 4)  or (pvp == 4 and x[aa][2] == 3) or (pvp == 1 and x[aa][2] == 6) or (pvp == 2 and x[aa][2] == 5):
+                pvp == 2 and x[aa][2] == 4)  or (pvp == 4 and x[aa][2] == 3) or (pvp == 1 and x[aa][2] == 6) or (pvp == 2 and x[aa][2] == 5)\
+                or (pvp == 9 and x[aa][2] == 1):
             c.movingfigur_Down(0.65)  # 向下移动，移动一秒
         else:
 
@@ -5326,12 +5339,13 @@ if __name__ == '__main__':
             # dt.press('right')  # 向右移动， 移动1秒，
             # dt.press('right')  # 向右移动， 移动1秒，
         # elif x[aa][2] == 5 and pvp == 2 or (x[aa][2] == 7 and pvp == 2):  # or  (x[aa][2] == 3 and pvp ==2)
-        elif (x[aa][2] == 2 and pvp == 7) or (x[aa][2] == 3 and pvp == 7) :  # or  (x[aa][2] == 3 and pvp ==2)
-
+        # elif (x[aa][2] == 2 and pvp == 7) or (x[aa][2] == 3 and pvp == 7) :  # or  (x[aa][2] == 3 and pvp ==2)
+        #
+        #     dt.press('left')  # 向右移动， 移动1秒，
+        #     dt.press('left')  # 向右移动， 移动1秒，
+        #     dt.press('left')  # 向右移动， 移动1秒，
+        elif (x[aa][2] == 2 and pvp == 8) or (x[aa][2] == 3 and pvp == 8) :  # or  (x[aa][2] == 3 and pvp ==2)
             dt.press('left')  # 向右移动， 移动1秒，
-            dt.press('left')  # 向右移动， 移动1秒，
-        elif (x[aa][2] == 2 and pvp == 6) or (x[aa][2] == 3 and pvp == 6) :  # or  (x[aa][2] == 3 and pvp ==2)
-
             dt.press('left')  # 向右移动， 移动1秒，
             dt.press('left')  # 向右移动， 移动1秒，
 
@@ -5365,11 +5379,14 @@ if __name__ == '__main__':
             elif pvp == 5:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p
             elif pvp == 6:
-                c.nvQiGong(n, 0.51, 0.26, 0, 0, *canshu)  # 6p 造就师很狂
+                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 造就师很狂
 
             elif pvp == 7:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 7p 色彩不足
-
+                c.nvQiGong(n, 0.68, 0.26, 0, 0, *canshu)  # 7p 色彩不足S
+            elif pvp == 8:
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 力气师很大
+            elif pvp == 9:
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 无敌师很猛
 
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
@@ -5387,7 +5404,7 @@ if __name__ == '__main__':
                 # c.nvQiGong(n, 0.48, 0.2, 0)  # 1p 气功师很懒
                 c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
             elif pvp == 2:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
+                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
             elif pvp == 3:
                  c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师废了
             # elif pvp == 4:
@@ -5399,11 +5416,15 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 5p 史上最菜气功
                 #break
             elif pvp == 6:
-                c.nvQiGong(n, 0.51, 0.26, 0, 0, *canshu)  # 6p 狗头师很差
+                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 狗头师很差
 
             elif pvp == 7:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 7p 炼狱不足钢
-
+                c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 7p 炼狱不足钢
+            elif pvp == 8:
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 冒险师很帅
+            elif pvp == 9:
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 乐乐师很猛
+                break
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 # c.nvQiGong(n, 0.48, 0.26, 0)  # 气功师该加强了
@@ -5421,7 +5442,7 @@ if __name__ == '__main__':
                 # c.nvQiGong(n, 0.62, 0.26, 0)  # 2p 睡眠不足丶
                 #
             elif pvp == 2:
-                c.nvQiGong(n, 0.56, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
+                c.nvQiGong(n, 0.48, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
             elif pvp == 3:
                  c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功运气
             elif pvp == 4:
@@ -5430,10 +5451,12 @@ if __name__ == '__main__':
             elif pvp == 5:
                 c.naiMa(n, 0.49, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
             elif pvp == 6:
-                c.nvQiGong(n, 0.51, 0.26, 0, 0, *canshu)  # 6p 建筑师很牛
+                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 建筑师很牛
                 break
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足金
+            elif pvp == 8:
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 冒险师很坏
                 break
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
@@ -5458,6 +5481,8 @@ if __name__ == '__main__':
 
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
+            elif pvp == 7:
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足了
 
             else:
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  #
@@ -5483,10 +5508,13 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师很送
                 #break
             elif pvp == 4:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 气功师很水i
-                break
+                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很水i
+
             elif pvp == 5:
                 c.naiMa(n, 0.48, 0.26, 0, 0, *canshu) #5P 爷的太阳最混
+            elif pvp == 7:
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 水水不足了
+
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 break
@@ -5508,12 +5536,17 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊
             elif pvp == 3:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师很水丨
+            elif pvp == 4:
+                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师运气
 
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu)  # 5P 爷的曙光最混
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
                 #c.nvQiGong(n, 0.69, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p
+            elif pvp == 7:
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 宽带不足了
+                break
             else:
                 break
             time.sleep(2)
@@ -5534,7 +5567,9 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p 睡眠不足风
             elif pvp == 3:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 睡眠不足巛
-
+            elif pvp == 4:
+                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很行
+                break
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最香
             else:
@@ -5557,6 +5592,9 @@ if __name__ == '__main__':
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu)  # 5P 爷的奶无敌了 
                 break
                 #c.yuren(n, 0.51, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
+            elif pvp == 4:
+                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很刚
+                break
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的曙光最叼
 
