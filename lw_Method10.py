@@ -5248,10 +5248,10 @@ if __name__ == '__main__':
     # x = [[150, 290 1], [270, 280, 2], [380, 215, 3], [49dyg0, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(3, 10):  # 打图设置ddddg
+    for aa in range(0, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
-        if aa == 11 and pvp == 1:  # aarfgqqrf
+        if aa == 11 and pvp == 1:  # aa
             # if aa == 3 and pvp. == 1:# aa
             aa = 4
         # elif aa == 6 and pvp == 1:
@@ -5417,7 +5417,6 @@ if __name__ == '__main__':
                 #break
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 狗头师很差
-                #c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 6p 建筑师很牛
 
             elif pvp == 7:
                 c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 7p 炼狱不足钢
@@ -5425,7 +5424,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 冒险师很帅
             elif pvp == 9:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 乐乐师很猛
-                break
+
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 # c.nvQiGong(n, 0.48, 0.26, 0)  # 气功师该加强了
@@ -5459,6 +5458,9 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足金
             elif pvp == 8:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 冒险师很坏
+                break
+            elif pvp == 9:
+                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 8p 乐乐师很猛
                 break
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
