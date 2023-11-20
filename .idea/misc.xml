@@ -3,5 +3,9 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (PyCharm 2019.3.4)" project-jdk-type="Python SDK" />
+=======
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (webdriver_new)" project-jdk-type="Python SDK" />
+>>>>>>> 58d929cb359c8e372ab6bd51b65500f70707ce73
 </project>
