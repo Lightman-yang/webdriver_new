@@ -4383,8 +4383,8 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        #data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # r"D:\webdriver_new\lw\game_name.xlsx"
@@ -4587,18 +4587,22 @@ class Caozuolei(Caozuolei1):
                 if h == 1000:
                     print(1000)
                     break
-                elif y == 0 or y1 == 0 or y==2 or y1== 4:
-                    print('y=', y, ' y1=', y1)
+                elif y == 0 and y1 == 4 :
+                    print('y=', y, ' y1=', y1,'测试')
                     return
-                elif int(y - y1) > 60 and z == 88:  # 6
-                    # print((y- y1) , 'y2')
+                elif y > 449:
                     dt.press('up')
-                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    print('y=', y, ' y1=', (y - y1), "up,#6  int(y - y1) > 16 and z == 88 ")
-                    num_ss[0] = 0
+                    print('y=', y, ' y1=', y1,'测试')
                     return
+                # elif int(y - y1) > 60 and z == 88:  # 6
+                #     # print((y- y1) , 'y2')
+                #     dt.press('up')
+                #     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                #     print('y=', y, ' y1=', (y - y1), "up,#6  int(y - y1) > 16 and z == 88 ")
+                #     num_ss[0] = 0
+                #     return
 
-                elif int(y - y1) > 22 and z == 88:  # 6
+                elif int(y - y1) > 22 and z == 88:  # 61
                     # print((y- y1) , 'y2')
                     # dt.press('up')
                     # dt.press('up')
@@ -4607,6 +4611,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('up')  # ：模拟按键松开按键
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
                     print("up,#6  int(y - y1) > 16 and z == 88 ",'y分别为',y,'y1分别为',y1)
+                    print('y=', y, ' y1=', y1, '测试')
                     num_ss[0] = 0
                     return
                 elif int(y - y1) < -110 and z == 88:  # 5
@@ -4614,6 +4619,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('down')
                     print("down,#5 int(y - y1) < -16 and z == 88 ",'y分别为',y,'y1分别为',y1)
                     num_ss[0] = 0
+                    print('y=', y, ' y1=', y1, '测试')
                     return
                 elif 33 > int(y - y1) > -60 and z == 88:  # 6
                     # print((y- y1) , 'y2')
@@ -5372,7 +5378,7 @@ if __name__ == '__main__':
                 # aa1, bb1, cc1, dd1="熟练者", "#410", "师很", "#140"
                 # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
             elif pvp == 3:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p ll0110ll
+                c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 3p ll0110ll
             elif pvp == 4:
                 c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 4p 气功师很水 快递员
             elif pvp == 5:
@@ -5443,7 +5449,7 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.56, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
             elif pvp == 3:
-                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功运气
+                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 3p 气功运气 2023 11 16
             elif pvp == 4:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 快递员
                 #break
@@ -5477,7 +5483,7 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 2p 十睡眠不足
             elif pvp == 3:
-                c.nvQiGong(n, 0.75, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
+                c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
             elif pvp == 4:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p l11l
 
