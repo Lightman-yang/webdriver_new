@@ -4602,7 +4602,7 @@ class Caozuolei(Caozuolei1):
                 #     num_ss[0] = 0
                 #     return
 
-                elif int(y - y1) > 22 and z == 88:  # 6
+                elif int(y - y1) > 22 and z == 88:  # 61
                     # print((y- y1) , 'y2')
                     # dt.press('up')
                     # dt.press('up')
