@@ -5299,7 +5299,7 @@ if __name__ == '__main__':
         time.sleep(5)           #pvp==2 是睡眠不足
         if (x[aa][2] == 1 and pvp == 4) or(x[aa][2] == 1 and pvp == 3) or (x[aa][2] == 7 and pvp == 1) or (x[aa][2] == 9 and pvp == 1) or  (
                 pvp == 3 and x[aa][2] == 3)  or (
-                pvp == 2 and x[aa][2] == 4)  or (pvp == 4 and x[aa][2] == 3) or (pvp == 1 and x[aa][2] == 6) or (pvp == 2 and x[aa][2] == 5)\
+                pvp == 2 and x[aa][2] == 4)  or (pvp == 4 and x[aa][2] == 3)  or (pvp == 2 and x[aa][2] == 5)\
                 or (pvp == 9 and x[aa][2] == 1):
             c.movingfigur_Down(0.65)  # 向下移动，移动一秒
         else:
@@ -5452,7 +5452,7 @@ if __name__ == '__main__':
                 c.naiMa(n, 0.49, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
             elif pvp == 6:
                 #c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 建筑师很牛
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 6p 狗头师很差
+                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 狗头师很差
 
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足金
