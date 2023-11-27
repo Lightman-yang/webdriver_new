@@ -5305,11 +5305,16 @@ if __name__ == '__main__':
             # d
         # 女气功的操作流程，从选人物到进入图，在到刷图
         time.sleep(5)           #pvp==2 是睡眠不足
-        if (x[aa][2] == 1 and pvp == 4) or(x[aa][2] == 1 and pvp == 3) or (x[aa][2] == 7 and pvp == 1) or (x[aa][2] == 9 and pvp == 1) or  (
-                pvp == 3 and x[aa][2] == 3)  or (
-                pvp == 2 and x[aa][2] == 4)  or (pvp == 4 and x[aa][2] == 3) or (pvp == 1 and x[aa][2] == 6) or (pvp == 2 and x[aa][2] == 5) or (pvp == 5 and x[aa][2] == 5):
-                pvp == 2 and x[aa][2] == 4)  or (pvp == 4 and x[aa][2] == 3) or (pvp == 1 and x[aa][2] == 6) or (pvp == 2 and x[aa][2] == 5)\
+        if (x[aa][2] == 1 and pvp == 4) or(x[aa][2] == 1 and pvp == 3) or (x[aa][2] == 7 and pvp == 1) or (x[aa][2] == 9 and pvp == 1) \
+                or (pvp == 3 and x[aa][2] == 3) \
+                or (pvp == 2 and x[aa][2] == 4) \
+                or (pvp == 4 and x[aa][2] == 3) \
+                or (pvp == 1 and x[aa][2] == 6) \
+                or (pvp == 2 and x[aa][2] == 5) \
+                or (pvp == 5 and x[aa][2] == 5) \
                 or (pvp == 9 and x[aa][2] == 1):
+
+
             c.movingfigur_Down(0.65)  # 向下移动，移动一秒
         else:
 
