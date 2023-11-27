@@ -2728,10 +2728,12 @@ class Caozuolei(Caozuolei1):
                     t31.start()  # 开始运行t1线程
                     dt.press('down')
                     self.FuBen_INFO6(0, 6)
+                    dt.press('down')
+                    time.sleep(0.7)
                     dt.press('9')
                     time.sleep(0.75)
                     self.FuBen_INFO1()
-                    self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2)
+                    self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2,-20)
                     # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 20)
                     if self.FuBen_INFO13() == 0:
                         dt.press('left')
@@ -5459,7 +5461,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 冒险师很坏
                 break
             elif pvp == 9:
-                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 8p 乐乐师很猛
+                c.nvQiGong(n, 0.7, 0.26, 0, 0, *canshu)  # 8p 乐乐师很猛
                 break
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
