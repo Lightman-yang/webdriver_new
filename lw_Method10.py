@@ -4604,7 +4604,7 @@ class Caozuolei(Caozuolei1):
                 #     num_ss[0] = 0
                 #     return
 
-                elif int(y - y1) > 22 and z == 88:  # 61
+                elif (int(y - y1) > 22 and z == 88) and y1!=4:  # 61
                     # print((y- y1) , 'y2')
                     # dt.press('up')
                     # dt.press('up')
@@ -4613,21 +4613,25 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('up')  # ：模拟按键松开按键
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
                     print("up,#6  int(y - y1) > 16 and z == 88 ",'y分别为',y,'y1分别为',y1)
-                    print('y=', y, ' y1=', y1, '测试')
+                    print('y=', y, ' y1=', y1, '2023')
                     num_ss[0] = 0
                     return
-                elif int(y - y1) < -110 and z == 88:  # 5
+                elif (int(y - y1) < -110 and z == 88) and y1 != 4 :  # 5
                     # print((y- y1), 'y1')
                     dt.press('down')
                     print("down,#5 int(y - y1) < -16 and z == 88 ",'y分别为',y,'y1分别为',y1)
                     num_ss[0] = 0
                     print('y=', y, ' y1=', y1, '测试')
                     return
-                elif 33 > int(y - y1) > -60 and z == 88:  # 6
+                elif (33 > int(y - y1) > -60 and z == 88) and y1 != 4:  # 6
                     # print((y- y1) , 'y2')
                     # dt.press('up')
                     # dt.press('down')
                     print('不动，数据不名称，', (y - y1), '> -150 ','y分别为',y,'y1分别为',y1)
+                    return
+                elif y < 380:
+                    dt.press('down')
+                    print('y=', y, ' y1=', y1, '测试')
                     return
 
 
@@ -5466,7 +5470,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 冒险师很坏
                 break
             elif pvp == 9:
-                c.nvQiGong(n, 0.7, 0.26, 0, 0, *canshu)  # 8p 乐乐师很猛
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 乐乐师很猛
                 break
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
