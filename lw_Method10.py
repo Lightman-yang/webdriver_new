@@ -337,6 +337,7 @@ class Caozuolei(Caozuolei1):
     def FuBen_INFO3(self, zzz=0):  # 副本地图信息如果自动存在，证明没活力点了，直接退出
         # self.Use_Dict(1)
         # c.Set_Dict(0, "测试2.txt") 靓丽=#70  靓仔=#360
+
         while True:
             # time.sleep(0.15)
             aa = self.Find_Ocr(
@@ -364,6 +365,7 @@ class Caozuolei(Caozuolei1):
                 return 2
             elif "再次挑战" in aa:
                 ret_values.append(1)
+
                 dt.press('f12')
                 time.sleep(1)
                 # dt.press('.')
@@ -5248,7 +5250,7 @@ if __name__ == '__main__':
     # x = [[150, 290 1], [270, 280, 2], [380, 215, 3], [49dyg0, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(3, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
         if aa == 11 and pvp == 1:  # aa
