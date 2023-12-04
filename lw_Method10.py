@@ -5476,8 +5476,8 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 冒险师很坏
                 break
             elif pvp == 9:
-                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 乐乐师很猛
-                break
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 睡眠师很水
+
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
             time.sleep(3)
@@ -5503,7 +5503,8 @@ if __name__ == '__main__':
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足了
-
+            elif pvp == 9:
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 雪域师很水
             else:
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  #
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
@@ -5535,7 +5536,9 @@ if __name__ == '__main__':
                 c.naiMa(n, 0.48, 0.26, 0, 0, *canshu) #5P 爷的太阳最混
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 水水不足了
-
+            elif pvp == 9:
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 无敌师很水
+                break
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 break
