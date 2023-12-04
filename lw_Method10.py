@@ -4385,9 +4385,9 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
-        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -4604,7 +4604,7 @@ class Caozuolei(Caozuolei1):
                 #     num_ss[0] = 0
                 #     return
 
-                elif int(y - y1) > 22 and z == 88:  # 61
+                elif (int(y - y1) > 22 and z == 88) and y1!=4:  # 61
                     # print((y- y1) , 'y2')
                     # dt.press('up')
                     # dt.press('up')
@@ -4613,21 +4613,25 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('up')  # ：模拟按键松开按键
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
                     print("up,#6  int(y - y1) > 16 and z == 88 ",'y分别为',y,'y1分别为',y1)
-                    print('y=', y, ' y1=', y1, '测试')
+                    print('y=', y, ' y1=', y1, '2023')
                     num_ss[0] = 0
                     return
-                elif int(y - y1) < -110 and z == 88:  # 5
+                elif (int(y - y1) < -110 and z == 88) and y1 != 4 :  # 5
                     # print((y- y1), 'y1')
                     dt.press('down')
                     print("down,#5 int(y - y1) < -16 and z == 88 ",'y分别为',y,'y1分别为',y1)
                     num_ss[0] = 0
                     print('y=', y, ' y1=', y1, '测试')
                     return
-                elif 33 > int(y - y1) > -60 and z == 88:  # 6
+                elif (33 > int(y - y1) > -60 and z == 88) and y1 != 4:  # 6
                     # print((y- y1) , 'y2')
                     # dt.press('up')
                     # dt.press('down')
                     print('不动，数据不名称，', (y - y1), '> -150 ','y分别为',y,'y1分别为',y1)
+                    return
+                elif y < 380:
+                    dt.press('down')
+                    print('y=', y, ' y1=', y1, '测试')
                     return
 
 
@@ -5256,7 +5260,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(2, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
         if aa == 11 and pvp == 1:  # aa
@@ -5291,13 +5295,13 @@ if __name__ == '__main__':
             sss1 = 49 # 造就师很狂 ?
             print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 7:
-            sss1 = 52  # 风化雪月  色彩不足啊
+            sss1 = 58  # 风化雪月  色彩不足啊
             print('pvp=', pvp,'excel=>', sss1)
         elif pvp == 8:
-            sss1 = 61  # 柳杨  力气师很大
+            sss1 = 67  # 柳杨  力气师很大
             print('pvp=', pvp,'excel=>', sss1)
         elif pvp == 9:
-            sss1 = 71  # 超越起跑线  无敌师很猛
+            sss1 = 77  # 超越起跑线  无敌师很猛
             print('pvp=', pvp,'excel=>', sss1)
         else:
             print('什么都不是')
@@ -5358,10 +5362,10 @@ if __name__ == '__main__':
         #     dt.press('left')  # 向右移动， 移动1秒，
         #     dt.press('left')  # 向右移动， 移动1秒，
         #     dt.press('left')  # 向右移动， 移动1秒，
-        # elif (x[aa][2] == 2 and pvp == 8) or (x[aa][2] == 3 and pvp == 8) :  # or  (x[aa][2] == 3 and pvp ==2)
-        #     dt.press('left')  # 向右移动， 移动1秒，
-        #     dt.press('left')  # 向右移动， 移动1秒，
-        #     dt.press('left')  # 向右移动， 移动1秒，
+        elif (x[aa][2] == 2 and pvp == 8) or (x[aa][2] == 3 and pvp == 8) :  # or  (x[aa][2] == 3 and pvp ==2)
+            dt.press('left')  # 向右移动， 移动1秒，
+            dt.press('left')  # 向右移动， 移动1秒，
+            dt.press('left')  # 向右移动， 移动1秒，
         else:
             dt.press('right')  # 向右移动， 移动1秒，
         # dt.press('right')  # 向右移动， 移动1秒，
@@ -5415,7 +5419,7 @@ if __name__ == '__main__':
             if pvp == 1:
                 #
                 # c.nvQiGong(n, 0.48, 0.2, 0)  # 1p 气功师很懒
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
+                c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
             elif pvp == 2:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
             elif pvp == 3:
@@ -5451,7 +5455,7 @@ if __name__ == '__main__':
             continue
         elif aa == 2:
             if pvp == 1:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师很懒
+                c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 1p 气功师很懒
                 # c.nvQiGong(n, 0.62, 0.26, 0)  # 2p 睡眠不足丶
                 #
             elif pvp == 2:
@@ -5465,15 +5469,15 @@ if __name__ == '__main__':
                 c.naiMa(n, 0.5, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 建筑师很牛
-                break
+
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足金
             elif pvp == 8:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 冒险师很坏
                 break
             elif pvp == 9:
-                c.nvQiGong(n, 0.7, 0.26, 0, 0, *canshu)  # 8p 乐乐师很猛
-                break
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 睡眠师很水
+
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
             time.sleep(3)
@@ -5494,12 +5498,14 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
             elif pvp == 4:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p l11l
-
+            elif pvp == 6:
+                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 拉梅师很开
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足了
-
+            elif pvp == 9:
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 雪域师很水
             else:
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  #
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
@@ -5525,13 +5531,16 @@ if __name__ == '__main__':
                 #break
             elif pvp == 4:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很水i
-
+            elif pvp == 6:
+                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 梦想师很阔
             elif pvp == 5:
                 c.naiMa(n, 0.5, 0.26, 0, 0, *canshu) #5P 爷的太阳最混
                 c.naiMa(n, 0.48, 0.26, 0, 0, *canshu) #5P 爷的太阳最混
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 水水不足了
-
+            elif pvp == 9:
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 无敌师很水
+                break
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 break
@@ -5555,7 +5564,9 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师很水丨
             elif pvp == 4:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师运气
-
+            elif pvp == 6:
+                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 高台师很恶
+                break
             elif pvp == 5:
                 c.naiMa(n, 0.5, 0.26, 0, 0, *canshu)  # 5P 爷的曙光最混
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
