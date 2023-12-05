@@ -5309,7 +5309,7 @@ if __name__ == '__main__':
             # d
         # 女气功的操作流程，从选人物到进入图，在到刷图
         time.sleep(5)           #pvp==2 是睡眠不足
-        if (x[aa][2] == 1 and pvp == 4) or(x[aa][2] == 1 and pvp == 3) or (x[aa][2] == 7 and pvp == 1) or (x[aa][2] == 9 and pvp == 1) \
+        if (x[aa][2] == 1 and pvp == 3) or (x[aa][2] == 7 and pvp == 1) or (x[aa][2] == 9 and pvp == 1) \
                 or (pvp == 3 and x[aa][2] == 3) \
                 or (pvp == 2 and x[aa][2] == 4) \
                 or (pvp == 4 and x[aa][2] == 3) \
@@ -5505,7 +5505,7 @@ if __name__ == '__main__':
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足了
             elif pvp == 9:
-                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 雪域师很水
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 铸造师很广
             else:
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  #
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
@@ -5539,8 +5539,7 @@ if __name__ == '__main__':
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 水水不足了
             elif pvp == 9:
-                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 无敌师很水
-                break
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 铸造师很气
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 break
@@ -5574,6 +5573,9 @@ if __name__ == '__main__':
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 宽带不足了
+                break
+            elif pvp == 9:
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 理解师很哦
                 break
             else:
                 break
