@@ -4596,6 +4596,10 @@ class Caozuolei(Caozuolei1):
                     dt.press('up')
                     print('y=', y, ' y1=', y1,'测试')
                     return
+                elif y < 380:
+                    dt.press('down')
+                    print('y=', y, ' y1=', y1, '测试')
+                    return
                 # elif int(y - y1) > 60 and z == 88:  # 6
                 #     # print((y- y1) , 'y2')
                 #     dt.press('up')
@@ -4603,36 +4607,33 @@ class Caozuolei(Caozuolei1):
                 #     print('y=', y, ' y1=', (y - y1), "up,#6  int(y - y1) > 16 and z == 88 ")
                 #     num_ss[0] = 0
                 #     return
+                #
+                # elif (int(y - y1) > 22 and z == 88) and (y1!=4 or y!=2):  # 61
+                #     # print((y- y1) , 'y2')
+                #     # dt.press('up')
+                #     # dt.press('up')
+                #     dt.keyDown('up')  # ：模拟按键按下
+                #     time.sleep(0.1)
+                #     dt.keyUp('up')  # ：模拟按键松开按键
+                #     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                #     print("up,#6  int(y - y1) > 16 and z == 88 ",'y分别为',y,'y1分别为',y1)
+                #     print('y=', y, ' y1=', y1, '2023')
+                #     num_ss[0] = 0
+                #     return
+                # elif (int(y - y1) < -110 and z == 88) and (y1!=4 or y!=2) :  # 5
+                #     # print((y- y1), 'y1')
+                #     dt.press('down')
+                #     print("down,#5 int(y - y1) < -16 and z == 88 ",'y分别为',y,'y1分别为',y1)
+                #     num_ss[0] = 0
+                #     print('y=', y, ' y1=', y1, '测试')
+                #     return
+                # elif (33 > int(y - y1) > -60 and z == 88) and (y1!=4 or y!=2):  # 6
+                #     # print((y- y1) , 'y2')
+                #     # dt.press('up')
+                #     # dt.press('down')
+                #     print('不动，数据不名称，', (y - y1), '> -150 ','y分别为',y,'y1分别为',y1)
+                #     return
 
-                elif (int(y - y1) > 22 and z == 88) and y1!=4:  # 61
-                    # print((y- y1) , 'y2')
-                    # dt.press('up')
-                    # dt.press('up')
-                    dt.keyDown('up')  # ：模拟按键按下
-                    time.sleep(0.1)
-                    dt.keyUp('up')  # ：模拟按键松开按键
-                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    print("up,#6  int(y - y1) > 16 and z == 88 ",'y分别为',y,'y1分别为',y1)
-                    print('y=', y, ' y1=', y1, '2023')
-                    num_ss[0] = 0
-                    return
-                elif (int(y - y1) < -110 and z == 88) and y1 != 4 :  # 5
-                    # print((y- y1), 'y1')
-                    dt.press('down')
-                    print("down,#5 int(y - y1) < -16 and z == 88 ",'y分别为',y,'y1分别为',y1)
-                    num_ss[0] = 0
-                    print('y=', y, ' y1=', y1, '测试')
-                    return
-                elif (33 > int(y - y1) > -60 and z == 88) and y1 != 4:  # 6
-                    # print((y- y1) , 'y2')
-                    # dt.press('up')
-                    # dt.press('down')
-                    print('不动，数据不名称，', (y - y1), '> -150 ','y分别为',y,'y1分别为',y1)
-                    return
-                elif y < 380:
-                    dt.press('down')
-                    print('y=', y, ' y1=', y1, '测试')
-                    return
 
 
 
@@ -5309,7 +5310,7 @@ if __name__ == '__main__':
             # d
         # 女气功的操作流程，从选人物到进入图，在到刷图
         time.sleep(5)           #pvp==2 是睡眠不足
-        if (x[aa][2] == 1 and pvp == 4) or(x[aa][2] == 1 and pvp == 3) or (x[aa][2] == 7 and pvp == 1) or (x[aa][2] == 9 and pvp == 1) \
+        if (x[aa][2] == 1 and pvp == 3) or (x[aa][2] == 7 and pvp == 1) or (x[aa][2] == 9 and pvp == 1) \
                 or (pvp == 3 and x[aa][2] == 3) \
                 or (pvp == 2 and x[aa][2] == 4) \
                 or (pvp == 4 and x[aa][2] == 3) \
