@@ -5362,10 +5362,10 @@ if __name__ == '__main__':
         #     dt.press('left')  # 向右移动， 移动1秒，
         #     dt.press('left')  # 向右移动， 移动1秒，
         #     dt.press('left')  # 向右移动， 移动1秒，
-        elif (x[aa][2] == 2 and pvp == 8) or (x[aa][2] == 3 and pvp == 8) :  # or  (x[aa][2] == 3 and pvp ==2)
-            dt.press('left')  # 向右移动， 移动1秒，
-            dt.press('left')  # 向右移动， 移动1秒，
-            dt.press('left')  # 向右移动， 移动1秒，
+        # elif (x[aa][2] == 2 and pvp == 8) or (x[aa][2] == 3 and pvp == 8) :  # or  (x[aa][2] == 3 and pvp ==2)
+        #     dt.press('left')  # 向右移动， 移动1秒，
+        #     dt.press('left')  # 向右移动， 移动1秒，
+        #     dt.press('left')  # 向右移动， 移动1秒，
         else:
             dt.press('right')  # 向右移动， 移动1秒，
         # dt.press('right')  # 向右移动， 移动1秒，
