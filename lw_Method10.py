@@ -5363,10 +5363,10 @@ if __name__ == '__main__':
         #     dt.press('left')  # 向右移动， 移动1秒，
         #     dt.press('left')  # 向右移动， 移动1秒，
         #     dt.press('left')  # 向右移动， 移动1秒，
-        elif (x[aa][2] == 2 and pvp == 8) or (x[aa][2] == 3 and pvp == 8) :  # or  (x[aa][2] == 3 and pvp ==2)
-            dt.press('left')  # 向右移动， 移动1秒，
-            dt.press('left')  # 向右移动， 移动1秒，
-            dt.press('left')  # 向右移动， 移动1秒，
+        # elif (x[aa][2] == 2 and pvp == 8) or (x[aa][2] == 3 and pvp == 8) :  # or  (x[aa][2] == 3 and pvp ==2)
+        #     dt.press('left')  # 向右移动， 移动1秒，
+        #     dt.press('left')  # 向右移动， 移动1秒，
+        #     dt.press('left')  # 向右移动， 移动1秒，
         else:
             dt.press('right')  # 向右移动， 移动1秒，
         # dt.press('right')  # 向右移动， 移动1秒，
@@ -5474,10 +5474,10 @@ if __name__ == '__main__':
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足金
             elif pvp == 8:
-                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 冒险师很坏
-                break
+                c.nvQiGong(n, 0.72, 0.26, 0, 0, *canshu)  # 8p 冒险师很坏
+
             elif pvp == 9:
-                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 睡眠师很水
+                c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 9P 睡眠师很水
 
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
@@ -5496,7 +5496,7 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 2p 十睡眠不足
             elif pvp == 3:
-                c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
+                c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
             elif pvp == 4:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p l11l
             elif pvp == 6:
@@ -5505,8 +5505,11 @@ if __name__ == '__main__':
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足了
+            elif pvp == 8:
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很广
+
             elif pvp == 9:
-                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 铸造师很广
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 9P 雪域师很水
             else:
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  #
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
@@ -5536,11 +5539,13 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 梦想师很阔
             elif pvp == 5:
                 c.naiMa(n, 0.5, 0.26, 0, 0, *canshu) #5P 爷的太阳最混
-                c.naiMa(n, 0.48, 0.26, 0, 0, *canshu) #5P 爷的太阳最混
+            elif pvp == 8:
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
+                break
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 水水不足了
             elif pvp == 9:
-                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 铸造师很气
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 9P 铸造师很气
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 break
