@@ -5541,7 +5541,7 @@ if __name__ == '__main__':
                 c.naiMa(n, 0.5, 0.26, 0, 0, *canshu) #5P 爷的太阳最混
             elif pvp == 8:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
-                break
+
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 水水不足了
             elif pvp == 9:
@@ -5578,7 +5578,10 @@ if __name__ == '__main__':
                 #c.nvQiGong(n, 0.69, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p
             elif pvp == 7:
-                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 宽带不足了
+                c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 7p 宽带不足了
+                break
+            elif pvp == 8:
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
                 break
             elif pvp == 9:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 理解师很哦
