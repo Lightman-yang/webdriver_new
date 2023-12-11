@@ -5254,7 +5254,7 @@ if __name__ == '__main__':
     # n = 24
     # c.nvQiGgdfyong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
-    # time.sleep(1000)
+    # time.sleep(1000)y
 
     pvp = c.FuBen_INFO12()  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     print(pvp)
