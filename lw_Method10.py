@@ -2524,7 +2524,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)  # 按下两秒
                     dt.press('right')
                     dt.keyDown('right')  # ：模拟按键按下 向下
-                    time.sleep(1.25 + move_seep)
+                    time.sleep(1.25 + move_seep+0.5)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     self.FuBen_INFO66()
@@ -5254,16 +5254,16 @@ if __name__ == '__main__':
     # n = 24
     # c.nvQiGgdfyong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
-    # time.sleep(1000)
+    # time.sleep(1000)y
 
     pvp = c.FuBen_INFO12()  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     print(pvp)
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(2, 10):  # 打图设置ddddg
+    for aa in range(3, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
-        # c.Set_Dict(0, 'test3.t1xt')
+        # c.Set_Dict(0, 'test3.t1xt')f
         if aa == 11 and pvp == 1:  # aa
             # if aa == 3 and pvp. == 1:# aa
             aa = 4
@@ -5477,7 +5477,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.72, 0.26, 0, 0, *canshu)  # 8p 冒险师很坏
 
             elif pvp == 9:
-                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 睡眠师很水
+                c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 9P 睡眠师很水
 
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
@@ -5509,7 +5509,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很广
 
             elif pvp == 9:
-                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 铸造师很广
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 9P 雪域师很水
             else:
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  #
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
@@ -5545,7 +5545,7 @@ if __name__ == '__main__':
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 水水不足了
             elif pvp == 9:
-                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 铸造师很气
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 9P 铸造师很气
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 break
