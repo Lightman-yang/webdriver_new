@@ -2524,7 +2524,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)  # 按下两秒
                     dt.press('right')
                     dt.keyDown('right')  # ：模拟按键按下 向下
-                    time.sleep(1.25 + move_seep)
+                    time.sleep(1.25 + move_seep+0.5)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     self.FuBen_INFO66()
