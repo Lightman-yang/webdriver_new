@@ -4577,7 +4577,7 @@ class Caozuolei(Caozuolei1):
             #     print((x-x1), 'y','外层循环')
             #     return
             # else:
-            for j in range(1, 2):
+            for j in range(1, 3):
                 print(num_ss[0])
                 self.menzuobiao1(renwuzuobiao)
                 # self.Find_srt(aa1, bb1, cc1, dd1)
@@ -4589,16 +4589,16 @@ class Caozuolei(Caozuolei1):
                 if h == 1000:
                     print(1000)
                     break
-                elif y == 0 and y1 == 4 :
-                    print('y=', y, ' y1=', y1,'测试')
-                    return
-                elif y > 449:
+                elif (y == 0 and y1 == 4) or (y == 2 and y1 == 4) :
+                    print('y=', y, ' y1=', y1,'测试1')
+                    continue
+                elif y > 449:  #449
                     dt.press('up')
-                    print('y=', y, ' y1=', y1,'测试')
+                    print('y=', y, ' y1=', y1,'测试2')
                     return
                 elif y < 380:
                     dt.press('down')
-                    print('y=', y, ' y1=', y1, '测试')
+                    print('y=', y, ' y1=', y1, '测试3')
                     return
                 # elif int(y - y1) > 60 and z == 88:  # 6
                 #     # print((y- y1) , 'y2')
@@ -5261,7 +5261,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(2, 10):  # 打图设置ddddg
+    for aa in range(4, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
         if aa == 11 and pvp == 1:  # aa
