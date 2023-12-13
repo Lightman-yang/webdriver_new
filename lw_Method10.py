@@ -4386,8 +4386,8 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -5260,7 +5260,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(2, 10):  # 打图设置ddddg
+    for aa in range(4, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
         if aa == 11 and pvp == 1:  # aa
@@ -5466,7 +5466,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 快递员
                 #break
             elif pvp == 5:
-                c.naiMa(n, 0.5, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
+                c.naiMa(n, 0.48, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 建筑师很牛
                 break
