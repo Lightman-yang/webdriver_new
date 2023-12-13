@@ -5203,7 +5203,7 @@ class Caozuolei(Caozuolei1):
             print('没有找到没有找到没有找到')
 
     def SY001(self):
-        for l in range(1, 60):
+        for kk in range(1, 60):
             global ret_values
             ret_values = [9, 8, 7]
             t13 = Thread(target=self.FuBen_INFO3,
@@ -5217,34 +5217,44 @@ class Caozuolei(Caozuolei1):
                     time.sleep(2)
                     dt.press('9')
                     time.sleep(2)
+                    dt.press('esc')
+                    time.sleep(1)
                     dt.press('f10')
                     time.sleep(2)
                     # dt.press('.')
                     ret_values[0] = 9
                     i = 60
                     print("再次挑战", 1)
-                if i == 1 or ret_values != 1:
+                    break
+                if i == 1 :
+                    print(i,'步骤一')
+                    time.sleep(0.65)  # 按下两秒
+                    dt.press('right')
+                    time.sleep(0.0075)  # 按下两秒
+                    dt.keyDown('right')  # ：模拟按键按下
+                    time.sleep(2.6)
+                    dt.keyUp('right')  # ：模拟按键松开按键
 
+                elif i == 2 :
+                    print(i, '步骤二')
                     time.sleep(0.65)  # 按下两秒
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(2.6)
                     dt.keyUp('right')  # ：模拟按键松开按键
+
                 elif i == 2 or ret_values != 1:
+                    print(i, '步骤三')
                     time.sleep(0.65)  # 按下两秒
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(2.6)
                     dt.keyUp('right')  # ：模拟按键松开按键
-                elif i == 2 or ret_values != 1:
-                    time.sleep(0.65)  # 按下两秒
-                    dt.press('right')
-                    time.sleep(0.0075)  # 按下两秒
-                    dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(2.6)
-                    dt.keyUp('right')  # ：模拟按键松开按键
+                    time.sleep(0.65)
+                    dt.press('g')
+                    time.sleep(0.7)
                 else:
                     print('111')
 

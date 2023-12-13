@@ -4577,7 +4577,7 @@ class Caozuolei(Caozuolei1):
             #     print((x-x1), 'y','外层循环')
             #     return
             # else:
-            for j in range(1, 2):
+            for j in range(1, 3):
                 print(num_ss[0])
                 self.menzuobiao1(renwuzuobiao)
                 # self.Find_srt(aa1, bb1, cc1, dd1)
@@ -4589,16 +4589,16 @@ class Caozuolei(Caozuolei1):
                 if h == 1000:
                     print(1000)
                     break
-                elif y == 0 and y1 == 4 :
-                    print('y=', y, ' y1=', y1,'测试')
-                    return
-                elif y > 449:
+                elif (y == 0 and y1 == 4) or (y == 2 and y1 == 4) :
+                    print('y=', y, ' y1=', y1,'测试1')
+                    continue
+                elif y > 449:  #449
                     dt.press('up')
-                    print('y=', y, ' y1=', y1,'测试')
+                    print('y=', y, ' y1=', y1,'测试2')
                     return
                 elif y < 380:
                     dt.press('down')
-                    print('y=', y, ' y1=', y1, '测试')
+                    print('y=', y, ' y1=', y1, '测试3')
                     return
                 # elif int(y - y1) > 60 and z == 88:  # 6
                 #     # print((y- y1) , 'y2')
