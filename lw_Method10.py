@@ -5571,7 +5571,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师运气
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 高台师很恶
-                break
+
             elif pvp == 5:
                 c.naiMa(n, 0.5, 0.26, 0, 0, *canshu)  # 5P 爷的曙光最混
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
@@ -5609,6 +5609,9 @@ if __name__ == '__main__':
             elif pvp == 4:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很行
                 break
+            elif pvp == 6:
+                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 储藏师很狂
+
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最香
             else:
@@ -5630,7 +5633,8 @@ if __name__ == '__main__':
             elif pvp == 3:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu)  # 5P 爷的奶无敌了
                 break
-                #c.yuren(n, 0.51, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
+            elif pvp == 6:
+                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 朱雀师很美
             elif pvp == 4:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很刚
                 break
@@ -5653,6 +5657,9 @@ if __name__ == '__main__':
                 #c.yuren(n, 0.52, 0.26, 0, 0, *canshu)  # 1p 悟空师很烂 缪斯
             elif pvp == 2:
                 c.zhaohuan(n, 0.18, 0.24, 0, 0, *canshu)  # 2p s睡眠不足s
+            elif pvp == 6:
+                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 武功师很利
+                break
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu)  # 5P 爷的太阳最叼
                 break
