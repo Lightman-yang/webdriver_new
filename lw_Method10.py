@@ -1567,7 +1567,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.5 + move_seep)
-                    t3 = Thread(target=self.forxunhuanY,
+                    t3 = Thread(target=self.forxunhuanYnama,
                                 args=(sss, aa1, bb1, cc1, dd1, hh1, hh2,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
                     t3.start()  # 开始运行t1线程
                     # self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
@@ -4652,6 +4652,50 @@ class Caozuolei(Caozuolei1):
                 #
                 #     a.append("真")
                 #     return
+                else:
+
+                    print('????')
+                    return
+    # 人物移动到地图某一个x，y坐标点
+    def forxunhuanYnama(self, sss, aa, bb, cc, dd, hh1=0.75, hh2=0.75, renwuzuobiao=0):  # ,aa,bb,cc,dd
+        # self.Use_Dict(0)
+            print('--->')
+            a = [1]
+            num_ss = [0]
+            self.Find_srt(aa, bb, cc, dd, hh1, hh2)
+            # self.Find_srt("先驱者","#422", "不足", "#422")
+            # # self.menzuobiao()
+            # x, y, x1, y1, z, h = xxyy
+            # # print('x=',x,'y=',y,x1,y1,z,h)
+            # if -11 < (x-x1) < 11 and -11 < (y- y1)  < 11 and z==88 :
+            #
+            #     print((x-x1), 'y','外层循环')
+            #     return
+            # else:
+            for j in range(1, 3):
+                print(num_ss[0])
+                self.menzuobiao1(renwuzuobiao)
+                # self.Find_srt(aa1, bb1, cc1, dd1)
+                #time.sleep(0.5)
+
+                x, y, x1, y1, z, h = xxyy
+                print(xxyy)
+                print((x - x1, '=x - x1'), (y - y1, '=y - y1'), '----')
+                if h == 1000:
+                    print(1000)
+                    break
+                elif (y == 0 and y1 == 4) or (y == 2 and y1 == 4) :
+                    print('y=', y, ' y1=', y1,'测试1')
+                    continue
+                elif y > 349:  #449
+                    dt.press('up')
+                    print('y=', y, ' y1=', y1,'测试2')
+                    return
+                elif y < 480:
+                    dt.press('down')
+                    print('y=', y, ' y1=', y1, '测试3')
+                    return
+
                 else:
 
                     print('????')
