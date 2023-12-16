@@ -5216,7 +5216,7 @@ class Caozuolei(Caozuolei1):
                 if ret_values[0] == 1:
                     time.sleep(2)
                     dt.press('9')
-                    time.sleep(2)
+                    time.sleep(3.5)
                     dt.press('esc')
                     time.sleep(1)
                     dt.press('f10')
