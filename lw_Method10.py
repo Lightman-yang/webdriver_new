@@ -4386,8 +4386,8 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -5458,7 +5458,8 @@ if __name__ == '__main__':
             # 425, 532 选人位置 424, 533
             time.sleep(3)
             # c.LeftClick(392,444)  # 单机鼠标左键
-            c.LeftClick(399, 524)  # 单机鼠标左键
+            #c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
             continue
         elif aa == 1:
             if pvp == 1:
@@ -5496,7 +5497,8 @@ if __name__ == '__main__':
             # 425, 532 选人位置 424, 533
             time.sleep(3)
             # c.LeftClick(390,500)  # 单机鼠标左键
-            c.LeftClick(399, 524)  # 单机鼠标左键
+            #c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
             continue
         elif aa == 2:
             if pvp == 1:
@@ -5531,7 +5533,8 @@ if __name__ == '__main__':
             # 425, 532 选人位置 424, 533
             time.sleep(3)
             # c.LeftClick(392,444)  # 单机鼠标左键
-            c.LeftClick(399, 524)  # 单机鼠标左键
+            #c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
             continue
         elif aa == 3:
             if pvp == 1:
@@ -5565,7 +5568,8 @@ if __name__ == '__main__':
             # 425, 532 选人位置 424, 533
             time.sleep(3)
             # c.LeftClick(392,444)  # 单机鼠标左键
-            c.LeftClick(399, 524)  # 单机鼠标左键
+            #c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
             continue
         elif aa == 4:
             if pvp == 1:
@@ -5602,7 +5606,8 @@ if __name__ == '__main__':
             # 425, 532 选人位置 424, 533
             time.sleep(3)
             # c.LeftClick(392,444)  # 单机鼠标左键
-            c.LeftClick(399, 524)  # 单机鼠标左键
+            #c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
             continue
         elif aa == 5:
             if pvp == 1:
@@ -5638,7 +5643,8 @@ if __name__ == '__main__':
             # 425, 532 选人位置 424, 533
             time.sleep(3)
             # c.LeftClick(392,444)  # 单机鼠标左键
-            c.LeftClick(399, 524)  # 单机鼠标左键
+            #c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
             continue
         elif aa == 6:
             if pvp == 1:
@@ -5666,7 +5672,8 @@ if __name__ == '__main__':
             # 425, 532 选人位置 424, 533
             time.sleep(3)
             # c.LeftClick(392,444)  # 单机鼠标左键
-            c.LeftClick(399, 524)  # 单机鼠标左键
+            #c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
             continue
         elif aa == 7:
             if pvp == 1:
@@ -5717,7 +5724,8 @@ if __name__ == '__main__':
             # 425, 532 选人位置 424, 533
             time.sleep(3)
             # c.LeftClick(392,444)  # 单机鼠标左键
-            c.LeftClick(399, 524)  # 单机鼠标左键
+            #c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
             break
         elif aa == 9:
             if pvp == 1:
@@ -5734,7 +5742,8 @@ if __name__ == '__main__':
             # 425, 532 选人位置 424, 533
             time.sleep(3)
             # c.LeftClick(392,444)  # 单机鼠标左键
-            c.LeftClick(399, 524)  # 单机鼠标左键
+            #c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
             break
     '''
     time.sleep(1.5)  # 选一个任务
