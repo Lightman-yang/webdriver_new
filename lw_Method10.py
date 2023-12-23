@@ -722,20 +722,20 @@ class Caozuolei(Caozuolei1):
         for i in range(1, 80):
             time.sleep(0.5)
             aa = self.Find_Ocr(
-                x1=440,
-                y1=250,
-                x2=800,
-                y2=600,
+                x1=480,
+                y1=22,
+                x2=799,
+                y2=166,
                 color_format="#360",
-                sim=0.95,
+                sim=0.8,
                 linesign=" ",
-                isbackcolor=1)
-            if "总经验值" in aa:
-                print('总经验值')
+                isbackcolor=0)
+            if "返回" in aa or "再次挑战" in aa:
+                print('总经验值,请选择奖励，返回')
                 zjyz[0] = 1
                 return 1
             else:
-                print('没找到总经验值')
+                print('没找到总经验值，返回')
                 continue
 
     def FuBen_INFO66(self, ss=0):  # 副本地图信息数据实时获取
@@ -4386,8 +4386,8 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
-        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -5305,11 +5305,11 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(1, 10):  # 打图设置ddddg
+    for aa in range(0, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')f
         if aa == 11 and pvp == 1:  # aa
-            # if aa == 3 and pvp. == 1:# aygy yaa
+            # if aa == 3 and pvp. == 1:# aa
             aa = 4
         # elif aa == 6 and pvp == 1:
         #     aa = 7gdfyhe
