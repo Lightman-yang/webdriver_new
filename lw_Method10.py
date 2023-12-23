@@ -727,8 +727,7 @@ class Caozuolei(Caozuolei1):
                 x2=800,
                 y2=600,
                 color_format="#360",
-                # sim=0.95,
-                sim=0.85,
+                sim=0.95,
                 linesign=" ",
                 isbackcolor=1)
             if "总经验值" in aa:
@@ -1568,7 +1567,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.5 + move_seep)
-                    t3 = Thread(target=self.forxunhuanY,
+                    t3 = Thread(target=self.forxunhuanYnama,
                                 args=(sss, aa1, bb1, cc1, dd1, hh1, hh2,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
                     t3.start()  # 开始运行t1线程
                     # self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
@@ -4387,8 +4386,8 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -4653,6 +4652,50 @@ class Caozuolei(Caozuolei1):
                 #
                 #     a.append("真")
                 #     return
+                else:
+
+                    print('????')
+                    return
+    # 人物移动到地图某一个x，y坐标点
+    def forxunhuanYnama(self, sss, aa, bb, cc, dd, hh1=0.75, hh2=0.75, renwuzuobiao=0):  # ,aa,bb,cc,dd
+        # self.Use_Dict(0)
+            print('--->')
+            a = [1]
+            num_ss = [0]
+            self.Find_srt(aa, bb, cc, dd, hh1, hh2)
+            # self.Find_srt("先驱者","#422", "不足", "#422")
+            # # self.menzuobiao()
+            # x, y, x1, y1, z, h = xxyy
+            # # print('x=',x,'y=',y,x1,y1,z,h)
+            # if -11 < (x-x1) < 11 and -11 < (y- y1)  < 11 and z==88 :
+            #
+            #     print((x-x1), 'y','外层循环')
+            #     return
+            # else:
+            for j in range(1, 3):
+                print(num_ss[0])
+                self.menzuobiao1(renwuzuobiao)
+                # self.Find_srt(aa1, bb1, cc1, dd1)
+                #time.sleep(0.5)
+
+                x, y, x1, y1, z, h = xxyy
+                print(xxyy)
+                print((x - x1, '=x - x1'), (y - y1, '=y - y1'), '----')
+                if h == 1000:
+                    print(1000)
+                    break
+                elif (y == 0 and y1 == 4) or (y == 2 and y1 == 4) :
+                    print('y=', y, ' y1=', y1,'测试1')
+                    continue
+                elif y > 349:  #449
+                    dt.press('up')
+                    print('y=', y, ' y1=', y1,'测试2')
+                    return
+                elif y < 480:
+                    dt.press('down')
+                    print('y=', y, ' y1=', y1, '测试3')
+                    return
+
                 else:
 
                     print('????')
@@ -5262,7 +5305,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(2, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -5468,7 +5511,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 快递员
                 #break
             elif pvp == 5:
-                c.naiMa(n, 0.5, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
+                c.naiMa(n, 0.47, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 建筑师很牛
 
@@ -5572,7 +5615,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师运气
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 高台师很恶
-                break
+
             elif pvp == 5:
                 c.naiMa(n, 0.5, 0.26, 0, 0, *canshu)  # 5P 爷的曙光最混
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
@@ -5610,6 +5653,9 @@ if __name__ == '__main__':
             elif pvp == 4:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很行
                 break
+            elif pvp == 6:
+                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 储藏师很狂
+
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最香
             else:
@@ -5631,7 +5677,8 @@ if __name__ == '__main__':
             elif pvp == 3:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu)  # 5P 爷的奶无敌了
                 break
-                #c.yuren(n, 0.51, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
+            elif pvp == 6:
+                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 朱雀师很美
             elif pvp == 4:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很刚
                 break
@@ -5654,6 +5701,9 @@ if __name__ == '__main__':
                 #c.yuren(n, 0.52, 0.26, 0, 0, *canshu)  # 1p 悟空师很烂 缪斯
             elif pvp == 2:
                 c.zhaohuan(n, 0.18, 0.24, 0, 0, *canshu)  # 2p s睡眠不足s
+            elif pvp == 6:
+                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 武功师很利
+                break
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu)  # 5P 爷的太阳最叼
                 break
