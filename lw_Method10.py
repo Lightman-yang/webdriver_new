@@ -2,6 +2,7 @@ import os
 import random
 import smtplib
 import time
+import traceback
 # import pandas as pd
 from email.header import Header
 from email.mime.text import MIMEText
@@ -84,7 +85,17 @@ class Caozuolei(Caozuolei1):
             smtObj.sendmail(from_mail, to_mail, msg.as_string())
             print('邮件成功发送！')
 
-    def youjian(self):
+    def youjian(self, pvp=0):
+        pmp = [[0, '0'],
+               [1, "阳-pc1-v4"],
+               [2, "qqlight-pc1-v1"],
+               [3, "撒旦-pc1-v2"],
+               [4, "心动依恋-pc2-v2"],
+               [5, "阿斯顿-pc1-v3"],
+               [6, "梦想-pc2-v32"],
+               [7, "风化雪月-pc2-v1"],
+               [8, "柳杨-pc2-v4"],
+               [9, "超越起跑线-pc3-v1"], ]
         user_info = ['286224275@qq.com']
 
         apartment_dict = {
@@ -105,7 +116,8 @@ class Caozuolei(Caozuolei1):
         to_mail = user_info[0]  # 收件邮箱
         user_name = user_info[0]  # 亲爱的xxx用户xx
         # room_no = user_info[2]  # 房间号
-        note_content = f'亲爱的{1}，你好：系统显示，游戏已经崩溃了！\
+
+        note_content = f'亲爱的{(pmp[pvp][1])}，你好：系统显示，游戏已经崩溃了！\
                                  \n{apartment_name}\
                                  \n崩溃时间为{time.strftime("%Y-%m-%d %H:%M-%S秒", time.localtime())}！'
         self.send_mails_QQsmtp(QQmail_user, to_mail, note_content, apartment_name, sub,
@@ -840,11 +852,18 @@ class Caozuolei(Caozuolei1):
 
 
             else:
+                try:
+                    dt.press('right')
 
-                dt.press('right')
-
-                print('FuBen_INFO66')
-                continue
+                    print('FuBen_INFO66')
+                    continue
+                except OSError as de:
+                    print(de)
+                    traceback.print_exc()
+                    continue
+                except Exception as e:
+                    print(e)
+                    traceback.print_exc()
 
     def yuren(self, num_parameter, move_seepx, move_seepy, Restart_computer_parameter, sss, aa1, bb1, cc1, dd1,
               hh1=0.75, hh2=0.75):
@@ -908,25 +927,34 @@ class Caozuolei(Caozuolei1):
                     #     print('测试')
                     #     break
                     else:
-                        self.FuBen_INFO66(2)
+                        try:
+                            self.FuBen_INFO66(2)
 
-                        self.FuBen_INFO6()
-                        # dt.keyDown('down')  # ：模拟按键按下 向下
-                        # time.sleep(0.5 + move_seep1)
-                        # dt.keyUp('down')  # ：模拟按键松开按键
-                        dt.press('9')
-                        time.sleep(0.3)  # 按下两秒
-                        if self.FuBen_INFO() == 1:
-                            self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2)
-                            # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
-                            # time.sleep(1)  # 按下两秒
-                            dt.keyDown('right')  # ：模拟按键按下 向下
-                            time.sleep(1.5 + move_seep1)
-                            dt.keyUp('right')  # ：模拟按键松开按键
+                            self.FuBen_INFO6()
+                            # dt.keyDown('down')  # ：模拟按键按下 向下
+                            # time.sleep(0.5 + move_seep1)
+                            # dt.keyUp('down')  # ：模拟按键松开按键
+                            dt.press('9')
+                            time.sleep(0.3)  # 按下两秒
+                            if self.FuBen_INFO() == 1:
+                                self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2)
+                                # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
+                                # time.sleep(1)  # 按下两秒
+                                dt.keyDown('right')  # ：模拟按键按下 向下
+                                time.sleep(1.5 + move_seep1)
+                                dt.keyUp('right')  # ：模拟按键松开按键
 
 
-                        else:
-                            pass
+                            else:
+                                pass
+                        except OSError as de:
+                            print(de)
+                            print(i)
+                            traceback.print_exc()
+                        except Exception as e:
+                            print(e)
+                            print(i)
+                            traceback.print_exc()
 
                 elif j == 2:
                     time.sleep(0.3)  # 按下两秒
@@ -2407,6 +2435,7 @@ class Caozuolei(Caozuolei1):
         # t2.start()  # 开始运行t2线程0
         # time.sleep(10000)
         # -------------》
+
         global gg_values
         gg_values[0] = 10
         for i in range(1, 60):
@@ -2426,6 +2455,10 @@ class Caozuolei(Caozuolei1):
             print(move_seep)
             a_error = 0
             Restart_computer = Restart_computer_parameter  # Restart_computer为0或者1，0关闭电脑，1不关闭电脑
+            t001 = Thread(target=self.timedaojishi, args=(pvp,))  # 定义线程t2，线程任务为5.30s倒计时，无参数
+            t001.start()  # 开始运行t1线程
+            print('开始')
+
             for j in range(1, 9):
 
                 print(gg_values, "gg_values", ' 小循环', i, '大循环', j)
@@ -2724,7 +2757,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下 向下
                     time.sleep(0.65 + move_seep1)
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    t31 = Thread(target=self.FuBen_INFO66())  # 定义线程t2，
+                    t31 = Thread(target=self.FuBen_INFO66)  # 定义线程t2，
                     t31.start()  # 开始运行t1线程
                     dt.press('down')
                     self.FuBen_INFO6(0, 6)
@@ -5248,14 +5281,69 @@ class Caozuolei(Caozuolei1):
         else:
             print('没有找到没有找到没有找到')
 
+    def timedaojishi(self, pvp):
+
+        # for i in range(330,0,-1):
+        for i in range(330, 0, -1):
+            aa = self.Find_Ocr(
+                x1=0,
+                y1=0,
+                x2=800,
+                y2=300,
+                color_format="#360",
+                sim=0.8,
+                linesign=" ",
+                isbackcolor=0)
+
+            time.sleep(0.5)
+            print('pvp=', pvp)
+            if i > 170 and ("最后" in aa or "再次挑战" in aa):
+                print(i, aa, 'timedaojishi')
+                # self.youjian(pvp)
+                print(i)
+                return
+            elif i > 170:
+                time.sleep(0.5)
+                print(i)
+                pass
+            elif i <= 170:
+                if "最后" in aa or "再次挑战" in aa:
+                    print(i, aa, 'timedaojishi')
+                    # self.youjian(pvp)
+                    print(i)
+                    return
+                else:
+                    print(i, aa, "没有找到timedaojishi")
+                    print(i, aa, 'timedaojishi')
+                    # self.youjian()
+            else:
+                try:
+                    print(i)
+                    self.youjian(pvp)
+                    print("查询timedaojishi%.f" % i)
+                # except OSError:
+                #     ...
+                except OSError as de:
+                    print(de)
+                    print(i)
+                    traceback.print_exc()
+                except Exception as e:
+                    print(e)
+                    print(i)
+                    traceback.print_exc()
+
+                # else:
+                #     ...
 
 if __name__ == '__main__':
     global xxyy
     global gg_values
+
     gg_values = [10]
     # global ret_values
     # ret_values = [9]
     xxyy = [1, 2, 3, 4, 99, 6]
+    # pmp=['阳1v4号','qqlight-1v1号','撒旦1v2号','心动依恋2v2号','阿斯顿1v3号','','','','','','']
     # 定位坐标[606,401,75,499,502,481,460,481,360,454]
     # c.forxunhuan(606, 401)
     # move_seep = -0.54  # 57.7   气功4.2  40.8
@@ -5264,6 +5352,7 @@ if __name__ == '__main__':
 
     time.sleep(1.5)
     c = Caozuolei()  # 注册乐玩
+
     # dt.press('alt')
     print(1)
     # time.sleep(1000)
@@ -5302,10 +5391,11 @@ if __name__ == '__main__':
 
     pvp = c.FuBen_INFO12()  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     print(pvp)
+
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(1, 10):  # 打图设置ddddg
+    for aa in range(2, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')f
         if aa == 11 and pvp == 1:  # aa
