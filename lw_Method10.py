@@ -722,20 +722,20 @@ class Caozuolei(Caozuolei1):
         for i in range(1, 80):
             time.sleep(0.5)
             aa = self.Find_Ocr(
-                x1=440,
-                y1=250,
-                x2=800,
-                y2=600,
+                x1=480,
+                y1=22,
+                x2=799,
+                y2=166,
                 color_format="#360",
-                sim=0.95,
+                sim=0.8,
                 linesign=" ",
-                isbackcolor=1)
-            if "总经验值" in aa:
-                print('总经验值')
+                isbackcolor=0)
+            if "返回" in aa or "再次挑战" in aa:
+                print('总经验值,请选择奖励，返回')
                 zjyz[0] = 1
                 return 1
             else:
-                print('没找到总经验值')
+                print('没找到总经验值，返回')
                 continue
 
     def FuBen_INFO66(self, ss=0):  # 副本地图信息数据实时获取
@@ -1567,7 +1567,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.5 + move_seep)
-                    t3 = Thread(target=self.forxunhuanY,
+                    t3 = Thread(target=self.forxunhuanYnama,
                                 args=(sss, aa1, bb1, cc1, dd1, hh1, hh2,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
                     t3.start()  # 开始运行t1线程
                     # self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
@@ -4656,6 +4656,50 @@ class Caozuolei(Caozuolei1):
 
                     print('????')
                     return
+    # 人物移动到地图某一个x，y坐标点
+    def forxunhuanYnama(self, sss, aa, bb, cc, dd, hh1=0.75, hh2=0.75, renwuzuobiao=0):  # ,aa,bb,cc,dd
+        # self.Use_Dict(0)
+            print('--->')
+            a = [1]
+            num_ss = [0]
+            self.Find_srt(aa, bb, cc, dd, hh1, hh2)
+            # self.Find_srt("先驱者","#422", "不足", "#422")
+            # # self.menzuobiao()
+            # x, y, x1, y1, z, h = xxyy
+            # # print('x=',x,'y=',y,x1,y1,z,h)
+            # if -11 < (x-x1) < 11 and -11 < (y- y1)  < 11 and z==88 :
+            #
+            #     print((x-x1), 'y','外层循环')
+            #     return
+            # else:
+            for j in range(1, 3):
+                print(num_ss[0])
+                self.menzuobiao1(renwuzuobiao)
+                # self.Find_srt(aa1, bb1, cc1, dd1)
+                #time.sleep(0.5)
+
+                x, y, x1, y1, z, h = xxyy
+                print(xxyy)
+                print((x - x1, '=x - x1'), (y - y1, '=y - y1'), '----')
+                if h == 1000:
+                    print(1000)
+                    break
+                elif (y == 0 and y1 == 4) or (y == 2 and y1 == 4) :
+                    print('y=', y, ' y1=', y1,'测试1')
+                    continue
+                elif y > 349:  #449
+                    dt.press('up')
+                    print('y=', y, ' y1=', y1,'测试2')
+                    return
+                elif y < 480:
+                    dt.press('down')
+                    print('y=', y, ' y1=', y1, '测试3')
+                    return
+
+                else:
+
+                    print('????')
+                    return
 
     def menzuobiao2(self, renwuzuobiao):  # 开府门 颜色 #334 相似度 0.8
         # self.Use_Dict(0)                # 开府口 颜色 #388 相似度 0.75
@@ -5414,7 +5458,8 @@ if __name__ == '__main__':
             # 425, 532 选人位置 424, 533
             time.sleep(3)
             # c.LeftClick(392,444)  # 单机鼠标左键
-            c.LeftClick(399, 524)  # 单机鼠标左键
+            #c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
             continue
         elif aa == 1:
             if pvp == 1:
@@ -5452,7 +5497,8 @@ if __name__ == '__main__':
             # 425, 532 选人位置 424, 533
             time.sleep(3)
             # c.LeftClick(390,500)  # 单机鼠标左键
-            c.LeftClick(399, 524)  # 单机鼠标左键
+            #c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
             continue
         elif aa == 2:
             if pvp == 1:
@@ -5467,7 +5513,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 快递员
                 #break
             elif pvp == 5:
-                c.naiMa(n, 0.5, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
+                c.naiMa(n, 0.47, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 建筑师很牛
 
@@ -5487,7 +5533,8 @@ if __name__ == '__main__':
             # 425, 532 选人位置 424, 533
             time.sleep(3)
             # c.LeftClick(392,444)  # 单机鼠标左键
-            c.LeftClick(399, 524)  # 单机鼠标左键
+            #c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
             continue
         elif aa == 3:
             if pvp == 1:
@@ -5521,7 +5568,8 @@ if __name__ == '__main__':
             # 425, 532 选人位置 424, 533
             time.sleep(3)
             # c.LeftClick(392,444)  # 单机鼠标左键
-            c.LeftClick(399, 524)  # 单机鼠标左键
+            #c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
             continue
         elif aa == 4:
             if pvp == 1:
@@ -5558,7 +5606,8 @@ if __name__ == '__main__':
             # 425, 532 选人位置 424, 533
             time.sleep(3)
             # c.LeftClick(392,444)  # 单机鼠标左键
-            c.LeftClick(399, 524)  # 单机鼠标左键
+            #c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
             continue
         elif aa == 5:
             if pvp == 1:
@@ -5571,7 +5620,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师运气
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 高台师很恶
-                break
+
             elif pvp == 5:
                 c.naiMa(n, 0.5, 0.26, 0, 0, *canshu)  # 5P 爷的曙光最混
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
@@ -5594,7 +5643,8 @@ if __name__ == '__main__':
             # 425, 532 选人位置 424, 533
             time.sleep(3)
             # c.LeftClick(392,444)  # 单机鼠标左键
-            c.LeftClick(399, 524)  # 单机鼠标左键
+            #c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
             continue
         elif aa == 6:
             if pvp == 1:
@@ -5609,6 +5659,9 @@ if __name__ == '__main__':
             elif pvp == 4:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很行
                 break
+            elif pvp == 6:
+                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 储藏师很狂
+
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最香
             else:
@@ -5619,7 +5672,8 @@ if __name__ == '__main__':
             # 425, 532 选人位置 424, 533
             time.sleep(3)
             # c.LeftClick(392,444)  # 单机鼠标左键
-            c.LeftClick(399, 524)  # 单机鼠标左键
+            #c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
             continue
         elif aa == 7:
             if pvp == 1:
@@ -5630,7 +5684,8 @@ if __name__ == '__main__':
             elif pvp == 3:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu)  # 5P 爷的奶无敌了
                 break
-                #c.yuren(n, 0.51, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
+            elif pvp == 6:
+                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 朱雀师很美
             elif pvp == 4:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很刚
                 break
@@ -5653,6 +5708,9 @@ if __name__ == '__main__':
                 #c.yuren(n, 0.52, 0.26, 0, 0, *canshu)  # 1p 悟空师很烂 缪斯
             elif pvp == 2:
                 c.zhaohuan(n, 0.18, 0.24, 0, 0, *canshu)  # 2p s睡眠不足s
+            elif pvp == 6:
+                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 武功师很利
+                break
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu)  # 5P 爷的太阳最叼
                 break
@@ -5666,7 +5724,8 @@ if __name__ == '__main__':
             # 425, 532 选人位置 424, 533
             time.sleep(3)
             # c.LeftClick(392,444)  # 单机鼠标左键
-            c.LeftClick(399, 524)  # 单机鼠标左键
+            #c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
             break
         elif aa == 9:
             if pvp == 1:
@@ -5683,7 +5742,8 @@ if __name__ == '__main__':
             # 425, 532 选人位置 424, 533
             time.sleep(3)
             # c.LeftClick(392,444)  # 单机鼠标左键
-            c.LeftClick(399, 524)  # 单机鼠标左键
+            #c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
             break
     '''
     time.sleep(1.5)  # 选一个任务
