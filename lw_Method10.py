@@ -5465,9 +5465,8 @@ if __name__ == '__main__':
                 or (pvp == 4 and x[aa][2] == 3) \
                 or (pvp == 1 and x[aa][2] == 6) \
                 or (pvp == 2 and x[aa][2] == 5) \
-                or (pvp == 5 and x[aa][2] == 5) \
-                or (pvp == 9 and x[aa][2] == 1):
-
+                or (pvp == 5 and x[aa][2] == 5):
+            # or (pvp == 9 and x[aa][2] == 1):
 
             c.movingfigur_Down(0.65)  # 向下移动，移动一秒
         else:
