@@ -187,7 +187,17 @@ class Caozuolei(Caozuolei1):
 
             print("找到图片, 横向坐标为：" + self.lw.x + "纵向坐标为：" + self.lw.y + "序号为：" + self.lw.idx)
         else:
-            print("没有！")
+            try:
+                print("没有！")
+            except OSError as de:
+                print(de)
+
+                traceback.print_exc()
+
+            except Exception as e:
+                print(e)
+
+                traceback.print_exc()
 
     def movingFigur_Down(self, time_sleep):
 
@@ -444,8 +454,19 @@ class Caozuolei(Caozuolei1):
                 print("通关完成")
                 return 10
             else:
-                print("0,没找到")
-                return 0
+                try:
+
+                    print("0,没找到")
+                    return 0
+                except OSError as de:
+                    print(de)
+                    traceback.print_exc()
+                    continue
+                except Exception as e:
+                    print(e)
+
+                    traceback.print_exc()
+                    continue
 
     def FuBen_INFO11(self):  # 进图校验是否选择“永恒之光研究所”
 
@@ -2765,6 +2786,7 @@ class Caozuolei(Caozuolei1):
                     t31 = Thread(target=self.FuBen_INFO66)  # 定义线程t2，
                     t31.start()  # 开始运行t1线程
                     dt.press('down')
+                    dt.press('down')
                     self.FuBen_INFO6(0, 6)
                     dt.press('down')
                     time.sleep(0.7)
@@ -4393,7 +4415,7 @@ class Caozuolei(Caozuolei1):
                     else:
                         j = 9
                         print(9)
-                        self.youjian()
+                        self.youjian(pvp)
                         time.sleep(600)
                         print(10)
                         self.movingfigur_right(2.5)  # 向右移动， 移动8秒，
@@ -5296,7 +5318,7 @@ class Caozuolei(Caozuolei1):
         else:
             print('没有找到没有找到没有找到')
 
-    def timedaojishi(self, pvp):
+    def timedaojishi(self, pvp=0):
 
         # for i in range(330,0,-1):
         for i in range(330, 0, -1):
@@ -5312,7 +5334,13 @@ class Caozuolei(Caozuolei1):
 
             time.sleep(0.5)
             print('pvp=', pvp)
-            if i > 170 and ("最后" in aa or "再次挑战" in aa):
+            if aa is None:
+                continue
+            elif i == 1:
+                print(i)
+                self.youjian(pvp)
+                return
+            elif i > 170 and ("最后" in aa or "再次挑战" in aa):
                 print(i, aa, 'timedaojishi')
                 # self.youjian(pvp)
                 print(i)
@@ -5320,7 +5348,7 @@ class Caozuolei(Caozuolei1):
             elif i > 170:
                 time.sleep(0.5)
                 print(i)
-                pass
+                continue
             elif i <= 170:
                 if "最后" in aa or "再次挑战" in aa:
                     print(i, aa, 'timedaojishi')
@@ -5331,6 +5359,7 @@ class Caozuolei(Caozuolei1):
                     print(i, aa, "没有找到timedaojishi")
                     print(i, aa, 'timedaojishi')
                     # self.youjian()
+                    continue
             else:
                 try:
                     print(i)
@@ -5530,7 +5559,7 @@ if __name__ == '__main__':
         print(aa,sss1,'    sss')
         if aa == 0:
             if pvp == 1:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
+                c.nvQiGong(n, 0.62, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
 
             elif pvp == 2:
 
