@@ -242,9 +242,21 @@ class Caozuolei1():
         if ret is not None:
             print(ret)
             return ret
-        else:
+        elif ret is None:
             # print(0)
             return '非'
+        else:
+            try:
+                # print(0)
+                return '非'
+            except OSError as de:
+                print(de)
+                return '非'
+                # traceback.print_exc()
+            except Exception as e:
+                print(e)
+                return '非'
+                # traceback.print_exc()
 
     def selfxy(self):  # 获取人物坐标
         print("人物坐标")
