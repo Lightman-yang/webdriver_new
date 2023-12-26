@@ -315,8 +315,21 @@ class Caozuolei(Caozuolei1):
 
                 dt.press('9')
                 time.sleep(1)  # 按下两秒
+            elif aa is None:
+                continue
             else:
-                return
+
+                try:
+                    print()
+                    return
+                except OSError as de:
+                    print(de)
+
+                    traceback.print_exc()
+                except Exception as e:
+                    print(e)
+
+                    traceback.print_exc()
 
     def FuBen_INFO2(self, oopp=0):  # 副本地图信息数据实时获取
         # self.Use_Dict(1)
@@ -659,7 +672,9 @@ class Caozuolei(Caozuolei1):
             if "开洞" in aa:
                 print('开洞',cc)
                 return
-
+            elif aa is None:
+                print(aa,'aa is None')
+                continue
             elif cc == 6 and "开洞" not in aa and b == 1:
                 dt.press('right')
                 dt.press('alt')
@@ -684,10 +699,19 @@ class Caozuolei(Caozuolei1):
                 print('开洞', cc, aa1)
                 return
             else:
-                print('FuBen_INFO6 #000')  # 000
-                # self.youjian()
-                break
 
+                try:
+                    print('FuBen_INFO6 #000')  # 000
+                    # self.youjian()
+                    break
+                except OSError as de:
+                    print(de)
+
+                    traceback.print_exc()
+                except Exception as e:
+                    print(e)
+
+                    traceback.print_exc()
     def FuBen_INFO666(self, b=0, c=1):  # 副本地图信息数据实时获取
         # self.Set_Dict(0, 'test3.txt')
         # self.Use_Dict(0)
@@ -819,6 +843,9 @@ class Caozuolei(Caozuolei1):
             if "开洞" in aa:
                 print('开洞')
                 return
+            elif aa is None or aa1 is None or aa3 is None or aa2 is None:
+                print(aa,aa1,aa2,aa3,'aa is None or aa1 is None or aa3 is None or aa2 is None')
+                continue
             elif "开洞" in aa1 and "开洞" not in aa:
                 if sss2 == 7:
                     dt.press('right')
@@ -4473,6 +4500,9 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
+        # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
