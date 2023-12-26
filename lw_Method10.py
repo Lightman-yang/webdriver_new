@@ -315,8 +315,21 @@ class Caozuolei(Caozuolei1):
 
                 dt.press('9')
                 time.sleep(1)  # 按下两秒
+            elif aa is None:
+                continue
             else:
-                return
+
+                try:
+                    print()
+                    return
+                except OSError as de:
+                    print(de)
+
+                    traceback.print_exc()
+                except Exception as e:
+                    print(e)
+
+                    traceback.print_exc()
 
     def FuBen_INFO2(self, oopp=0):  # 副本地图信息数据实时获取
         # self.Use_Dict(1)
@@ -659,7 +672,9 @@ class Caozuolei(Caozuolei1):
             if "开洞" in aa:
                 print('开洞',cc)
                 return
-
+            elif aa is None:
+                print(aa,'aa is None')
+                continue
             elif cc == 6 and "开洞" not in aa and b == 1:
                 dt.press('right')
                 dt.press('alt')
@@ -684,10 +699,19 @@ class Caozuolei(Caozuolei1):
                 print('开洞', cc, aa1)
                 return
             else:
-                print('FuBen_INFO6 #000')  # 000
-                # self.youjian()
-                break
 
+                try:
+                    print('FuBen_INFO6 #000')  # 000
+                    # self.youjian()
+                    break
+                except OSError as de:
+                    print(de)
+
+                    traceback.print_exc()
+                except Exception as e:
+                    print(e)
+
+                    traceback.print_exc()
     def FuBen_INFO666(self, b=0, c=1):  # 副本地图信息数据实时获取
         # self.Set_Dict(0, 'test3.txt')
         # self.Use_Dict(0)
@@ -819,8 +843,8 @@ class Caozuolei(Caozuolei1):
             if "开洞" in aa:
                 print('开洞')
                 return
-            elif aa is None or aa1 is None or aa2 is None  or aa3 is None:
-                print(aa,aa1,aa2,aa3,' aa is None or aa1 is None or aa2 is None  or aa3 is None')
+            elif aa is None or aa1 is None or aa3 is None or aa2 is None:
+                print(aa,aa1,aa2,aa3,'aa is None or aa1 is None or aa3 is None or aa2 is None')
                 continue
             elif "开洞" in aa1 and "开洞" not in aa:
                 if sss2 == 7:
@@ -830,18 +854,36 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('right')  # ：模拟按键松开按键
                     return
                 else:
-                    dt.press('right')
-                    print("开洞 not in")
-                    continue
+
+                    try:
+                        dt.press('right')
+                        print("开洞 not in")
+                        continue
+                    except OSError as de:
+                        print(de)
+                        traceback.print_exc()
+                        continue
+                    except Exception as e:
+                        print(e)
+                        traceback.print_exc()
             elif '开府' in aa2:
                 if sss2 == 2:
                     dt.press('d')
                     dt.press('q')
                     continue
                 else:
-                    dt.press('y')
-                    dt.press('g')
-                    continue
+
+                    try:
+                        dt.press('y')
+                        dt.press('g')
+                        continue
+                    except OSError as de:
+                        print(de)
+                        traceback.print_exc()
+                        continue
+                    except Exception as e:
+                        print(e)
+                        traceback.print_exc()
             elif '德拉' in aa3 or '防护罩' in aa3:
                 dt.press('y')
 
@@ -4458,8 +4500,11 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # r"D:\webdriver_new\lw\game_name.xlsx"
@@ -5442,7 +5487,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(3, 10):  # 打图设置ddddg
+    for aa in range(1, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')f
         if aa == 11 and pvp == 1:  # aa
