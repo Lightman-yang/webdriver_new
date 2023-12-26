@@ -650,8 +650,8 @@ class Caozuolei(Caozuolei1):
         cc = c
         while True:
             cc = cc + 1
-
-            aa = self.Find_Ocr(
+            print('FuBen_INFO6 开始')
+            aa6 = self.Find_Ocr(
                 x1=392,
                 y1=63,
                 x2=853,
@@ -660,7 +660,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.88,
                 linesign=" ",
                 isbackcolor=0)
-            aa1 = self.Find_Ocr(
+            aa7 = self.Find_Ocr(
                 x1=0,
                 y1=0,
                 x2=800,
@@ -669,24 +669,24 @@ class Caozuolei(Caozuolei1):
                 sim=0.88,
                 linesign=" ",
                 isbackcolor=0)
-            if "开洞" in aa:
+            if "开洞" in aa6:
                 print('开洞',cc)
                 return
-            elif aa is None:
-                print(aa,'aa is None')
+            elif aa6 is None or aa7 is None:
+                print(aa6,aa7,'aa is None')
                 continue
-            elif cc == 6 and "开洞" not in aa and b == 1:
+            elif cc == 6 and "开洞" not in aa6 and b == 1:
                 dt.press('right')
                 dt.press('alt')
 
                 continue
-            elif (cc == 25 or cc == 51) and "开洞" not in aa:
+            elif (cc == 25 or cc == 51) and "开洞" not in aa6:
                 dt.press('alt')
                 continue
-            elif 50 > cc > 7 and "开洞" not in aa:
+            elif 50 > cc > 7 and "开洞" not in aa6:
                 dt.press('right')
                 continue
-            elif cc <= 7 and "开洞" not in aa:
+            elif cc <= 7 and "开洞" not in aa7:
                 print("9等待9")
                 dt.press('g')
                 time.sleep(0.075)
@@ -695,8 +695,8 @@ class Caozuolei(Caozuolei1):
 
                 continue
 
-            elif "开洞" in aa1:
-                print('开洞', cc, aa1)
+            elif "开洞" in aa7:
+                print('开洞', cc, aa7)
                 return
             else:
 
@@ -705,11 +705,11 @@ class Caozuolei(Caozuolei1):
                     # self.youjian()
                     break
                 except OSError as de:
-                    print(de)
+                    print(de,'de')
 
                     traceback.print_exc()
                 except Exception as e:
-                    print(e)
+                    print(e,'e')
 
                     traceback.print_exc()
     def FuBen_INFO666(self, b=0, c=1):  # 副本地图信息数据实时获取
@@ -852,31 +852,37 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下 向下
                     time.sleep(1)
                     dt.keyUp('right')  # ：模拟按键松开按键
+                    print('FuBen_INFO66 步骤一')
                     return
                 else:
 
                     try:
                         dt.press('right')
                         print("开洞 not in")
-                        continue
+                        #continue
+                        print('FuBen_INFO66 步骤二')
+                        break
                     except OSError as de:
-                        print(de)
+                        print(de,"de")
                         traceback.print_exc()
                         continue
                     except Exception as e:
-                        print(e)
+                        print(e,'e')
                         traceback.print_exc()
             elif '开府' in aa2:
                 if sss2 == 2:
                     dt.press('d')
                     dt.press('q')
+                    print('FuBen_INFO66 步骤三')
                     continue
                 else:
 
                     try:
                         dt.press('y')
                         dt.press('g')
+                        print('FuBen_INFO66 步骤四')
                         continue
+
                     except OSError as de:
                         print(de)
                         traceback.print_exc()
@@ -888,7 +894,9 @@ class Caozuolei(Caozuolei1):
                 dt.press('y')
 
                 dt.press('g')
+                print('FuBen_INFO66 步骤五')
                 continue
+
             elif '德拉' not in aa3 and '开洞' not in aa and '开洞' not in aa2 and '开洞' not in aa1 and sss2 == 7:
                 print('非')
                 dt.press('right')
@@ -897,6 +905,8 @@ class Caozuolei(Caozuolei1):
                 dt.keyUp('right')  # ：模拟按键松开按键
                 print('----------')
                 sss2 = +1
+                print('FuBen_INFO66 步骤六')
+
                 continue
             elif '非' in aa3 and '非' in aa and '非' in aa2 and '非' in aa1 and sss2 == 7:
                 print('非')
@@ -909,20 +919,24 @@ class Caozuolei(Caozuolei1):
                 continue
             elif '非' in aa3 and '非' in aa and '非' in aa2 and '非' in aa1:
                 print('非')
+                print('FuBen_INFO66 步骤七')
 
                 self.Set_Dict(0, 'test3.txt')
                 continue
 
             elif '德拉' not in aa3 and sss2 == 1:
+                print('FuBen_INFO66 步骤八')
+
                 return
 
 
             else:
                 try:
                     dt.press('right')
+                    print('FuBen_INFO66 步骤九')
 
                     print('FuBen_INFO66')
-                    continue
+                    break
                 except OSError as de:
                     print(de)
                     traceback.print_exc()
