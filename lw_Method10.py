@@ -295,28 +295,30 @@ class Caozuolei(Caozuolei1):
         while True:
             # self.Use_Dict(1)
             # c.Set_Dict(0, "测试2.txt")
-            aa = self.Find_Ocr(
+            aa100 = self.Find_Ocr(
                 x1=0,
                 y1=0,
-                x2=1200,
-                y2=1200,
+                x2=800,
+                y2=600,
                 color_format="#360",
                 sim=0.85,
                 linesign=" ",
                 isbackcolor=0)
-            print("打印aa", aa)
-            if "靓仔" in aa:
-                print(aa)
-                b = time.strftime("%y-%m-%d_%H$%M$%S", time.localtime())
-
-                img = pyautogui.screenshot(region=[48, 84, 848, 684])
-                img = Image.fromarray(np.uint8(img))
-                #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
+            print("打印aa100", aa100)
+            if aa100 is None or aa100 == 0:
+                continue
+            elif "靓仔" in aa100:
+                print(aa100)
+                # b = time.strftime("%y-%m-%d_%H$%M$%S", time.localtime())
+                #
+                # img = pyautogui.screenshot(region=[48, 84, 848, 684])
+                # img = Image.fromarray(np.uint8(img))
+                # #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
 
                 dt.press('9')
                 time.sleep(1)  # 按下两秒
-            elif aa is None:
-                continue
+                return
+
             else:
 
                 try:
@@ -5649,7 +5651,7 @@ if __name__ == '__main__':
             elif pvp == 3:
                 c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 3p ll0110ll
             elif pvp == 4:
-                c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 4p 气功师很水 快递员
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 4p 气功师很水 快递员
             elif pvp == 5:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p
             elif pvp == 6:

@@ -213,8 +213,22 @@ class Caozuolei1():
             self.lw.LeftClick()
             print("点击左键进入，大乱斗")
         else:
-            print("没有字符！")
-            return 0
+
+            try:
+                print("没有字符！")
+                print(ret,'Find_Str try')
+                return 0
+            except OSError as de:
+                print(de)
+                print('de=ret=', ret)
+                # return '非'
+
+                # traceback.print_exc()
+            except Exception as e:
+                print(e)
+                print('e=ret=', ret)
+                # return '非'
+                # traceback.print_exc()
 
     def Find_Strkspp(self):  # 获取"开始匹配"字符串
         print("字符匹配中")
@@ -238,18 +252,20 @@ class Caozuolei1():
 
     # 找字功能
     def Find_Ocr(self, x1, y1, x2, y2, color_format, sim, linesign, isbackcolor):
+        print(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
         ret = self.lw.Ocr(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
         print('0000001')
-        print(ret,'=ret')
-        if ret is not None and ret !=0:
-            print(ret,' ret is not None')
+        if ret is not None and ret!=0:
+            print(ret,'ret')
             return ret
         elif ret is None or ret ==0:
-            # print(0)
+            # print(0)\
+            print(ret,'ret is None or ret ==0')
             return '非'
         else:
             try:
                 # print(0)
+                print(ret,'ret=try')
                 return '非'
             except OSError as de:
                 print(de)
