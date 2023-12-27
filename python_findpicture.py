@@ -239,6 +239,7 @@ class Caozuolei1():
     # 找字功能
     def Find_Ocr(self, x1, y1, x2, y2, color_format, sim, linesign, isbackcolor):
         ret = self.lw.Ocr(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
+        print('0000001')
         if ret is not None:
             print(ret)
             return ret
@@ -251,11 +252,15 @@ class Caozuolei1():
                 return '非'
             except OSError as de:
                 print(de)
-                return '非'
+                print('de=ret=',ret)
+                #return '非'
+
+
                 # traceback.print_exc()
             except Exception as e:
                 print(e)
-                return '非'
+                print('e=ret=', ret)
+                #return '非'
                 # traceback.print_exc()
 
     def selfxy(self):  # 获取人物坐标
