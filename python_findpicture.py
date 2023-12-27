@@ -238,17 +238,20 @@ class Caozuolei1():
 
     # 找字功能
     def Find_Ocr(self, x1, y1, x2, y2, color_format, sim, linesign, isbackcolor):
+        print(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
         ret = self.lw.Ocr(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
         print('0000001')
-        if ret is not None:
-            print(ret)
+        if ret is not None and ret!=0:
+            print(ret,'ret')
             return ret
-        elif ret is None:
-            # print(0)
+        elif ret is None or ret ==0:
+            # print(0)\
+            print(ret,'ret is None or ret ==0')
             return '非'
         else:
             try:
                 # print(0)
+                print(ret,'ret=try')
                 return '非'
             except OSError as de:
                 print(de)
