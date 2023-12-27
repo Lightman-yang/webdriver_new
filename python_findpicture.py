@@ -213,8 +213,22 @@ class Caozuolei1():
             self.lw.LeftClick()
             print("点击左键进入，大乱斗")
         else:
-            print("没有字符！")
-            return 0
+
+            try:
+                print("没有字符！")
+                print(ret,'Find_Str try')
+                return 0
+            except OSError as de:
+                print(de)
+                print('de=ret=', ret)
+                # return '非'
+
+                # traceback.print_exc()
+            except Exception as e:
+                print(e)
+                print('e=ret=', ret)
+                # return '非'
+                # traceback.print_exc()
 
     def Find_Strkspp(self):  # 获取"开始匹配"字符串
         print("字符匹配中")
