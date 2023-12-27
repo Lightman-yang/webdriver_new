@@ -295,26 +295,27 @@ class Caozuolei(Caozuolei1):
         while True:
             # self.Use_Dict(1)
             # c.Set_Dict(0, "测试2.txt")
-            aa = self.Find_Ocr(
-                x1=0,
-                y1=0,
-                x2=1200,
-                y2=1200,
-                color_format="#360",
-                sim=0.85,
-                linesign=" ",
-                isbackcolor=0)
+            # aa = self.Find_Ocr(
+            #     x1=0,
+            #     y1=0,
+            #     x2=1200,
+            #     y2=1200,
+            #     color_format="#360",
+            #     sim=0.85,
+            #     linesign=" ",
+            #     isbackcolor=0)
             print("打印aa", aa)
             if "靓仔" in aa:
                 print(aa)
-                b = time.strftime("%y-%m-%d_%H$%M$%S", time.localtime())
-
-                img = pyautogui.screenshot(region=[48, 84, 848, 684])
-                img = Image.fromarray(np.uint8(img))
-                #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
+                # b = time.strftime("%y-%m-%d_%H$%M$%S", time.localtime())
+                #
+                # img = pyautogui.screenshot(region=[48, 84, 848, 684])
+                # img = Image.fromarray(np.uint8(img))
+                # #img.save('D:\webdriver_new\lw\Tpshot{}s.png'.format(b))
 
                 dt.press('9')
                 time.sleep(1)  # 按下两秒
+                return
             elif aa is None:
                 continue
             else:
@@ -4503,7 +4504,7 @@ class Caozuolei(Caozuolei1):
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
@@ -5487,7 +5488,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(1, 10):  # 打图设置ddddg
+    for aa in range(0, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')f
         if aa == 11 and pvp == 1:  # aa
