@@ -7,7 +7,7 @@ import traceback
 from email.header import Header
 from email.mime.text import MIMEText
 from random import uniform
-from threading import Thread  # 导入线程函数
+from threading import Thread ,Lock # 导入线程函数
 from time import sleep  # 导入时间休眠函数
 
 import numpy as np
@@ -821,6 +821,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.88,
                 linesign=" ",
                 isbackcolor=0)
+            time.sleep(0.15)
             aa11 = self.Find_Ocr(
                 x1=0,
                 y1=0,
@@ -830,6 +831,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.88,
                 linesign=" ",
                 isbackcolor=0)
+            time.sleep(0.15)
             aa12 = self.Find_Ocr(
                 x1=0,
                 y1=0,
@@ -839,6 +841,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.91,
                 linesign=" ",
                 isbackcolor=0)
+            time.sleep(0.15)
             aa13 = self.Find_Ocr(
                 x1=0,
                 y1=0,
@@ -848,6 +851,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.91,
                 linesign=" ",
                 isbackcolor=0)
+            time.sleep(0.15)
             print(aa00,'=aa00')
             print(aa11, '=aa11')
             print(aa12, '=aa12')
@@ -5468,6 +5472,7 @@ if __name__ == '__main__':
     # global ret_values
     # ret_values = [9]
     xxyy = [1, 2, 3, 4, 99, 6]
+
     # pmp=['阳1v4号','qqlight-1v1号','撒旦1v2号','心动依恋2v2号','阿斯顿1v3号','','','','','','']
     # 定位坐标[606,401,75,499,502,481,460,481,360,454]
     # c.forxunhuan(606, 401)
