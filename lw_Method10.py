@@ -665,16 +665,17 @@ class Caozuolei(Caozuolei1):
                 sim=0.88,
                 linesign=" ",
                 isbackcolor=0)
+            time.sleep(0.15)
             aa7 = self.Find_Ocr(
-                x1=0,
-                y1=0,
+                x1=5,
+                y1=5,
                 x2=800,
                 y2=600,
                 color_format="#380",
                 sim=0.88,
                 linesign=" ",
                 isbackcolor=0)
-
+            time.sleep(0.15)
             if aa6 is None or aa7 is None:
                 print(aa6,aa7,'aa is None')
                 continue
@@ -4658,21 +4659,31 @@ class Caozuolei(Caozuolei1):
                 print('开洞yy', z[0], '+50+renwuzuobiao', 140, renwuzuobiao, '=', xxyy[2], '(开洞Y坐标)')
                 print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
                 return
-            else:
-                print('测试', xxyy[0])
-                if xxyy[3] == 4 and xxyy[0] > 500:
 
+
+            elif xxyy[3] == 4 and xxyy[0] > 500:
+                print('测试', xxyy[0])
+                return
+            elif xxyy[3] == 4 and xxyy[0] < 90:
+                dt.press('right')
+                time.sleep(0.0075)  # 按下两秒
+                dt.keyDown('right')  # ：模拟按键按下
+                time.sleep(1)
+                dt.keyUp('right')  # ：模拟按键松开按键
+                print("9988")
+                return
+            else:
+
+                try:
                     return
-                elif xxyy[3] == 4 and xxyy[0] < 90:
-                    dt.press('right')
-                    time.sleep(0.0075)  # 按下两秒
-                    dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1)
-                    dt.keyUp('right')  # ：模拟按键松开按键
-                    print("9988")
-                    return
-                else:
-                    return
+                except OSError as de:
+                    print(de)
+
+                    traceback.print_exc()
+                except Exception as e:
+                    print(e)
+
+                    traceback.print_exc()
 
     def menzuobiao1(self, renwuzuobiao):  # 门坐标
         # self.Use_Dict(0)
@@ -5525,7 +5536,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(1, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')f
         if aa == 11 and pvp == 1:  # aa
