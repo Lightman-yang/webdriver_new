@@ -6,9 +6,12 @@ import pydirectinput  as dt
 import win32gui
 from comtypes.client import CreateObject
 from win32gui import FindWindow
+from threading import Thread,Lock
+
 
 
 class Caozuolei1():
+    mutex = Lock()
     #time.sleep(2)
     # 绑定窗口句柄
     # 如果函数运行期间想要停止，请把鼠标移动到屏幕得左上角（0，0）位置，
@@ -213,8 +216,22 @@ class Caozuolei1():
             self.lw.LeftClick()
             print("点击左键进入，大乱斗")
         else:
-            print("没有字符！")
-            return 0
+
+            try:
+                print("没有字符！")
+                print(ret,'Find_Str try')
+                return 0
+            except OSError as de:
+                print(de)
+                print('de=ret=', ret)
+                # return '非'
+
+                # traceback.print_exc()
+            except Exception as e:
+                print(e)
+                print('e=ret=', ret)
+                # return '非'
+                # traceback.print_exc()
 
     def Find_Strkspp(self):  # 获取"开始匹配"字符串
         print("字符匹配中")
@@ -238,25 +255,44 @@ class Caozuolei1():
 
     # 找字功能
     def Find_Ocr(self, x1, y1, x2, y2, color_format, sim, linesign, isbackcolor):
-        ret = self.lw.Ocr(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
-        if ret is not None:
-            print(ret)
-            return ret
-        elif ret is None:
-            # print(0)
-            return '非'
-        else:
-            try:
-                # print(0)
+        Caozuolei1.mutex.acquire()
+        #mutex.acquire()
+
+        while True:
+            print(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
+            ret = self.lw.Ocr(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
+            print('0000001')
+            if ret is not None and ret!=0 and OSError :
+                print(ret,'ret')
+                Caozuolei1.mutex.release()
+                return ret
+            elif ret is None or ret ==0:
+                # print(0)\
+                print(ret,'ret is None or ret ==0')
+                Caozuolei1.mutex.release()
                 return '非'
-            except OSError as de:
-                print(de)
-                return '非'
-                # traceback.print_exc()
-            except Exception as e:
-                print(e)
-                return '非'
-                # traceback.print_exc()
+            else:
+                try:
+                    # print(0)
+                    print(ret,'ret=try')
+                    Caozuolei1.mutex.release()
+                    return '非'
+                except OSError as de:
+                    print(de)
+                    print('de=ret=',ret)
+                    Caozuolei1.mutex.release()
+                    #return '非'
+
+
+
+                    # traceback.print_exc()
+                except Exception as e:
+                    print(e)
+                    print('e=ret=', ret)
+                    #return '非'
+                    # traceback.print_exc()
+                    Caozuolei1.mutex.release()
+
 
     def selfxy(self):  # 获取人物坐标
         print("人物坐标")
