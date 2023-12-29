@@ -281,7 +281,7 @@ class Caozuolei1():
                 except OSError as de:
                     print(de)
                     print('de=ret=',ret)
-                   # Caozuolei1.mutex.release()
+                    #Caozuolei1.mutex.release()
                     #return '非'
 
 
@@ -292,7 +292,7 @@ class Caozuolei1():
                     print('e=ret=', ret)
                     #return '非'
                     # traceback.print_exc()
-                    Caozuolei1.mutex.release()
+                    #Caozuolei1.mutex.release()
 
 
     def selfxy(self):  # 获取人物坐标
