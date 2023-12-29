@@ -263,7 +263,7 @@ class Caozuolei1():
             ret = self.lw.Ocr(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
             print('0000001')
             Caozuolei1.mutex.release()
-            if ret is not None and ret!=0 and OSError :
+            if ret is not None and ret!=0 :
                 print(ret,'ret')
 
                 return ret
