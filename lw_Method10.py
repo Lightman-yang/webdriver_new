@@ -5418,7 +5418,7 @@ class Caozuolei(Caozuolei1):
 
         # for i in range(330,0,-1):
         for i in range(330, 0, -1):
-            aa = self.Find_Ocr(
+            aabb = self.Find_Ocr(
                 x1=0,
                 y1=0,
                 x2=800,
@@ -5430,14 +5430,14 @@ class Caozuolei(Caozuolei1):
 
             time.sleep(0.5)
             print('pvp=', pvp)
-            if aa is None:
+            if aabb is None:
                 continue
             elif i == 1:
                 print(i)
                 self.youjian(pvp)
                 return
-            elif i > 170 and ("最后" in aa or "再次挑战" in aa):
-                print(i, aa, 'timedaojishi')
+            elif i > 170 and ("最后" in aabb or "再次挑战" in aabb):
+                print(i, aabb, 'timedaojishi')
                 # self.youjian(pvp)
                 print(i)
                 return
@@ -5446,14 +5446,14 @@ class Caozuolei(Caozuolei1):
                 print(i)
                 continue
             elif i <= 170:
-                if "最后" in aa or "再次挑战" in aa:
-                    print(i, aa, 'timedaojishi')
+                if "最后" in aabb or "再次挑战" in aabb:
+                    print(i, aabb, 'timedaojishi')
                     # self.youjian(pvp)
                     print(i)
                     return
                 else:
-                    print(i, aa, "没有找到timedaojishi")
-                    print(i, aa, 'timedaojishi')
+                    print(i, aabb, "没有找到timedaojishi")
+                    print(i, aabb, 'timedaojishi')
                     # self.youjian()
                     continue
             else:
@@ -5536,7 +5536,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(1, 10):  # 打图设置ddddg
+    for aa in range(0, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')f
         if aa == 11 and pvp == 1:  # aa
