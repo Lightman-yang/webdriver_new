@@ -258,13 +258,12 @@ class Caozuolei1():
         Caozuolei1.mutex.acquire()
         #mutex.acquire()
         time.sleep(0.05)
-
         while True:
             print(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
             ret = self.lw.Ocr(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
             print('0000001')
             Caozuolei1.mutex.release()
-            if ret is not None and ret!=0:
+            if ret is not None and ret!=0 :
                 print(ret,'ret')
 
                 return ret
@@ -284,7 +283,6 @@ class Caozuolei1():
                     print('de=ret=',ret)
                     #Caozuolei1.mutex.release()
                     #return '非'
-                    continue
 
 
 
@@ -294,9 +292,8 @@ class Caozuolei1():
                     print('e=ret=', ret)
                     #return '非'
                     # traceback.print_exc()
-                    Caozuolei1.mutex.release()
+                    #Caozuolei1.mutex.release()
 
-                    continue
 
     def selfxy(self):  # 获取人物坐标
         print("人物坐标")
