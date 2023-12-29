@@ -7,7 +7,7 @@ import traceback
 from email.header import Header
 from email.mime.text import MIMEText
 from random import uniform
-from threading import Thread ,Lock # 导入线程函数
+from threading import Thread, RLock  # 导入线程函数
 from time import sleep  # 导入时间休眠函数
 
 import numpy as np
@@ -23,6 +23,8 @@ from python_findpicture import Caozuolei1
 
 # 继承Caozuolei1函数。
 class Caozuolei(Caozuolei1):
+    mutex2 = RLock()
+    mutex3 = RLock()
     time.sleep(0.5)
 
     # # 绑定窗口句柄
@@ -417,9 +419,10 @@ class Caozuolei(Caozuolei1):
 
     def FuBen_INFO(self):  # 副本地图信息数据实时获取
         # self.Use_Dict(0)
+        Caozuolei.mutex2.acquire()
         while True:
-            #time.sleep(0.15)
-            aa = self.Find_Ocr(
+            time.sleep(0.15)
+            aa = Caozuolei1().Find_Ocr(
                 x1=0,
                 y1=0,
                 x2=800,
@@ -428,6 +431,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.99,
                 linesign=" ",
                 isbackcolor=0)
+            Caozuolei.mutex2.release()
             if aa is None:
                 print(aa)
                 print('狗屎')
@@ -5415,6 +5419,7 @@ class Caozuolei(Caozuolei1):
             print('没有找到没有找到没有找到')
 
     def timedaojishi(self, pvp=0):
+        Caozuolei.mutex3.acquire()
 
         # for i in range(330,0,-1):
         for i in range(330, 0, -1):
@@ -5427,7 +5432,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.8,
                 linesign=" ",
                 isbackcolor=0)
-
+            Caozuolei.mutex3.release()
             time.sleep(0.5)
             print('pvp=', pvp)
             if aabb is None:
@@ -5536,7 +5541,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(3, 10):  # 打图设置ddddg
+    for aa in range(2, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')f
         if aa == 11 and pvp == 1:  # aa
