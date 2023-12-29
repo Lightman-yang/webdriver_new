@@ -7,7 +7,7 @@ import traceback
 from email.header import Header
 from email.mime.text import MIMEText
 from random import uniform
-from threading import Thread ,Lock # 导入线程函数
+from threading import Thread ,Lock,RLock # 导入线程函数
 from time import sleep  # 导入时间休眠函数
 
 import numpy as np
@@ -24,7 +24,8 @@ from python_findpicture import Caozuolei1
 # 继承Caozuolei1函数。
 class Caozuolei(Caozuolei1):
     time.sleep(0.5)
-
+    mutex1 = RLock()
+    mutex2 =RLock()
     # # 绑定窗口句柄
     # # 如果函数运行期间想要停止，请把鼠标移动到屏幕得左上角（0，0）位置，
     # # 这触发pyautogui.FaailSafeException异常，从而终止程序运行。
@@ -4562,13 +4563,25 @@ class Caozuolei(Caozuolei1):
         return row_list2[2:8]  # 取数据直接截取前6条数据 并返回给调用方
 
     def FindStr(self, x1, y1, x2, y2, string, color_format, sim, isbackcolor):
+        Caozuolei.mutex1.acquire()
+        time.sleep(0.05)
         ret = self.lw.FindStr(x1, y1, x2, y2, string, color_format, sim, isbackcolor)
+        Caozuolei.mutex1.release()
         if ret == 1:
             return self.lw.x(), self.lw.y()
         else:
-            print('零')
-            # dt.press('alt')
-            return 0
+            try:
+                print('零')
+                # dt.press('alt')
+                return 0
+
+            except OSError as de:
+                print(de)
+
+                traceback.print_exc()
+            except Exception as e:
+                print(e)
+
 
     def Find_srt(self, usr_string1, usr_color_format1, usr_string2, usr_color_format2, usr_HH1=0.75,
                  usr_HH2=0.75):  # 人物坐标
@@ -5415,10 +5428,10 @@ class Caozuolei(Caozuolei1):
             print('没有找到没有找到没有找到')
 
     def timedaojishi(self, pvp=0):
-
+        Caozuolei.mutex2.acquire()
         # for i in range(330,0,-1):
         for i in range(330, 0, -1):
-            aabb = self.Find_Ocr(
+            aa = self.Find_Ocr(
                 x1=0,
                 y1=0,
                 x2=800,
@@ -5429,15 +5442,16 @@ class Caozuolei(Caozuolei1):
                 isbackcolor=0)
 
             time.sleep(0.5)
+            Caozuolei.mutex2.release()
             print('pvp=', pvp)
-            if aabb is None:
+            if aa is None:
                 continue
             elif i == 1:
                 print(i)
                 self.youjian(pvp)
                 return
-            elif i > 170 and ("最后" in aabb or "再次挑战" in aabb):
-                print(i, aabb, 'timedaojishi')
+            elif i > 170 and ("最后" in aa or "再次挑战" in aa):
+                print(i, aa, 'timedaojishi')
                 # self.youjian(pvp)
                 print(i)
                 return
@@ -5446,14 +5460,14 @@ class Caozuolei(Caozuolei1):
                 print(i)
                 continue
             elif i <= 170:
-                if "最后" in aabb or "再次挑战" in aabb:
-                    print(i, aabb, 'timedaojishi')
+                if "最后" in aa or "再次挑战" in aa:
+                    print(i, aa, 'timedaojishi')
                     # self.youjian(pvp)
                     print(i)
                     return
                 else:
-                    print(i, aabb, "没有找到timedaojishi")
-                    print(i, aabb, 'timedaojishi')
+                    print(i, aa, "没有找到timedaojishi")
+                    print(i, aa, 'timedaojishi')
                     # self.youjian()
                     continue
             else:
