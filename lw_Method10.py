@@ -7,7 +7,7 @@ import traceback
 from email.header import Header
 from email.mime.text import MIMEText
 from random import uniform
-from threading import Thread ,Lock # 导入线程函数
+from threading import Thread ,Lock,RLock # 导入线程函数
 from time import sleep  # 导入时间休眠函数
 
 import numpy as np
@@ -24,6 +24,7 @@ from python_findpicture import Caozuolei1
 # 继承Caozuolei1函数。
 class Caozuolei(Caozuolei1):
     time.sleep(0.5)
+    mutex1 =RLock()
 
     # # 绑定窗口句柄
     # # 如果函数运行期间想要停止，请把鼠标移动到屏幕得左上角（0，0）位置，
@@ -857,10 +858,10 @@ class Caozuolei(Caozuolei1):
             print(aa11, '=aa11')
             print(aa12, '=aa12')
             print(aa13,'=aa13')
-            if aa00 is None or aa11 is None or aa13 is None or aa12 is None:
-                print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
-                continue
-            elif "开洞" in aa00:
+            # if aa00 is None or aa11 is None or aa13 is None or aa12 is None:
+            #     print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
+            #     continue
+            if "开洞" in aa00:
                 print('开洞')
                 return
 
@@ -2558,10 +2559,10 @@ class Caozuolei(Caozuolei1):
             m_button = 'h'
             print(move_seep)
             a_error = 0
-            # Restart_computer = Restart_computer_parameter  # Restart_computer为0或者1，0关闭电脑，1不关闭电脑
-            # t001 = Thread(target=self.timedaojishi, args=(pvp,))  # 定义线程t2，线程任务为5.30s倒计时，无参数
-            # t001.start()  # 开始运行t1线程
-            # print('开始')
+            Restart_computer = Restart_computer_parameter  # Restart_computer为0或者1，0关闭电脑，1不关闭电脑
+            t001 = Thread(target=self.timedaojishi, args=(pvp,))  # 定义线程t2，线程任务为5.30s倒计时，无参数
+            t001.start()  # 开始运行t1线程
+            print('开始')
 
             for j in range(1, 9):
 
@@ -5415,7 +5416,7 @@ class Caozuolei(Caozuolei1):
             print('没有找到没有找到没有找到')
 
     def timedaojishi(self, pvp=0):
-
+        Caozuolei.mutex1.acquire()
         # for i in range(330,0,-1):
         for i in range(330, 0, -1):
             aa = self.Find_Ocr(
@@ -5429,6 +5430,7 @@ class Caozuolei(Caozuolei1):
                 isbackcolor=0)
 
             time.sleep(0.5)
+            Caozuolei.mutex1.release()
             print('pvp=', pvp)
             if aa is None:
                 continue
@@ -5536,7 +5538,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(6, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')f
         if aa == 11 and pvp == 1:  # aa

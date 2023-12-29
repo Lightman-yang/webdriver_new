@@ -6,12 +6,12 @@ import pydirectinput  as dt
 import win32gui
 from comtypes.client import CreateObject
 from win32gui import FindWindow
-from threading import Thread,Lock
+from threading import Thread,Lock,RLock
 
 
 
 class Caozuolei1():
-    mutex = Lock()
+    mutex = RLock()
     #time.sleep(2)
     # 绑定窗口句柄
     # 如果函数运行期间想要停止，请把鼠标移动到屏幕得左上角（0，0）位置，
@@ -256,31 +256,33 @@ class Caozuolei1():
     # 找字功能
     def Find_Ocr(self, x1, y1, x2, y2, color_format, sim, linesign, isbackcolor):
         Caozuolei1.mutex.acquire()
-        #mutex.acquire()
 
+        #mutex.acquire()
+        time.sleep(0.05)
         while True:
             print(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
             ret = self.lw.Ocr(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
             print('0000001')
-            if ret is not None and ret!=0 and OSError :
+            Caozuolei1.mutex.release()
+            if ret is not None and ret!=0:
                 print(ret,'ret')
-                Caozuolei1.mutex.release()
+
                 return ret
             elif ret is None or ret ==0:
                 # print(0)\
                 print(ret,'ret is None or ret ==0')
-                Caozuolei1.mutex.release()
+               # Caozuolei1.mutex.release()
                 return '非'
             else:
                 try:
                     # print(0)
                     print(ret,'ret=try')
-                    Caozuolei1.mutex.release()
+                    #Caozuolei1.mutex.release()
                     return '非'
                 except OSError as de:
                     print(de)
                     print('de=ret=',ret)
-                    Caozuolei1.mutex.release()
+                    #Caozuolei1.mutex.release()
                     #return '非'
 
 
@@ -291,7 +293,7 @@ class Caozuolei1():
                     print('e=ret=', ret)
                     #return '非'
                     # traceback.print_exc()
-                    Caozuolei1.mutex.release()
+                    #Caozuolei1.mutex.release()
 
 
     def selfxy(self):  # 获取人物坐标
