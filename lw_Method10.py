@@ -4536,7 +4536,7 @@ class Caozuolei(Caozuolei1):
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         #data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
-        #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
@@ -5418,7 +5418,7 @@ class Caozuolei(Caozuolei1):
 
         # for i in range(330,0,-1):
         for i in range(330, 0, -1):
-            aa = self.Find_Ocr(
+            aabb = self.Find_Ocr(
                 x1=0,
                 y1=0,
                 x2=800,
@@ -5430,14 +5430,14 @@ class Caozuolei(Caozuolei1):
 
             time.sleep(0.5)
             print('pvp=', pvp)
-            if aa is None:
+            if aabb is None:
                 continue
             elif i == 1:
                 print(i)
                 self.youjian(pvp)
                 return
             elif i > 170 and ("最后" in aa or "再次挑战" in aa):
-                print(i, aa, 'timedaojishi')
+                print(i, aabb, 'timedaojishi')
                 # self.youjian(pvp)
                 print(i)
                 return
@@ -5446,14 +5446,14 @@ class Caozuolei(Caozuolei1):
                 print(i)
                 continue
             elif i <= 170:
-                if "最后" in aa or "再次挑战" in aa:
-                    print(i, aa, 'timedaojishi')
+                if "最后" in aabb or "再次挑战" in aabb:
+                    print(i, aabb, 'timedaojishi')
                     # self.youjian(pvp)
                     print(i)
                     return
                 else:
-                    print(i, aa, "没有找到timedaojishi")
-                    print(i, aa, 'timedaojishi')
+                    print(i, aabb, "没有找到timedaojishi")
+                    print(i, aabb, 'timedaojishi')
                     # self.youjian()
                     continue
             else:
