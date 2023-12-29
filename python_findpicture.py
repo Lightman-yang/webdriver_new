@@ -263,9 +263,9 @@ class Caozuolei1():
             ret = self.lw.Ocr(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
             print('0000001')
             Caozuolei1.mutex.release()
-            if ret is not None and ret!=0 and OSError :
+            if ret is not None and ret!=0 :
                 print(ret,'ret')
-                #Caozuolei1.mutex.release()
+
                 return ret
             elif ret is None or ret ==0:
                 # print(0)\
@@ -292,7 +292,7 @@ class Caozuolei1():
                     print('e=ret=', ret)
                     #return '非'
                     # traceback.print_exc()
-                    #aozuolei1.mutex.release()
+                    #Caozuolei1.mutex.release()
 
 
     def selfxy(self):  # 获取人物坐标
