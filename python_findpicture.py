@@ -256,7 +256,6 @@ class Caozuolei1():
     # 找字功能
     def Find_Ocr(self, x1, y1, x2, y2, color_format, sim, linesign, isbackcolor):
         Caozuolei1.mutex.acquire()
-
         #mutex.acquire()
         time.sleep(0.05)
         while True:
@@ -264,14 +263,14 @@ class Caozuolei1():
             ret = self.lw.Ocr(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
             print('0000001')
             Caozuolei1.mutex.release()
-            if ret is not None and ret!=0:
+            if ret is not None and ret!=0 :
                 print(ret,'ret')
 
                 return ret
             elif ret is None or ret ==0:
                 # print(0)\
                 print(ret,'ret is None or ret ==0')
-               # Caozuolei1.mutex.release()
+                #Caozuolei1.mutex.release()
                 return '非'
             else:
                 try:
