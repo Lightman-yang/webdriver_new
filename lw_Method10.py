@@ -7,7 +7,7 @@ import traceback
 from email.header import Header
 from email.mime.text import MIMEText
 from random import uniform
-from threading import Thread ,Lock # 导入线程函数
+from threading import Thread ,Lock,RLock # 导入线程函数
 from time import sleep  # 导入时间休眠函数
 
 import numpy as np
@@ -24,7 +24,7 @@ from python_findpicture import Caozuolei1
 # 继承Caozuolei1函数。
 class Caozuolei(Caozuolei1):
     time.sleep(0.5)
-
+    mutex1 =RLock()
     # # 绑定窗口句柄
     # # 如果函数运行期间想要停止，请把鼠标移动到屏幕得左上角（0，0）位置，
     # # 这触发pyautogui.FaailSafeException异常，从而终止程序运行。
@@ -5415,10 +5415,10 @@ class Caozuolei(Caozuolei1):
             print('没有找到没有找到没有找到')
 
     def timedaojishi(self, pvp=0):
-
+        Caozuolei.mutex1.acquire()
         # for i in range(330,0,-1):
         for i in range(330, 0, -1):
-            aa = self.Find_Ocr(
+            aabb = self.Find_Ocr(
                 x1=0,
                 y1=0,
                 x2=800,
@@ -5429,15 +5429,16 @@ class Caozuolei(Caozuolei1):
                 isbackcolor=0)
 
             time.sleep(0.5)
+            Caozuolei.mutex1.release()
             print('pvp=', pvp)
-            if aa is None:
+            if aabb is None:
                 continue
             elif i == 1:
                 print(i)
                 self.youjian(pvp)
                 return
-            elif i > 170 and ("最后" in aa or "再次挑战" in aa):
-                print(i, aa, 'timedaojishi')
+            elif i > 170 and ("最后" in aabb or "再次挑战" in aabb):
+                print(i, aabb, 'timedaojishi')
                 # self.youjian(pvp)
                 print(i)
                 return
@@ -5446,14 +5447,14 @@ class Caozuolei(Caozuolei1):
                 print(i)
                 continue
             elif i <= 170:
-                if "最后" in aa or "再次挑战" in aa:
-                    print(i, aa, 'timedaojishi')
+                if "最后" in aabb or "再次挑战" in aabb:
+                    print(i, aabb, 'timedaojishi')
                     # self.youjian(pvp)
                     print(i)
                     return
                 else:
-                    print(i, aa, "没有找到timedaojishi")
-                    print(i, aa, 'timedaojishi')
+                    print(i, aabb, "没有找到timedaojishi")
+                    print(i, aabb, 'timedaojishi')
                     # self.youjian()
                     continue
             else:
@@ -5536,7 +5537,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(1, 10):  # 打图设置ddddg
+    for aa in range(0, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')f
         if aa == 11 and pvp == 1:  # aa
