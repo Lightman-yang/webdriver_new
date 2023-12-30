@@ -292,7 +292,7 @@ class Caozuolei1():
                     print('e=ret=', ret)
                     #return '非'
                     # traceback.print_exc()
-                    Caozuolei1.mutex.release()
+                    #Caozuolei1.mutex.release()
 
 
     def selfxy(self):  # 获取人物坐标
