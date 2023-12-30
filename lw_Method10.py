@@ -7,7 +7,7 @@ import traceback
 from email.header import Header
 from email.mime.text import MIMEText
 from random import uniform
-from threading import Thread ,Lock # 导入线程函数
+from threading import Thread ,Lock,RLock # 导入线程函数
 from time import sleep  # 导入时间休眠函数
 
 import numpy as np
@@ -23,6 +23,7 @@ from python_findpicture import Caozuolei1
 
 # 继承Caozuolei1函数。
 class Caozuolei(Caozuolei1):
+    mutex2 =RLock()
     time.sleep(0.5)
 
     # # 绑定窗口句柄
@@ -4566,9 +4567,23 @@ class Caozuolei(Caozuolei1):
         if ret == 1:
             return self.lw.x(), self.lw.y()
         else:
-            print('零')
-            # dt.press('alt')
-            return 0
+            try:
+                print('零')
+                # dt.press('alt')
+                return 0
+            except OSError as de:
+                print(de)
+
+                Caozuolei1.mutex.release()
+                # return '非'
+
+                # traceback.print_exc()
+            except Exception as e:
+                print(e)
+
+                # return '非'
+                # traceback.print_exc()
+                Caozuolei1.mutex.release()
 
     def Find_srt(self, usr_string1, usr_color_format1, usr_string2, usr_color_format2, usr_HH1=0.75,
                  usr_HH2=0.75):  # 人物坐标
@@ -5415,7 +5430,7 @@ class Caozuolei(Caozuolei1):
             print('没有找到没有找到没有找到')
 
     def timedaojishi(self, pvp=0):
-
+        Caozuolei.mutex2.acquire()
         # for i in range(330,0,-1):
         for i in range(330, 0, -1):
             aa = self.Find_Ocr(
@@ -5429,6 +5444,7 @@ class Caozuolei(Caozuolei1):
                 isbackcolor=0)
 
             time.sleep(0.5)
+            Caozuolei.mutex2.release()
             print('pvp=', pvp)
             if aa is None:
                 continue
@@ -5536,8 +5552,8 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
-        # c.Set_Dict(1, '测试2.txt')
+    for aa in range(2, 10):  # 打图设置ddddg
+        # c.Set_Dict(1, '测试2.txgt')
         # c.Set_Dict(0, 'test3.t1xt')f
         if aa == 11 and pvp == 1:  # aa
             # if aa == 3 and pvp. == 1:# aa
