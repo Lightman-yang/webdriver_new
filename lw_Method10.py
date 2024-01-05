@@ -5875,7 +5875,7 @@ if __name__ == '__main__':
                 break
             elif pvp == 8:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
-                break
+
             elif pvp == 9:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 格斗师很猛
 
@@ -5905,7 +5905,8 @@ if __name__ == '__main__':
                 break
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 储藏师很狂
-
+            elif pvp == 8:
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最香
             elif pvp == 9:
@@ -5933,6 +5934,8 @@ if __name__ == '__main__':
                 break
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 朱雀师很美
+            elif pvp == 8:
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
             elif pvp == 4:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很刚
                 break
@@ -5963,6 +5966,8 @@ if __name__ == '__main__':
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu)  # 5P 爷的太阳最叼
                 break
+            elif pvp == 8:
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
                 #c.naiMa(n, 0.49, 0.26, 1, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
             elif pvp == 9:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 帆帆师很水
@@ -5984,6 +5989,9 @@ if __name__ == '__main__':
             elif pvp == 2:
 
                 c.naiMa(n, 0.49, 0.26, 1, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
+                break
+            elif pvp == 8:
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
                 break
             else:
                 break
