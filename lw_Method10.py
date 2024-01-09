@@ -4535,9 +4535,9 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
-        #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
@@ -5431,7 +5431,7 @@ class Caozuolei(Caozuolei1):
         Caozuolei.mutex2.acquire()
         # for i in range(330,0,-1):
         for i in range(330, 0, -1):
-            aa = self.Find_Ocr(
+            aabb = self.Find_Ocr(
                 x1=0,
                 y1=0,
                 x2=800,
@@ -5444,14 +5444,14 @@ class Caozuolei(Caozuolei1):
             time.sleep(0.5)
             Caozuolei.mutex2.release()
             print('pvp=', pvp)
-            if aa is None:
+            if aabb is None:
                 continue
             elif i == 1:
                 print(i)
                 self.youjian(pvp)
                 return
             elif i > 170 and ("最后" in aa or "再次挑战" in aa):
-                print(i, aa, 'timedaojishi')
+                print(i, aabb, 'timedaojishi')
                 # self.youjian(pvp)
                 print(i)
                 return
@@ -5460,14 +5460,14 @@ class Caozuolei(Caozuolei1):
                 print(i)
                 continue
             elif i <= 170:
-                if "最后" in aa or "再次挑战" in aa:
-                    print(i, aa, 'timedaojishi')
+                if "最后" in aabb or "再次挑战" in aabb:
+                    print(i, aabb, 'timedaojishi')
                     # self.youjian(pvp)
                     print(i)
                     return
                 else:
-                    print(i, aa, "没有找到timedaojishi")
-                    print(i, aa, 'timedaojishi')
+                    print(i, aabb, "没有找到timedaojishi")
+                    print(i, aabb, 'timedaojishi')
                     # self.youjian()
                     continue
             else:
@@ -5674,7 +5674,7 @@ if __name__ == '__main__':
 
             elif pvp == 2:
 
-                c.nvQiGong(n, 0.52, 0.26, 0, 0, *canshu)  # 2p 睡眠不足十
+                c.nvQiGong(n, 0.62, 0.26, 0, 0, *canshu)  # 2p 睡眠不足十
                 # aa1, bb1, cc1, dd1 = "先驱者", "#422", "师很", "#140"
                 # aa1, bb1, cc1, dd1="熟练者", "#410", "师很", "#140"
                 # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
@@ -5930,7 +5930,8 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊啊
             elif pvp == 3:
-                c.naiMa(n, 0.56, 0.26, 0, 0, *canshu)  # 5P 爷的奶无敌了
+                #c.naiMa(n, 0.56, 0.26, 0, 0, *canshu)  # 5P 爷的奶无敌了
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 睡眠不足丨
                 break
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 朱雀师很美
@@ -5959,7 +5960,8 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师很懒
                 #c.yuren(n, 0.52, 0.26, 0, 0, *canshu)  # 1p 悟空师很烂 缪斯
             elif pvp == 2:
-                c.zhaohuan(n, 0.18, 0.24, 0, 0, *canshu)  # 2p s睡眠不足s
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊啊
+
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 武功师很利
                 break
@@ -5987,8 +5989,8 @@ if __name__ == '__main__':
             if pvp == 1:
                 c.naiMa(n, 0.5, 0.26, 1, 0, *canshu)  # 1p 奇特木偶 光明骑士
             elif pvp == 2:
-
-                c.naiMa(n, 0.49, 0.26, 1, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
+                c.zhaohuan(n, 0.18, 0.24, 0, 0, *canshu)  # 2p s睡眠不足s
+                #c.naiMa(n, 0.49, 0.26, 1, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
                 break
             elif pvp == 8:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
