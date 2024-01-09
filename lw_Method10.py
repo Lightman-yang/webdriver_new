@@ -20,12 +20,12 @@ from win32gui import FindWindow
 
 from python_findpicture import Caozuolei1
 
-
+mutex2 = RLock()
 # 继承Caozuolei1函数。
 class Caozuolei(Caozuolei1):
     time.sleep(0.5)
     mutex1 = RLock()
-    mutex2 =RLock()
+
     # # 绑定窗口句柄
     # # 如果函数运行期间想要停止，请把鼠标移动到屏幕得左上角（0，0）位置，
     # # 这触发pyautogui.FaailSafeException异常，从而终止程序运行。
@@ -5428,7 +5428,7 @@ class Caozuolei(Caozuolei1):
             print('没有找到没有找到没有找到')
 
     def timedaojishi(self, pvp=0):
-        Caozuolei.mutex2.acquire()
+        mutex2.acquire()
         # for i in range(330,0,-1):
         for i in range(330, 0, -1):
             aabb = self.Find_Ocr(
@@ -5442,7 +5442,7 @@ class Caozuolei(Caozuolei1):
                 isbackcolor=0)
 
             time.sleep(0.5)
-            Caozuolei.mutex2.release()
+            mutex2.release()
             print('pvp=', pvp)
             if aabb is None:
                 continue
@@ -5550,7 +5550,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(3, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -5828,7 +5828,7 @@ if __name__ == '__main__':
             elif pvp == 4:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很水i
             elif pvp == 6:
-                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 梦想师很阔
+                c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  # 6p 梦想师很阔
             elif pvp == 5:
                 c.naiMa(n, 0.5, 0.26, 0, 0, *canshu) #5P 爷的太阳最混
             elif pvp == 8:
@@ -5862,8 +5862,8 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师很水丨
             elif pvp == 4:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师运气
-            elif pvp == 6:
-                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 高台师很恶
+            elif pvp == 6:  #、\\2024。1.1.
+                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 6p 高台师很恶
 
             elif pvp == 5:
                 c.naiMa(n, 0.5, 0.26, 0, 0, *canshu)  # 5P 爷的曙光最混
@@ -5904,7 +5904,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很行
                 break
             elif pvp == 6:
-                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 储藏师很狂
+                c.nvQiGong(n, 0.65, 0.26, 0, 0, *canshu)  # 6p 储藏师很狂
 
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最香
