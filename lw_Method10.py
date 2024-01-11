@@ -500,7 +500,7 @@ class Caozuolei(Caozuolei1):
                 color_format="#331",
                 sim=0.8,
                 linesign=" ",
-                isbackcolor=1)
+                isbackcolor=0)
             if "永恒之光" in aa:
 
                 print("永恒之光")
@@ -654,7 +654,9 @@ class Caozuolei(Caozuolei1):
         # c.Set_Dict(0, "test3.txt")
         # time.sleep(2)
         cc = c
+
         while True:
+            print(b,c,'B和C')
             cc = cc + 1
             print('FuBen_INFO6 开始')
             aa6 = self.Find_Ocr(
@@ -754,8 +756,10 @@ class Caozuolei(Caozuolei1):
 
             elif cc == 6 and "开洞" not in aa and b == 1:
                 dt.press('right')
-                dt.press('alt')
-
+                time.sleep(0.013)  # 按下两秒
+                dt.keyDown('right')  # ：模拟按键按下
+                time.sleep(0.2)  # 按下19秒
+                dt.keyUp('right')  # ：模拟按键松开按键
                 continue
             elif (cc == 25 or cc == 51) and "开洞" not in aa:
                 dt.press('alt')
@@ -786,7 +790,7 @@ class Caozuolei(Caozuolei1):
 
     def FuBen_INFO99(self):  # 副本地图信息数据实时获取
         for i in range(1, 80):
-            time.sleep(0.5)
+            time.sleep(0.05)
             aa = self.Find_Ocr(
                 x1=480,
                 y1=22,
@@ -823,7 +827,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.88,
                 linesign=" ",
                 isbackcolor=0)
-            time.sleep(0.15)
+
             aa11 = self.Find_Ocr(
                 x1=0,
                 y1=0,
@@ -833,7 +837,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.88,
                 linesign=" ",
                 isbackcolor=0)
-            time.sleep(0.15)
+
             aa12 = self.Find_Ocr(
                 x1=0,
                 y1=0,
@@ -843,7 +847,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.91,
                 linesign=" ",
                 isbackcolor=0)
-            time.sleep(0.15)
+
             aa13 = self.Find_Ocr(
                 x1=0,
                 y1=0,
@@ -858,6 +862,7 @@ class Caozuolei(Caozuolei1):
             print(aa11, '=aa11')
             print(aa12, '=aa12')
             print(aa13,'=aa13')
+            print(sss2)
             if aa00 is None or aa11 is None or aa13 is None or aa12 is None:
                 print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
                 continue
@@ -920,10 +925,10 @@ class Caozuolei(Caozuolei1):
                 print('非')
                 dt.press('right')
                 dt.keyDown('right')  # ：模拟按键按下 向下
-                time.sleep(0.5)
+                time.sleep(0.3)
                 dt.keyUp('right')  # ：模拟按键松开按键
                 print('----------')
-                sss2 = +1
+                sss2 = +7
                 print('FuBen_INFO66 步骤六')
 
                 continue
@@ -940,7 +945,7 @@ class Caozuolei(Caozuolei1):
                 print('非')
                 print('FuBen_INFO66 步骤七')
 
-                self.Set_Dict(0, 'test3.txt')
+                #self.Set_Dict(0, 'test3.txt')
                 continue
 
             elif '德拉' not in aa13 and sss2 == 1:
@@ -2559,8 +2564,9 @@ class Caozuolei(Caozuolei1):
             m_button = 'h'
             print(move_seep)
             a_error = 0
+            print('pvp=',pvp)
             Restart_computer = Restart_computer_parameter  # Restart_computer为0或者1，0关闭电脑，1不关闭电脑
-            t001 = Thread(target=self.timedaojishi, args=(pvp,))  # 定义线程t2，线程任务为5.30s倒计时，无参数
+            t001 = Thread(target=self.timedaojishi, args=(int(pvp),))  # 定义线程t2，线程任务为5.30s倒计时，无参数
             t001.start()  # 开始运行t1线程
             print('开始')
 
@@ -2604,11 +2610,12 @@ class Caozuolei(Caozuolei1):
                     if ret_values[0] == 1:
                         j = 8
                         i = num
-                        print('测试', t13)
+                        print('测试', t13,'break 返回')
                         break
                     # elif self.FuBen_INFO3() == 2:
                     elif ret_values[0] == 2:
                         j = 8
+                        print('break 返回')
                         break
                     else:
                         print('测试', t13)
@@ -4535,9 +4542,9 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
-        #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
@@ -4611,9 +4618,9 @@ class Caozuolei(Caozuolei1):
                 # print('人物坐标{},{},门坐标{},{}'.format(xxyy[0], xxyy[1],xxyy[2],xxyy[3]))
                 print('人物坐标Find_srt先驱者', z[0], '+', 68, '=', xxyy[0])
                 return
-            else:
+            elif z == 0:
 
-                z = self.FindStr(
+                zy = self.FindStr(
                     x1=0,
                     y1=0,
                     x2=800,
@@ -4622,14 +4629,14 @@ class Caozuolei(Caozuolei1):
                     color_format=usr_color_format2,  # "#422",
                     sim=usr_HH2,
                     isbackcolor=0)
-                if z != 0:
-                    x = z[0]
-                    y = z[1] + 114
+                if zy != 0:
+                    x = zy[0]
+                    y = zy[1] + 114
                     # xxyy[5] = 999
                     xxyy[0] = x
                     xxyy[1] = y
                     # print('人物坐标{},{},门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]), ',?')
-                    print('人物坐标Find_srt不足', z[0], '+', 0, '=', xxyy[0])
+                    print('人物坐标Find_srt不足', zy[0], '+', 0, '=', xxyy[0])
                     return
                 else:
                     b = b + 1
@@ -4648,6 +4655,10 @@ class Caozuolei(Caozuolei1):
                     #
                     # print("从新找")
                     # continue
+            else:
+                 print('不知道什么情况')
+                 continue
+
 
     def menzuobiao(self, renwuzuobiao):  # 门坐标
         # self.Use_Dict(0)
@@ -4688,7 +4699,8 @@ class Caozuolei(Caozuolei1):
             else:
 
                 try:
-                    return
+                    #return
+                    continue
                 except OSError as de:
                     print(de)
 
@@ -5425,13 +5437,23 @@ class Caozuolei(Caozuolei1):
         if t1 == 1 and t2 == 1:
             return 1
         else:
-            print('没有找到没有找到没有找到')
+            try:
+                 print('没有找到没有找到没有找到')
+                 return self
+            except OSError as de:
+                print(de)
+
+                traceback.print_exc()
+            except Exception as e:
+                print(e)
+
+                traceback.print_exc()
 
     def timedaojishi(self, pvp=0):
-        Caozuolei.mutex2.acquire()
+        #Caozuolei.mutex2.acquire()
         # for i in range(330,0,-1):
         for i in range(330, 0, -1):
-            aa = self.Find_Ocr(
+            aabb = self.Find_Ocr(
                 x1=0,
                 y1=0,
                 x2=800,
@@ -5441,17 +5463,18 @@ class Caozuolei(Caozuolei1):
                 linesign=" ",
                 isbackcolor=0)
 
+
+            #Caozuolei.mutex2.release()
             time.sleep(0.5)
-            Caozuolei.mutex2.release()
             print('pvp=', pvp)
-            if aa is None:
+            if aabb is None:
                 continue
             elif i == 1:
                 print(i)
                 self.youjian(pvp)
                 return
-            elif i > 170 and ("最后" in aa or "再次挑战" in aa):
-                print(i, aa, 'timedaojishi')
+            elif i > 170 and ("最后" in aabb or "再次挑战" in aabb):
+                print(i, aabb, 'timedaojishi')
                 # self.youjian(pvp)
                 print(i)
                 return
@@ -5460,14 +5483,14 @@ class Caozuolei(Caozuolei1):
                 print(i)
                 continue
             elif i <= 170:
-                if "最后" in aa or "再次挑战" in aa:
-                    print(i, aa, 'timedaojishi')
+                if "最后" in aabb or "再次挑战" in aabb:
+                    print(i, aabb, 'timedaojishi')
                     # self.youjian(pvp)
                     print(i)
                     return
                 else:
-                    print(i, aa, "没有找到timedaojishi")
-                    print(i, aa, 'timedaojishi')
+                    print(i, aabb, "没有找到timedaojishi")
+                    print(i, aabb, 'timedaojishi')
                     # self.youjian()
                     continue
             else:
@@ -5550,8 +5573,8 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
-        # c.Set_Dict(1, '测试2.txt')
+    for aa in range(1, 10):  # 打图设置ddddg
+        # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')f
         if aa == 11 and pvp == 1:  # aa
             # if aa == 3 and pvp. == 1:# aa
@@ -5674,7 +5697,7 @@ if __name__ == '__main__':
 
             elif pvp == 2:
 
-                c.nvQiGong(n, 0.52, 0.26, 0, 0, *canshu)  # 2p 睡眠不足十
+                c.nvQiGong(n, 0.62, 0.26, 0, 0, *canshu)  # 2p 睡眠不足十
                 # aa1, bb1, cc1, dd1 = "先驱者", "#422", "师很", "#140"
                 # aa1, bb1, cc1, dd1="熟练者", "#410", "师很", "#140"
                 # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
@@ -5875,7 +5898,7 @@ if __name__ == '__main__':
                 break
             elif pvp == 8:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
-                break
+
             elif pvp == 9:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 格斗师很猛
 
@@ -5905,7 +5928,8 @@ if __name__ == '__main__':
                 break
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 储藏师很狂
-
+            elif pvp == 8:
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最香
             elif pvp == 9:
@@ -5929,10 +5953,13 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊啊
             elif pvp == 3:
-                c.naiMa(n, 0.56, 0.26, 0, 0, *canshu)  # 5P 爷的奶无敌了
+                #c.naiMa(n, 0.56, 0.26, 0, 0, *canshu)  # 5P 爷的奶无敌了
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 睡眠不足丨
                 break
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 朱雀师很美
+            elif pvp == 8:
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
             elif pvp == 4:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很刚
                 break
@@ -5956,13 +5983,16 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师很懒
                 #c.yuren(n, 0.52, 0.26, 0, 0, *canshu)  # 1p 悟空师很烂 缪斯
             elif pvp == 2:
-                c.zhaohuan(n, 0.18, 0.24, 0, 0, *canshu)  # 2p s睡眠不足s
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊啊
+
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 武功师很利
                 break
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu)  # 5P 爷的太阳最叼
                 break
+            elif pvp == 8:
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
                 #c.naiMa(n, 0.49, 0.26, 1, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
             elif pvp == 9:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 9P 帆帆师很水
@@ -5982,8 +6012,11 @@ if __name__ == '__main__':
             if pvp == 1:
                 c.naiMa(n, 0.5, 0.26, 1, 0, *canshu)  # 1p 奇特木偶 光明骑士
             elif pvp == 2:
-
-                c.naiMa(n, 0.49, 0.26, 1, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
+                c.zhaohuan(n, 0.18, 0.24, 0, 0, *canshu)  # 2p s睡眠不足s
+                #c.naiMa(n, 0.49, 0.26, 1, 0, *canshu)  # 2p 圣骑士很烂 光明骑士
+                break
+            elif pvp == 8:
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
                 break
             else:
                 break
