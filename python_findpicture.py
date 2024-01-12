@@ -260,40 +260,42 @@ class Caozuolei1():
         time.sleep(0.05)
         while True:
             print(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
-            ret = self.lw.Ocr(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
-            print('0000001')
-            Caozuolei1.mutex.release()
-            if ret is not None and ret!=0 :
-                print(ret,'ret')
+            try:
+                ret = self.lw.Ocr(x1, y1, x2, y2, color_format, sim, linesign, isbackcolor)
+                print('0000001')
+                Caozuolei1.mutex.release()
 
-                return ret
-            elif ret is None or ret ==0:
-                # print(0)\
-                print(ret,'ret is None or ret ==0')
-                #Caozuolei1.mutex.release()
-                return '非'
-            else:
-                try:
-                    # print(0)
-                    print(ret,'ret=try')
+                if ret is not None and ret!=0 :
+                    print(ret,'ret')
+
+                    return ret
+                elif ret is None or ret ==0:
+                    # print(0)\
+                    print(ret,'ret is None or ret ==0')
                     #Caozuolei1.mutex.release()
                     return '非'
-                except OSError as de:
-                    print(de)
-                    print('de=ret=',ret)
-                    #Caozuolei1.mutex.release()
-                    #return '非'
+            # else:
+            #     try:
+            #         # print(0)
+            #         print(ret,'ret=try')
+            #         #Caozuolei1.mutex.release()
+            #         return '非'
+            except OSError as de:
+                print(de)
+               # print('de=ret=',ret)
+                #Caozuolei1.mutex.release()
+                #return '非'
+                continue
 
 
-
-                    # traceback.print_exc()
-                except Exception as e:
-                    print(e)
-                    print('e=ret=', ret)
-                    #return '非'
-                    # traceback.print_exc()
-                    #Caozuolei1.mutex.release()
-
+                # traceback.print_exc()
+            except Exception as e:
+                print(e)
+               # print('e=ret=', ret)
+                #return '非'
+                # traceback.print_exc()
+                #Caozuolei1.mutex.release()
+                continue
 
     def selfxy(self):  # 获取人物坐标
         print("人物坐标")
