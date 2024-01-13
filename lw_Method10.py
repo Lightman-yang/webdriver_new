@@ -4570,24 +4570,30 @@ class Caozuolei(Caozuolei1):
         return row_list2[2:8]  # 取数据直接截取前6条数据 并返回给调用方
 
     def FindStr(self, x1, y1, x2, y2, string, color_format, sim, isbackcolor):
-        Caozuolei.mutex1.acquire()
-        time.sleep(0.05)
-        ret = self.lw.FindStr(x1, y1, x2, y2, string, color_format, sim, isbackcolor)
-        Caozuolei.mutex1.release()
-        if ret == 1:
-            return self.lw.x(), self.lw.y()
-        else:
-            try:
+
+    
+        try:
+            Caozuolei.mutex1.acquire()
+            time.sleep(0.05)
+            ret = self.lw.FindStr(x1, y1, x2, y2, string, color_format, sim, isbackcolor)
+
+            Caozuolei.mutex1.release()
+            if ret == 1:
+                return self.lw.x(), self.lw.y()
+            else:
+
                 print('零')
                 # dt.press('alt')
                 return 0
 
-            except OSError as de:
-                print(de)
 
-                traceback.print_exc()
-            except Exception as e:
-                print(e)
+        except OSError as de:
+            print(de)
+            return 0
+            traceback.print_exc()
+        except Exception as e:
+            print(e)
+            return 0
 
 
     def Find_srt(self, usr_string1, usr_color_format1, usr_string2, usr_color_format2, usr_HH1=0.75,
@@ -4608,7 +4614,7 @@ class Caozuolei(Caozuolei1):
                 sim=usr_HH1,
                 isbackcolor=0)
             print(z, "人物坐标Find_srt<>")
-            if z != 0:
+            if z != 0 and z is not None:
                 x = z[0] + 68
                 y = z[1] + 100
                 # xxyy[0:2] = x, y
@@ -4630,7 +4636,7 @@ class Caozuolei(Caozuolei1):
                     color_format=usr_color_format2,  # "#422",
                     sim=usr_HH2,
                     isbackcolor=0)
-                if zy != 0:
+                if zy != 0 and zy is not None:
                     x = zy[0]
                     y = zy[1] + 114
                     # xxyy[5] = 999
@@ -4665,7 +4671,7 @@ class Caozuolei(Caozuolei1):
         # self.Use_Dict(0)
         while True:
 
-            z = self.FindStr(
+            zoo = self.FindStr(
                 x1=392,
                 y1=63,
                 x2=853,
@@ -4674,14 +4680,14 @@ class Caozuolei(Caozuolei1):
                 color_format="#380",  # "#422",  ##380
                 sim=0.8,
                 isbackcolor=0)
-            print(z, 'z')
-            if z != 0:
-                xxyy[2] = z[0] - 140
-                xxyy[3] = z[1] + 50 + renwuzuobiao  # 65
+            print(zoo, 'z')
+            if zoo != 0 and zoo is not None:
+                xxyy[2] = zoo[0] - 140
+                xxyy[3] = zoo[1] + 50 + renwuzuobiao  # 65
                 xxyy[4] = 88  # 找到数据传88
                 # xxyy[2:2] = x, y
-                print('开洞', z[0], '-', 140, '=', xxyy[2])
-                print('开洞yy', z[0], '+50+renwuzuobiao', 140, renwuzuobiao, '=', xxyy[2], '(开洞Y坐标)')
+                print('开洞', zoo[0], '-', 140, '=', xxyy[2])
+                print('开洞yy', zoo[0], '+50+renwuzuobiao', 140, renwuzuobiao, '=', xxyy[2], '(开洞Y坐标)')
                 print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
                 return
 
@@ -4704,11 +4710,11 @@ class Caozuolei(Caozuolei1):
                     continue
                 except OSError as de:
                     print(de)
-
+                    continue
                     traceback.print_exc()
                 except Exception as e:
                     print(e)
-
+                    continue
                     traceback.print_exc()
 
     def menzuobiao1(self, renwuzuobiao):  # 门坐标
@@ -5435,19 +5441,21 @@ class Caozuolei(Caozuolei1):
         print(t1, t2, 't1,t2')
         t1.join()
         t2.join()
-        if t1 == 1 and t2 == 1:
+        if t1.is_alive() and t2.is_alive():
+        #if t1 == 1 and t2 == 1:
+            print('执行成功T1，T2')
             return 1
         else:
             try:
                  print('没有找到没有找到没有找到')
-                 return self
+                 return 0
             except OSError as de:
                 print(de)
-
+                return 0
                 traceback.print_exc()
             except Exception as e:
                 print(e)
-
+                return 0
                 traceback.print_exc()
 
     def timedaojishi(self, pvp=0):
@@ -5574,7 +5582,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(1, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')f
         if aa == 11 and pvp == 1:  # aa
