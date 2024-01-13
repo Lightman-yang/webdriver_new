@@ -2877,6 +2877,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('down')
                     time.sleep(0.7)
                     dt.press('9')
+                    t31.join()
                     time.sleep(0.75)
                     self.FuBen_INFO1()
                     self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2,-20)
@@ -4571,23 +4572,25 @@ class Caozuolei(Caozuolei1):
 
     def FindStr(self, x1, y1, x2, y2, string, color_format, sim, isbackcolor):
         Caozuolei.mutex1.acquire()
-        time.sleep(0.05)
-        ret = self.lw.FindStr(x1, y1, x2, y2, string, color_format, sim, isbackcolor)
-        Caozuolei.mutex1.release()
-        if ret == 1:
-            return self.lw.x(), self.lw.y()
-        else:
-            try:
-                print('零')
-                # dt.press('alt')
-                return 0
+        try:
+            time.sleep(0.05)
+            ret = self.lw.FindStr(x1, y1, x2, y2, string, color_format, sim, isbackcolor)
+            Caozuolei.mutex1.release()
+            if ret == 1:
+                return self.lw.x(), self.lw.y()
+            else:
 
-            except OSError as de:
-                print(de)
+                    print('零')
+                    # dt.press('alt')
+                    return 0
 
-                traceback.print_exc()
-            except Exception as e:
-                print(e)
+        except OSError as de:
+            print(de)
+
+            traceback.print_exc()
+
+        except Exception as e:
+            print(e)
 
 
     def Find_srt(self, usr_string1, usr_color_format1, usr_string2, usr_color_format2, usr_HH1=0.75,
@@ -4675,7 +4678,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.8,
                 isbackcolor=0)
             print(z, 'z')
-            if z != 0:
+            if z != 0 and z is not None:
                 xxyy[2] = z[0] - 140
                 xxyy[3] = z[1] + 50 + renwuzuobiao  # 65
                 xxyy[4] = 88  # 找到数据传88
@@ -5027,7 +5030,7 @@ class Caozuolei(Caozuolei1):
         num_ss = [0]
         while '真' not in a:
 
-            print(' else #10', (a))
+            print(' else #10,forxunhuan', (a))
             self.Find_srt(aa, bb, cc, dd, hh1, hh2)
             # self.Find_srt("先驱者","#422", "不足", "#422")
             # # self.menzuobiao()
@@ -5181,7 +5184,7 @@ class Caozuolei(Caozuolei1):
         num_ss = [0]
         while True :
 
-                print(' else #10', (a))
+                print(' else #10,forxunhuanB', (a))
                 self.Find_srt(aa, bb, cc, dd, hh1, hh2)
                 # self.Find_srt("先驱者","#422", "不足", "#422")
                 # # self.menzuobiao()
@@ -5294,7 +5297,7 @@ class Caozuolei(Caozuolei1):
         num_ss = [0]
         while True :
 
-                print(' else #10', (a))
+                print(' else #10,forxunhuanA', (a))
                 self.Find_srt(aa, bb, cc, dd, hh1, hh2)
                 # self.Find_srt("先驱者","#422", "不足", "#422")
                 # # self.menzuobiao()
@@ -5435,7 +5438,10 @@ class Caozuolei(Caozuolei1):
         print(t1, t2, 't1,t2')
         t1.join()
         t2.join()
-        if t1 == 1 and t2 == 1:
+        if t1.is_alive() and t2.is_alive():
+
+        #if t1 == 1 and t2 == 1:
+            print('执行完成T1,T2')
             return 1
         else:
             try:
@@ -5443,11 +5449,12 @@ class Caozuolei(Caozuolei1):
                  return self
             except OSError as de:
                 print(de)
-
+                print('返回self')
+                return self
                 traceback.print_exc()
             except Exception as e:
-                print(e)
-
+                print(e,'返回self')
+                return self
                 traceback.print_exc()
 
     def timedaojishi(self, pvp=0):
