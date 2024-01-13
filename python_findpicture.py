@@ -223,15 +223,16 @@ class Caozuolei1():
                 return 0
             except OSError as de:
                 print(de)
-                print('de=ret=', ret)
+                print('Find_Str try', ret)
                 # return '非'
-
+                return 0
                 # traceback.print_exc()
             except Exception as e:
                 print(e)
-                print('e=ret=', ret)
+                print('Find_Str try', ret)
                 # return '非'
                 # traceback.print_exc()
+                return 0
 
     def Find_Strkspp(self):  # 获取"开始匹配"字符串
         print("字符匹配中")
@@ -273,7 +274,7 @@ class Caozuolei1():
                     # print(0)\
                     print(ret,'ret is None or ret ==0')
                     #Caozuolei1.mutex.release()
-                    return '非'
+
             # else:
             #     try:
             #         # print(0)
@@ -281,21 +282,22 @@ class Caozuolei1():
             #         #Caozuolei1.mutex.release()
             #         return '非'
             except OSError as de:
-                print(de)
+                print(de,'Find_Ocr')
                # print('de=ret=',ret)
                 #Caozuolei1.mutex.release()
-                #return '非'
-                continue
+                return '崩溃'
+                #continue
 
 
                 # traceback.print_exc()
             except Exception as e:
-                print(e)
+                print(e,'Find_Ocr')
                # print('e=ret=', ret)
                 #return '非'
                 # traceback.print_exc()
                 #Caozuolei1.mutex.release()
-                continue
+                return '崩溃'
+               # continue
 
     def selfxy(self):  # 获取人物坐标
         print("人物坐标")
