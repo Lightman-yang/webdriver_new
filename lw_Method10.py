@@ -2878,6 +2878,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)
                     dt.press('9')
                     time.sleep(0.75)
+                    t31.join()
                     self.FuBen_INFO1()
                     self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2,-20)
                     # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 20)
@@ -4569,25 +4570,28 @@ class Caozuolei(Caozuolei1):
         print(row_list2[0:8])
         return row_list2[2:8]  # 取数据直接截取前6条数据 并返回给调用方
 
+
     def FindStr(self, x1, y1, x2, y2, string, color_format, sim, isbackcolor):
-        Caozuolei.mutex1.acquire()
-        time.sleep(0.05)
-        ret = self.lw.FindStr(x1, y1, x2, y2, string, color_format, sim, isbackcolor)
-        Caozuolei.mutex1.release()
-        if ret == 1:
-            return self.lw.x(), self.lw.y()
-        else:
-            try:
+        try:
+            Caozuolei.mutex1.acquire()
+            time.sleep(0.05)
+            ret = self.lw.FindStr(x1, y1, x2, y2, string, color_format, sim, isbackcolor)
+            Caozuolei.mutex1.release()
+            if ret == 1:
+                return self.lw.x(), self.lw.y()
+            else:
+
                 print('零')
                 # dt.press('alt')
                 return 0
 
-            except OSError as de:
-                print(de)
-
-                traceback.print_exc()
-            except Exception as e:
-                print(e)
+        except OSError as de:
+            print(de)
+            return 0
+            traceback.print_exc()
+        except Exception as e:
+            return 0
+            print(e)
 
 
     def Find_srt(self, usr_string1, usr_color_format1, usr_string2, usr_color_format2, usr_HH1=0.75,
@@ -4608,7 +4612,7 @@ class Caozuolei(Caozuolei1):
                 sim=usr_HH1,
                 isbackcolor=0)
             print(z, "人物坐标Find_srt<>")
-            if z != 0:
+            if z != 0 and z is not None:
                 x = z[0] + 68
                 y = z[1] + 100
                 # xxyy[0:2] = x, y
@@ -4630,7 +4634,7 @@ class Caozuolei(Caozuolei1):
                     color_format=usr_color_format2,  # "#422",
                     sim=usr_HH2,
                     isbackcolor=0)
-                if zy != 0:
+                if zy != 0 and zy is not None:
                     x = zy[0]
                     y = zy[1] + 114
                     # xxyy[5] = 999
@@ -5027,7 +5031,7 @@ class Caozuolei(Caozuolei1):
         num_ss = [0]
         while '真' not in a:
 
-            print(' else #10', (a))
+            print(' else #10,forxunhuan', (a))
             self.Find_srt(aa, bb, cc, dd, hh1, hh2)
             # self.Find_srt("先驱者","#422", "不足", "#422")
             # # self.menzuobiao()
@@ -5181,7 +5185,7 @@ class Caozuolei(Caozuolei1):
         num_ss = [0]
         while True :
 
-                print(' else #10', (a))
+                print(' else #10,forxunhuanB', (a))
                 self.Find_srt(aa, bb, cc, dd, hh1, hh2)
                 # self.Find_srt("先驱者","#422", "不足", "#422")
                 # # self.menzuobiao()
@@ -5294,7 +5298,7 @@ class Caozuolei(Caozuolei1):
         num_ss = [0]
         while True :
 
-                print(' else #10', (a))
+                print(' else #10,forxunhuanA', (a))
                 self.Find_srt(aa, bb, cc, dd, hh1, hh2)
                 # self.Find_srt("先驱者","#422", "不足", "#422")
                 # # self.menzuobiao()
@@ -5404,19 +5408,18 @@ class Caozuolei(Caozuolei1):
                     a.append("真")
 
                     return 1
-
+                elif x > 600 and z == 88:  # 8
+                    # dt.keyDown('left')  # ：模拟按键按下
+                    # time.sleep(1)  # 按下19秒
+                    # dt.keyUp('left')  # ：模拟按键松开按键
+                    # print((x-x1) , 'x', (y- y1), 'y','怎么回事')
+                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                    print("up,#8")
+                    continue
                 else:
-                    if x > 600 and z == 88:  # 8
-                        # dt.keyDown('left')  # ：模拟按键按下
-                        # time.sleep(1)  # 按下19秒
-                        # dt.keyUp('left')  # ：模拟按键松开按键
-                        # print((x-x1) , 'x', (y- y1), 'y','怎么回事')
-                        # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                        print("up,#8")
-                        continue
 
 
-                    else:
+
                         print(xxyy)
                         # self.youjian()
                         # dt.press('right')
@@ -5435,12 +5438,15 @@ class Caozuolei(Caozuolei1):
         print(t1, t2, 't1,t2')
         t1.join()
         t2.join()
-        if t1 == 1 and t2 == 1:
-            return 1
+        if t1.is_alive() and t2.is_alive():
+              print('t1,t2执行完毕')
+              return 1
+        # if t1 == 1 and t2 == 1:
+        #     return 1
         else:
             try:
                  print('没有找到没有找到没有找到')
-                 return self
+                 return 0
             except OSError as de:
                 print(de)
 
@@ -5574,7 +5580,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(1, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')f
         if aa == 11 and pvp == 1:  # aa
