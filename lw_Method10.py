@@ -5737,7 +5737,7 @@ if __name__ == '__main__':
                 or (pvp == 4 and x[aa][2] == 3) \
                 or (pvp == 1 and x[aa][2] == 6) \
                 or (pvp == 2 and x[aa][2] == 5) \
-                or (pvp == 1 and x[aa][2] == 1) \
+                or (pvp == 4 and x[aa][2] == 1) \
                 or (pvp == 5 and x[aa][2] == 5):
             # or (pvp == 9 and x[aa][2] == 1):
 
