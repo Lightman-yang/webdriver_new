@@ -2878,6 +2878,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)
                     dt.press('9')
                     time.sleep(0.75)
+                    t31.join()
                     self.FuBen_INFO1()
                     self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2,-20)
                     # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 20)
@@ -4542,9 +4543,9 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
-        #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
@@ -4570,25 +4571,27 @@ class Caozuolei(Caozuolei1):
         return row_list2[2:8]  # 取数据直接截取前6条数据 并返回给调用方
 
     def FindStr(self, x1, y1, x2, y2, string, color_format, sim, isbackcolor):
-        Caozuolei.mutex1.acquire()
-        time.sleep(0.05)
-        ret = self.lw.FindStr(x1, y1, x2, y2, string, color_format, sim, isbackcolor)
-        Caozuolei.mutex1.release()
-        if ret == 1:
-            return self.lw.x(), self.lw.y()
-        else:
-            try:
+
+        try:
+            Caozuolei.mutex1.acquire()
+            time.sleep(0.05)
+            ret = self.lw.FindStr(x1, y1, x2, y2, string, color_format, sim, isbackcolor)
+            Caozuolei.mutex1.release()
+            if ret == 1:
+                return self.lw.x(), self.lw.y()
+            else:
+
                 print('零')
                 # dt.press('alt')
                 return 0
 
-            except OSError as de:
-                print(de)
-
-                traceback.print_exc()
-            except Exception as e:
-                print(e)
-
+        except OSError as de:
+            print(de)
+            return 0
+            traceback.print_exc()
+        except Exception as e:
+            print(e)
+            return 0
 
     def Find_srt(self, usr_string1, usr_color_format1, usr_string2, usr_color_format2, usr_HH1=0.75,
                  usr_HH2=0.75):  # 人物坐标
@@ -4608,7 +4611,7 @@ class Caozuolei(Caozuolei1):
                 sim=usr_HH1,
                 isbackcolor=0)
             print(z, "人物坐标Find_srt<>")
-            if z != 0:
+            if z != 0 and z is not None:
                 x = z[0] + 68
                 y = z[1] + 100
                 # xxyy[0:2] = x, y
@@ -4630,7 +4633,7 @@ class Caozuolei(Caozuolei1):
                     color_format=usr_color_format2,  # "#422",
                     sim=usr_HH2,
                     isbackcolor=0)
-                if zy != 0:
+                if zy != 0 and zy is not None:
                     x = zy[0]
                     y = zy[1] + 114
                     # xxyy[5] = 999
@@ -4675,7 +4678,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.8,
                 isbackcolor=0)
             print(z, 'z')
-            if z != 0:
+            if z != 0 and z is not None:
                 xxyy[2] = z[0] - 140
                 xxyy[3] = z[1] + 50 + renwuzuobiao  # 65
                 xxyy[4] = 88  # 找到数据传88
@@ -5435,12 +5438,13 @@ class Caozuolei(Caozuolei1):
         print(t1, t2, 't1,t2')
         t1.join()
         t2.join()
-        if t1 == 1 and t2 == 1:
+        if t1.is_alive() and t2.is_alive():
+       # if t1 == 1 and t2 == 1:
             return 1
         else:
             try:
                  print('没有找到没有找到没有找到')
-                 return self
+                 return 0
             except OSError as de:
                 print(de)
 
@@ -5574,7 +5578,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(2, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')f
         if aa == 11 and pvp == 1:  # aa
