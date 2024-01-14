@@ -306,11 +306,11 @@ class Caozuolei(Caozuolei1):
                 linesign=" ",
                 isbackcolor=0)
             print("打印aa100", aa100)
-            if aa100 is None or aa100 == 0 or aa100 in '崩溃':
+            if str(aa100) is None or aa100 == 0 or str(aa100) in '崩溃':
                 print('时间',time.time())
                 continue
-            elif "靓仔" in aa100:
-                print(aa100)
+            elif "靓仔" in str(aa100):
+                print(str(aa100))
                 # b = time.strftime("%y-%m-%d_%H$%M$%S", time.localtime())
                 #
                 # img = pyautogui.screenshot(region=[48, 84, 848, 684])
@@ -320,7 +320,7 @@ class Caozuolei(Caozuolei1):
                 dt.press('9')
                 time.sleep(1)  # 按下两秒
                 return
-            elif "靓仔" not in aa100:
+            elif "靓仔" not in str(aa100):
                 print('没有靓仔')
                 return
             else:
@@ -352,15 +352,15 @@ class Caozuolei(Caozuolei1):
                 sim=0.85,
                 linesign=" ",
                 isbackcolor=0)
-            if "五陵" in aa:
+            if "五陵" in str(aa):
                 return 100
-            elif "再次挑战" not in aa and oopp == 0:
+            elif "再次挑战" not in str(aa) and oopp == 0:
                 dt.press('g')
                 dt.press('d')
                 # time.sleep(0.75)  # 按下19秒
                 dt.press('f')
                 dt.press('y')
-            elif "再次挑战" not in aa and oopp == 1:
+            elif "再次挑战" not in str(aa) and oopp == 1:
                 dt.press('d')
                 dt.press('q')
                 time.sleep(1)  # 按下两秒
@@ -368,7 +368,7 @@ class Caozuolei(Caozuolei1):
                 dt.press('w')
                 time.sleep(0.7)  # 按下两秒
                 dt.press('w')
-            elif "再次挑战" not in aa and oopp == 2:
+            elif "再次挑战" not in str(aa) and oopp == 2:
                 return 1
 
             else:
@@ -398,12 +398,12 @@ class Caozuolei(Caozuolei1):
                 sim=0.85,
                 linesign=" ",
                 isbackcolor=0)
-            if ("靓仔" in aa and zzz == 1) or ("靓丽" in bb and zzz == 1):
+            if ("靓仔" in str(aa) and zzz == 1) or ("靓丽" in str(bb) and zzz == 1):
                 dt.press('9')
                 time.sleep(1)
                 ret_values.append(2)
                 return 2
-            elif "再次挑战" in aa:
+            elif "再次挑战" in str(aa):
                 ret_values.append(1)
                 dt.press('f12')
                 time.sleep(1)
@@ -432,47 +432,47 @@ class Caozuolei(Caozuolei1):
                 sim=0.99,
                 linesign=" ",
                 isbackcolor=0)
-            if aa is None:
-                print(aa)
+            if str(aa) is None or str(aa) in '崩溃':
+                print(str(aa))
                 print('狗屎')
                 continue
-            elif "五陵" in aa:
+            elif "五陵" in str(aa):
                 print("在副本外面")
                 return 100
                 # continue
-            elif "第一关" in aa and "开门" not in aa:
+            elif "第一关" in str(aa) and "开门" not in str(aa):
                 print('第一关')
                 return 1
                 # continue
-            elif "开门" in aa:
+            elif "开门" in str(aa):
                 print('第二关')
                 return 2
                 # continue
-            elif "凹凸" in aa and "星星" not in aa:
+            elif "凹凸" in str(aa) and "星星" not in str(aa):
                 print("在第三关凹凸")
                 return 3
-            elif "大鱼海棠" in aa or "夜空下" in aa:
+            elif "大鱼海棠" in str(aa) or "夜空下" in str(aa):
                 print("在第四关")
                 return 5
-            elif "星星" in aa:
+            elif "星星" in str(aa):
                 print("在第5关")
                 return 6
-            elif "花花" in aa and "空空" in aa:
+            elif "花花" in str(aa) and "空空" in str(aa):
                 print("在6关")
                 return 7
-            elif "花花" in aa and "好绿" not in aa:
+            elif "花花" in str(aa) and "好绿" not in str(aa):
                 print("在6关")
                 return 7
-            elif "空空" in aa and "花花" not in aa:
+            elif "空空" in str(aa) and "花花" not in str(aa):
                 print("在6关")
                 return 77
-            elif "好绿" in aa or (("好绿" in aa) and ("花花" in aa)):
+            elif "好绿" in str(aa) or (("好绿" in str(aa)) and ("花花" in str(aa))):
                 print("在7关")
                 return 8
-            elif "最后" in aa and "再次挑战" not in aa:
+            elif "最后" in str(aa) and "再次挑战" not in str(aa):
                 print("在boss房间")
                 return 9
-            elif "再次挑战" in aa:
+            elif "再次挑战" in str(aa):
                 print("通关完成")
                 return 10
             else:
@@ -504,7 +504,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.8,
                 linesign=" ",
                 isbackcolor=0)
-            if "永恒之光" in aa:
+            if "永恒之光" in str(aa):
 
                 print("永恒之光")
 
@@ -528,7 +528,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.8,
                 linesign=" ",
                 isbackcolor=0)
-            print("aa:", aa)
+            print("aa:", str(aa))
             bb = self.Find_Ocr(
                 x1=0,
                 y1=0,
@@ -538,24 +538,24 @@ class Caozuolei(Caozuolei1):
                 sim=0.79,
                 linesign=" ",
                 isbackcolor=0)
-            print("bb:", bb)
-            if "无敌" in aa and "快递员" not in aa:
+            print("bb:", str(bb))
+            if "无敌" in str(aa) and "快递员" not in str(aa):
                 print("无敌师很酷 是：超越起跑线  账号,9")
                 return 9
-            elif "冒险师" in aa and "快递员" not in aa:
+            elif "冒险师" in str(aa) and "快递员" not in str(aa):
                 print("力气师很大 是：曌飂飏  账号,8")
                 return 8
-            elif "水水" in aa and "快递员" not in aa:
+            elif "水水" in str(aa) and "快递员" not in str(aa):
                 print("色彩不足啊 是：风花雪月 账号,6")
                 return 7
-            elif "造就师" in bb or '造就师' in aa:
+            elif "造就师" in str(bb) or '造就师' in str(aa):
                 print("造就师,6")
                 return 6
-            elif "最叼" in bb or "最" in bb:
+            elif "最叼" in str(bb)  or "最" in str(bb) :
                 print("最,1")
 
                 return 5
-            elif "不足" in aa:
+            elif "不足" in str(aa):
 
                 print("不足,1")
 
@@ -565,14 +565,14 @@ class Caozuolei(Caozuolei1):
                 print("一二,4")
 
                 return 4
-            elif "士拉" in aa:
+            elif "士拉" in str(aa):
 
                 print("士拉,2")
 
                 return 1
-            elif "数字" in aa:
+            elif "数字" in str(aa):
 
-                print(aa, "0110,3")
+                print(str(aa), "0110,3")
 
                 return 3
             else:
@@ -595,9 +595,9 @@ class Caozuolei(Caozuolei1):
                 linesign=" ",
                 isbackcolor=0)
             print(aa)
-            if "传送" in aa:
+            if "传送" in str(aa):
 
-                print(aa, "有传送,1")
+                print(str(aa), "有传送,1")
 
                 return 1
             else:
@@ -682,25 +682,33 @@ class Caozuolei(Caozuolei1):
                 linesign=" ",
                 isbackcolor=0)
             time.sleep(0.15)
-            if aa6 is None or aa7 is None:
-                print(aa6,aa7,'aa is None')
+            if str(aa6) is None or str(aa7) is None:
+                print(str(aa6),str(aa7),'aa is None')
                 continue
 
-            elif "开洞" in aa6:
+            elif "开洞" in str(aa6):
                 print('开洞', cc)
                 return
-            elif cc == 6 and "开洞" not in aa6 and b == 1:
+            elif cc == 6 and "开洞" not in str(aa6) and b == 1:
+                dt.press('right')
+                time.sleep(0.013)  # 按下两秒
+                dt.keyDown('right')  # ：模拟按键按下
+                time.sleep(0.2)  # 按下19秒
+                dt.keyUp('right')  # ：模拟按键松开按键
+                cc+=1
+                continue
+            elif cc == 7 and "开洞" not in str(aa6) and b == 1:
                 dt.press('right')
                 dt.press('alt')
 
                 continue
-            elif (cc == 25 or cc == 51) and "开洞" not in aa6:
+            elif (cc == 25 or cc == 51) and "开洞" not in str(aa6):
                 dt.press('alt')
                 continue
-            elif 50 > cc > 7 and "开洞" not in aa6:
+            elif 50 > cc > 7 and "开洞" not in str(aa6):
                 dt.press('right')
                 continue
-            elif cc <= 7 and "开洞" not in aa7:
+            elif cc <= 7 and "开洞" not in str(aa7):
                 print("9等待9")
                 dt.press('g')
                 time.sleep(0.075)
@@ -709,8 +717,8 @@ class Caozuolei(Caozuolei1):
 
                 continue
 
-            elif "开洞" in aa7:
-                print('开洞', cc, aa7)
+            elif "开洞" in str(aa7):
+                print('开洞', cc, str(aa7))
                 return
             else:
 
@@ -799,18 +807,22 @@ class Caozuolei(Caozuolei1):
             aa = self.Find_Ocr(
                 x1=480,
                 y1=22,
-                x2=799,
-                y2=166,
+                x2=800,
+                y2=600,
                 color_format="#360",
                 sim=0.8,
                 linesign=" ",
                 isbackcolor=0)
-            if "返回" in aa or "再次挑战" in aa:
+            if "返回" in str(aa) or "再次挑战" in str(aa) or "经验值" in str(aa) or "通关时间" in str(aa):
                 print('总经验值,请选择奖励，返回')
                 zjyz[0] = 1
                 return 1
+            elif '崩溃' in str(aa):
+                print('从新调用self.FuBen_INFO99()')
+                continue
             else:
-                print('没找到总经验值，返回')
+                print('没找到总经验值，返回',aa)
+
                 continue
 
     def FuBen_INFO66(self, ss=0):  # 副本地图信息数据实时获取
@@ -826,7 +838,7 @@ class Caozuolei(Caozuolei1):
             aa00 = self.Find_Ocr(
                 x1=392,
                 y1=63,
-                x2=853,
+                x2=800,
                 y2=574,
                 color_format="#380",
                 sim=0.88,
@@ -868,20 +880,29 @@ class Caozuolei(Caozuolei1):
             print(aa12, '=aa12')
             print(aa13,'=aa13')
             print(sss2)
-            if aa00 is None or aa11 is None or aa13 is None or aa12 is None or \
-                     aa00 in '崩溃' or aa11 in '崩溃' or aa12 in '崩溃' or aa13 in '崩溃':
+            if str(aa11) in '崩溃' or str(aa13) in '崩溃':
+            #if  aa00 in '崩溃' or aa11 in '崩溃' or aa13 in '崩溃' or aa12 in '崩溃':
+               print('FuBen_INFO66崩溃')
+               continue
+            elif '开洞' not in str(aa00)  and  sss2 == 2:
                 print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
+
                 dt.press('right')
                 dt.keyDown('right')  # ：模拟按键按下 向下
-                time.sleep(0.3)
+                time.sleep(0.5)
                 dt.keyUp('right')  # ：模拟按键松开按键
+                continue
+            elif str(aa00) is None or str(aa11) is None or str(aa13) is None or str(aa12) is None :
+                print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
+                dt.press('right')
+
                 print('崩溃向前走一下')
                 continue
-            elif "开洞" in aa00:
+            elif "开洞" in str(aa00):
                 print('开洞')
                 return
 
-            elif "开洞" in aa11 and "开洞" not in aa00:
+            elif "开洞" in str(aa11) and "开洞" not in str(aa00):
                 if sss2 == 7:
                     dt.press('right')
                     dt.keyDown('right')  # ：模拟按键按下 向下
@@ -889,6 +910,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('right')  # ：模拟按键松开按键
                     print('FuBen_INFO66 步骤一')
                     return
+
                 else:
 
                     try:
@@ -905,7 +927,7 @@ class Caozuolei(Caozuolei1):
                         print(e,'FuBen_INFO66')
                         traceback.print_exc()
                         break
-            elif '开府' in aa12:
+            elif '开府' in str(aa12):
                 if sss2 == 2:
                     dt.press('d')
                     dt.press('q')
@@ -927,14 +949,14 @@ class Caozuolei(Caozuolei1):
                         print(e,'FuBen_INFO66 ==')
                         traceback.print_exc()
                         continue
-            elif '德拉' in aa13 or '防护罩' in aa13:
+            elif '德拉' in str(aa13) or '防护罩' in str(aa13):
                 dt.press('y')
 
                 dt.press('g')
                 print('FuBen_INFO66 步骤五')
                 continue
 
-            elif '德拉' not in aa13 and '开洞' not in aa00 and '开洞' not in aa12 and '开洞' not in aa11 and sss2 == 7:
+            elif '德拉' not in str(aa13) and '开洞' not in str(aa00) and '开洞' not in str(aa12) and '开洞' not in str(aa11) and sss2 == 7:
                 print('非')
                 dt.press('right')
                 dt.keyDown('right')  # ：模拟按键按下 向下
@@ -945,7 +967,7 @@ class Caozuolei(Caozuolei1):
                 print('FuBen_INFO66 步骤六')
 
                 continue
-            elif '非' in aa13 and '非' in aa00 and '非' in aa12 and '非' in aa11 and sss2 == 7:
+            elif '非' in str(aa13) and '非' in str(aa00) and '非' in str(aa12) and '非' in str(aa11) and sss2 == 7:
                 print('非')
                 dt.press('right')
                 dt.keyDown('right')  # ：模拟按键按下 向下
@@ -954,19 +976,31 @@ class Caozuolei(Caozuolei1):
                 print('----------')
                 sss2 = +1
                 continue
-            elif '非' in aa13 and '非' in aa00 and '非' in aa12 and '非' in aa11:
+            elif '非' in str(aa13) and '非' in str(aa00) and '非' in str(aa12) and '非' in str(aa11):
                 print('非')
                 print('FuBen_INFO66 步骤七')
 
                 #self.Set_Dict(0, 'test3.txt')
                 continue
 
-            elif '德拉' not in aa13 and sss2 == 1:
+            elif '德拉' not in str(aa13) and sss2 == 1:
                 print('FuBen_INFO66 步骤八')
 
                 return
+            elif str(aa00) is None or str(aa11) is None or str(aa13) is None or str(aa12) is None or \
+                    str(aa00) in '崩溃' or str(aa11) in '崩溃' or str(aa12) in '崩溃' or str(aa13) in '崩溃':
+                print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
+                dt.press('right')
+                dt.keyDown('right')  # ：模拟按键按下 向下
+                time.sleep(0.3)
+                dt.keyUp('right')  # ：模拟按键松开按键
+                print('崩溃向前走一下')
+                continue
 
-
+            elif  str(aa11) in '崩溃' or str(aa13) in '崩溃' or str(aa12) in '崩溃':
+            #if  aa00 in '崩溃' or aa11 in '崩溃' or aa13 in '崩溃' or aa12 in '崩溃':
+               print('FuBen_INFO66崩溃')
+               continue
             else:
                 try:
                     dt.press('right')
@@ -2802,13 +2836,14 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.65)  # 按下两秒
                     dt.press('e')
                     self.FuBen_INFO66(1)
+
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
-
-                    self.FuBen_INFO6(0, 6)
+                    self.FuBen_INFO66(2)
+                    #self.FuBen_INFO6(0, 6)
 
                     dt.press('9')
                     time.sleep(0.6)
@@ -2831,7 +2866,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.21 + move_seep)
+                    time.sleep(1.205 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.keyDown('up')  # ：模拟按键按下 向下
@@ -2886,11 +2921,13 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下 向下
                     time.sleep(0.65 + move_seep1)
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    t31 = Thread(target=self.FuBen_INFO66)  # 定义线程t2，
+                    t31 = Thread(target=self.FuBen_INFO66,
+                                 args=(1,))  # 定义线程t2，
                     t31.start()  # 开始运行t1线程
                     dt.press('down')
                     dt.press('down')
-                    self.FuBen_INFO6(0, 6)
+
+                    #self.FuBen_INFO6(0, 6)
                     dt.press('down')
                     time.sleep(0.7)
                     dt.press('9')
@@ -2912,11 +2949,14 @@ class Caozuolei(Caozuolei1):
                         dt.press('g')
                         time.sleep(0.75)
                         dt.press('f')
+                        print('第6关开始')
                         ##self.FuBen_INFO66()
                         self.FuBen_INFO6(1)
                         dt.press('9')
                         time.sleep(0.85)
+                        print('第6关开始1')
                         self.FuBen_INFO1()
+                        print('第6关开始2')
                         self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                         #self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 20)
 
@@ -4587,13 +4627,13 @@ class Caozuolei(Caozuolei1):
         print(row_list2[0:8])
         return row_list2[2:8]  # 取数据直接截取前6条数据 并返回给调用方
 
-    def FindStr(self, x1, y1, x2, y2, string, color_format, sim, isbackcolor):
+    def FindStr(self, x1, y1, x2, y2, string, color_format, sim, isbackcolor,err='0'):
 
         try:
-            Caozuolei.mutex1.acquire()
-            time.sleep(0.05)
+           # Caozuolei.mutex1.acquire()
+            #time.sleep(0.05)
             ret = self.lw.FindStr(x1, y1, x2, y2, string, color_format, sim, isbackcolor)
-            Caozuolei.mutex1.release()
+            #Caozuolei.mutex1.release()
             if ret == 1:
                 return self.lw.x(), self.lw.y()
             else:
@@ -4603,12 +4643,12 @@ class Caozuolei(Caozuolei1):
                 return 0
 
         except OSError as de:
-            print(de,'FindStr')
-            return 0
+            print(de,'FindStr',err)
+            return '崩溃'
             traceback.print_exc()
         except Exception as e:
-            print(e,'FindStr')
-            return 0
+            print(e,'FindStr',err)
+            return '崩溃'
 
 
     def Find_srt(self, usr_string1, usr_color_format1, usr_string2, usr_color_format2, usr_HH1=0.75,
@@ -4617,7 +4657,7 @@ class Caozuolei(Caozuolei1):
         print(usr_HH1, type(usr_HH1))
         b = 0
         while True:
-
+            b = b + 1
             #sleep(0.15)
             z = self.FindStr(
                 x1=0,
@@ -4627,11 +4667,15 @@ class Caozuolei(Caozuolei1):
                 string=usr_string1,  # "先驱者",  # "挑战者"
                 color_format=usr_color_format1,  # "#422",  ##380
                 sim=usr_HH1,
-                isbackcolor=0)
+                isbackcolor=0,
+                err='Find_srt')
             print(z, "人物坐标Find_srt<>")
-            if z != 0 and z is not None:
-                x = z[0] + 68
-                y = z[1] + 100
+            if '崩溃' in str(z):
+                print('崩溃？？')
+                continue
+            elif z != 0 and z is not None:
+                x = int(z[0]) + 68
+                y = int(z[1]) + 100
                 # xxyy[0:2] = x, y
                 xxyy[0] = x
                 xxyy[1] = y
@@ -4651,7 +4695,10 @@ class Caozuolei(Caozuolei1):
                     color_format=usr_color_format2,  # "#422",
                     sim=usr_HH2,
                     isbackcolor=0)
-                if zy != 0 and zy is not None:
+                if '崩溃' in str(zy):
+                    print('崩溃？？')
+                    continue
+                elif zy != 0 and zy is not None:
                     x = zy[0]
                     y = zy[1] + 114
                     # xxyy[5] = 999
@@ -4660,33 +4707,39 @@ class Caozuolei(Caozuolei1):
                     # print('人物坐标{},{},门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]), ',?')
                     print('人物坐标Find_srt不足', zy[0], '+', 0, '=', xxyy[0])
                     return
-                else:
-                    b = b + 1
-                    if b == 60:
-                        #self.youjian()
-                        print('!!!')
-                        return
-                    elif 32 > b > 30:
-                        dt.press('right')
-                        dt.press('alt')
-                        continue
-                    else:
-                        print(b)
-                        break
-                    # print(0, xxyy)
-                    #
-                    # print("从新找")
-                    # continue
+            #
+            elif b == 60:
+                #self.youjian()
+                print('!!!')
+                return
+            elif 32 > b > 30:
+                dt.press('right')
+                dt.press('alt')
+                continue
+            # print(0, xxyy)
+            #
+            # print("从新找")
+            # continue
             else:
-                 print('不知道什么情况')
-                 continue
+                try:
+                     print('不知道什么情况')
+                     continue
+                except OSError as de:
+                    print(de, 'forxunhuan',)
+
+                    traceback.print_exc()
+                    return self
+                except Exception as e:
+                    print(e, 'forxunhuan')
+                    traceback.print_exc()
+                    return self
 
 
     def menzuobiao(self, renwuzuobiao):  # 门坐标
         # self.Use_Dict(0)
         while True:
 
-            z = self.FindStr(
+            zuer = self.FindStr(
                 x1=392,
                 y1=63,
                 x2=853,
@@ -4694,15 +4747,19 @@ class Caozuolei(Caozuolei1):
                 string="开洞",  # "先驱者",  # "挑战者"
                 color_format="#380",  # "#422",  ##380
                 sim=0.8,
-                isbackcolor=0)
-            print(z, 'z')
-            if z != 0 and z is not None:
-                xxyy[2] = z[0] - 140
-                xxyy[3] = z[1] + 50 + renwuzuobiao  # 65
+                isbackcolor=0,
+                err='menzuobiao')
+            print(zuer, 'zuer')
+            if '崩溃' in str(zuer)  :
+                print('崩溃？？')
+                continue
+            elif zuer != 0 and zuer is not None:
+                xxyy[2] = int(zuer[0])- 140
+                xxyy[3] = int(zuer[1]) + 50 + renwuzuobiao  # 65
                 xxyy[4] = 88  # 找到数据传88
                 # xxyy[2:2] = x, y
-                print('开洞', z[0], '-', 140, '=', xxyy[2])
-                print('开洞yy', z[0], '+50+renwuzuobiao', 140, renwuzuobiao, '=', xxyy[2], '(开洞Y坐标)')
+                print('开洞', zuer[0], '-', 140, '=', xxyy[2])
+                print('开洞yy', zuer[0], '+50+renwuzuobiao', 140, renwuzuobiao, '=', xxyy[2], '(开洞Y坐标)')
                 print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
                 return
 
@@ -4746,11 +4803,15 @@ class Caozuolei(Caozuolei1):
                 string="开洞",  # "先驱者",  # "挑战者"
                 color_format="#380",  # "#422",  ##380
                 sim=0.8,
-                isbackcolor=0)
+                isbackcolor=0,
+                err='menzuobiao1')
             print(z, 'z')
-            if z != 0:
-                xxyy[2] = z[0] - 140
-                xxyy[3] = z[1] + 50 + renwuzuobiao  # 65
+            if '崩溃' in str(z):
+                print('崩溃？？')
+                continue
+            elif z != 0:
+                xxyy[2] = int(z[0]) - 140
+                xxyy[3] = int(z[1]) + 50 + renwuzuobiao  # 65
                 xxyy[4] = 88  # 找到数据传88
                 # xxyy[2:2] = x, y
                 print('开洞', z[0], '-', 140, '=', xxyy[2])
@@ -4925,7 +4986,10 @@ class Caozuolei(Caozuolei1):
                 sim=0.75,
                 isbackcolor=0)
             print(z, 'z')
-            if z != 0:
+            if '崩溃' in str(z):
+                print('崩溃？？')
+                continue
+            elif z != 0:
                 xxyy[2] = z[0] - 140
                 xxyy[3] = z[1] + 50 + renwuzuobiao  # 65
                 xxyy[4] = 88  # 找到数据传88
@@ -5289,31 +5353,40 @@ class Caozuolei(Caozuolei1):
                 elif  (-24 <= (y - y1) <= 24) and z == 88:  # 7
                     # print((x-x1), 'y？？？？？？')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    print("up,#7")
+                    print("up,#7,forxunhuan B")
 
                     a.append("真")
 
                     return 1
-
+                if x > 600 and z == 88:  # 8
+                    # dt.keyDown('left')  # ：模拟按键按下
+                    # time.sleep(1)  # 按下19秒
+                    # dt.keyUp('left')  # ：模拟按键松开按键
+                    # print((x-x1) , 'x', (y- y1), 'y','怎么回事')
+                    # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                    print("up,#8")
+                    continue
 
                 else:
-                    if x > 600 and z == 88:  # 8
-                        #dt.keyDown('left')  # ：模拟按键按下
-                       # time.sleep(1)  # 按下19秒
-                        #dt.keyUp('left')  # ：模拟按键松开按键
-                        # print((x-x1) , 'x', (y- y1), 'y','怎么回事')
-                        # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                        print("up,#8")
-                        continue
 
-
-                    else:
+                    try:
                         print(xxyy)
                         # self.youjian()
                         # dt.press('right')
-                        #dt.press('alt')
+                        # dt.press('alt')
                         print("up,#100")
+
                         continue
+                    except OSError as de:
+                        print(de, 'forxunhuanb-try')
+                        continue
+                        traceback.print_exc()
+                    except Exception as e:
+                        print(e, 'forxunhuanb-try')
+                        continue
+
+
+
     def forxunhuanA(self, sss, aa, bb, cc, dd, hh1=0.75, hh2=0.75, renwuzuobiao=0):  # ,aa,bb,cc,dd
         # self.Use_Dict(0)
         a = [1]
@@ -5338,9 +5411,10 @@ class Caozuolei(Caozuolei1):
                 #time.sleep(0.5)
 
                 x, y, x1, y1, z, h = xxyy
-                print(xxyy)
+                #print(xxyy)
                 print((x - x1), (y - y1), '----')
                 if h == 1000:
+                    print('h',h)
                     break
                 elif sss == 6 and self.FuBen_INFO() == 7:
 
@@ -5359,7 +5433,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(0.075)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    print('#0,人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
+                    #print('#0,人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
                     # self.Find_srt("熟练者", "#422", "功师", "#422")
 
                     continue
@@ -5425,7 +5499,7 @@ class Caozuolei(Caozuolei1):
                 elif -26 <= (x - x1) <= 36 and z == 88:  # 7
                     # print((x-x1), 'y？？？？？？')
                     # print('人物坐标{},{},dong门坐标{},{}'.format(xxyy[0], xxyy[1], xxyy[2], xxyy[3]))
-                    print("up,#7")
+                    print("up,#7，forxunhuanA")
 
                     a.append("真")
 
@@ -5439,26 +5513,34 @@ class Caozuolei(Caozuolei1):
                     print("up,#8")
                     continue
                 else:
-
+                      try:
                         print(xxyy)
                         # self.youjian()
                         # dt.press('right')
                         #dt.press('alt')
                         print("up,#100")
                         continue
+                      except OSError as de:
+                          print(de, 'forxunhuanA-try')
+                          continue
+                          traceback.print_exc()
+                      except Exception as e:
+                          print(e, 'forxunhuanA-try')
+                          continue
 
     def forxunhuanC(self, sss, aa1, bb1, cc1, dd1, hh1=0.75, hh2=0.75, renwuzuobiao=0):
-
+        print('forxunhuanC内')
         t1 = Thread(target=self.forxunhuanB,
                     args=(sss, aa1, bb1, cc1, dd1, hh1, hh2, -10))  # 定义线程t1，线程任务为调用task1函数，task1函数的参数是6
         t2 = Thread(target=self.forxunhuanA,
                     args=(sss, aa1, bb1, cc1, dd1, hh1, hh2, -10))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
         t1.start()  # 开始运行t1线程
         t2.start()  #
-        print(t1, t2, 't1,t2')
+
         t1.join()
         t2.join()
-        if t1.is_alive() and t2.is_alive():
+        print(t1, t2, 't1,t2')
+        if t1.is_alive() or t2.is_alive():
             print("t1,t2运行结束")
             return 1
         # if t1 == 1 and t2 == 1:
@@ -5493,47 +5575,47 @@ class Caozuolei(Caozuolei1):
 
             #Caozuolei.mutex2.release()
             time.sleep(0.5)
-            #print('pvp=', pvp)
-            if aabb is None:
+           # print('pvp=', pvp)
+            if str(aabb) is None:
                 continue
             elif i == 1:
-                #print(i)
+             #   print(i)
                 self.youjian(pvp)
                 return
-            elif i > 170 and ("最后" in aabb or "再次挑战" in aabb):
-                #print(i, aabb, 'timedaojishi')
+            elif i > 170 and ("最后" in str(aabb) or "再次挑战" in str(aabb)):
+              #  print(i, aabb, 'timedaojishi')
                 # self.youjian(pvp)
-               # print(i)
+              #  print(i)
                 return
             elif i > 170:
                 time.sleep(0.5)
                # print(i)
                 continue
             elif i <= 170:
-                if "最后" in aabb or "再次挑战" in aabb:
-                  #  print(i, aabb, 'timedaojishi')
+                if "最后" in str(aabb) or "再次挑战" in str(aabb):
+                   # print(i, aabb, 'timedaojishi')
                     # self.youjian(pvp)
-                  #  print(i)
+                   # print(i)
                     return
                 else:
-                  #  print(i, aabb, "没有找到timedaojishi")
-                  #  print(i, aabb, 'timedaojishi')
+                    #print(i, aabb, "没有找到timedaojishi")
+                    #print(i, aabb, 'timedaojishi')
                     # self.youjian()
                     continue
             else:
                 try:
                   #  print(i)
                     self.youjian(pvp)
-                  #  print("查询timedaojishi%.f" % i)
+                 #   print("查询timedaojishi%.f" % i)
                 # except OSError:
                 #     ...
                 except OSError as de:
                   #  print(de,'timedaojishi')
-                  #  print(i)
+                 #   print(i)
                     traceback.print_exc()
                 except Exception as e:
-                  #  print(e,'timedaojishi')
-                  #  print(i)
+                 #   print(e,'timedaojishi')
+                 #   print(i)
                     traceback.print_exc()
 
                 # else:
@@ -5600,9 +5682,9 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(1, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '1测试2.txt')
-        # c.Set_Dict(0, 'test3.t1xt')f
+        # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
             # if aa == 3 and pvp. == 1:# aa
             aa = 4
@@ -5655,6 +5737,7 @@ if __name__ == '__main__':
                 or (pvp == 4 and x[aa][2] == 3) \
                 or (pvp == 1 and x[aa][2] == 6) \
                 or (pvp == 2 and x[aa][2] == 5) \
+                or (pvp == 1 and x[aa][2] == 1) \
                 or (pvp == 5 and x[aa][2] == 5):
             # or (pvp == 9 and x[aa][2] == 1):
 
@@ -5735,7 +5818,7 @@ if __name__ == '__main__':
             elif pvp == 5:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p
             elif pvp == 6:
-                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 造就师很狂
+                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 6p 造就师很狂
 
             elif pvp == 7:
                 c.nvQiGong(n, 0.68, 0.26, 0, 0, *canshu)  # 7p 色彩不足S
@@ -5773,7 +5856,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p 史上最菜气功
                 #break
             elif pvp == 6:
-                c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 狗头师很差
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 6p 狗头师很差
 
             elif pvp == 7:
                 c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 7p 炼狱不足钢
