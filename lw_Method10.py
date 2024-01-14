@@ -868,13 +868,10 @@ class Caozuolei(Caozuolei1):
             print(aa12, '=aa12')
             print(aa13,'=aa13')
             print(sss2)
-            if aa00 is None or aa11 is None or aa13 is None or aa12 is None or \
-                     aa00 in '崩溃' or aa11 in '崩溃' or aa12 in '崩溃' or aa13 in '崩溃':
-                print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
+            if aa00 is None or aa11 is None or aa13 is None or aa12 is None :
+
                 dt.press('right')
-                dt.keyDown('right')  # ：模拟按键按下 向下
-                time.sleep(0.3)
-                dt.keyUp('right')  # ：模拟按键松开按键
+
                 print('崩溃向前走一下')
                 continue
             elif "开洞" in aa00:
@@ -966,7 +963,14 @@ class Caozuolei(Caozuolei1):
 
                 return
 
-
+            elif  aa00 in '崩溃' or aa11 in '崩溃' or aa12 in '崩溃' or aa13 in '崩溃':
+                print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
+                dt.press('right')
+                dt.keyDown('right')  # ：模拟按键按下 向下
+                time.sleep(0.3)
+                dt.keyUp('right')  # ：模拟按键松开按键
+                print('崩溃向前走一下')
+                continue
             else:
                 try:
                     dt.press('right')
@@ -5493,47 +5497,47 @@ class Caozuolei(Caozuolei1):
 
             #Caozuolei.mutex2.release()
             time.sleep(0.5)
-            print('pvp=', pvp)
+           # print('pvp=', pvp)
             if aabb is None:
                 continue
             elif i == 1:
-                print(i)
+             #   print(i)
                 self.youjian(pvp)
                 return
             elif i > 170 and ("最后" in aabb or "再次挑战" in aabb):
-                print(i, aabb, 'timedaojishi')
+             #   print(i, aabb, 'timedaojishi')
                 # self.youjian(pvp)
-                print(i)
+             #   print(i)
                 return
             elif i > 170:
                 time.sleep(0.5)
-                print(i)
+              #  print(i)
                 continue
             elif i <= 170:
                 if "最后" in aabb or "再次挑战" in aabb:
-                    print(i, aabb, 'timedaojishi')
+                 #   print(i, aabb, 'timedaojishi')
                     # self.youjian(pvp)
-                    print(i)
+                #    print(i)
                     return
                 else:
-                    print(i, aabb, "没有找到timedaojishi")
-                    print(i, aabb, 'timedaojishi')
+                 #   print(i, aabb, "没有找到timedaojishi")
+                 ##   print(i, aabb, 'timedaojishi')
                     # self.youjian()
                     continue
             else:
                 try:
-                    print(i)
+                   # print(i)
                     self.youjian(pvp)
-                    print("查询timedaojishi%.f" % i)
+                   # print("查询timedaojishi%.f" % i)
                 # except OSError:
                 #     ...
                 except OSError as de:
-                    print(de,'timedaojishi')
-                    print(i)
+                 #   print(de,'timedaojishi')
+                  #  print(i)
                     traceback.print_exc()
                 except Exception as e:
-                    print(e,'timedaojishi')
-                    print(i)
+                  #  print(e,'timedaojishi')
+                 #   print(i)
                     traceback.print_exc()
 
                 # else:
