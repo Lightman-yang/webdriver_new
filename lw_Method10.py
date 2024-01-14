@@ -5493,47 +5493,47 @@ class Caozuolei(Caozuolei1):
 
             #Caozuolei.mutex2.release()
             time.sleep(0.5)
-            print('pvp=', pvp)
+            #print('pvp=', pvp)
             if aabb is None:
                 continue
             elif i == 1:
-                print(i)
+                #print(i)
                 self.youjian(pvp)
                 return
             elif i > 170 and ("最后" in aabb or "再次挑战" in aabb):
-                print(i, aabb, 'timedaojishi')
+                #print(i, aabb, 'timedaojishi')
                 # self.youjian(pvp)
-                print(i)
+               # print(i)
                 return
             elif i > 170:
                 time.sleep(0.5)
-                print(i)
+               # print(i)
                 continue
             elif i <= 170:
                 if "最后" in aabb or "再次挑战" in aabb:
-                    print(i, aabb, 'timedaojishi')
+                  #  print(i, aabb, 'timedaojishi')
                     # self.youjian(pvp)
-                    print(i)
+                  #  print(i)
                     return
                 else:
-                    print(i, aabb, "没有找到timedaojishi")
-                    print(i, aabb, 'timedaojishi')
+                  #  print(i, aabb, "没有找到timedaojishi")
+                  #  print(i, aabb, 'timedaojishi')
                     # self.youjian()
                     continue
             else:
                 try:
-                    print(i)
+                  #  print(i)
                     self.youjian(pvp)
-                    print("查询timedaojishi%.f" % i)
+                  #  print("查询timedaojishi%.f" % i)
                 # except OSError:
                 #     ...
                 except OSError as de:
-                    print(de,'timedaojishi')
-                    print(i)
+                  #  print(de,'timedaojishi')
+                  #  print(i)
                     traceback.print_exc()
                 except Exception as e:
-                    print(e,'timedaojishi')
-                    print(i)
+                  #  print(e,'timedaojishi')
+                  #  print(i)
                     traceback.print_exc()
 
                 # else:
@@ -5600,7 +5600,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(1, 10):  # 打图设置ddddg
+    for aa in range(0, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')f
         if aa == 11 and pvp == 1:  # aa
