@@ -891,7 +891,7 @@ class Caozuolei(Caozuolei1):
 
 
 
-            elif "开洞" in str(aa11) and "开洞" not in str(aa00):
+            elif "开洞" in str(aa11) and "开洞" not in str(aa00) and '开府' not in str(aa12):
                 if sss2 == 7:
                     dt.press('right')
                     dt.keyDown('right')  # ：模拟按键按下 向下
@@ -907,15 +907,15 @@ class Caozuolei(Caozuolei1):
                         print("开洞 not in")
                         #continue
                         print('FuBen_INFO66 步骤二')
-                        break
+                        continue
                     except OSError as de:
                         print(de,"FuBen_INFO66")
                         traceback.print_exc()
-                        break
+                        continue
                     except Exception as e:
                         print(e,'FuBen_INFO66')
                         traceback.print_exc()
-                        break
+                        continue
             elif '开洞' not in str(aa00) and sss2 == 2:  # and aa00 !=None:
                 print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
 
@@ -935,6 +935,10 @@ class Caozuolei(Caozuolei1):
 
                     print('崩溃向前走一下')
                     continue
+            elif "开洞" not in str(aa00) and "开洞" in str(aa11):
+                dt.press('right')
+                print('开洞，洞口没找到')
+                continue
             elif "开洞" not in str(aa00) and "开洞" in str(aa11):
                 dt.press('right')
                 print('开洞，洞口没找到')
@@ -1022,7 +1026,7 @@ class Caozuolei(Caozuolei1):
                 print('FuBen_INFO66崩溃')
                 self.Set_Dict(0, 'test3.txt')
                 continue
-            elif "开洞" not in str(aa00) and "开洞" not in str(aa11):
+            elif "开洞" not in str(aa00) and "开洞" not in str(aa11) :
                 dt.press('right')
                 print('开洞，洞口没找到pop')
                 continue
@@ -4628,9 +4632,9 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
-        #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
