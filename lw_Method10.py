@@ -884,12 +884,12 @@ class Caozuolei(Caozuolei1):
             #if  aa00 in '崩溃' or aa11 in '崩溃' or aa13 in '崩溃' or aa12 in '崩溃':
                print('FuBen_INFO66崩溃')
                continue
-            elif '开洞' not in str(aa00)  and  sss2 == 2:
+            elif '开洞' not in str(aa00)  and  sss2 == 2 and aa00 !=None:
                 print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
 
                 dt.press('right')
                 dt.keyDown('right')  # ：模拟按键按下 向下
-                time.sleep(0.5)
+                time.sleep(0.4)
                 dt.keyUp('right')  # ：模拟按键松开按键
                 continue
             elif str(aa00) is None or str(aa11) is None or str(aa13) is None or str(aa12) is None :
@@ -1003,10 +1003,10 @@ class Caozuolei(Caozuolei1):
                continue
             else:
                 try:
-                    dt.press('right')
-                    dt.keyDown('right')  # ：模拟按键按下 向下
-                    time.sleep(0.3)
-                    dt.keyUp('right')  # ：模拟按键松开按键
+                    # dt.press('right')
+                    # dt.keyDown('right')  # ：模拟按键按下 向下
+                    # time.sleep(0.3)
+                    # dt.keyUp('right')  # ：模拟按键松开按键
                     print('FuBen_INFO66 步骤九')
 
                     print('FuBen_INFO66')
