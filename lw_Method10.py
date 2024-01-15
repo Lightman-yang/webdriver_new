@@ -1022,6 +1022,10 @@ class Caozuolei(Caozuolei1):
                 print('FuBen_INFO66崩溃')
                 self.Set_Dict(0, 'test3.txt')
                 continue
+            elif "开洞" not in str(aa00) and "开洞" not in str(aa11):
+                dt.press('right')
+                print('开洞，洞口没找到pop')
+                return
             else:
                 try:
 
@@ -2798,7 +2802,14 @@ class Caozuolei(Caozuolei1):
                     dt.press('left')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(3.45 + move_seep+0.5)
+                    #move_seep = -move_seepx - 0.05
+                    print('move_seepx=={}'.format(move_seepx))
+                    if  move_seepx > 0.65:
+                        #move_seepx1= round(move_seepx / 1.5, 2)  #除以2 保留两位小数
+                        time.sleep(3.45 + move_seep - move_seep1)
+                    else:
+                        time.sleep(3.45 + move_seep + 0.5)
+
                     dt.keyUp('left')  # ：模拟按键松开按键
 
                     time.sleep(0.5)
@@ -4617,9 +4628,9 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
-        #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
@@ -5699,7 +5710,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(2, 10):  # 打图设置ddddg
+    for aa in range(1, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -5861,7 +5872,7 @@ if __name__ == '__main__':
                 # c.nvQiGong(n, 0.48, 0.2, 0)  # 1p 气功师很懒
                 c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
             elif pvp == 2:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
+                c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
             elif pvp == 3:
                  c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师废了
             # elif pvp == 4:
