@@ -897,7 +897,7 @@ class Caozuolei(Caozuolei1):
                 time.sleep(0.4)
                 dt.keyUp('right')  # ：模拟按键松开按键
                 continue
-            elif str(aa00) is None or str(aa11) is None or str(aa13) is None or str(aa12) is None :
+            elif aa00 is None or aa11 is None or aa13 is None or aa12 is None :
                 print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
                 dt.press('right')
 
@@ -921,15 +921,15 @@ class Caozuolei(Caozuolei1):
                         print("开洞 not in")
                         #continue
                         print('FuBen_INFO66 步骤二')
-                        break
+                        continue
                     except OSError as de:
                         print(de,"FuBen_INFO66")
                         traceback.print_exc()
-                        break
+                        continue
                     except Exception as e:
                         print(e,'FuBen_INFO66')
                         traceback.print_exc()
-                        break
+                        continue
             elif '开府' in str(aa12):
                 if sss2 == 2:
                     dt.press('d')
@@ -1004,6 +1004,13 @@ class Caozuolei(Caozuolei1):
             #if  aa00 in '崩溃' or aa11 in '崩溃' or aa13 in '崩溃' or aa12 in '崩溃':
                print('FuBen_INFO66崩溃')
                continue
+
+            elif aa00 ==0 and aa11 ==0 and aa13 == 0 and aa12 ==0 :
+                print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
+                dt.press('right')
+
+                print('崩溃向前走一下.000')
+                continue
             else:
                 try:
 
@@ -4600,9 +4607,9 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        #data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
