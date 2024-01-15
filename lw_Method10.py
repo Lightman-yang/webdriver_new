@@ -749,10 +749,10 @@ class Caozuolei(Caozuolei1):
             aa = self.Find_Ocr(
                 x1=392,
                 y1=63,
-                x2=800,
-                y2=600,
+                x2=853,
+                y2=574,
                 color_format="#380",
-                sim=0.80,#0.88
+                sim=0.88,
                 linesign=" ",
                 isbackcolor=0)
             aa1 = self.Find_Ocr(
@@ -887,31 +887,8 @@ class Caozuolei(Caozuolei1):
                print('FuBen_INFO66崩溃')
                continue
 
-            elif '开洞' not in str(aa00)  and  sss2 == 2: #and aa00 !=None:
-                if "开洞" in str(aa00):
-                    print('开洞')
-                    return
-                else:
-                    print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
 
-                    dt.press('right')
-                    dt.keyDown('right')  # ：模拟按键按下 向下
-                    time.sleep(0.4)
-                    dt.keyUp('right')  # ：模拟按键松开按键
-                    continue
-            elif "开洞" not in str(aa00) and "开洞" in str(aa11):
-                dt.press('right')
-                print('开洞,美找到 向前走一不走')
-                continue
-            elif "开洞" in str(aa00):
-                print('开洞')
-                return
-            elif str(aa00) is None or str(aa11) is None or str(aa13) is None or str(aa12) is None :
-                print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
-                dt.press('right')
 
-                print('崩溃向前走一下')
-                continue
 
 
             elif "开洞" in str(aa11) and "开洞" not in str(aa00):
@@ -930,15 +907,42 @@ class Caozuolei(Caozuolei1):
                         print("开洞 not in")
                         #continue
                         print('FuBen_INFO66 步骤二')
-                        continue
+                        break
                     except OSError as de:
                         print(de,"FuBen_INFO66")
                         traceback.print_exc()
-                        continue
+                        break
                     except Exception as e:
                         print(e,'FuBen_INFO66')
                         traceback.print_exc()
-                        continue
+                        break
+            elif '开洞' not in str(aa00) and sss2 == 2:  # and aa00 !=None:
+                print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
+
+                dt.press('right')
+                dt.keyDown('right')  # ：模拟按键按下 向下
+                time.sleep(0.4)
+                dt.keyUp('right')  # ：模拟按键松开按键
+                continue
+            elif aa00 is None or aa11 is None or aa13 is None or aa12 is None:
+                if "开洞" in str(aa00):
+                    dt.press('right')
+                    print('开洞，洞口没找到')
+                    return
+                else:
+                    print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
+                    dt.press('right')
+
+                    print('崩溃向前走一下')
+                    continue
+            elif "开洞" not in str(aa00) and "开洞" in str(aa11):
+                dt.press('right')
+                print('开洞，洞口没找到')
+                return
+            elif "开洞" in str(aa00):
+                print('开洞')
+                return
+
             elif '开府' in str(aa12):
                 if sss2 == 2:
                     dt.press('d')
@@ -1013,18 +1017,21 @@ class Caozuolei(Caozuolei1):
             #if  aa00 in '崩溃' or aa11 in '崩溃' or aa13 in '崩溃' or aa12 in '崩溃':
                print('FuBen_INFO66崩溃')
                continue
-            elif aa11 ==0 and aa13==0 and aa12 ==0 and aa00==0 :
-            #if  aa00 in '崩溃' or aa11 in '崩溃' or aa13 in '崩溃' or aa12 in '崩溃':
-               print('FuBen_INFO66崩溃,000')
-               self.Set_Dict(0, 'test3.txt')
-               continue
+            elif aa11==0 and aa13 ==0 and aa12 ==0  and aa00 ==0 :
+                # if  aa00 in '崩溃' or aa11 in '崩溃' or aa13 in '崩溃' or aa12 in '崩溃':
+                print('FuBen_INFO66崩溃')
+                self.Set_Dict(0, 'test3.txt')
+                continue
+            elif "开洞" not in str(aa00) and "开洞" not in str(aa11):
+                dt.press('right')
+                print('开洞，洞口没找到pop')
+                continue
             else:
                 try:
 
-
                         print('FuBen_INFO66,123')
+                        #break
                         continue
-                        #continue
                 except OSError as de:
                     print(de, '  continue 九')
                     traceback.print_exc()
@@ -2760,12 +2767,12 @@ class Caozuolei(Caozuolei1):
 
 
                 elif j == 3:
-
+                    time.sleep(0.5)
                     dt.keyDown('down')  # ：模拟按键按下 向下
                     time.sleep(0.66 + move_seep1)
                     dt.keyUp('down')  # ：模拟按键松开按键
 
-                    time.sleep(0.5)  # 按下两秒
+                    time.sleep(0.1)  # 按下两秒
                     dt.press('y')
                     time.sleep(0.5)  # 按下两
                     dt.press('right')
@@ -2795,7 +2802,14 @@ class Caozuolei(Caozuolei1):
                     dt.press('left')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(3.45 + move_seep+0.5)
+                    #move_seep = -move_seepx - 0.05
+                    print('move_seepx=={}'.format(move_seepx))
+                    if  move_seepx > 0.65:
+                        #move_seepx1= round(move_seepx / 1.5, 2)  #除以2 保留两位小数
+                        time.sleep(3.45 + move_seep - move_seep1)
+                    else:
+                        time.sleep(3.45 + move_seep + 0.5)
+
                     dt.keyUp('left')  # ：模拟按键松开按键
 
                     time.sleep(0.5)
@@ -5696,7 +5710,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(1, 10):  # 打图设置ddddg
+    for aa in range(2, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -5858,7 +5872,7 @@ if __name__ == '__main__':
                 # c.nvQiGong(n, 0.48, 0.2, 0)  # 1p 气功师很懒
                 c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
             elif pvp == 2:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
+                c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
             elif pvp == 3:
                  c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师废了
             # elif pvp == 4:
@@ -5899,7 +5913,7 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.56, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
             elif pvp == 3:
-                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 3p 气功运气 2023 11 16
+                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 3p 气功运气 2023 11 16
             elif pvp == 4:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 快递员
                 #break
