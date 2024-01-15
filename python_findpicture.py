@@ -277,6 +277,7 @@ class Caozuolei1():
                     print(ret,'ret is None or ret ==0')
                     #Caozuolei1.mutex.release()
                     return 0
+                    #continue
 
             # else:
             #     try:
