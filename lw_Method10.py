@@ -884,12 +884,12 @@ class Caozuolei(Caozuolei1):
             #if  aa00 in '崩溃' or aa11 in '崩溃' or aa13 in '崩溃' or aa12 in '崩溃':
                print('FuBen_INFO66崩溃')
                continue
-            elif '开洞' not in str(aa00)  and  sss2 == 2:
+            elif '开洞' not in str(aa00)  and  sss2 == 2 and aa00 !=None:
                 print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
 
                 dt.press('right')
                 dt.keyDown('right')  # ：模拟按键按下 向下
-                time.sleep(0.5)
+                time.sleep(0.4)
                 dt.keyUp('right')  # ：模拟按键松开按键
                 continue
             elif str(aa00) is None or str(aa11) is None or str(aa13) is None or str(aa12) is None :
@@ -898,7 +898,7 @@ class Caozuolei(Caozuolei1):
 
                 print('崩溃向前走一下')
                 continue
-            elif "开洞" in str(aa00):
+            elif "开洞" in str(aa00) :
                 print('开洞')
                 return
 
@@ -1003,11 +1003,11 @@ class Caozuolei(Caozuolei1):
                continue
             else:
                 try:
-                    dt.press('right')
-                    dt.keyDown('right')  # ：模拟按键按下 向下
-                    time.sleep(0.3)
-                    dt.keyUp('right')  # ：模拟按键松开按键
-                    print('FuBen_INFO66 步骤九')
+                    # dt.press('right')
+                    # dt.keyDown('right')  # ：模拟按键按下 向下
+                    # time.sleep(0.3)
+                    # dt.keyUp('right')  # ：模拟按键松开按键
+                    # print('FuBen_INFO66 步骤九')
 
                     print('FuBen_INFO66')
                     #break
@@ -5682,7 +5682,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(1, 10):  # 打图设置ddddg
+    for aa in range(4, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
