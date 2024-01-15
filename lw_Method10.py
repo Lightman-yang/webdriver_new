@@ -891,7 +891,7 @@ class Caozuolei(Caozuolei1):
 
 
 
-            elif "开洞" in str(aa11) and "开洞" not in str(aa00):
+            elif "开洞" in str(aa11) and "开洞" not in str(aa00) and '开府' not in str(aa12):
                 if sss2 == 7:
                     dt.press('right')
                     dt.keyDown('right')  # ：模拟按键按下 向下
@@ -907,15 +907,15 @@ class Caozuolei(Caozuolei1):
                         print("开洞 not in")
                         #continue
                         print('FuBen_INFO66 步骤二')
-                        break
+                        continue
                     except OSError as de:
                         print(de,"FuBen_INFO66")
                         traceback.print_exc()
-                        break
+                        continue
                     except Exception as e:
                         print(e,'FuBen_INFO66')
                         traceback.print_exc()
-                        break
+                        continue
             elif '开洞' not in str(aa00) and sss2 == 2:  # and aa00 !=None:
                 print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
 
@@ -938,7 +938,11 @@ class Caozuolei(Caozuolei1):
             elif "开洞" not in str(aa00) and "开洞" in str(aa11):
                 dt.press('right')
                 print('开洞，洞口没找到')
-                return
+                continue
+            elif "开洞" not in str(aa00) and "开洞" in str(aa11):
+                dt.press('right')
+                print('开洞，洞口没找到')
+                continue
             elif "开洞" in str(aa00):
                 print('开洞')
                 return
@@ -1021,6 +1025,10 @@ class Caozuolei(Caozuolei1):
                 # if  aa00 in '崩溃' or aa11 in '崩溃' or aa13 in '崩溃' or aa12 in '崩溃':
                 print('FuBen_INFO66崩溃')
                 self.Set_Dict(0, 'test3.txt')
+                continue
+            elif "开洞" not in str(aa00) and "开洞" not in str(aa11) :
+                dt.press('right')
+                print('开洞，洞口没找到pop')
                 continue
             else:
                 try:
@@ -2798,7 +2806,14 @@ class Caozuolei(Caozuolei1):
                     dt.press('left')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(3.45 + move_seep+0.5)
+                    #move_seep = -move_seepx - 0.05
+                    print('move_seepx=={}'.format(move_seepx))
+                    if  move_seepx > 0.65:
+                        #move_seepx1= round(move_seepx / 1.5, 2)  #除以2 保留两位小数
+                        time.sleep(3.45 + move_seep - move_seep1)
+                    else:
+                        time.sleep(3.45 + move_seep + 0.5)
+
                     dt.keyUp('left')  # ：模拟按键松开按键
 
                     time.sleep(0.5)
@@ -4617,9 +4632,9 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
-        #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
@@ -5861,7 +5876,7 @@ if __name__ == '__main__':
                 # c.nvQiGong(n, 0.48, 0.2, 0)  # 1p 气功师很懒
                 c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
             elif pvp == 2:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
+                c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
             elif pvp == 3:
                  c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师废了
             # elif pvp == 4:
@@ -5902,7 +5917,7 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.56, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
             elif pvp == 3:
-                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 3p 气功运气 2023 11 16
+                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 3p 气功运气 2023 11 16
             elif pvp == 4:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 快递员
                 #break
