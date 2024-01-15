@@ -380,7 +380,7 @@ class Caozuolei(Caozuolei1):
         # c.Set_Dict(0, "测试2.txt") 靓丽=#70  靓仔=#360
         while True:
             # time.sleep(0.15)
-            aa = self.Find_Ocr(
+            aabbcc = self.Find_Ocr(
                 x1=0,
                 y1=0,
                 x2=800,
@@ -389,7 +389,7 @@ class Caozuolei(Caozuolei1):
                 sim=0.85,
                 linesign=" ",
                 isbackcolor=0)
-            bb = self.Find_Ocr(
+            bbb = self.Find_Ocr(
                 x1=0,
                 y1=0,
                 x2=800,
@@ -398,12 +398,12 @@ class Caozuolei(Caozuolei1):
                 sim=0.85,
                 linesign=" ",
                 isbackcolor=0)
-            if ("靓仔" in str(aa) and zzz == 1) or ("靓丽" in str(bb) and zzz == 1):
+            if ("靓仔" in str(aabbcc) and zzz == 1) or ("靓丽" in str(bbb) and zzz == 1):
                 dt.press('9')
                 time.sleep(1)
                 ret_values.append(2)
                 return 2
-            elif "再次挑战" in str(aa):
+            elif "再次挑战" in str(aabbcc):
                 ret_values.append(1)
                 dt.press('f12')
                 time.sleep(1)
@@ -423,7 +423,7 @@ class Caozuolei(Caozuolei1):
         # self.Use_Dict(0)
         while True:
             #time.sleep(0.15)
-            aa = self.Find_Ocr(
+            aam = self.Find_Ocr(
                 x1=0,
                 y1=0,
                 x2=800,
@@ -432,47 +432,48 @@ class Caozuolei(Caozuolei1):
                 sim=0.99,
                 linesign=" ",
                 isbackcolor=0)
-            if str(aa) is None or str(aa) in '崩溃':
-                print(str(aa))
+            print('FuBen_INFO',aam,'==aam')
+            if str(aam) is None or str(aam) in '崩溃':
+                print(str(aam))
                 print('狗屎')
                 continue
-            elif "五陵" in str(aa):
+            elif "五陵" in str(aam):
                 print("在副本外面")
                 return 100
                 # continue
-            elif "第一关" in str(aa) and "开门" not in str(aa):
+            elif "第一关" in str(aam) and "开门" not in str(aam):
                 print('第一关')
                 return 1
                 # continue
-            elif "开门" in str(aa):
+            elif "开门" in str(aam):
                 print('第二关')
                 return 2
                 # continue
-            elif "凹凸" in str(aa) and "星星" not in str(aa):
+            elif "凹凸" in str(aam) and "星星" not in str(aam):
                 print("在第三关凹凸")
                 return 3
-            elif "大鱼海棠" in str(aa) or "夜空下" in str(aa):
+            elif "大鱼海棠" in str(aam) or "夜空下" in str(aam):
                 print("在第四关")
                 return 5
-            elif "星星" in str(aa):
+            elif "星星" in str(aam):
                 print("在第5关")
                 return 6
-            elif "花花" in str(aa) and "空空" in str(aa):
+            elif "花花" in str(aam) and "空空" in str(aam):
                 print("在6关")
                 return 7
-            elif "花花" in str(aa) and "好绿" not in str(aa):
+            elif "花花" in str(aam) and "好绿" not in str(aam):
                 print("在6关")
                 return 7
-            elif "空空" in str(aa) and "花花" not in str(aa):
+            elif "空空" in str(aam) and "花花" not in str(aam):
                 print("在6关")
                 return 77
-            elif "好绿" in str(aa) or (("好绿" in str(aa)) and ("花花" in str(aa))):
+            elif "好绿" in str(aam) or (("好绿" in str(aam)) and ("花花" in str(aam))):
                 print("在7关")
                 return 8
-            elif "最后" in str(aa) and "再次挑战" not in str(aa):
+            elif "最后" in str(aam) and "再次挑战" not in str(aam):
                 print("在boss房间")
                 return 9
-            elif "再次挑战" in str(aa):
+            elif "再次挑战" in str(aam):
                 print("通关完成")
                 return 10
             else:
@@ -880,11 +881,15 @@ class Caozuolei(Caozuolei1):
             print(aa12, '=aa12')
             print(aa13,'=aa13')
             print(sss2)
-            if str(aa11) in '崩溃' or str(aa13) in '崩溃':
+            if '崩溃' in str(aa11) or '崩溃' in str(aa13):
+
             #if  aa00 in '崩溃' or aa11 in '崩溃' or aa13 in '崩溃' or aa12 in '崩溃':
                print('FuBen_INFO66崩溃')
                continue
-            elif '开洞' not in str(aa00)  and  sss2 == 2 and aa00 !=None:
+            elif  "开洞" in str(aa00):
+                print('开洞')
+                return
+            elif '开洞' not in str(aa00)  and  sss2 == 2: #and aa00 !=None:
                 print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
 
                 dt.press('right')
@@ -898,9 +903,7 @@ class Caozuolei(Caozuolei1):
 
                 print('崩溃向前走一下')
                 continue
-            elif "开洞" in str(aa00):
-                print('开洞')
-                return
+
 
             elif "开洞" in str(aa11) and "开洞" not in str(aa00):
                 if sss2 == 7:
@@ -1003,15 +1006,11 @@ class Caozuolei(Caozuolei1):
                continue
             else:
                 try:
-                    # dt.press('right')
-                    # dt.keyDown('right')  # ：模拟按键按下 向下
-                    # time.sleep(0.3)
-                    # dt.keyUp('right')  # ：模拟按键松开按键
-                    print('FuBen_INFO66 步骤九')
 
-                    print('FuBen_INFO66')
-                    #break
-                    continue
+
+                        print('FuBen_INFO66,123')
+                        #break
+                        continue
                 except OSError as de:
                     print(de, '  continue 九')
                     traceback.print_exc()
@@ -2676,6 +2675,7 @@ class Caozuolei(Caozuolei1):
                         # dt.keyDown('down')  # ：模拟按键按下 向下
                         # time.sleep(0.5 + move_seep1)
                         # dt.keyUp('down')  # ：模拟按键松开按键
+                        print('走到这不走了')
                         dt.press('9')
                         if self.FuBen_INFO() == 1:
 
@@ -4600,9 +4600,9 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
-        #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
@@ -5682,7 +5682,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(1, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -5807,7 +5807,7 @@ if __name__ == '__main__':
 
             elif pvp == 2:
 
-                c.nvQiGong(n, 0.62, 0.26, 0, 0, *canshu)  # 2p 睡眠不足十
+                c.nvQiGong(n, 0.65, 0.26, 0, 0, *canshu)  # 2p 睡眠不足十
                 # aa1, bb1, cc1, dd1 = "先驱者", "#422", "师很", "#140"
                 # aa1, bb1, cc1, dd1="熟练者", "#410", "师很", "#140"
                 # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
