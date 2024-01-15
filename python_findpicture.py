@@ -272,6 +272,9 @@ class Caozuolei1():
                     #Caozuolei1.mutex.release()
                     print(ret,'lllo')
                     return ret
+                # elif ret is None:
+                #     print('从新抓取')
+                #     continue
                 elif ret is None or ret ==0:
                     # print(0)\
                     print(ret,'ret is None or ret ==0')
