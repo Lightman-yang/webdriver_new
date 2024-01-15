@@ -897,7 +897,7 @@ class Caozuolei(Caozuolei1):
                 time.sleep(0.4)
                 dt.keyUp('right')  # ：模拟按键松开按键
                 continue
-            elif str(aa00) is None or str(aa11) is None or str(aa13) is None or str(aa12) is None :
+            elif aa00 is None or aa11 is None or aa13 is None or aa12 is None :
                 print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
                 dt.press('right')
 
@@ -1004,6 +1004,13 @@ class Caozuolei(Caozuolei1):
             #if  aa00 in '崩溃' or aa11 in '崩溃' or aa13 in '崩溃' or aa12 in '崩溃':
                print('FuBen_INFO66崩溃')
                continue
+            elif aa00 ==0 and aa11 ==0 and aa13 ==0 and aa12 ==0:
+                print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
+                dt.press('right')
+
+                print('崩溃向前走一下')
+                continue
+
             else:
                 try:
 
@@ -4600,9 +4607,9 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        #data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
@@ -5803,7 +5810,7 @@ if __name__ == '__main__':
         print(aa,sss1,'    sss')
         if aa == 0:
             if pvp == 1:
-                c.nvQiGong(n, 0.62, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
+                c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
 
             elif pvp == 2:
 
