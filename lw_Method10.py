@@ -891,31 +891,7 @@ class Caozuolei(Caozuolei1):
 
 
 
-            elif "开洞" in str(aa11) and "开洞" not in str(aa00) :
-                if sss2 == 7:
-                    dt.press('right')
-                    dt.keyDown('right')  # ：模拟按键按下 向下
-                    time.sleep(0.4)
-                    dt.keyUp('right')  # ：模拟按键松开按键
-                    print('FuBen_INFO66 步骤一')
-                    return
 
-                else:
-
-                    try:
-                        dt.press('right')
-                        print("开洞 not in")
-                        #continue
-                        print('FuBen_INFO66 步骤二')
-                        continue
-                    except OSError as de:
-                        print(de,"FuBen_INFO66")
-                        traceback.print_exc()
-                        continue
-                    except Exception as e:
-                        print(e,'FuBen_INFO66')
-                        traceback.print_exc()
-                        continue
             elif '开洞' not in str(aa00) and sss2 == 2:  # and aa00 !=None:
                 print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
 
@@ -924,6 +900,31 @@ class Caozuolei(Caozuolei1):
                 time.sleep(0.4)
                 dt.keyUp('right')  # ：模拟按键松开按键
                 continue
+            elif "开洞" in str(aa11) and "开洞" not in str(aa00) and '开府' not in str(aa12):
+                if sss2 == 7:
+                    dt.press('right')
+                    dt.keyDown('right')  # ：模拟按键按下 向下
+                    time.sleep(0.5)
+                    dt.keyUp('right')  # ：模拟按键松开按键
+                    print('FuBen_INFO66 步骤一')
+                    continue
+
+                else:
+
+                    try:
+                        dt.press('right')
+                        print("开洞 not in")
+                        # continue
+                        print('FuBen_INFO66 步骤二')
+                        continue
+                    except OSError as de:
+                        print(de, "FuBen_INFO66")
+                        traceback.print_exc()
+                        continue
+                    except Exception as e:
+                        print(e, 'FuBen_INFO66')
+                        traceback.print_exc()
+                        continue
             elif aa00 is None or aa11 is None or aa13 is None or aa12 is None:
                 if "开洞" in str(aa00):
                     dt.press('right')
@@ -2842,7 +2843,7 @@ class Caozuolei(Caozuolei1):
                     t3 = Thread(target=self.forxunhuanY,
                                 args=(sss, aa1, bb1, cc1, dd1, hh1, hh2))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
                     t3.start()  # 开始运行t1线程
-                    time.sleep(0.3)
+                    time.sleep(0.56)
                     # self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     print('<---')
                     dt.press('right')
@@ -4632,9 +4633,9 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        #data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
@@ -5680,8 +5681,7 @@ if __name__ == '__main__':
     # c.Set_Dict(1, '测试2.txt')
     # c.Set_Dict(0, 'test3.txt')
     #
-    # time.sleep(150)
-    # c.KeyPress1(27)  # 案件esc建
+    #
     # while True:
     #     c.FuBen_INFO()
     #     time.sleep(1)
@@ -5701,7 +5701,7 @@ if __name__ == '__main__':
     # time.sleep(1)
     # c.forxunhuan(627,462)
     # c.Find_srt("熟练者", "#422", "功师", "#422")
-    time.sleep(1)
+    time.sleep(50)
 
     # canshu = c.excelboot01(22)
     # n = 24
@@ -5715,7 +5715,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(2, 10):  # 打图设置ddddg
+    for aa in range(4, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -5840,7 +5840,7 @@ if __name__ == '__main__':
 
             elif pvp == 2:
 
-                c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 2p 睡眠不足十
+                c.nvQiGong(n, 0.65, 0.26, 0, 0, *canshu)  # 2p 睡眠不足十
                 # aa1, bb1, cc1, dd1 = "先驱者", "#422", "师很", "#140"
                 # aa1, bb1, cc1, dd1="熟练者", "#410", "师很", "#140"
                 # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
