@@ -302,7 +302,7 @@ class Caozuolei(Caozuolei1):
                 x2=800,
                 y2=600,
                 color_format="#360",
-                sim=0.85,
+                sim=0.80,#0.85
                 linesign=" ",
                 isbackcolor=0)
             print("打印aa100", aa100)
@@ -891,14 +891,14 @@ class Caozuolei(Caozuolei1):
 
 
 
-            elif "开洞" in str(aa11) and "开洞" not in str(aa00) and '开府' not in str(aa12):
+            elif "开洞" in str(aa11) and "开洞" not in str(aa00) :
                 if sss2 == 7:
                     dt.press('right')
                     dt.keyDown('right')  # ：模拟按键按下 向下
-                    time.sleep(1)
+                    time.sleep(0.4)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     print('FuBen_INFO66 步骤一')
-                    return
+                    continue
 
                 else:
 
@@ -1032,7 +1032,7 @@ class Caozuolei(Caozuolei1):
                 continue
             else:
                 try:
-
+                        dt.press('right')
                         print('FuBen_INFO66,123')
                         #break
                         continue
@@ -5714,7 +5714,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(6, 10):  # 打图设置ddddg
+    for aa in range(0, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -5850,7 +5850,7 @@ if __name__ == '__main__':
             elif pvp == 5:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p
             elif pvp == 6:
-                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 6p 造就师很狂
+                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 6p 造就师很狂
 
             elif pvp == 7:
                 c.nvQiGong(n, 0.68, 0.26, 0, 0, *canshu)  # 7p 色彩不足S
