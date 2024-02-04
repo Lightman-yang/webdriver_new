@@ -366,8 +366,8 @@ class Caozuolei(Caozuolei1):
                 ret_values[0] = 2
                 # return 2
                 print('等于 靓仔，继续')
-                return
-            if "靓仔" in str(aa999) and zzz == 2:
+                continue
+            elif "靓仔" in str(aa999) and zzz == 2:
                 dt.press('0')
                 time.sleep(1.5)
                 dt.press('x')
@@ -375,7 +375,7 @@ class Caozuolei(Caozuolei1):
                 ret_values[0] = 2
                 # return 2
                 print('等于 靓仔，继续')
-                return
+                continue
             elif "再次挑战" in str(aa999):# or "商店" in str(aa999):
                 #ret_values.append(1)
                 #ret_values[0] = 1
