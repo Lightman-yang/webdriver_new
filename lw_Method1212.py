@@ -4382,8 +4382,8 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
