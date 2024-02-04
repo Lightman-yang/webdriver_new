@@ -345,7 +345,7 @@ class Caozuolei(Caozuolei1):
                 x2=800,
                 y2=800,
                 color_format="#360",
-                sim=0.8,
+                sim=0.75,#0.8
                 linesign=" ",
                 isbackcolor=0)
             # bb = self.Find_Ocr(
@@ -358,7 +358,7 @@ class Caozuolei(Caozuolei1):
             #     linesign=" ",
             #     isbackcolor=0)
             # if ("靓仔" in aa and zzz == 1) or ("靓丽" in bb and zzz == 1):
-            if ("靓仔" in aa and zzz == 1):
+            if "靓仔" in aa and zzz == 1:
                 dt.press('9')
                 time.sleep(1.5)
                 dt.press('x')
@@ -368,7 +368,7 @@ class Caozuolei(Caozuolei1):
                 print('等于 靓仔，继续')
                 continue
             elif "再次挑战" in aa or "商店" in aa:
-                ret_values.append(1)
+                #ret_values.append(1)
                 # dt.press('f12')
                 # time.sleep(1)
                 # dt.press('.')
@@ -4383,9 +4383,9 @@ class Caozuolei(Caozuolei1):
     def excelboot01(self, nn):  # 参数是传几取列表（nn-1）行的数据
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
-        # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -5289,7 +5289,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1)
                     print("再次挑战", 1)
                     break
-                if i == 1 and ret_values != 1:
+                elif i == 1 and ret_values[0] != 1:
                     print(i, '步骤一')
                     #dt.press('t')
                     dt.press('y')
@@ -5303,8 +5303,10 @@ class Caozuolei(Caozuolei1):
 
                     dt.press('d')
                     time.sleep(0.75)
+                    dt.press('e')
+                    time.sleep(0.75)
                     # continue
-                elif i == 2 and ret_values != 1:
+                elif i == 2 and ret_values[0] != 1:
                     print(i, '步骤二')
                     time.sleep(0.65)  # 按下两秒
                     dt.press('right')
@@ -5314,8 +5316,10 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('g')
                     time.sleep(0.75)
+                    dt.press('e')
+                    time.sleep(0.75)
                     # continue
-                elif i == 3 and ret_values != 1:
+                elif i == 3 and ret_values[0]!= 1:
                     print(i, '步骤三')
                     time.sleep(0.65)  # 按下两秒
                     dt.press('right')
@@ -5327,7 +5331,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('g')
                     time.sleep(0.7)
                     dt.press('left')  # ：模拟按键按下
-                elif i >= 4 and ret_values != 1:
+                elif i >= 4 and ret_values[0] != 1:
                     # dt.press('left')  # ：模拟按键按下
                     # time.sleep(0.75)
                     dt.press('g')
@@ -5337,6 +5341,8 @@ class Caozuolei(Caozuolei1):
                     dt.press('f')
                     time.sleep(0.75)
                     dt.press('d')
+                    time.sleep(0.75)
+                    dt.press('w')
                     print(i, '步骤三 无限输出')
                 else:
                     print('111')
@@ -5353,9 +5359,14 @@ class Caozuolei(Caozuolei1):
                 print(gg_values, "gg_values", ' 小循环', i, '大循环')
 
                 if ret_values[0] == 1:
+                    time.sleep(1)
+                    dt.press('0')
                     time.sleep(2)
                     dt.press('9')
-                    time.sleep(3.5)
+                    time.sleep(1)
+                    dt.press('x')
+                    time.sleep(1.5)
+
                     dt.press('esc')
                     time.sleep(1)
                     dt.press('f10')
@@ -5363,14 +5374,10 @@ class Caozuolei(Caozuolei1):
                     # dt.press('.')
                     ret_values[0] = 9
                     i = 60
-                    time.sleep(1)
-                    dt.press('9')
-                    time.sleep(1)
-                    dt.press('x')
-                    time.sleep(1)
+
                     print("再次挑战", 1)
                     break
-                if i == 1 and ret_values != 1:
+                elif i == 1 and ret_values[0] != 1:
                     print(i, '步骤一')
                     # dt.press('t')
                     dt.press('h')
@@ -5385,7 +5392,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('d')
                     time.sleep(0.75)
                     # continue
-                elif i == 2 and ret_values != 1:
+                elif i == 2 and ret_values[0] != 1:
                     print(i, '步骤二')
                     time.sleep(0.65)  # 按下两秒
                     dt.press('right')
@@ -5397,7 +5404,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.75)
                     dt.press('w')
                     # continue
-                elif i == 3 and ret_values != 1:
+                elif i == 3 and ret_values[0] != 1:
                     print(i, '步骤三')
                     time.sleep(0.65)  # 按下两秒
                     dt.press('right')
@@ -5409,7 +5416,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('g')
                     time.sleep(0.7)
                     dt.press('left')  # ：模拟按键按下
-                elif i >= 4 and ret_values != 1:
+                elif i >= 4 and ret_values[0] != 1:
                     # dt.press('left')  # ：模拟按键按下
                     # time.sleep(0.75)
                     dt.press('g')
