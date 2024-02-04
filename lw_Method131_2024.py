@@ -367,6 +367,15 @@ class Caozuolei(Caozuolei1):
                 # return 2
                 print('等于 靓仔，继续')
                 return
+            if "靓仔" in str(aa999) and zzz == 2:
+                dt.press('0')
+                time.sleep(1.5)
+                dt.press('x')
+                time.sleep(1)
+                ret_values[0] = 2
+                # return 2
+                print('等于 靓仔，继续')
+                return
             elif "再次挑战" in str(aa999):# or "商店" in str(aa999):
                 #ret_values.append(1)
                 #ret_values[0] = 1
@@ -5347,7 +5356,7 @@ class Caozuolei(Caozuolei1):
             global ret_values
             ret_values = [9, 8, 7]
             t13 = Thread(target=self.FuBen_INFO3,
-                         args=(1,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
+                         args=(2,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
             t13.start()  # 开始运行t1线程
             for i in range(1, 60):
                 print(gg_values[0])
@@ -5799,13 +5808,19 @@ class Caozuolei(Caozuolei1):
                     print(i, '步骤一')
                     time.sleep(2.6)
                     # dt.press('t')
-                    #keyboard.press('up')
-                    pyautogui.press('right',presses=2)
-                    #dt.press('right', presses=2)
-                    dt.press('space', presses=2)
-                    time.sleep(0.85)
-                    dt.press('right', presses=2)
-                    dt.press('space', presses=2)
+                    #dt.press('a')
+
+                    dt.PAUSE=random.uniform(0.03,0.05)
+                    dt.press('right',presses=2)
+                    dt.press('space')
+                    # dt.press('right', presses=3)
+                    # dt.press('space')
+                    # time.sleep(0.95)
+                    # pyautogui.press('right', presses=2)
+                    # pyautogui.press('space')
+                    time.sleep(0.95)
+                    # dt.press('right', presses=3)
+                    # dt.press('space')
                     # pyautogui.hotkey("up")
                     # pyautogui.hotkey("space")
                     # time.sleep(0.15)  # 按下两秒
@@ -5828,7 +5843,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.6)
+                    time.sleep(1.8)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.press('d')
