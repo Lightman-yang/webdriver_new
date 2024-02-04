@@ -5290,7 +5290,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1)
                     print("再次挑战", 1)
                     break
-                if i == 1 and ret_values != 1:
+                elif i == 1 and ret_values[0] != 1:
                     print(i, '步骤一')
                     #dt.press('t')
                     dt.press('y')
@@ -5305,7 +5305,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('d')
                     time.sleep(0.75)
                     # continue
-                elif i == 2 and ret_values != 1:
+                elif i == 2 and ret_values[0] != 1:
                     print(i, '步骤二')
                     time.sleep(0.65)  # 按下两秒
                     dt.press('right')
@@ -5316,7 +5316,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('g')
                     time.sleep(0.75)
                     # continue
-                elif i == 3 and ret_values != 1:
+                elif i == 3 and ret_values[0] != 1:
                     print(i, '步骤三')
                     time.sleep(0.65)  # 按下两秒
                     dt.press('right')
@@ -5746,6 +5746,24 @@ class Caozuolei(Caozuolei1):
         if keyboard.is_pressed('up')  and keyboard.is_pressed('space') :
             print("成功按下 A、B、C")
 
+    """
+    阿修罗技能：
+              Q :地裂*波动剑                
+              w : 邪光斩                       s :极炎*裂波剑
+              E :   极冰*烈波剑                d : 兵刃*波动剑
+              R :  爆炎*波动剑                 f : 鬼斩
+              T :  裂波斩                      g :崩山击
+              y :  上挑                         h :天雷*波动剑
+              ctrl: 波动神决：万空
+              
+                     👇 👇  
+                     👇 👇
+                     👇 👇
+                     👇 👇
+                ↓ 👇 👇 👇 👇 ↓
+                     👇 👇
+                       👇
+    """
 
     def JunhengzhongKuangZanShi(self):  # 均衡仲裁者地图
         for kk in range(1, 60):
@@ -5782,9 +5800,10 @@ class Caozuolei(Caozuolei1):
                     time.sleep(2.6)
                     # dt.press('t')
                     #keyboard.press('up')
-                    dt.press('right', presses=2)
+                    pyautogui.press('right',presses=2)
+                    #dt.press('right', presses=2)
                     dt.press('space', presses=2)
-                    time.sleep(0.65)
+                    time.sleep(0.85)
                     dt.press('right', presses=2)
                     dt.press('space', presses=2)
                     # pyautogui.hotkey("up")
@@ -5871,6 +5890,7 @@ class Caozuolei(Caozuolei1):
                     print(i, '步骤三 无限输出')
                 else:
                     print('111')
+
 if __name__ == '__main__':
     global xxyy
     global gg_values
@@ -5932,11 +5952,12 @@ if __name__ == '__main__':
         dt.press('space')  # 单击空格操作
         time.sleep(1)
         # c.SY001()
+        c.JunhengzhongKuangZanShi()
         #c.JunhengzhongZhaoHuanShi()
         #c.Junhengzhong()
         #c.JunhengzhongMaoSi()
         #c.JunhengzhongNai()
-        c.JunhengzhongYuRen()
+        #c.JunhengzhongYuRen()
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
 
