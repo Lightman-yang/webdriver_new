@@ -5391,7 +5391,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.8)
+                    time.sleep(2)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.press('d')
@@ -5405,7 +5405,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.6)
+                    time.sleep(2.1)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('w')
                     time.sleep(0.75)
@@ -5490,7 +5490,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('w')
                     time.sleep(0.75)
                     # continue
-                elif i == 2 and ret_values != 1:
+                elif i == 2 and ret_values[0] != 1:
                     print(i, '步骤二')
                     time.sleep(0.65)  # 按下两秒
                     dt.press('right')
@@ -5935,7 +5935,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1)
                     print("再次挑战", 1)
                     break
-                elif i == 1 and ret_values != 1:
+                elif i == 1 and ret_values[0] != 1:
                     print(i, '步骤一')
                     # dt.press('t')
                     time.sleep(0.65)  # 按下两秒
@@ -5957,7 +5957,7 @@ class Caozuolei(Caozuolei1):
 
                     time.sleep(0.85)
                     # continue
-                elif i == 2 and ret_values != 1:
+                elif i == 2 and ret_values[0] != 1:
                     print(i, '步骤二')
                     time.sleep(0.65)  # 按下两秒
                     dt.press('right')
@@ -5976,7 +5976,7 @@ class Caozuolei(Caozuolei1):
 
                     time.sleep(0.85)  # 按下两秒
                     # continue
-                elif i == 3 and ret_values != 1:
+                elif i == 3 and ret_values[0] != 1:
                     print(i, '步骤三')
                     time.sleep(0.65)  # 按下两秒
                     dt.press('right')
@@ -5991,7 +5991,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('f')
                     time.sleep(0.95)
                     dt.press('left')  # ：模拟按键按下
-                elif i >= 4 and ret_values != 1:
+                elif i >= 4 and ret_values[0] != 1:
                     # dt.press('left')  # ：模拟按键按下
                     # time.sleep(0.75)
                     dt.press('space')  # 单击空格操作
@@ -6073,7 +6073,7 @@ if __name__ == '__main__':
         dt.press('space')  # 单击空格操作
         time.sleep(1)
         # c.SY001()
-        c.JunhengzhongKuangZanShi()
+        #c.JunhengzhongKuangZanShi()
         #c.JunhengzhongZhaoHuanShi()
         #c.Junhengzhong()
         c.JunhengzhongNvQiGong()
