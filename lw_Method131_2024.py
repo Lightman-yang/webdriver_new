@@ -4384,8 +4384,8 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -5289,7 +5289,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1)
                     print("再次挑战", 1)
                     break
-                if i == 1 and ret_values != 1:
+                elif i == 1 and ret_values[0] != 1:
                     print(i, '步骤一')
                     #dt.press('t')
                     dt.press('y')
@@ -5304,7 +5304,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('d')
                     time.sleep(0.75)
                     # continue
-                elif i == 2 and ret_values != 1:
+                elif i == 2 and ret_values[0] != 1:
                     print(i, '步骤二')
                     time.sleep(0.65)  # 按下两秒
                     dt.press('right')
@@ -5315,7 +5315,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('g')
                     time.sleep(0.75)
                     # continue
-                elif i == 3 and ret_values != 1:
+                elif i == 3 and ret_values[0] != 1:
                     print(i, '步骤三')
                     time.sleep(0.65)  # 按下两秒
                     dt.press('right')
@@ -5327,7 +5327,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('g')
                     time.sleep(0.7)
                     dt.press('left')  # ：模拟按键按下
-                elif i >= 4 and ret_values != 1:
+                elif i >= 4 and ret_values[0] != 1:
                     # dt.press('left')  # ：模拟按键按下
                     # time.sleep(0.75)
                     dt.press('g')
