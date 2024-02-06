@@ -1032,7 +1032,7 @@ class Caozuolei(Caozuolei1):
                 continue
             else:
                 try:
-
+                        dt.press('right')
                         print('FuBen_INFO66,123')
                         #break
                         continue
@@ -5714,7 +5714,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddddg
+    for aa in range(2, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -5835,7 +5835,7 @@ if __name__ == '__main__':
         print(aa,sss1,'    sss')
         if aa == 0:
             if pvp == 1:
-                c.nvQiGong(n, 0.62, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
+                c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 1p 气功师很烂丶
 
             elif pvp == 2:
 
@@ -5911,7 +5911,7 @@ if __name__ == '__main__':
             continue
         elif aa == 2:
             if pvp == 1:
-                c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 1p 气功师很懒
+                c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 1p 气功师很懒
                 # c.nvQiGong(n, 0.62, 0.26, 0)  # 2p 睡眠不足丶
                 #
             elif pvp == 2:
