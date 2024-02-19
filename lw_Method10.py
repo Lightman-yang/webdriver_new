@@ -524,7 +524,7 @@ class Caozuolei(Caozuolei1):
                 x1=12,
                 y1=140,
                 x2=760,
-                y2=333,
+                y2=600,
                 color_format="#422",
                 sim=0.8,
                 linesign=" ",
@@ -534,7 +534,7 @@ class Caozuolei(Caozuolei1):
                 x1=0,
                 y1=0,
                 x2=760,
-                y2=433,
+                y2=600,
                 color_format="#360",
                 sim=0.79,
                 linesign=" ",
@@ -1032,7 +1032,7 @@ class Caozuolei(Caozuolei1):
                 continue
             else:
                 try:
-
+                        dt.press('right')
                         print('FuBen_INFO66,123')
                         #break
                         continue
@@ -1780,17 +1780,21 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.5 + move_seep)
-                    t3 = Thread(target=self.forxunhuanYnama,
+                    dt.keyUp('right')  # ：模拟按键松开按键
+                    t3 = Thread(target=self.forxunhuanYnamaxin,
                                 args=(sss, aa1, bb1, cc1, dd1, hh1, hh2,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
                     t3.start()  # 开始运行t1线程
+
+                    time.sleep(0.85)
+
                     # self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
-                    dt.keyUp('right')  # ：模拟按键松开按键
+
 
                     print('<---')
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(3.5 + move_seep)
+                    time.sleep(3.3 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
                 elif j == 4:
                     time.sleep(0.5)
@@ -4632,9 +4636,9 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        #data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
@@ -4701,6 +4705,15 @@ class Caozuolei(Caozuolei1):
                 sim=usr_HH1,
                 isbackcolor=0,
                 err='Find_srt')
+            zy = self.FindStr(
+                x1=0,
+                y1=0,
+                x2=800,
+                y2=600,
+                string=usr_string2,  # "不足",
+                color_format=usr_color_format2,  # "#422",
+                sim=usr_HH2,
+                isbackcolor=0)
             print(z, "人物坐标Find_srt<>")
             if '崩溃' in str(z):
                 print('崩溃？？')
@@ -4718,20 +4731,12 @@ class Caozuolei(Caozuolei1):
                 return
             elif z == 0:
 
-                zy = self.FindStr(
-                    x1=0,
-                    y1=0,
-                    x2=800,
-                    y2=600,
-                    string=usr_string2,  # "不足",
-                    color_format=usr_color_format2,  # "#422",
-                    sim=usr_HH2,
-                    isbackcolor=0)
+
                 if '崩溃' in str(zy):
                     print('崩溃？？')
                     continue
                 elif zy != 0 and zy is not None:
-                    x = zy[0]
+                    x = zy[0]+0
                     y = zy[1] + 114
                     # xxyy[5] = 999
                     xxyy[0] = x
@@ -4895,7 +4900,7 @@ class Caozuolei(Caozuolei1):
                 elif (y == 0 and y1 == 4) or (y == 2 and y1 == 4) :
                     print('y=', y, ' y1=', y1,'测试1')
                     continue
-                elif y >= 423:  #449
+                elif y >= 409:  #449
                     dt.press('up')
                     print('y=', y, ' y1=', y1,'测试2')
                     return
@@ -4990,7 +4995,7 @@ class Caozuolei(Caozuolei1):
                 elif (y == 0 and y1 == 4) or (y == 2 and y1 == 4) :
                     print('y=', y, ' y1=', y1,'测试1')
                     continue
-                elif y > 349:  #449
+                elif y > 349:  #449  #349
                     dt.press('up')
                     print('y=', y, ' y1=', y1,'测试2')
                     return
@@ -5003,7 +5008,50 @@ class Caozuolei(Caozuolei1):
 
                     print('????')
                     return
+    def forxunhuanYnamaxin(self, sss, aa, bb, cc, dd, hh1=0.75, hh2=0.75, renwuzuobiao=0):  # ,aa,bb,cc,dd
+        # self.Use_Dict(0)
+            print('--->')
+            a = [1]
+            num_ss = [0]
 
+            # self.Find_srt("先驱者","#422", "不足", "#422")
+            # # self.menzuobiao()
+            # x, y, x1, y1, z, h = xxyy
+            # # print('x=',x,'y=',y,x1,y1,z,h)
+            # if -11 < (x-x1) < 11 and -11 < (y- y1)  < 11 and z==88 :
+            #
+            #     print((x-x1), 'y','外层循环')
+            #     return
+            # else:
+            for j in range(1, 3):
+                print(num_ss[0])
+                self.Find_srt(aa, bb, cc, dd, hh1, hh2)
+                #self.menzuobiao1(renwuzuobiao)
+                # self.Find_srt(aa1, bb1, cc1, dd1)
+                #time.sleep(0.5)
+
+                x, y, x1, y1, z, h = xxyy
+                print(xxyy)
+                print((x - x1, '=x - x1'), (y - y1, '=y - y1'), '----')
+                if h == 1000:
+                    print(1000)
+                    break
+                elif (y == 0 and y1 == 4) or (y == 2 and y1 == 4) :
+                    print('y=', y, ' y1=', y1,'测试1')
+                    continue
+                elif y > 349:  #449  #349
+                    dt.press('up')
+                    print('y=', y, ' y1=', y1,'测试2')
+                    return
+                elif y < 480:
+                    dt.press('down')
+                    print('y=', y, ' y1=', y1, '测试3')
+                    return
+
+                else:
+
+                    print('????')
+                    return
     def menzuobiao2(self, renwuzuobiao):  # 开府门 颜色 #334 相似度 0.8
         # self.Use_Dict(0)                # 开府口 颜色 #388 相似度 0.75
         while True:
@@ -5714,7 +5762,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(2, 10):  # 打图设置ddddg
+    for aa in range(1, 10):  # 打图设置ddddg
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
