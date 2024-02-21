@@ -366,7 +366,16 @@ class Caozuolei(Caozuolei1):
                 ret_values[0] = 2
                 # return 2
                 print('等于 靓仔，继续')
-                return
+                continue
+            elif "靓仔" in str(aa999) and zzz == 2:
+                dt.press('0')
+                time.sleep(1.5)
+                dt.press('x')
+                time.sleep(1)
+                ret_values[0] = 2
+                # return 2
+                print('等于 靓仔，继续')
+                continue
             elif "再次挑战" in str(aa999):# or "商店" in str(aa999):
                 #ret_values.append(1)
                 #ret_values[0] = 1
@@ -5347,7 +5356,7 @@ class Caozuolei(Caozuolei1):
             global ret_values
             ret_values = [9, 8, 7]
             t13 = Thread(target=self.FuBen_INFO3,
-                         args=(1,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
+                         args=(2,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
             t13.start()  # 开始运行t1线程
             for i in range(1, 60):
                 print(gg_values[0])
@@ -5382,7 +5391,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.8)
+                    time.sleep(2.2)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.press('d')
@@ -5396,7 +5405,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.6)
+                    time.sleep(2.2)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('w')
                     time.sleep(0.75)
@@ -5416,7 +5425,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.65)
                     dt.press('g')
                     time.sleep(0.7)
-                    dt.press('left')  # ：模拟按键按下
+                    #dt.press('left')  # ：模拟按键按下
                 elif i >= 4 and ret_values[0] != 1:
                     # dt.press('left')  # ：模拟按键按下
                     # time.sleep(0.75)
@@ -5799,19 +5808,22 @@ class Caozuolei(Caozuolei1):
                     print(i, '步骤一')
                     time.sleep(2.6)
                     # dt.press('t')
-                    #keyboard.press('up')
-                    pyautogui.press('right',presses=2)
-                    #dt.press('right', presses=2)
-                    dt.press('space', presses=2)
-                    time.sleep(0.85)
+                    dt.Pause=random.uniform(0.04,0.05) #随机按键时间
                     dt.press('right', presses=2)
-                    dt.press('space', presses=2)
+                    dt.press('space')
+                    # time.sleep(0.85)
+                    # dt.press('right', presses=2)
+                    # dt.press('space', presses=2)
+                    #
+                    # time.sleep(0.95)
+                    # dt.press('right', presses=2)
+                    # dt.press('space', presses=2)
                     # pyautogui.hotkey("up")
                     # pyautogui.hotkey("space")
                     # time.sleep(0.15)  # 按下两秒
                     # dt.keyDown('up','space')
                     # dt.press('up')
-                    dt.press('w')
+                    #dt.press('a')
                     # dt.keyUp('up','space')
                     # dt.press('up')
                     # dt.press('space')
@@ -5828,7 +5840,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.6)
+                    time.sleep(1.85)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.press('d')
@@ -5949,12 +5961,12 @@ if __name__ == '__main__':
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
     for aa in range(0, 1):  # 打图设置ddddg
-        dt.press('space')  # 单击空格操作
+        dt.press('space')  # 单击空格操作g
         time.sleep(1)
         # c.SY001()
-        c.JunhengzhongKuangZanShi()
+        #c.JunhengzhongKuangZanShi()
         #c.JunhengzhongZhaoHuanShi()
-        #c.Junhengzhong()
+        c.Junhengzhong()
         #c.JunhengzhongMaoSi()
         #c.JunhengzhongNai()
         #c.JunhengzhongYuRen()
