@@ -334,19 +334,18 @@ class Caozuolei(Caozuolei1):
 
                 return
 
-    def FuBen_INFO3(self, zzzd=0):  # 副本地图信息如果自动存在，证明没活力点了，直接退出
+    def FuBen_INFO3(self, zzz=0):  # 副本地图信息如果自动存在，证明没活力点了，直接退出
         # self.Use_Dict(1)
         # c.Set_Dict(0, "测试2.txt") 靓丽=#70  靓仔=#360
         while True:
             # time.sleep(0.15)
-            zzz=zzzd
             aa999 = self.Find_Ocr(
                 x1=0,
                 y1=0,
                 x2=800,
                 y2=800,
                 color_format="#360",
-                sim=0.8,
+                sim=0.75,
                 linesign=" ",
                 isbackcolor=0)
             # bb = self.Find_Ocr(
@@ -4395,8 +4394,8 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -5300,7 +5299,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1)
                     print("再次挑战", 1)
                     break
-                if i == 1 and ret_values != 1:
+                elif i == 1 and ret_values[0] != 1:
                     print(i, '步骤一')
                     #dt.press('t')
                     dt.press('y')
@@ -5315,7 +5314,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('d')
                     time.sleep(0.75)
                     # continue
-                elif i == 2 and ret_values != 1:
+                elif i == 2 and ret_values[0] != 1:
                     print(i, '步骤二')
                     time.sleep(0.65)  # 按下两秒
                     dt.press('right')
@@ -5326,7 +5325,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('g')
                     time.sleep(0.75)
                     # continue
-                elif i == 3 and ret_values != 1:
+                elif i == 3 and ret_values[0] != 1:
                     print(i, '步骤三')
                     time.sleep(0.65)  # 按下两秒
                     dt.press('right')
@@ -5370,7 +5369,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('esc')
                     time.sleep(1)
 
-                    dt.press('x')
+                    dt.press('0')
                     time.sleep(1)
                     dt.press('x')
                     time.sleep(1)
@@ -5491,7 +5490,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('w')
                     time.sleep(0.75)
                     # continue
-                elif i == 2 and ret_values != 1:
+                elif i == 2 and ret_values[0] != 1:
                     print(i, '步骤二')
                     time.sleep(0.65)  # 按下两秒
                     dt.press('right')
@@ -5756,8 +5755,26 @@ class Caozuolei(Caozuolei1):
     #     if keyboard.is_pressed('up')  and keyboard.is_pressed('space') :
     #         print("成功按下 A、B、C")
 
+    """
+    阿修罗技能：
+              Q :地裂*波动剑                
+              w : 邪光斩                       s :极炎*裂波剑
+              E :   极冰*烈波剑                d : 兵刃*波动剑
+              R :  爆炎*波动剑                 f : 鬼斩
+              T :  裂波斩                      g :崩山击
+              y :  上挑                         h :天雷*波动剑
+              ctrl: 波动神决：万空
+              
+                     👇 👇  
+                     👇 👇
+                     👇 👇
+                     👇 👇
+                ↓ 👇 👇 👇 👇 ↓
+                     👇 👇
+                       👇
+    """
 
-    def JunhengzhongKuangZanShi(self):  # 均衡仲裁者地图
+    def JunhengzhongKuangZanShi(self,kk=0):  # 均衡仲裁者地图
         for kk in range(1, 60):
             global ret_values
             ret_values = [9, 8, 7]
@@ -5791,18 +5808,25 @@ class Caozuolei(Caozuolei1):
                     print(i, '步骤一')
                     time.sleep(2.6)
                     # dt.press('t')
-                    #keyboard.press('up')
-                    dt.press('right', presses=2)
-                    dt.press('space', presses=2)
-                    time.sleep(0.65)
-                    dt.press('right', presses=2)
-                    dt.press('space', presses=2)
+                    #dt.press('a')
+
+                    dt.PAUSE=random.uniform(0.03,0.05)
+                    # dt.press('right',presses=2)
+                    # dt.press('space')
+                    # dt.press('right', presses=3)
+                    # dt.press('space')
+                    # time.sleep(0.95)
+                    # pyautogui.press('right', presses=2)
+                    # pyautogui.press('space')
+                    time.sleep(1)
+                    # dt.press('right', presses=3)
+                    # dt.press('space')
                     # pyautogui.hotkey("up")
                     # pyautogui.hotkey("space")
                     # time.sleep(0.15)  # 按下两秒
                     # dt.keyDown('up','space')
                     # dt.press('up')
-                    dt.press('w')
+                    dt.press('h')
                     # dt.keyUp('up','space')
                     # dt.press('up')
                     # dt.press('space')
@@ -5819,28 +5843,26 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.6)
+                    time.sleep(2.05+kk)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
-                    dt.press('d')
+                    dt.press('f')
                     time.sleep(0.75)
-                    dt.press('y')
+                    dt.press('e')
                     time.sleep(0.75)
-                    dt.press('q')
+                    dt.press('w')
                     time.sleep(0.75)
                     # continue
                 elif i == 2 and ret_values[0] != 1:
-                    dt.press('h')
+                    dt.press('d')
                     print(i, '步骤二')
                     time.sleep(0.85)  # 按下两秒
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.6)
+                    time.sleep(1.8+kk)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('e')
-                    time.sleep(0.75)
-                    dt.press('r')
                     time.sleep(0.75)
                     dt.press('s')
                     time.sleep(0.75)
@@ -5854,11 +5876,11 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.8)
+                    time.sleep(1.9+kk)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('d')
                     time.sleep(0.15)  # 按下两秒
-                    dt.press('q')
+                    dt.press('e')
                     time.sleep(0.95)
                     #dt.press('left')  # ：模拟按键按下
                 elif i >= 4 and ret_values[0] != 1:
@@ -5872,12 +5894,119 @@ class Caozuolei(Caozuolei1):
                     dt.press('d')
                     dt.press('w')
                     dt.press('q')
-                    dt.press('y')
+                    dt.press('g')
                     time.sleep(0.15)
                     dt.press('w')
                     time.sleep(0.95)
                     dt.press('e')
                     time.sleep(1)
+                    print(i, '步骤三 无限输出')
+                else:
+                    print('111')
+
+    def JunhengzhongNvQiGong(self):  # 均衡仲裁者地图
+        for kk in range(1, 60):
+            global ret_values
+            ret_values = [9, 8, 7]
+            t13 = Thread(target=self.FuBen_INFO3,
+                         args=(1,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
+            t13.start()  # 开始运行t1线程
+            for i in range(1, 60):
+                print(gg_values[0])
+                print(gg_values, "gg_values", ' 小循环', i, '大循环')
+
+                if ret_values[0] == 1:
+                    time.sleep(2)
+                    dt.press('9')
+                    time.sleep(3.5)
+                    dt.press('esc')
+                    time.sleep(1)
+                    dt.press('f10')
+                    time.sleep(2)
+                    # dt.press('.')
+                    ret_values[0] = 9
+                    i = 60
+                    time.sleep(1)
+                    dt.press('9')
+                    time.sleep(1)
+                    dt.press('x')
+                    time.sleep(1)
+                    print("再次挑战", 1)
+                    break
+                elif i == 1 and ret_values[0] != 1:
+                    print(i, '步骤一')
+                    # dt.press('t')
+                    time.sleep(0.65)  # 按下两秒
+                    dt.press('a')
+
+                    time.sleep(0.85)  # 按下两秒
+                    dt.press('right')
+                    time.sleep(0.0075)  # 按下两秒
+                    dt.keyDown('right')  # ：模拟按键按下
+                    time.sleep(1.9)
+                    dt.keyUp('right')  # ：模拟按键松开按键
+
+                    time.sleep(0.65)  # 按下两秒
+                    dt.press('d')
+                    time.sleep(0.85)  # 按下两秒
+                    dt.press('h')
+                    time.sleep(0.75)  # 按下两秒
+                    dt.press('y')
+
+                    time.sleep(0.85)
+                    # continue
+                elif i == 2 and ret_values[0] != 1:
+                    print(i, '步骤二')
+                    time.sleep(0.65)  # 按下两秒
+                    dt.press('right')
+                    time.sleep(0.0075)  # 按下两秒
+                    dt.keyDown('right')  # ：模拟按键按下
+                    time.sleep(1.6)
+                    dt.keyUp('right')  # ：模拟按键松开按键
+                    dt.press('d')
+                    time.sleep(0.75)  # 按下两秒
+                    dt.press('alt')
+                    time.sleep(0.15)  # 按下两秒
+                    dt.press('g')
+                    time.sleep(0.75)  # 按下两秒
+
+
+
+                    time.sleep(0.85)  # 按下两秒
+                    # continue
+                elif i == 3 and ret_values[0] != 1:
+                    print(i, '步骤三')
+                    time.sleep(0.65)  # 按下两秒
+                    dt.press('right')
+                    time.sleep(0.0075)  # 按下两秒
+                    dt.keyDown('right')  # ：模拟按键按下
+                    time.sleep(1.8)
+                    dt.keyUp('right')  # ：模拟按键松开按键
+                    dt.press('d')
+                    time.sleep(0.75)  # 按下两秒
+                    time.sleep(0.75)  # 按下两秒
+
+                    dt.press('f')
+                    time.sleep(0.95)
+                    dt.press('left')  # ：模拟按键按下
+                elif i >= 4 and ret_values[0] != 1:
+                    # dt.press('left')  # ：模拟按键按下
+                    # time.sleep(0.75)
+                    dt.press('space')  # 单击空格操作
+                    time.sleep(0.75)  # 按下两秒
+                    dt.press('y')
+                    time.sleep(0.75)  # 按下两秒
+                    dt.press('d')
+                    time.sleep(0.75)  # 按下两秒
+                    dt.press('q')
+                    time.sleep(0.85)  # 按下两秒
+                    dt.press('f')
+                    time.sleep(0.75)
+                    dt.press('w')
+                    time.sleep(0.95)
+                    dt.press('q')
+                    dt.press('q')
+                    time.sleep(2.95)
                     print(i, '步骤三 无限输出')
                 else:
                     print('111')
@@ -5942,10 +6071,13 @@ if __name__ == '__main__':
         dt.press('space')  # 单击空格操作
         time.sleep(1)
         # c.SY001()
+        c.JunhengzhongKuangZanShi()
         #c.JunhengzhongZhaoHuanShi()
         #c.Junhengzhong()
+        #c.JunhengzhongNvQiGong()
+        #c.Junhengzhong()
         #c.JunhengzhongMaoSi()
-        c.JunhengzhongNai()
+        #c.JunhengzhongNai()
         #c.JunhengzhongYuRen()
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
