@@ -2869,6 +2869,8 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
+                    dt.press('down')
+                    time.sleep(0.0075)  #
                     time.sleep(1.75 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('y')
@@ -3120,7 +3122,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)  # 按下19秒
                     dt.press('w')
 
-                    for iiit in range(1, 100):
+                    for iiit in range(1, 200):
                         if zjyz[0] == 1:
                             break
                         else:
@@ -3136,12 +3138,13 @@ class Caozuolei(Caozuolei1):
 
                     time.sleep(0.5)  # 按下19秒
                     if self.FuBen_INFO2() != 100 or zjyz[0] == 1:
+                        time.sleep(0.5)  # 按下19秒
                         dt.press('0')
 
-                        time.sleep(0.5)  # 按下两秒
+                        time.sleep(0.75)  # 按下两秒
                         for ii in range(1, 4):
                             num_num = num // 2
-                            if i == num_num or i == 10 or i == num:
+                            if i == num_num or i == 10 or i == num or i==1:
                                 time.sleep(5)  # 按下两秒
                                 # from python_findpicture import Caozuolei1
                                 self.sellGoods_xy()  # 点击一键出售按钮
@@ -3157,7 +3160,7 @@ class Caozuolei(Caozuolei1):
                                 break
                             else:
                                 break
-                        time.sleep(3)  # 按下两秒
+                        time.sleep(1)  # 按下两秒
                         dt.press('esc')
 
                         # print('0')
@@ -4661,11 +4664,11 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         # data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -4924,7 +4927,7 @@ class Caozuolei(Caozuolei1):
                 elif (y == 0 and y1 == 4) or (y == 2 and y1 == 4) :
                     print('y=', y, ' y1=', y1,'测试1')
                     continue
-                elif y >= 423:  #449
+                elif y >= 401:  #449
                     dt.press('up')
                     print('y=', y, ' y1=', y1,'测试2')
                     return
@@ -5744,12 +5747,12 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(1, 10):  # 打图设置ddg
+    for aa in range(0, 10):  # 打图设置ddd
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
             # if aa == 3 and pvp. == 1:# aa
-            aa = 4
+            aa = 40
         # elif aa == 6 and pvp == 1:
         #     aa = 7gdfyhe
         elif aa == 13 and pvp == 2:
@@ -6101,7 +6104,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 睡眠不足巛
             elif pvp == 4:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很行
-                break
+                #break
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 储藏师很狂
             elif pvp == 8:
@@ -6137,8 +6140,8 @@ if __name__ == '__main__':
             elif pvp == 8:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
             elif pvp == 4:
-                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很刚
-                break
+                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 4p 气功师很刚
+                #break
             elif pvp == 5:
                 c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的曙光最叼
             elif pvp == 9:
@@ -6160,7 +6163,9 @@ if __name__ == '__main__':
                 #c.yuren(n, 0.52, 0.26, 0, 0, *canshu)  # 1p 悟空师很烂 缪斯
             elif pvp == 2:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p 睡眠不足啊啊
-
+            elif pvp == 4:
+                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很刚
+                break
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 武功师很利
                 break
