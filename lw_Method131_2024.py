@@ -16,7 +16,7 @@ import pydirectinput  as dt
 from PIL import Image
 from comtypes.client import CreateObject
 from win32gui import FindWindow
-import keyboard
+#import keyboard
 from python_findpicture import Caozuolei1
 import multiprocessing as djc
 
@@ -5742,9 +5742,9 @@ class Caozuolei(Caozuolei1):
         pyautogui.keyUp('space')
         print('4',time.time())
 
-    def on_press(self):
-        if keyboard.is_pressed('up')  and keyboard.is_pressed('space') :
-            print("成功按下 A、B、C")
+    # def on_press(self):
+    #     if keyboard.is_pressed('up')  and keyboard.is_pressed('space') :
+    #         print("成功按下 A、B、C")
 
 
     def JunhengzhongKuangZanShi(self):  # 均衡仲裁者地图
@@ -5933,10 +5933,10 @@ if __name__ == '__main__':
         time.sleep(1)
         # c.SY001()
         #c.JunhengzhongZhaoHuanShi()
-        #c.Junhengzhong()
+        c.Junhengzhong()
         #c.JunhengzhongMaoSi()
         #c.JunhengzhongNai()
-        c.JunhengzhongYuRen()
+        #c.JunhengzhongYuRen()
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
 
