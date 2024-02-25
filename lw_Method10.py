@@ -540,7 +540,7 @@ class Caozuolei(Caozuolei1):
                 linesign=" ",
                 isbackcolor=0)
             print("bb:", str(bb))
-            if "无敌" in str(aa) and "快递员" not in str(aa):
+            if ("无敌" in str(aa) and "快递员" not in str(aa)) and "数字" not in str(aa):
                 print("无敌师很酷 是：超越起跑线  账号,9")
                 return 9
             elif "冒险师" in str(aa) and "快递员" not in str(aa):
@@ -557,11 +557,13 @@ class Caozuolei(Caozuolei1):
 
                 return 5
             elif "不足" in str(aa):
+                if "无敌" not in str(bb):
+                    print("不足,1")
 
-                print("不足,1")
-
-                return 2
-            elif "一二" in bb or "快递员" in bb:
+                    return 2
+                else:
+                    return 3
+            elif ("一二" in bb or "快递员" in bb ) and "无敌" not in str(bb):
 
                 print("一二,4")
 
@@ -6246,7 +6248,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(3, 10):  # 打图设置ddd
+    for aa in range(0, 10):  # 打图设置ddd
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
