@@ -5982,7 +5982,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.8)
+                    time.sleep(1.55)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('d')
                     time.sleep(0.75)  # 按下两秒
@@ -6073,10 +6073,11 @@ if __name__ == '__main__':
         dt.press('space')  # 单击空格操作
         time.sleep(1)
         # c.SY001()
+        c.JunhengzhongNvQiGong()
         #c.JunhengzhongKuangZanShi()
         #c.JunhengzhongZhaoHuanShi()
         #c.Junhengzhong()
-        c.JunhengzhongNvQiGong()
+        #c.JunhengzhongNvQiGong()
         #c.Junhengzhong()
         #c.JunhengzhongMaoSi()
         #c.JunhengzhongNai()
