@@ -5774,7 +5774,7 @@ class Caozuolei(Caozuolei1):
                        👇
     """
 
-    def JunhengzhongKuangZanShi(self):  # 均衡仲裁者地图
+    def JunhengzhongKuangZanShi(self,kk=0):  # 均衡仲裁者地图
         for kk in range(1, 60):
             global ret_values
             ret_values = [9, 8, 7]
@@ -5811,14 +5811,14 @@ class Caozuolei(Caozuolei1):
                     #dt.press('a')
 
                     dt.PAUSE=random.uniform(0.03,0.05)
-                    dt.press('right',presses=2)
-                    dt.press('space')
+                    # dt.press('right',presses=2)
+                    # dt.press('space')
                     # dt.press('right', presses=3)
                     # dt.press('space')
                     # time.sleep(0.95)
                     # pyautogui.press('right', presses=2)
                     # pyautogui.press('space')
-                    time.sleep(0.95)
+                    time.sleep(1)
                     # dt.press('right', presses=3)
                     # dt.press('space')
                     # pyautogui.hotkey("up")
@@ -5826,7 +5826,7 @@ class Caozuolei(Caozuolei1):
                     # time.sleep(0.15)  # 按下两秒
                     # dt.keyDown('up','space')
                     # dt.press('up')
-                    dt.press('w')
+                    dt.press('h')
                     # dt.keyUp('up','space')
                     # dt.press('up')
                     # dt.press('space')
@@ -5843,28 +5843,26 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.8)
+                    time.sleep(2.05+kk)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
-                    dt.press('d')
+                    dt.press('f')
                     time.sleep(0.75)
-                    dt.press('y')
+                    dt.press('e')
                     time.sleep(0.75)
-                    dt.press('q')
+                    dt.press('w')
                     time.sleep(0.75)
                     # continue
                 elif i == 2 and ret_values[0] != 1:
-                    dt.press('h')
+                    dt.press('d')
                     print(i, '步骤二')
                     time.sleep(0.85)  # 按下两秒
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.6)
+                    time.sleep(1.8+kk)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('e')
-                    time.sleep(0.75)
-                    dt.press('r')
                     time.sleep(0.75)
                     dt.press('s')
                     time.sleep(0.75)
@@ -5878,11 +5876,11 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.8)
+                    time.sleep(1.9+kk)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('d')
                     time.sleep(0.15)  # 按下两秒
-                    dt.press('q')
+                    dt.press('e')
                     time.sleep(0.95)
                     #dt.press('left')  # ：模拟按键按下
                 elif i >= 4 and ret_values[0] != 1:
@@ -5896,7 +5894,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('d')
                     dt.press('w')
                     dt.press('q')
-                    dt.press('y')
+                    dt.press('g')
                     time.sleep(0.15)
                     dt.press('w')
                     time.sleep(0.95)
@@ -5982,7 +5980,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.55)
+                    time.sleep(1.8)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('d')
                     time.sleep(0.75)  # 按下两秒
@@ -6073,8 +6071,7 @@ if __name__ == '__main__':
         dt.press('space')  # 单击空格操作
         time.sleep(1)
         # c.SY001()
-        c.JunhengzhongNvQiGong()
-        #c.JunhengzhongKuangZanShi()
+        c.JunhengzhongKuangZanShi()
         #c.JunhengzhongZhaoHuanShi()
         #c.Junhengzhong()
         #c.JunhengzhongNvQiGong()
