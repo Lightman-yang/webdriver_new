@@ -47,6 +47,8 @@
 #     aa1 = ["熟练者", "#422", 422,]
 #     aad(*aa1)
 # class zz():
+import time
+
 a = []
 
 
@@ -63,8 +65,21 @@ def aaa():
     return a
 
 
+
 if __name__ == '__main__':
     aa = []
+    mess="开""工"'大''典'
+    print(mess)
+    time.sleep(1000)
+
+
+
+
+
+
+
+
+
     print(aaa())
     print(type(aaa()))
     if 1 in aaa():
