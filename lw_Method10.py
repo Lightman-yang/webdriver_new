@@ -3016,7 +3016,10 @@ class Caozuolei(Caozuolei1):
                         dt.keyDown('right')  # ：模拟按键按下
                         time.sleep(1.5 + move_seep)
                         dt.keyUp('right')  # ：模拟按键松开按键
-
+                        t3 = Thread(target=self.forxunhuanY,
+                                    args=(sss, aa1, bb1, cc1, dd1, hh1, hh2))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
+                        t3.start()  # 开始运行t1线程
+                        time.sleep(0.56)
                         dt.press('right')
                         time.sleep(0.0075)  # 按下两秒
                         dt.keyDown('right')  # ：模拟按键按下
@@ -3120,7 +3123,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)  # 按下19秒
                     dt.press('w')
 
-                    for iiit in range(1, 100):
+                    for iiit in range(1, 200):
                         if zjyz[0] == 1:
                             break
                         else:
@@ -3141,7 +3144,7 @@ class Caozuolei(Caozuolei1):
                         time.sleep(0.5)  # 按下两秒
                         for ii in range(1, 4):
                             num_num = num // 2
-                            if i == num_num or i == 10 or i == num:
+                            if i == num_num or i == 10 or i == num or i==1:
                                 time.sleep(5)  # 按下两秒
                                 # from python_findpicture import Caozuolei1
                                 self.sellGoods_xy()  # 点击一键出售按钮
@@ -4661,11 +4664,11 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         # data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -5744,7 +5747,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(1, 10):  # 打图设置ddg
+    for aa in range(4, 10):  # 打图设置ddd
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -5908,8 +5911,8 @@ if __name__ == '__main__':
                 # c.nvQiGong(n, 0.48, 0.2, 0)  # 1p 气功师很懒
                 c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
             elif pvp == 2:
-                c.nvQiGong(n, 0.99, 0.26, 0, 0, *canshu)  # 2p 睡眠不足十
-                break
+                # c.nvQiGong(n, 0.69, 0.26, 0, 0, *canshu)  # 2p 睡眠不足十
+                # break
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
             elif pvp == 3:
                  c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师废了
