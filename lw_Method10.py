@@ -547,8 +547,11 @@ class Caozuolei(Caozuolei1):
                 print("力气师很大 是：曌飂飏  账号,8")
                 return 8
             elif "水水" in str(aa) and "快递员" not in str(aa):
-                print("色彩不足啊 是：风花雪月 账号,6")
-                return 7
+                if "无敌" in str(aa):
+                    return 9
+                else:
+                    print("色彩不足啊 是：风花雪月 账号,6")
+                    return 7
             elif "造就师" in str(bb) or '造就师' in str(aa):
                 print("造就师,6")
                 return 6
@@ -6248,11 +6251,11 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddd
-        # c.Set_Dict(1, '1测试2.txt')
+    for aa in range(2, 10):  # 打图设置ddd
+        # c.Set_Dict(1, '1测试2.txt')qrf
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
-            # if aa == 3 and pvp. == 1:# aa
+            # if aa == 3 and pvp. == 1:# aaii
             aa = 4
         # elif aa == 6 and pvp == 1:
         #     aa = 7gdfyhe
