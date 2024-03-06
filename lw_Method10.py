@@ -555,8 +555,9 @@ class Caozuolei(Caozuolei1):
             elif "最叼" in str(bb)  or "最" in str(bb) :
                 print("最,1")
 
+
                 return 5
-            elif "不足" in str(aa):
+            elif "不足" in str(aa) and "快递员" not in bb:
                 if "无敌" not in str(bb):
                     print("不足,1")
 
@@ -6248,7 +6249,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 10):  # 打图设置ddd
+    for aa in range(2, 10):  # 打图设置ddd
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -6258,7 +6259,7 @@ if __name__ == '__main__':
         #     aa = 7gdfyhe
         elif aa == 13 and pvp == 2:
             aa = 14
-        time.sleep(1.85)  # 选一个任务
+        time.sleep(1.85)  # 选一个任务y
         c.LeftClick(x[aa][0], x[aa][1])  # 441 , 310
         time.sleep(0.015)
         c.LeftClick(x[aa][0], x[aa][1])  # 单机两下鼠标左键0
@@ -6328,6 +6329,7 @@ if __name__ == '__main__':
         #     dt.press('left')  # 向上移动， 移动0.15秒，
 
         time.sleep(0.5)  # 睡眠1.5秒
+        dt.press('right')  # 向右移动， 移动1秒，
         dt.press('right')  # 向右移动， 移动1秒，
         dt.press('right')  # 向右移动， 移动1秒，
         dt.press('right')  # 向右移动， 移动1秒，

@@ -5774,7 +5774,7 @@ class Caozuolei(Caozuolei1):
                        👇
     """
 
-    def JunhengzhongKuangZanShi(self,kk=0):  # 均衡仲裁者地图
+    def JunhengzhongKuangZanShi(self,kkk=0):  # 均衡仲裁者地图
         for kk in range(1, 60):
             global ret_values
             ret_values = [9, 8, 7]
@@ -5843,7 +5843,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(2.05+kk)
+                    time.sleep(2.05+kkk)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.press('f')
@@ -5860,7 +5860,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.8+kk)
+                    time.sleep(1.8+kkk)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('e')
                     time.sleep(0.75)
@@ -5876,7 +5876,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.9+kk)
+                    time.sleep(1.9+kkk)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('d')
                     time.sleep(0.15)  # 按下两秒
@@ -6071,13 +6071,13 @@ if __name__ == '__main__':
         dt.press('space')  # 单击空格操作
         time.sleep(1)
         # c.SY001()
-        c.JunhengzhongKuangZanShi()
+        #c.JunhengzhongKuangZanShi(0.1)
         #c.JunhengzhongZhaoHuanShi()
         #c.Junhengzhong()
         #c.JunhengzhongNvQiGong()
         #c.Junhengzhong()
         #c.JunhengzhongMaoSi()
-        #c.JunhengzhongNai()
+        c.JunhengzhongNai()
         #c.JunhengzhongYuRen()
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
