@@ -5369,7 +5369,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('esc')
                     time.sleep(1)
 
-                    #dt.press('0')
+                    dt.press('0')
                     time.sleep(1)
                     dt.press('x')
                     time.sleep(1)
@@ -6072,13 +6072,12 @@ if __name__ == '__main__':
         time.sleep(1)
         # c.SY001()
         #c.JunhengzhongKuangZanShi(0.1)
-
-        c.JunhengzhongZhaoHuanShi()
+        #c.JunhengzhongZhaoHuanShi().
         #c.Junhengzhong()
         #c.JunhengzhongNvQiGong()
         #c.Junhengzhong()
         #c.JunhengzhongMaoSi()
-        #c.JunhengzhongNai()
+        c.JunhengzhongNai()
         #c.JunhengzhongYuRen()
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
