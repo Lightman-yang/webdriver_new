@@ -5995,10 +5995,9 @@ class Caozuolei(Caozuolei1):
                     dt.press('space')  # 单击空格操作
                     time.sleep(0.75)  # 按下两秒
                     dt.press('y')
-                    dt.press('g')
                     time.sleep(0.75)  # 按下两秒
                     dt.press('d')
-                    time.sleep(0.75)
+                    time.sleep(0.75)  # 按下两秒
                     dt.press('q')
                     time.sleep(0.85)  # 按下两秒
                     dt.press('f')
@@ -6007,7 +6006,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.95)
                     dt.press('q')
                     dt.press('q')
-                    time.sleep(1)
+                    time.sleep(2.95)
                     print(i, '步骤三 无限输出')
                 else:
                     print('111')
@@ -6073,12 +6072,12 @@ if __name__ == '__main__':
         time.sleep(1)
         # c.SY001()
         #c.JunhengzhongKuangZanShi(0.1)
-        #c.JunhengzhongZhaoHuanShi()
+        #c.JunhengzhongZhaoHuanShi().
         #c.Junhengzhong()
-        c.JunhengzhongNvQiGong()
+        #c.JunhengzhongNvQiGong()
         #c.Junhengzhong()
         #c.JunhengzhongMaoSi()
-        #c.JunhengzhongNai()
+        c.JunhengzhongNai()
         #c.JunhengzhongYuRen()
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
