@@ -6072,7 +6072,7 @@ if __name__ == '__main__':
         time.sleep(1)
         # c.SY001()
         #c.JunhengzhongKuangZanShi(0.1)
-        #c.JunhengzhongZhaoHuanShi()
+        #c.JunhengzhongZhaoHuanShi().
         #c.Junhengzhong()
         #c.JunhengzhongNvQiGong()
         #c.Junhengzhong()
