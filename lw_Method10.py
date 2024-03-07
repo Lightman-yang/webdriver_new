@@ -4458,16 +4458,29 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.6)
                     dt.keyUp('right')
                     dt.press('s')
-                    self.FuBen_INFO66()
-                    # dt.press('9')
-                    # time.sleep(0.7)
-                    self.FuBen_INFO1()
+
+
+                    time.sleep(0.7)
+
 
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(0.45 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按
+                    t31 = Thread(target=self.FuBen_INFO66,
+                                 args=(1,))  # 定义线程t2，
+                    t31.start()  # 开始运行t1线程
+                    dt.press('down')
+                    dt.press('down')
+
+                    # self.FuBen_INFO6(0, 6)
+                    dt.press('down')
+                    time.sleep(0.7)
+                    dt.press('9')
+                    t31.join()
+                    time.sleep(0.75)
+
                     self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
                     if self.FuBen_INFO13() == 0:
                         dt.press('left')
@@ -5934,10 +5947,17 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(0.6 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按
-                    # self.FuBen_INFO66()
-                    self.FuBen_INFO6(0, 6)
+                    t31 = Thread(target=self.FuBen_INFO66,
+                                 args=(1,))  # 定义线程t2，
+                    t31.start()  # 开始运行t1线程
+                    dt.press('down')
+                    dt.press('down')
 
+                    # self.FuBen_INFO6(0, 6)
+                    dt.press('down')
+                    t31.join()
                     dt.press('9')
+
                     time.sleep(0.75)  # 按下两秒
                     self.FuBen_INFO1()
                     self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2)
@@ -6442,7 +6462,7 @@ if __name__ == '__main__':
             elif pvp == 5:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p
             elif pvp == 6:
-                c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 6p 造就师很狂
+                c.nvQiGong(n, 0.54, 0.26, 0, 0, *canshu)  # 6p 造就师很狂
 
             elif pvp == 7:
                 c.nvQiGong(n, 0.68, 0.26, 0, 0, *canshu)  # 7p 色彩不足S
