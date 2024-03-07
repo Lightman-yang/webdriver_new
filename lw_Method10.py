@@ -4458,8 +4458,19 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.9)
                     dt.keyUp('right')
 
+                    t31 = Thread(target=self.FuBen_INFO66,
+                                 args=(1,))  # 定义线程t2，
+                    t31.start()  # 开始运行t1线程
                     dt.press('down')
-                    self.FuBen_INFO66(1)
+                    dt.press('down')
+
+                    # self.FuBen_INFO6(0, 6)
+                    dt.press('down')
+                    time.sleep(0.7)
+                    dt.press('9')
+                    t31.join()
+                    time.sleep(0.75)
+                    self.FuBen_INFO1()
                     # dt.press('9')
                     # time.sleep(0.7)
                     #self.FuBen_INFO1()
@@ -5951,9 +5962,18 @@ class Caozuolei(Caozuolei1):
                         time.sleep(0.75)
                         dt.press('f')
                         #self.FuBen_INFO66()
-                        self.FuBen_INFO6(1)
+                        t31 = Thread(target=self.FuBen_INFO66,
+                                     args=(1,))  # 定义线程t2，
+                        t31.start()  # 开始运行t1线程
+                        dt.press('down')
+                        dt.press('down')
+
+                        # self.FuBen_INFO6(0, 6)
+                        dt.press('down')
+                        time.sleep(0.7)
                         dt.press('9')
-                        time.sleep(0.8)
+                        t31.join()
+                        time.sleep(0.75)
                         self.FuBen_INFO1()
                         self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2, -5)
                         # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 20)
