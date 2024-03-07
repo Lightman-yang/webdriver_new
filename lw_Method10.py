@@ -4921,12 +4921,12 @@ class Caozuolei(Caozuolei1):
                 if h == 1000:
                     print(1000)
                     break
-                elif (y == 0 and y1 == 4) or (y == 2 and y1 == 4) :
-                    print('y=', y, ' y1=', y1,'测试1')
+                elif (y == 0 and y1 == 4) or (y == 2 and y1 == 4):
+                    print('y=', y, ' y1=', y1, '测试1')
                     continue
-                elif y >= 423:  #449
+                elif y >= 403:  # 449
                     dt.press('up')
-                    print('y=', y, ' y1=', y1,'测试2')
+                    print('y=', y, ' y1=', y1, '测试2')
                     return
                 elif y < 380:
                     dt.press('down')
@@ -5744,7 +5744,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(1, 10):  # 打图设置ddg
+    for aa in range(1, 10):  # 打图设置ddd
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -5925,7 +5925,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 6p 狗头师很差
 
             elif pvp == 7:
-                c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 7p 炼狱不足钢
+                c.nvQiGong(n, 0.63, 0.26, 0, 0, *canshu)  # 7p 炼狱不足钢
             elif pvp == 8:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 冒险师很帅
             elif pvp == 9:

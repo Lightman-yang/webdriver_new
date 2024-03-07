@@ -1,3 +1,4 @@
+import multiprocessing as djc
 import os
 import random
 import smtplib
@@ -16,9 +17,10 @@ import pydirectinput  as dt
 from PIL import Image
 from comtypes.client import CreateObject
 from win32gui import FindWindow
-import keyboard
+
+# import keyboard
 from python_findpicture import Caozuolei1
-import multiprocessing as djc
+
 
 # 继承Caozuolei1函数。
 class Caozuolei(Caozuolei1):
@@ -367,9 +369,18 @@ class Caozuolei(Caozuolei1):
                 # return 2
                 print('等于 靓仔，继续')
                 return
-            elif "再次挑战" in str(aa999):# or "商店" in str(aa999):
-                #ret_values.append(1)
-                #ret_values[0] = 1
+            if "靓仔" in str(aa999) and zzz == 2:
+                dt.press('0')
+                time.sleep(1.5)
+                dt.press('x')
+                time.sleep(1)
+                ret_values[0] = 2
+                # return 2
+                print('等于 靓仔，继续')
+                return
+            elif "再次挑战" in str(aa999):  # or "商店" in str(aa999):
+                # ret_values.append(1)
+                # ret_values[0] = 1
                 # dt.press('f12')
                 # time.sleep(1)
                 # dt.press('.')
@@ -5347,7 +5358,7 @@ class Caozuolei(Caozuolei1):
             global ret_values
             ret_values = [9, 8, 7]
             t13 = Thread(target=self.FuBen_INFO3,
-                         args=(1,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
+                         args=(2,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
             t13.start()  # 开始运行t1线程
             for i in range(1, 60):
                 print(gg_values[0])
@@ -5357,12 +5368,12 @@ class Caozuolei(Caozuolei1):
                     time.sleep(2)
                     dt.press('0')
                     time.sleep(3.5)
-                    dt.press('esc')
-                    time.sleep(1)
 
-                    dt.press('0')
+                    dt.press('x')
                     time.sleep(1)
                     dt.press('x')
+                    time.sleep(1)
+                    dt.press('esc')
                     time.sleep(1)
                     print("再次挑战", 1)
                     dt.press('f10')
@@ -5734,18 +5745,17 @@ class Caozuolei(Caozuolei1):
         # pyautogui.press('right')
         # dt.press('right')
 
-        print('3',time.time())
+        print('3', time.time())
 
     def ShuRu2(self):
         pyautogui.keyDown('space')
 
         pyautogui.keyUp('space')
-        print('4',time.time())
+        print('4', time.time())
 
-    def on_press(self):
-        if keyboard.is_pressed('up')  and keyboard.is_pressed('space') :
-            print("成功按下 A、B、C")
-
+    # def on_press(self):
+    #     if keyboard.is_pressed('up')  and keyboard.is_pressed('space') :
+    #         print("成功按下 A、B、C")
 
     def JunhengzhongKuangZanShi(self):  # 均衡仲裁者地图
         for kk in range(1, 60):
@@ -5933,10 +5943,10 @@ if __name__ == '__main__':
         time.sleep(1)
         # c.SY001()
         #c.JunhengzhongZhaoHuanShi()
-        #c.Junhengzhong()
+        c.Junhengzhong()
         #c.JunhengzhongMaoSi()
-        #c.JunhengzhongNai()
-        c.JunhengzhongYuRen()
+        # c.JunhengzhongNai()
+        # c.JunhengzhongYuRen()
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
 
