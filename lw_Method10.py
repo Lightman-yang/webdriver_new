@@ -4476,7 +4476,7 @@ class Caozuolei(Caozuolei1):
 
                     # self.FuBen_INFO6(0, 6)
                     dt.press('down')
-                    time.sleep(0.7)
+                    time.sleep(0.6)
                     dt.press('9')
                     t31.join()
                     time.sleep(0.75)
