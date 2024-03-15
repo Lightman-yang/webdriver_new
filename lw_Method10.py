@@ -6334,7 +6334,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(4, 7):  # 打图设置ddd
+    for aa in range(0, 7):  # 打图设置ddd
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -6389,10 +6389,8 @@ if __name__ == '__main__':
                 or (pvp == 2 and x[aa][2] == 4) \
                 or (pvp == 4 and x[aa][2] == 3) \
                 or (pvp == 1 and x[aa][2] == 6) \
-                or (pvp == 2 and x[aa][2] == 5) \
                 or (pvp == 4 and x[aa][2] == 1) \
                 or (pvp == 10 and x[aa][2] == 2) \
-                or (pvp == 2 and x[aa][2] == 5) \
                 or (pvp == 5 and x[aa][2] == 5):
             # or (pvp == 9 and x[aa][2] == 1):
 
@@ -6613,7 +6611,7 @@ if __name__ == '__main__':
 
                 c.nanQiGong(n, 0, 0, *canshu)  # 1p  男气功
             elif pvp == 2:
-                c.zhaohuan(n, 0.94, 0.26, 0, 0, *canshu)  # 2p 睡眠不足十
+                c.zhaohuan(n, 0.9, 0.26, 0, 0, *canshu)  # 2p 睡眠不足十
                 #c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
             elif pvp == 3:
                 c.kuangzhanshi2(n, 0.4, 0.3, 0.26, 0, 0, *canshu)
