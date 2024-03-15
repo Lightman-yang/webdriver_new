@@ -6466,7 +6466,7 @@ if __name__ == '__main__':
                 # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
 
             elif pvp == 3:
-                c.kuangzhanshi2(n, 0.4,0.3, 0.26, 0, 0, *canshu)  # 1p  阿修罗，睡眠不足♂
+                c.kuangzhanshi2(n, 0.47,0.45, 0.26, 0, 0, *canshu)  # 1p  阿修罗，睡眠不足♂
                 #c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 3p ll0110ll
             elif pvp == 4:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 4p 气功师很水 快递员
@@ -6617,7 +6617,7 @@ if __name__ == '__main__':
                 c.zhaohuan(n, 0.94, 0.26, 0, 0, *canshu)  # 2p 睡眠不足十
                 #c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
             elif pvp == 3:
-                c.kuangzhanshi2(n, 0.4, 0.3, 0.26, 0, 0, *canshu)
+                c.kuangzhanshi2(n, 0.47, 0.45, 0.26, 0, 0, *canshu)
                 #c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师很送
                 #break
             elif pvp == 4:
