@@ -6631,7 +6631,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
 
             elif pvp == 7:
-                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 水水不足了
+                c.kuangzhanshi2(n, 0.45, 0.47, 0.26, 0, 0, *canshu)  # 士
             elif pvp == 9:
                 c.kuangzhanshi2(n, 0.25, 0.48, 0.26, 0, 0, *canshu)  # 1p  阿修罗，无敌师很猛丨
             else:
