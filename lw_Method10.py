@@ -6376,6 +6376,9 @@ if __name__ == '__main__':
         elif pvp == 9:
             sss1 = 77  # 超越起跑线  无敌师很猛
             print('pvp=', pvp,'excel=>', sss1)
+        elif pvp == 10:
+            sss1 = 96  # 智力不足吗
+            print('pvp=', pvp, 'excel=>', sss1)
         else:
 
             print('什么都不是')
@@ -6482,6 +6485,8 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 力气师很大
             elif pvp == 9:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 无敌师很猛 0
+            elif pvp == 10:
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 10p  智力不足
 
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
@@ -6522,6 +6527,8 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 冒险师很帅
             elif pvp == 9:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 乐乐师很猛
+            elif pvp == 10:
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 10p  智力不足
 
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
@@ -6595,6 +6602,8 @@ if __name__ == '__main__':
 
             elif pvp == 9:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 9P 雪域师很水
+            elif pvp == 10:
+                c.kuangzhanshi2(n, 0.01, 0.45, 0.26, 0, 0, *canshu)  # 10p  睡眠不足♂ 丫
             else:
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  #
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
