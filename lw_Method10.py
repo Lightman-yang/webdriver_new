@@ -885,9 +885,21 @@ class Caozuolei(Caozuolei1):
             print(sss2)
             if '崩溃' in str(aa11) or '崩溃' in str(aa13):
 
-            #if  aa00 in '崩溃' or aa11 in '崩溃' or aa13 in '崩溃' or aa12 in '崩溃':
-               print('FuBen_INFO66崩溃')
-               continue
+                # if  aa00 in '崩溃' or aa11 in '崩溃' or aa13 in '崩溃' or aa12 in '崩溃':
+                print('FuBen_INFO66崩溃')
+                continue
+            elif '开府' in str(aa12):
+                if sss2 == 2:
+                    dt.press('d')
+                    # dt.press('q')
+                    print('FuBen_INFO66 步骤三')
+                    continue
+                else:
+
+                    # dt.press('y')
+                    dt.press('g')
+                    print('FuBen_INFO66 步骤四')
+                    continue
 
 
 
@@ -899,14 +911,14 @@ class Caozuolei(Caozuolei1):
 
                 dt.press('right')
                 dt.keyDown('right')  # ：模拟按键按下 向下
-                time.sleep(0.4)
+                time.sleep(0.35)
                 dt.keyUp('right')  # ：模拟按键松开按键
                 continue
             elif "开洞" in str(aa11) and "开洞" not in str(aa00) and '开府' not in str(aa12):
                 if sss2 == 7:
                     dt.press('right')
                     dt.keyDown('right')  # ：模拟按键按下 向下
-                    time.sleep(0.5)
+                    time.sleep(0.4)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     print('FuBen_INFO66 步骤一')
                     continue
@@ -994,7 +1006,7 @@ class Caozuolei(Caozuolei1):
                 print('非')
                 dt.press('right')
                 dt.keyDown('right')  # ：模拟按键按下 向下
-                time.sleep(0.5)
+                time.sleep(0.4)
                 dt.keyUp('right')  # ：模拟按键松开按键
                 print('----------')
                 sss2 = +1
@@ -2856,16 +2868,14 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
 
                     time.sleep(1.5 + move_seep)
-                    xxyy[1]=2
+                    xxyy[1] = 2
                     xxyy[3] = 4
-                    #xxyy = [1, 2, 3, 4, 99, 6]
-                    dt.keyUp('right')  # ：模拟按键松开按键
-
+                    # xxyy = [1, 2, 3, 4, 99, 6]
                     t3 = Thread(target=self.forxunhuanY,
                                 args=(sss, aa1, bb1, cc1, dd1, hh1, hh2))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
                     t3.start()  # 开始运行t1线程
-                    time.sleep(0.56)
-                    # self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
+                    dt.keyUp('right')  # ：模拟按键松开按键
+                    time.sleep(0.65)
                     print('<---')
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
@@ -4669,11 +4679,11 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
-        # data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
-        #data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
-       # data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
+        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
+        # data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # r"C:\Users\light\webdriver_new\lw\game_name.xlsx"
         # r"D:\webdriver_new\lw\game_name.xlsx"
         # 获取工作表 有三种方法
@@ -5650,7 +5660,7 @@ class Caozuolei(Caozuolei1):
             num = num_parameter  # num不能是奇数 运行几次
             # move_seep = -0.52  # 57.7   气功4.2  40.8
             # move_seep1 = -0.26
-            moveseepx_jia1=moveseepx_jia
+            moveseepx_jia1 = -moveseepx_jia
             # move_seep = 0.189  # 57.70
             # move_seep1 = -0.23
             move_seep = -move_seepx
@@ -5874,11 +5884,11 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(0.85 + move_seep)
+                    time.sleep(0.85 + moveseepx_jia1)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.keyDown('up')  # ：模拟按键按下 向下
-                    time.sleep(1.7 + moveseepx_jia1)
+                    time.sleep(1.7 + move_seep)
                     dt.keyUp('up')  # ：模拟按键松开按键
                     dt.keyDown('left')  # ：模拟按键按下 向下
                     time.sleep(0.75 + move_seep1)
@@ -5932,12 +5942,20 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.007)
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(0.6 + move_seep)
+                    time.sleep(0.55 + move_seep)
+                    t31 = Thread(target=self.FuBen_INFO66,
+                                 args=(1,))  # 定义线程t2，
+                    t31.start()  # 开始运行t1线程
                     dt.keyUp('right')  # ：模拟按键松开按
-                    # self.FuBen_INFO66()
-                    self.FuBen_INFO6(0, 6)
 
+                    dt.press('down')
+                    dt.press('down')
+
+                    # self.FuBen_INFO6(0, 6)
+                    dt.press('down')
+                    time.sleep(0.7)
                     dt.press('9')
+                    t31.join()
                     time.sleep(0.75)  # 按下两秒
                     self.FuBen_INFO1()
                     self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2)
@@ -6295,7 +6313,7 @@ if __name__ == '__main__':
     # c.nvQiGgdfyong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
     # time.sleep(1000)y
-    pvp = c.FuBen_INFO12()  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    pvp = 7  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     # pvp = 2 # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
 
     print(pvp)
@@ -6303,8 +6321,8 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(2, 5):  # 打图设置ddd
-        # c.Set_Dict(1, '1测试2.txt')
+    for aa in range(4, 5):  # 打图设置ddd
+        # c.Set_Dict1, '1测试2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
             # if aa == 3 and pvp. == 1:# aa
@@ -6583,7 +6601,7 @@ if __name__ == '__main__':
                 #c.zhaohuan(n, 0.26, 0.22, 0, 0, *canshu)  # 2p s睡眠不足s
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
             elif pvp == 3:
-                c.kuangzhanshi2(n, 0.4, 0.3, 0.26, 0, 0, *canshu)
+                c.kuangzhanshi2(n, 0.46, 0.4, 0.26, 0, 0, *canshu)
                 #c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师很送
                 #break
             elif pvp == 4:
@@ -6596,7 +6614,9 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
 
             elif pvp == 7:
-                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 水水不足了
+                c.kuangzhanshi2(n, 0.4, 0.45, 0.26, 0, 0, *canshu)  # 士
+
+                # c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 水水不足了
             elif pvp == 9:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 9P 铸造师很气
             else:
