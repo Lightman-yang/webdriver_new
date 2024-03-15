@@ -6071,13 +6071,13 @@ if __name__ == '__main__':
         dt.press('space')  # 单击空格操作
         time.sleep(1)
         # c.SY001()
-        c.JunhengzhongKuangZanShi(0.1)
+        #c.JunhengzhongKuangZanShi(0.1)
         #c.JunhengzhongZhaoHuanShi().
         #c.Junhengzhong()
         #c.JunhengzhongNvQiGong()
         #c.Junhengzhong()
         #c.JunhengzhongMaoSi()
-        #c.JunhengzhongNai()
+        c.JunhengzhongNai()
         #c.JunhengzhongYuRen()
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
