@@ -6071,10 +6071,10 @@ if __name__ == '__main__':
         dt.press('space')  # 单击空格操作
         time.sleep(1)
         # c.SY001()
-        c.JunhengzhongKuangZanShi(0.1)
+        #c.JunhengzhongKuangZanShi(0.1)
         #c.JunhengzhongZhaoHuanShi().
         #c.Junhengzhong()
-        #c.JunhengzhongNvQiGong()
+        c.JunhengzhongNvQiGong()
         #c.Junhengzhong()
         #c.JunhengzhongMaoSi()
         #c.JunhengzhongNai()
