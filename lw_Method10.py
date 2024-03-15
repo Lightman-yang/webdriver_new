@@ -845,7 +845,6 @@ class Caozuolei(Caozuolei1):
                 y2=574,
                 color_format="#380",
                 sim=0.78,
-                sim=0.75,
                 linesign=" ",
                 isbackcolor=0)
 
@@ -856,7 +855,6 @@ class Caozuolei(Caozuolei1):
                 y2=600,
                 color_format="#380",
                 sim=0.75,
-                sim=0.78,
                 linesign=" ",
                 isbackcolor=0)
 
