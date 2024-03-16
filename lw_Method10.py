@@ -918,7 +918,7 @@ class Caozuolei(Caozuolei1):
                 if sss2 == 7:
                     dt.press('right')
                     dt.keyDown('right')  # ：模拟按键按下 向下
-                    time.sleep(0.4)
+                    time.sleep(0.3)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     print('FuBen_INFO66 步骤一')
                     continue
@@ -1006,7 +1006,7 @@ class Caozuolei(Caozuolei1):
                 print('非')
                 dt.press('right')
                 dt.keyDown('right')  # ：模拟按键按下 向下
-                time.sleep(0.5)
+                time.sleep(0.3)
                 dt.keyUp('right')  # ：模拟按键松开按键
                 print('----------')
                 sss2 = +1
@@ -6325,7 +6325,7 @@ if __name__ == '__main__':
     # c.nvQiGgdfyong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
     # time.sleep(1000)y
-    pvp = c.FuBen_INFO12()  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    pvp = 3  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     # pvp = 2 # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
 
     print(pvp)
@@ -6466,7 +6466,7 @@ if __name__ == '__main__':
                 # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
 
             elif pvp == 3:
-                c.kuangzhanshi2(n, 0.47,0.45, 0.26, 0, 0, *canshu)  # 1p  阿修罗，睡眠不足♂
+                c.kuangzhanshi2(n, 0.43,0.45, 0.26, 0, 0, *canshu)  # 1p  阿修罗，睡眠不足♂
                 #c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 3p ll0110ll
             elif pvp == 4:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 4p 气功师很水 快递员
