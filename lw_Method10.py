@@ -1566,7 +1566,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.75)  # 按下两秒
                     for ii in range(1, 4):
                         num_num = num // 2
-                        if i == num_num or i == 10 or i == num:
+                        if i == num_num or i == 10 or i == num or i == 1:
                             time.sleep(5)  # 按下两秒
                             # from python_findpicture import Caozuolei1
                             self.sellGoods_xy()  # 点击一键出售按钮
@@ -2102,7 +2102,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1)  # 按下两秒
                     for ii in range(1, 4):
                         num_num = num // 2
-                        if i == num_num or i == 10 or i == num:
+                        if i == num_num or i == 10 or i == num or i == 1:
                             time.sleep(5)  # 按下两秒
                             # from python_findpicture import Caozuolei1
                             self.sellGoods_xy()  # 点击一键出售按钮
@@ -2588,7 +2588,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1)  # 按下两秒
                     for ii in range(1, 4):
                         num_num = num // 2
-                        if i == num_num or i == 10 or i == num:
+                        if i == num_num or i == 10 or i == num or i == 1:
                             time.sleep(5)  # 按下两秒
                             # from python_findpicture import Caozuolei1
                             self.sellGoods_xy()  # 点击一键出售按钮
@@ -3181,7 +3181,7 @@ class Caozuolei(Caozuolei1):
                         time.sleep(0.5)  # 按下两秒
                         for ii in range(1, 4):
                             num_num = num // 2
-                            if i == num_num or i == 10 or i == num:
+                            if i == num_num or i == 10 or i == num or i == 1:
                                 time.sleep(5)  # 按下两秒
                                 # from python_findpicture import Caozuolei1
                                 self.sellGoods_xy()  # 点击一键出售按钮
@@ -3673,7 +3673,7 @@ class Caozuolei(Caozuolei1):
                         time.sleep(0.5)  # 按下两秒
                         for ii in range(1, 4):
                             num_num = num // 2
-                            if i == num_num or i == 10 or i == num:
+                            if i == num_num or i == 10 or i == num or i == 1:
                                 time.sleep(5)  # 按下两秒
                                 # from python_findpicture import Caozuolei1
                                 self.sellGoods_xy()  # 点击一键出售按钮
@@ -4172,7 +4172,7 @@ class Caozuolei(Caozuolei1):
                         time.sleep(0.7)  # 按下两秒
                         for ii in range(1, 4):
                             num_num = num // 2
-                            if i == num_num or i == 10 or i == num:
+                            if i == num_num or i == 10 or i == num or i == 1:
                                 time.sleep(5)  # 按下两秒
                                 # from python_findpicture import Caozuolei1
                                 self.sellGoods_xy()  # 点击一键出售按钮
@@ -4635,7 +4635,7 @@ class Caozuolei(Caozuolei1):
                         time.sleep(1)  # 按下两秒
                         for ii in range(1, 4):
                             num_num = num // 2
-                            if i == num_num or i == 10 or i == num:
+                            if i == num_num or i == 10 or i == num or i == 1:
                                 time.sleep(5)  # 按下两秒
 
                                 self.sellGoods_xy()  # 点击一键出售按钮
@@ -6129,7 +6129,7 @@ class Caozuolei(Caozuolei1):
                         time.sleep(0.5)  # 按下两秒
                         for ii in range(1, 4):
                             num_num = num // 2
-                            if i == num_num or i == 10 or i == num:
+                            if i == num_num or i == 10 or i == num or i == 1:
                                 time.sleep(5)  # 按下两秒
                                 # from python_findpicture import Caozuolei1
                                 self.sellGoods_xy()  # 点击一键出售按钮
