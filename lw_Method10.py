@@ -5683,7 +5683,7 @@ class Caozuolei(Caozuolei1):
                           print(e, 'forxunhuanA-try')
                           continue
 
-    def kuangzhanshi2(self, num_parameter,moveseepx_jia, move_seepx, move_seepy, Restart_computer_parameter, sss, aa1, bb1, cc1,
+    def kuangzhanshi2(self, num_parameter, move_seepx,moveseepx_jia, move_seepy, Restart_computer_parameter, sss, aa1, bb1, cc1,
                      dd1, hh1=0.75, hh2=0.75):
 
         for i in range(1, 60):
@@ -6488,7 +6488,7 @@ if __name__ == '__main__':
                 # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
 
             elif pvp == 3:
-                c.kuangzhanshi2(n, 0.47,0.45, 0.26, 0, 0, *canshu)  # 1p  阿修罗，睡眠不足♂
+                c.kuangzhanshi2(n, 0.45,0.47, 0.26, 0, 0, *canshu)  # 1p  阿修罗，睡眠不足♂
                 #c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 3p ll0110ll
             elif pvp == 4:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 4p 气功师很水 快递员
@@ -6584,7 +6584,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.72, 0.26, 0, 0, *canshu)  # 8p 冒险师很坏
 
             elif pvp == 10:
-                c.kuangzhanshi2(n, 0.1, 0.45, 0.26, 0, 0, *canshu)  # 10p  睡眠不足♂ 丫
+                c.kuangzhanshi2(n, 0.45, 0.1, 0.26, 0, 0, *canshu)  # 10p  睡眠不足♂ 丫
 
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
@@ -6612,7 +6612,7 @@ if __name__ == '__main__':
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 拉梅师很开
             elif pvp == 5:
-                c.kuangzhanshi2(n, 0.4,0.2, 0.23, 0, 0, *canshu)  # 1p 狂战士
+                c.kuangzhanshi2(n, 0.2,0.4, 0.23, 0, 0, *canshu)  # 1p 狂战士
                 #c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足了
@@ -6645,13 +6645,13 @@ if __name__ == '__main__':
                 c.zhaohuan(n, 0.94, 0.26, 0, 0, *canshu)  # 2p 睡眠不足十
                 #c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
             elif pvp == 3:
-                c.kuangzhanshi2(n, 0.47, 0.45, 0.26, 0, 0, *canshu)
+                c.kuangzhanshi2(n, 0.45, 0.47, 0.26, 0, 0, *canshu)
                 #c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师很送
                 #break
             elif pvp == 4:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很水i
             elif pvp == 6:
-                c.kuangzhanshi2(n, 0.45, 0.4, 0.23, 0, 0, *canshu)  # 1p 狂战士
+                c.kuangzhanshi2(n, 0.4, 0.45, 0.26, 0, 0, *canshu)  # 1p 狂战士
                 #c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 梦想师很阔
             elif pvp == 5:
                 c.naiMa(n, 0.5, 0.26, 0, 0, *canshu) #5P 爷的太阳最混
@@ -6659,9 +6659,9 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
 
             elif pvp == 7:
-                c.kuangzhanshi2(n, 0.45, 0.47, 0.26, 0, 0, *canshu)  # 士
+                c.kuangzhanshi2(n, 0.47, 0.4, 0.26, 0, 0, *canshu)  # 士
             elif pvp == 9:
-                c.kuangzhanshi2(n, 0.25, 0.48, 0.26, 0, 0, *canshu)  # 1p  阿修罗，无敌师很猛丨
+                c.kuangzhanshi2(n, 0.48, 0.25, 0.26, 0, 0, *canshu)  # 1p  阿修罗，无敌师很猛丨
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 break
@@ -6720,7 +6720,7 @@ if __name__ == '__main__':
 
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师很猛
             elif pvp == 2:
-                c.kuangzhanshi2(n, 0.4, 0.45, 0.26, 0, 0, *canshu)
+                c.kuangzhanshi2(n, 0.45, 0.4, 0.26, 0, 0, *canshu)
                 #c.zhaohuan(n, 0.18, 0.24, 0, 0, *canshu)  # 2p s睡眠不足s
                 #c.yuren(n, 0.5, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
                 #c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p 睡眠不足风
