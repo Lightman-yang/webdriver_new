@@ -5683,7 +5683,7 @@ class Caozuolei(Caozuolei1):
                           print(e, 'forxunhuanA-try')
                           continue
 
-    def kuangzhanshi2(self, num_parameter,moveseepx_jia, move_seepx, move_seepy, Restart_computer_parameter, sss, aa1, bb1, cc1,
+    def kuangzhanshi2(self, num_parameter, move_seepx, moveseepx_jia,move_seepy, Restart_computer_parameter, sss, aa1, bb1, cc1,
                      dd1, hh1=0.75, hh2=0.75):
 
         for i in range(1, 60):
@@ -5908,7 +5908,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)  # 按下两秒
                     dt.keyDown('down')  # ：模拟按键按下 向下
 
-                    time.sleep(0.75 + move_seep1)
+                    time.sleep(0.85 + move_seep1)
                     dt.keyUp('down')  # ：模拟按键松开按键
 
                     dt.press('right')
@@ -6344,8 +6344,8 @@ if __name__ == '__main__':
     # c.nvQiGgdfyong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
     # time.sleep(1000)y
-    pvp = c.FuBen_INFO12()
-    #pvp = 10  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    #pvp = c.FuBen_INFO12()
+    pvp = 3  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     # pvp = 2 # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
 
     print(pvp)
@@ -6353,7 +6353,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 5):  # 打图设置ddd
+    for aa in range(1, 5):  # 打图设置ddd
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -6484,11 +6484,12 @@ if __name__ == '__main__':
 
                 c.nvQiGong(n, 0.65, 0.26, 0, 0, *canshu)  # 2p 睡眠不足十
                 # aa1, bb1, cc1, dd1 = "先驱者", "#422", "师很", "#140"
+                # aa1, bb1, cc1, dd1 = "先驱者", "#422", "师很", "#140"
                 # aa1, bb1, cc1, dd1="熟练者", "#410", "师很", "#140"
                 # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
 
             elif pvp == 3:
-                c.kuangzhanshi2(n, 0.47,0.45, 0.26, 0, 0, *canshu)  # 1p  阿修罗，睡眠不足♂
+                c.kuangzhanshi2(n, 0.56,0.4, 0.26, 0, 0, *canshu)  # 1p  阿修罗，睡眠不足♂
                 #c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 3p ll0110ll
             elif pvp == 4:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 4p 气功师很水 快递员
