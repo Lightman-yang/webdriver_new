@@ -1566,7 +1566,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.75)  # 按下两秒
                     for ii in range(1, 4):
                         num_num = num // 2
-                        if i == num_num or i == 10 or i == num:
+                        if i == num_num or i == 10 or i == num or i == 1:
                             time.sleep(5)  # 按下两秒
                             # from python_findpicture import Caozuolei1
                             self.sellGoods_xy()  # 点击一键出售按钮
@@ -2102,7 +2102,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1)  # 按下两秒
                     for ii in range(1, 4):
                         num_num = num // 2
-                        if i == num_num or i == 10 or i == num:
+                        if i == num_num or i == 10 or i == num or i == 1:
                             time.sleep(5)  # 按下两秒
                             # from python_findpicture import Caozuolei1
                             self.sellGoods_xy()  # 点击一键出售按钮
@@ -2588,7 +2588,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(1)  # 按下两秒
                     for ii in range(1, 4):
                         num_num = num // 2
-                        if i == num_num or i == 10 or i == num:
+                        if i == num_num or i == 10 or i == num or i == 1:
                             time.sleep(5)  # 按下两秒
                             # from python_findpicture import Caozuolei1
                             self.sellGoods_xy()  # 点击一键出售按钮
@@ -3181,7 +3181,7 @@ class Caozuolei(Caozuolei1):
                         time.sleep(0.5)  # 按下两秒
                         for ii in range(1, 4):
                             num_num = num // 2
-                            if i == num_num or i == 10 or i == num:
+                            if i == num_num or i == 10 or i == num or i == 1:
                                 time.sleep(5)  # 按下两秒
                                 # from python_findpicture import Caozuolei1
                                 self.sellGoods_xy()  # 点击一键出售按钮
@@ -3673,7 +3673,7 @@ class Caozuolei(Caozuolei1):
                         time.sleep(0.5)  # 按下两秒
                         for ii in range(1, 4):
                             num_num = num // 2
-                            if i == num_num or i == 10 or i == num:
+                            if i == num_num or i == 10 or i == num or i == 1:
                                 time.sleep(5)  # 按下两秒
                                 # from python_findpicture import Caozuolei1
                                 self.sellGoods_xy()  # 点击一键出售按钮
@@ -4172,7 +4172,7 @@ class Caozuolei(Caozuolei1):
                         time.sleep(0.7)  # 按下两秒
                         for ii in range(1, 4):
                             num_num = num // 2
-                            if i == num_num or i == 10 or i == num:
+                            if i == num_num or i == 10 or i == num or i == 1:
                                 time.sleep(5)  # 按下两秒
                                 # from python_findpicture import Caozuolei1
                                 self.sellGoods_xy()  # 点击一键出售按钮
@@ -4397,11 +4397,16 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.45 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
-
+                    t3 = Thread(target=self.forxunhuanY,
+                                args=(sss, aa1, bb1, cc1, dd1, hh1, hh2))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
+                    t3.start()  # 开始运行t1线程
+                    time.sleep(0.56)
+                    # self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
+                    print('<---')
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    dt.press('up')
+
                     time.sleep(3.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
                 elif j == 4:
@@ -4630,7 +4635,7 @@ class Caozuolei(Caozuolei1):
                         time.sleep(1)  # 按下两秒
                         for ii in range(1, 4):
                             num_num = num // 2
-                            if i == num_num or i == 10 or i == num:
+                            if i == num_num or i == 10 or i == num or i == 1:
                                 time.sleep(5)  # 按下两秒
 
                                 self.sellGoods_xy()  # 点击一键出售按钮
@@ -5678,7 +5683,7 @@ class Caozuolei(Caozuolei1):
                           print(e, 'forxunhuanA-try')
                           continue
 
-    def kuangzhanshi2(self, num_parameter,moveseepx_jia, move_seepx, move_seepy, Restart_computer_parameter, sss, aa1, bb1, cc1,
+    def kuangzhanshi2(self, num_parameter, move_seepx,moveseepx_jia, move_seepy, Restart_computer_parameter, sss, aa1, bb1, cc1,
                      dd1, hh1=0.75, hh2=0.75):
 
         for i in range(1, 60):
@@ -6124,7 +6129,7 @@ class Caozuolei(Caozuolei1):
                         time.sleep(0.5)  # 按下两秒
                         for ii in range(1, 4):
                             num_num = num // 2
-                            if i == num_num or i == 10 or i == num:
+                            if i == num_num or i == 10 or i == num or i == 1:
                                 time.sleep(5)  # 按下两秒
                                 # from python_findpicture import Caozuolei1
                                 self.sellGoods_xy()  # 点击一键出售按钮
@@ -6339,7 +6344,8 @@ if __name__ == '__main__':
     # c.nvQiGgdfyong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
     # time.sleep(1000)y
-    pvp = 4  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    #pvp = c.FuBen_INFO12()
+    pvp = 10  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     # pvp = 2 # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
 
     print(pvp)
@@ -6347,7 +6353,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(3, 5):  # 打图设置ddd
+    for aa in range(2, 5):  # 打图设置ddd
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -6407,7 +6413,6 @@ if __name__ == '__main__':
                 or (pvp == 1 and x[aa][2] == 6) \
                 or (pvp == 4 and x[aa][2] == 1) \
                 or (pvp == 10 and x[aa][2] == 2) \
-                or (pvp == 2 and x[aa][2] == 5) \
                 or (pvp == 5 and x[aa][2] == 5):
             # or (pvp == 9 and x[aa][2] == 1):
 
@@ -6483,7 +6488,7 @@ if __name__ == '__main__':
                 # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
 
             elif pvp == 3:
-                c.kuangzhanshi2(n, 0.47,0.45, 0.26, 0, 0, *canshu)  # 1p  阿修罗，睡眠不足♂
+                c.kuangzhanshi2(n, 0.45,0.47, 0.26, 0, 0, *canshu)  # 1p  阿修罗，睡眠不足♂
                 #c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 3p ll0110ll
             elif pvp == 4:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 4p 气功师很水 快递员
@@ -6579,7 +6584,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.72, 0.26, 0, 0, *canshu)  # 8p 冒险师很坏
 
             elif pvp == 10:
-                c.kuangzhanshi2(n, 0.1, 0.45, 0.26, 0, 0, *canshu)  # 10p  睡眠不足♂ 丫
+                c.kuangzhanshi2(n, 0.45, 0.1, 0.26, 0, 0, *canshu)  # 10p  睡眠不足♂ 丫
 
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
@@ -6607,7 +6612,7 @@ if __name__ == '__main__':
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 拉梅师很开
             elif pvp == 5:
-                c.kuangzhanshi2(n, 0.4,0.2, 0.23, 0, 0, *canshu)  # 1p 狂战士
+                c.kuangzhanshi2(n, 0.2,0.4, 0.23, 0, 0, *canshu)  # 1p 狂战士
                 #c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足了
@@ -6640,13 +6645,13 @@ if __name__ == '__main__':
                 c.zhaohuan(n, 0.94, 0.26, 0, 0, *canshu)  # 2p 睡眠不足十
                 #c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
             elif pvp == 3:
-                c.kuangzhanshi2(n, 0.47, 0.45, 0.26, 0, 0, *canshu)
+                c.kuangzhanshi2(n, 0.45, 0.47, 0.26, 0, 0, *canshu)
                 #c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师很送
                 #break
             elif pvp == 4:
                 c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很水i
             elif pvp == 6:
-                c.kuangzhanshi2(n, 0.45, 0.4, 0.23, 0, 0, *canshu)  # 1p 狂战士
+                c.kuangzhanshi2(n, 0.4, 0.45, 0.26, 0, 0, *canshu)  # 1p 狂战士
                 #c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 梦想师很阔
             elif pvp == 5:
                 c.naiMa(n, 0.5, 0.26, 0, 0, *canshu) #5P 爷的太阳最混
@@ -6654,9 +6659,9 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
 
             elif pvp == 7:
-                c.kuangzhanshi2(n, 0.45, 0.47, 0.26, 0, 0, *canshu)  # 士
+                c.kuangzhanshi2(n, 0.47, 0.4, 0.26, 0, 0, *canshu)  # 士
             elif pvp == 9:
-                c.kuangzhanshi2(n, 0.25, 0.48, 0.26, 0, 0, *canshu)  # 1p  阿修罗，无敌师很猛丨
+                c.kuangzhanshi2(n, 0.48, 0.25, 0.26, 0, 0, *canshu)  # 1p  阿修罗，无敌师很猛丨
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 break
@@ -6715,7 +6720,7 @@ if __name__ == '__main__':
 
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 1p 气功师很猛
             elif pvp == 2:
-                c.kuangzhanshi2(n, 0.4, 0.45, 0.26, 0, 0, *canshu)
+                c.kuangzhanshi2(n, 0.45, 0.4, 0.26, 0, 0, *canshu)
                 #c.zhaohuan(n, 0.18, 0.24, 0, 0, *canshu)  # 2p s睡眠不足s
                 #c.yuren(n, 0.5, 0.26, 0, 0, *canshu)  # 2p 睡眠不足罗
                 #c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 2p 睡眠不足风
