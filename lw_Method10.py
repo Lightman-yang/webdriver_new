@@ -320,7 +320,8 @@ class Caozuolei(Caozuolei1):
 
                 dt.press('9')
                 time.sleep(1)  # 按下两秒
-                return
+                continue
+                #return
             elif "靓仔" not in str(aa100):
                 print('没有靓仔')
                 return
@@ -2909,7 +2910,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.75)
                     dt.press('f')
                     self.FuBen_INFO66()
-                    self.FuBen_INFO6(1)
+                    #self.FuBen_INFO6(1)
                     dt.press('9')
                     time.sleep(0.7)
                     self.FuBen_INFO1()
@@ -2960,14 +2961,14 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    self.FuBen_INFO66(2)
+                    self.FuBen_INFO66()
                     # self.FuBen_INFO6(0, 6)
 
                     dt.press('9')
                     time.sleep(0.6)
                     self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
-                    self.FuBen_INFO66(1)
+                    #self.FuBen_INFO66()
 
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
@@ -3045,7 +3046,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.65 + move_seep1)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     t31 = Thread(target=self.FuBen_INFO66,
-                                 args=(1,))  # 定义线程t2，
+                                 args=(0,))  # 定义线程t2，
                     t31.start()  # 开始运行t1线程
                     dt.press('down')
                     dt.press('down')
@@ -3074,7 +3075,7 @@ class Caozuolei(Caozuolei1):
                         dt.press('f')
                         print('第6关开始')
                         ##self.FuBen_INFO66()
-                        self.FuBen_INFO6(1)
+                        self.FuBen_INFO6()
                         dt.press('9')
                         time.sleep(0.85)
                         print('第6关开始1')
@@ -4333,7 +4334,7 @@ class Caozuolei(Caozuolei1):
                     #     break
                     else:
                         self.FuBen_INFO66()
-                        self.FuBen_INFO6()
+                        #self.FuBen_INFO6()
                         dt.keyDown('down')  # ：模拟按键按下 向下
                         time.sleep(0.5 + move_seep1)
                         dt.keyUp('down')  # ：模拟按键松开按键
@@ -4413,7 +4414,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('left')  # ：模拟按键松开按键
 
                     self.FuBen_INFO66()
-                    self.FuBen_INFO6()
+                    #self.FuBen_INFO6()
 
                     self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
                     dt.press('9')
@@ -4462,7 +4463,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.7 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    self.FuBen_INFO66(1)
+                    self.FuBen_INFO66(2)
                     self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
                     self.FuBen_INFO1()
                     dt.press('right')
@@ -4614,7 +4615,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)
                     dt.press('9')
                     time.sleep(0.7)
-                    self.FuBen_INFO66(7)
+                    self.FuBen_INFO66()
                     self.FuBen_INFO1()
                     self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
                     dt.press('up')
@@ -4657,7 +4658,7 @@ class Caozuolei(Caozuolei1):
 
                         dt.press('0')
 
-                        time.sleep(1)  # 按下两秒
+                        time.sleep(3)  # 按下两秒
                         for ii in range(1, 4):
                             num_num = num // 2
                             if i == num_num or i == 10 or i == num or i == 1:
@@ -6364,8 +6365,8 @@ if __name__ == '__main__':
     # c.nvQiGgdfyong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
     # time.sleep(1000)y
-    # pvp = c.FuBen_INFO12()
-    pvp = 3  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    pvp = c.FuBen_INFO12()
+    #pvp = 3  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     # pvp = 2 # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
 
     print(pvp)
