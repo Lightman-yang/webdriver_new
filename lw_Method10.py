@@ -320,7 +320,8 @@ class Caozuolei(Caozuolei1):
 
                 dt.press('9')
                 time.sleep(1)  # 按下两秒
-                return
+                continue
+                #return
             elif "靓仔" not in str(aa100):
                 print('没有靓仔')
                 return
@@ -2960,7 +2961,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    self.FuBen_INFO66(2)
+                    self.FuBen_INFO66()
                     # self.FuBen_INFO6(0, 6)
 
                     dt.press('9')
@@ -6365,7 +6366,7 @@ if __name__ == '__main__':
 
     # time.sleep(1000)y
     # pvp = c.FuBen_INFO12()
-    pvp = 3  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    pvp = 9  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     # pvp = 2 # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
 
     print(pvp)
