@@ -847,7 +847,7 @@ class Caozuolei(Caozuolei1):
                 x2=800,
                 y2=574,
                 color_format="#380",
-                sim=0.99,
+                sim=1,
                 linesign=" ",
                 isbackcolor=0)
 
@@ -857,7 +857,7 @@ class Caozuolei(Caozuolei1):
                 x2=800,
                 y2=600,
                 color_format="#380",
-                sim=0.99,
+                sim=1,
                 linesign=" ",
                 isbackcolor=0)
 
@@ -867,7 +867,7 @@ class Caozuolei(Caozuolei1):
                 x2=800,
                 y2=600,
                 color_format="#130",
-                sim=0.99,
+                sim=1,
                 linesign=" ",
                 isbackcolor=0)
 
@@ -880,11 +880,30 @@ class Caozuolei(Caozuolei1):
                 sim=0.99,
                 linesign=" ",
                 isbackcolor=0)
+            aa016 = self.Find_Ocr(
+                x1=300,
+                y1=63,
+                x2=800,
+                y2=574,
+                color_format="#380",
+                sim=75,
+                linesign=" ",
+                isbackcolor=0)
+            aa017 = self.Find_Ocr(
+                x1=200,
+                y1=63,
+                x2=800,
+                y2=574,
+                color_format="#380",
+                sim=75,
+                linesign=" ",
+                isbackcolor=0)
 
             print(aa00, '=aa00')  # 开洞  =aa00
             print(aa11, '=aa11')  # 开洞  =aa11
             print(aa12, '=aa12')  # 洞府  =aa12
             print(aa13, '=aa13')
+            print(aa016, '=aa06')
             print(sss2)
             if '崩溃' in str(aa11) or '崩溃' in str(aa13):
 
@@ -932,6 +951,13 @@ class Caozuolei(Caozuolei1):
                     # if  aa00 in '崩溃' or aa11 in '崩溃' or aa13 in '崩溃' or aa12 in '崩溃':
                     print('FuBen_INFO66崩溃')
                     self.Set_Dict(0, 'test3.txt')
+                    continue
+
+                if "开洞" in str(aa00) or "开洞" in str(aa016) or "开洞" in str(aa017):
+
+                    print('开洞，洞口没找到')
+                    return
+                elif aa00 == 0 or aa017 == 0 or aa016 == 0:
                     continue
                 else:
 
@@ -1032,6 +1058,9 @@ class Caozuolei(Caozuolei1):
                     # dt.press('right')
                     print('开洞，洞口没找到')
                     return
+                elif aa00 == 0:
+                    continue
+
                 elif '开府' in str(aa12):
                     if sss2 == 2:
                         dt.press('d')
@@ -1051,15 +1080,15 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下 向下
                     time.sleep(0.3)
                     dt.keyUp('right')  # ：模拟按键松开按键
-            elif str(aa00) is None or str(aa11) is None or str(aa13) is None or str(aa12) is None or \
-                    str(aa00) in '崩溃' or str(aa11) in '崩溃' or str(aa12) in '崩溃' or str(aa13) in '崩溃':
-                print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
-                dt.press('right')
-                dt.keyDown('right')  # ：模拟按键按下 向下
-                time.sleep(0.3)
-                dt.keyUp('right')  # ：模拟按键松开按键
-                print('崩溃向前走一下')
-                continue
+            # elif str(aa00) is None or str(aa11) is None or str(aa13) is None or str(aa12) is None or \
+            #         str(aa00) in '崩溃' or str(aa11) in '崩溃' or str(aa12) in '崩溃' or str(aa13) in '崩溃':
+            #     print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
+            #     dt.press('right')
+            #     dt.keyDown('right')  # ：模拟按键按下 向下
+            #     time.sleep(0.3)
+            #     dt.keyUp('right')  # ：模拟按键松开按键
+            #     print('崩溃向前走一下')
+            #     continue
 
             elif str(aa11) in '崩溃' or str(aa13) in '崩溃' or str(aa12) in '崩溃':
                 # if  aa00 in '崩溃' or aa11 in '崩溃' or aa13 in '崩溃' or aa12 in '崩溃':
@@ -2938,7 +2967,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.6)
                     self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
-                    self.FuBen_INFO1()
+                    self.FuBen_INFO66(1)
 
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
@@ -3106,7 +3135,7 @@ class Caozuolei(Caozuolei1):
                         dt.press('alt')
 
                     # time.sleep(1.3)  # 按下19秒
-                    self.FuBen_INFO66(7)
+                    self.FuBen_INFO66()
                     self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2, -5)
                     # self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2, -5)
                     # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
@@ -5827,7 +5856,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.75)
                     dt.press('w')
                     self.FuBen_INFO66()
-                    self.FuBen_INFO6(1)
+                    # self.FuBen_INFO6(1)
                     dt.press('9')
                     time.sleep(0.3)
                     self.FuBen_INFO1()
@@ -5918,8 +5947,8 @@ class Caozuolei(Caozuolei1):
 
                     dt.press('q')
                     time.sleep(0.3)  # 按下两秒
-                    self.FuBen_INFO66()
-                    # self.FuBen_INFO6()
+                    # self.FuBen_INFO66()
+                    self.FuBen_INFO6()
 
                     if self.forxunhuan(6, aa1, bb1, cc1, dd1, hh1, hh2) == 7:
                         print('结束')
@@ -5961,12 +5990,12 @@ class Caozuolei(Caozuolei1):
 
                     dt.press('right')
                     time.sleep(0.007)
-                    dt.keyDown('right')  # ：模拟按键按下
+                    dt.keyDown('gright')  # ：模拟按键按下
                     time.sleep(0.57 + move_seep)
 
                     dt.keyUp('right')  # ：模拟按键松开按
                     t31 = Thread(target=self.FuBen_INFO66,
-                                 args=(1,))  # 定义线程t2，
+                                 args=(0,))  # 定义线程t2，
                     t31.start()  # 开始运行t1线程
                     # self.FuBen_INFO66()
 
@@ -6056,8 +6085,9 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.8 + move_seep)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
 
-                    self.FuBen_INFO66(7)
-                    self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2 -15)
+                    # self.FuBen_INFO66
+                    self.FuBen_INFO66()
+                    self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2 - 15)
                     # self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     self.FuBen_INFO1()
                     dt.press('9')
@@ -6343,7 +6373,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(2, 5):  # 打图设置ddd
+    for aa in range(1, 5):  # 打图设置ddd
         # c.Set_Dict(1, '1测试2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
