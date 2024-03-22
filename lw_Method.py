@@ -90,7 +90,7 @@ class Caozuolei():
         #     y = y1 + random.randint(0, yr)
         self.lw.MoveTo(x, y)
         self.lw.LeftClick()
-        print("点击了鼠标左键")
+        print("点击了鼠标左键1")
         time.sleep(delay)
 
     def FindStrFastEx(self, x1, y1, x2, y2, string, color_format, sim, isbackcolor, n=0):
