@@ -320,7 +320,8 @@ class Caozuolei(Caozuolei1):
 
                 dt.press('9')
                 time.sleep(1)  # 按下两秒
-                return
+                #return
+                continue
             elif "靓仔" not in str(aa100):
                 print('没有靓仔')
                 return
@@ -6384,7 +6385,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(1, 5):  # qr打图设置ddd
+    for aa in range(0, 5):  # qr打图设置ddd
         # c.Set_Dict(1, '1测试q2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
