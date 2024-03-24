@@ -900,23 +900,51 @@ class Caozuolei(Caozuolei1):
                 sim=75,
                 linesign=" ",
                 isbackcolor=0)
-
+            aamm = self.Find_Ocr(
+                x1=350,
+                y1=0,
+                x2=800,
+                y2=450,
+                color_format="#360",
+                sim=0.99,
+                linesign=" ",
+                isbackcolor=0)
             print(aa00, '=aa00')  # 开洞  =aa00
             print(aa11, '=aa11')  # 开洞  =aa11
             print(aa12, '=aa12')  # 洞府  =aa12
             print(aa13, '=aa13')
             print(aa016, '=aa06')
             print('')
-            print(sss2,'bs=================',bs)
+            print(sss2, 'bs=================', bs)
+            print(aamm, 'aamm=================', aamm)
             if '崩溃' in str(aa11) or '崩溃' in str(aa13):
 
                 # if  aa00 in '崩溃' or aa11 in '崩溃' or aa13 in '崩溃' or aa12 in '崩溃':
                 print('FuBen_INFO66崩溃')
                 continue
-            elif("开洞" not in str(aa00) or "开洞" not in str(aa016) or "开洞" not in str(aa017) ) and bs<=3:
+            elif sss2 == 8 and bs <= 4:
+                bs += 1
+                if "大鱼海棠" in str(aamm) or "开洞" in str(aa00) or "开洞" in str(aa016) or "开洞" in str(aa017):
+                    print("在第四关")
+                    return
+                elif aa11 == 0 and aa13 == 0 and aa12 == 0 and aa00 == 0 and aamm == 0:
+                    # if  aa00 in '崩溃' or aa11 in '崩溃' or aa13 in '崩溃' or aa12 in '崩溃':
+                    print('FuBen_INFO66崩溃')
+                    self.Set_Dict(0, 'test3.txt')
+                    continue
+                else:
+
+                    dt.press('right')
+                    dt.keyDown('right')  # ：模拟按键按下 向下
+                    time.sleep(0.25)
+                    dt.keyUp('right')  # ：模拟按键松开按键
+                    print('FuBen_INFO66 步骤一')
+                    continue
+
+            elif ("开洞" not in str(aa00) or "开洞" not in str(aa016) or "开洞" not in str(aa017)) and bs <= 3:
 
                 print('开洞，洞口没找到')
-                bs+=1
+                bs += 1
                 continue
             elif '开府' in str(aa12):
                 if sss2 == 2:
@@ -2968,7 +2996,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    self.FuBen_INFO66()
+                    self.FuBen_INFO66(8)
                     # self.FuBen_INFO6(0, 6)
 
                     dt.press('9')
