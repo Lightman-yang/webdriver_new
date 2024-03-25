@@ -2967,6 +2967,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
+                    dt.press('down')
                     self.FuBen_INFO66()
                     # self.FuBen_INFO6(0, 6)
 
@@ -6375,8 +6376,8 @@ if __name__ == '__main__':
     # c.nvQiGgdfyong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
     # time.sleep(1000)y
-    pvp = c.FuBen_INFO12()
-    #pvp = 4  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    #pvp = c.FuBen_INFO12()
+    pvp = 9  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     # pvp = 2 # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
 
     print(pvp)
