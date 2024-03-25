@@ -912,10 +912,10 @@ class Caozuolei(Caozuolei1):
                 # if  aa00 in '崩溃' or aa11 in '崩溃' or aa13 in '崩溃' or aa12 in '崩溃':
                 print('FuBen_INFO66崩溃')
                 continue
-            elif("开洞" not in str(aa00) or "开洞" not in str(aa016) or "开洞" not in str(aa017) ) and bs<=3:
+            elif ("开洞" not in str(aa00) or "开洞" not in str(aa016) or "开洞" not in str(aa017)) and bs <= 4:
 
                 print('开洞，洞口没找到')
-                bs+=1
+                bs += 1
                 continue
             elif '开府' in str(aa12):
                 if sss2 == 2:
@@ -2967,6 +2967,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.5 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
+                    dt.press('down')
                     self.FuBen_INFO66()
                     # self.FuBen_INFO6(0, 6)
 
@@ -4746,8 +4747,8 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx")  # 只有C盘的用这个
-        # data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx")  # 只有C盘的用这个
+        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         # data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
@@ -6375,8 +6376,8 @@ if __name__ == '__main__':
     # c.nvQiGgdfyong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
     # time.sleep(1000)y
-    pvp = c.FuBen_INFO12()
-    #pvp = 4  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    # pvp = c.FuBen_INFO12()
+    pvp = 7  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     # pvp = 2 # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
 
     print(pvp)
