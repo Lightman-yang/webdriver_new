@@ -90,14 +90,15 @@ class Caozuolei(Caozuolei1):
     def youjian(self, pvp=0):
         pmp = [[0, '0'],
                [1, "阳-pc1-v4"],
-               [2, "qqlight-pc1-v1"],
+               [2, "qqlight-pc2-v1"],
                [3, "撒旦-pc1-v2"],
                [4, "心动依恋-pc2-v2"],
                [5, "阿斯顿-pc1-v3"],
                [6, "梦想-pc2-v32"],
-               [7, "风化雪月-pc2-v1"],
+               [7, "风化雪月-pc1-v1"],
                [8, "柳杨-pc2-v4"],
-               [9, "超越起跑线-pc3-v1"], ]
+               [9, "超越起跑线-pc3-v1"],
+               [10, "-pv4-1"], ]
         user_info = ['286224275@qq.com']
 
         apartment_dict = {
@@ -939,13 +940,24 @@ class Caozuolei(Caozuolei1):
                     self.Set_Dict(0, 'test3.txt')
                     continue
                 else:
+                    try:
 
-                    dt.press('right')
-                    dt.keyDown('right')  # ：模拟按键按下 向下
-                    time.sleep(0.35)
-                    dt.keyUp('right')  # ：模拟按键松开按键
-                    print('FuBen_INFO66 sss2==', sss2)
-                    continue
+                        dt.press('right')
+                        dt.keyDown('right')  # ：模拟按键按下 向下
+                        time.sleep(0.35)
+                        dt.keyUp('right')  # ：模拟按键松开按键
+                        print('FuBen_INFO66 sss2==', sss2)
+                        continue
+
+                    except OSError as de:
+                        print(de, 'FuBen_INFO66 ==]')
+                        traceback.print_exc()
+                        continue
+                    except Exception as e:
+                        print(e, 'FuBen_INFO66 ==')
+                        traceback.print_exc()
+                        continue
+
 
             elif ("开洞" not in str(aa00) or "开洞" not in str(aa016) or "开洞" not in str(aa017)) and bs <= 7:
 
@@ -960,10 +972,21 @@ class Caozuolei(Caozuolei1):
                     continue
 
                 else:
+                    try:
 
-                    dt.press('g')
-                    print('FuBen_INFO66 步骤四')
-                    continue
+                        dt.press('g')
+                        print('FuBen_INFO66 步骤四')
+                        continue
+
+                    except OSError as de:
+                        print(de, 'FuBen_INFO66 ==]')
+                        traceback.print_exc()
+                        continue
+                    except Exception as e:
+                        print(e, 'FuBen_INFO66 ==')
+                        traceback.print_exc()
+                        continue
+
 
 
 
@@ -1002,13 +1025,23 @@ class Caozuolei(Caozuolei1):
                 elif aa00 == 0 or aa017 == 0 or aa016 == 0:
                     continue
                 else:
+                    try:
 
-                    dt.press('right')
-                    dt.keyDown('right')  # ：模拟按键按下 向下
-                    time.sleep(0.25)
-                    dt.keyUp('right')  # ：模拟按键松开按键
-                    print('FuBen_INFO66 步骤一')
-                    continue
+                        dt.press('right')
+                        dt.keyDown('right')  # ：模拟按键按下 向下
+                        time.sleep(0.25)
+                        dt.keyUp('right')  # ：模拟按键松开按键
+                        print('FuBen_INFO66 步骤一')
+                        continue
+                    except OSError as de:
+                        print(de, 'FuBen_INFO66 ==]')
+                        traceback.print_exc()
+                        continue
+                    except Exception as e:
+                        print(e, 'FuBen_INFO66 ==')
+                        traceback.print_exc()
+                        continue
+
             elif "开洞" not in str(aa11) and "开洞" not in str(aa00) and '开府' not in str(aa12):
                 dt.press('right')
                 dt.keyDown('right')  # ：模拟按键按下 向下
@@ -1021,11 +1054,22 @@ class Caozuolei(Caozuolei1):
                     print('开洞，洞口没找到')
                     return
                 else:
-                    print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
-                    dt.press('right')
+                    try:
 
-                    print('崩溃向前走一下')
-                    continue
+                        print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
+                        dt.press('right')
+
+                        print('崩溃向前走一下')
+                        continue
+                    except OSError as de:
+                        print(de, 'FuBen_INFO66 ==]')
+                        traceback.print_exc()
+                        continue
+                    except Exception as e:
+                        print(e, 'FuBen_INFO66 ==')
+                        traceback.print_exc()
+                        continue
+
             elif "开洞" not in str(aa00) and "开洞" in str(aa11):
                 dt.press('right')
                 print('开洞，洞口没找到')
@@ -1118,10 +1162,23 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     continue
                 else:
-                    dt.press('right')
-                    dt.keyDown('right')  # ：模拟按键按下 向下
-                    time.sleep(0.3)
-                    dt.keyUp('right')  # ：模拟按键松开按键
+
+                    try:
+
+                        dt.press('right')
+                        dt.keyDown('right')  # ：模拟按键按下 向下
+                        time.sleep(0.3)
+                        dt.keyUp('right')  # ：模拟按键松开按键
+
+                    except OSError as de:
+                        print(de, 'FuBen_INFO66 ==]')
+                        traceback.print_exc()
+                        continue
+                    except Exception as e:
+                        print(e, 'FuBen_INFO66 ==')
+                        traceback.print_exc()
+                        continue
+
             # elif str(aa00) is None or str(aa11) is None or str(aa13) is None or str(aa12) is None or \
             #         str(aa00) in '崩溃' or str(aa11) in '崩溃' or str(aa12) in '崩溃' or str(aa13) in '崩溃':
             #     print(aa00, aa11, aa12, aa13, 'aa is None or aa1 is None or aa3 is None or aa2 is None')
@@ -4508,7 +4565,8 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.7 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    self.FuBen_INFO66()
+                    dt.press('down')
+                    self.FuBen_INFO66(8)
                     self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
                     self.FuBen_INFO1()
                     dt.press('right')
@@ -4660,7 +4718,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.7)
                     dt.press('9')
                     time.sleep(0.7)
-                    self.FuBen_INFO66()
+                    self.FuBen_INFO66(7)
                     self.FuBen_INFO1()
                     self.forxunhuan(sss, aa1, bb1, cc1, dd1, hh1, hh2, 15)
                     dt.press('up')
@@ -5954,6 +6012,7 @@ class Caozuolei(Caozuolei1):
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(1.15 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
+                    dt.press('down')
                     self.FuBen_INFO66(8)
                     # self.FuBen_INFO6(0, 6)
                     dt.press('9')
