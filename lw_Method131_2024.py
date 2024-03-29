@@ -6071,9 +6071,9 @@ if __name__ == '__main__':
         dt.press('space')  # 单击空格操作
         time.sleep(1)
         # c.SY001()
-        c.JunhengzhongKuangZanShi()
-        #c.JunhengzhongZhaoHuanShi()
-        #c.Junhengzhong()
+        #c.JunhengzhongKuangZanShi(0.1)
+        #c.JunhengzhongZhaoHuanShi().
+        c.Junhengzhong()
         #c.JunhengzhongNvQiGong()
         #c.Junhengzhong()
         #c.JunhengzhongMaoSi()
