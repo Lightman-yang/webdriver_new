@@ -3232,6 +3232,9 @@ class Caozuolei(Caozuolei1):
                         dt.keyUp('right')  # ：模拟按键松开按键
                         dt.press('alt')
                         dt.press('alt')
+                    time.sleep(0.75)  # 按下两秒
+                    dt.press('g')
+                    time.sleep(0.75)  # 按下两秒
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -4710,7 +4713,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(0.7)  # 按下19秒
+                    time.sleep(0.6)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     dt.press('g')
@@ -6469,8 +6472,8 @@ if __name__ == '__main__':
     # c.nvQiGgdfyong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
     # time.sleep(1000)y
-    # pvp = c.FuBen_INFO12()
-    pvp = 3  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    pvp = c.FuBen_INFO12()
+    #pvp = 3  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     # pvp = 2 # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
 
     print(pvp)
@@ -6478,7 +6481,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 5):  # qr打图设置ddd
+    for aa in range(1, 6):  # qr打图设置ddd
         # c.Set_Dict(1, '1测试q2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -6692,7 +6695,7 @@ if __name__ == '__main__':
                 # c.nvQiGong(n, 0.62, 0.26, 0)  # 2p 睡眠不足丶
                 #
             elif pvp == 2:
-                c.nvQiGong(n, 0.56, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
+                c.nvQiGong(n, 0.67, 0.3, 0, 0, *canshu)  # 2p 睡眠不足丶
             elif pvp == 3:
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 3p 气功运气 2023 11 16
             elif pvp == 4:
@@ -6727,7 +6730,7 @@ if __name__ == '__main__':
 
                 c.kuangzhanshi(n, 0.4, 0.23, 0, 0, *canshu)  # 1p 狂战士
             elif pvp == 2:
-                c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 2p 十睡眠不足
+                c.nvQiGong(n, 0.68, 0.26, 0, 0, *canshu)  # 2p 十睡眠不足
             elif pvp == 3:
                 c.nvQiGong(n, 0.77, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
             elif pvp == 4:
@@ -6767,7 +6770,7 @@ if __name__ == '__main__':
 
                 c.nanQiGong(n, 0, 0, *canshu)  # 1p  男气功
             elif pvp == 2:
-                c.zhaohuan(n, 0.94, 0.26, 0, 0, *canshu)  # 2p 睡眠不足十
+                c.zhaohuan(n, 1.02, 0.26, 0, 0, *canshu)  # 2p 睡眠不足十
                 # c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
             elif pvp == 3:
                 c.kuangzhanshi2(n, 0.45, 0.47, 0.26, 0, 0, *canshu)
@@ -6816,7 +6819,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 高台师很恶
 
             elif pvp == 5:
-                c.naiMa(n, 0.5, 0.26, 0, 0, *canshu)  # 5P 爷的曙光最混
+                c.naiMa(n, 0.65, 0.26, 0, 0, *canshu)  # 5P 爷的曙光最混
                 # c.nvQiGong(n, 0.54, 0.32, 0)  # 气功师运气
                 # c.nvQiGong(n, 0.69, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
                 # c.zhaohuan(n, 0.05, 0.21, 0)  # 2p
