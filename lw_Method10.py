@@ -930,7 +930,7 @@ class Caozuolei(Caozuolei1):
                 self.Set_Dict(0, 'test3.txt')
 
                 continue
-            elif (sss2 == 8 or sss2 == 7) and bs <= 4:
+            elif (sss2 == 8 or sss2 == 7) and bs <= 5:
                 print('测试这个新任务，', time.time())
                 bs += 1
                 if "大鱼海棠" in str(aamm) or "开洞" in str(aa00) or "开洞" in str(aa016) or "开洞" in str(aa017):
@@ -944,10 +944,8 @@ class Caozuolei(Caozuolei1):
                 else:
                     try:
 
-                        # dt.press('right')
-                        # dt.keyDown('right')  # ：模拟按键按下 向下
-                        # time.sleep(0.25)
-                        # dt.keyUp('right')  # ：模拟按键松开按键
+                        dt.press('right')
+
                         print('FuBen_INFO66 sss2==', sss2)
                         continue
 
@@ -2779,10 +2777,10 @@ class Caozuolei(Caozuolei1):
         dt.keyUp('a') #：模拟按键松开time.sleep(2)
         '''
 
-    def nvQiGong(self, num_parameter, move_seepx, move_right, move_seepy,Restart_computer_parameter,move_seepx5, sss, aa1, bb1, cc1, dd1,
+    def nvQiGong(self, num_parameter, move_seepx, move_right, move_seepy,move_seepx5,Restart_computer_parameter, sss, aa1, bb1, cc1, dd1,
                  hh1=0.75, hh2=0.75):
         # 女气功 花花
-        print(num_parameter, move_seepx, move_seepy, Restart_computer_parameter,move_seepx5, 'sss=',sss, aa1, bb1, cc1, dd1, hh1, hh2)
+        print(num_parameter, move_seepx, move_seepy,move_seepx5,'Restart_computer_parameter==', Restart_computer_parameter, 'sss=',sss, aa1, bb1, cc1, dd1, hh1, hh2)
         # 定位坐标[606,401,75,499, 502,481, 460,481, 360,454]
         # self.forxunhuan(460,481)
 
@@ -2934,7 +2932,7 @@ class Caozuolei(Caozuolei1):
 
                     dt.keyUp('right')  # ：模拟按键松开按键
 
-                    self.FuBen_INFO66()
+                    self.FuBen_INFO66(8)
 
                     # self.FuBen_INFO6()
                     dt.press('9')
@@ -6547,15 +6545,15 @@ if __name__ == '__main__':
     # c.nvQiGgdfyong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
     # time.sleep(1000)y
-    pvp = c.FuBen_INFO12()
-    #pvp = 10  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    #pvp = c.FuBen_INFO12()
+    pvp = 9  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     # pvp = 2 # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
 
     print(pvp)
 
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
 
-    for aa in range(4, 5):  # qr打图设置ddd
+    for aa in range(0, 5):  # qr打图设置ddd
         # c.Set_Dict(1, '1测试q2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -6618,6 +6616,7 @@ if __name__ == '__main__':
                 or (pvp == 1 and x[aa][2] == 6) \
                 or (pvp == 4 and x[aa][2] == 1) \
                 or (pvp == 10 and x[aa][2] == 2) \
+                or (pvp == 9 and x[aa][2] == 4) \
                 or (pvp == 5 and x[aa][2] == 5):
             # or (pvp == 9 and x[aa][2] == 1):
 
@@ -6701,18 +6700,18 @@ if __name__ == '__main__':
             elif pvp == 5:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p
             elif pvp == 6:
-                c.nvQiGong(n, 0.68,0.1, 0.26,0.25, 0, 0, *canshu)  # 6p 造就师很狂
+                c.nvQiGong(n, 0.68,0.1, 0.26,0, 0, 0, *canshu)  # 6p 造就师很狂
                 # c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 造就师很狂
             elif pvp == 7:
                 c.nvQiGong(n, 0.68, 0.26, 0, 0, *canshu)  # 7p 色彩不足S
             elif pvp == 8:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 力气师很大
             elif pvp == 9:
-                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 无敌师很猛 0
+                c.nvQiGong(n, 0.62, 0.1,0.26,0.25, 0, 0, *canshu)  # 8p 无敌师很猛 0
             elif pvp == 10:
-                c.nvQiGong(n, 0.66, 0.1,0.26, 0.25,0, 0, *canshu)  # 10p  智力不足
+                c.nvQiGong(n, 0.66, 0.1,0.26, 0,0, 0, *canshu)  # 10p  智力不足
             elif pvp == 11:
-                c.nvQiGong(n, 0.89, 0.1, 0.26, 0.25, 0, 0, *canshu)  # 10p  智力不足
+                c.nvQiGong(n, 0.89, 0.1, 0.26, 0, 0, 0, *canshu)  # 10p  智力不足
 
 
             else:
@@ -6746,18 +6745,18 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p 史上最菜气功
                 # break
             elif pvp == 6:
-                c.nvQiGong(n, 0.58, 0,0.26,0.25, 0, 0, *canshu)  # 6p 狗头师很差
+                c.nvQiGong(n, 0.58, 0,0.26,0, 0, 0, *canshu)  # 6p 狗头师很差
 
             elif pvp == 7:
                 c.nvQiGong(n, 0.68, 0.26, 0, 0, *canshu)  # 7p 炼狱不足钢
             elif pvp == 8:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 冒险师很帅
             elif pvp == 9:
-                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 乐乐师很猛
+                c.nvQiGong(n, 0.67,0.1, 0.26,0, 0, 0, *canshu)  # 8p 乐乐师很猛
             elif pvp == 10:
-                c.nvQiGong(n, 0.66, 0.1,0.26, 0.25,0, 0, *canshu)  # 10p  智力不足
+                c.nvQiGong(n, 0.66, 0.1,0.26, 0,0, 0, *canshu)  # 10p  智力不足
             elif pvp == 11:
-                c.nvQiGong(n, 0.66, 0.1, 0.26, 0.25,0, 0, *canshu)  # 10p  智力不足
+                c.nvQiGong(n, 0.66, 0.1, 0.26, 0,0, 0, *canshu)  # 10p  智力不足
 
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
@@ -6786,12 +6785,14 @@ if __name__ == '__main__':
             elif pvp == 5:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p 能量不足？
             elif pvp == 6:
-                c.nvQiGong(n, 0.75, 0.1,0.26,0.25, 0, 0, *canshu)  # 6p 建筑师很牛
+                c.nvQiGong(n, 0.75, 0.1,0.26,0, 0, 0, *canshu)  # 6p 建筑师很牛
 
             elif pvp == 7:
                 c.nvQiGong(n, 0.72, 0.26, 0, 0, *canshu)  # 7p 炼铁不足金
             elif pvp == 8:
                 c.nvQiGong(n, 0.72, 0.26, 0, 0, *canshu)  # 8p 冒险师很坏
+            elif pvp == 9:
+                c.nvQiGong(n, 0.64, 0.1, 0.26, 0, 0, 0, *canshu)  # 9p 乐乐师很猛
 
             elif pvp == 10:
                 c.kuangzhanshi2(n, 0.68, 0, 0.26, 0.2,0 ,0, *canshu)  # 10p  睡眠不足♂ 丫
@@ -6822,7 +6823,7 @@ if __name__ == '__main__':
                 c.kuangzhanshi2(n, 0.56, 0.4, 0.26, 0, 0, *canshu)  # 1p  阿修罗
                 # c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p l11l
             elif pvp == 6:
-                c.nvQiGong(n, 0.69,0.1, 0.26,0.25, 0, 0, *canshu)  # 6p 拉梅师很开
+                c.nvQiGong(n, 0.69,0.1, 0.26,0, 0, 0, *canshu)  # 6p 拉梅师很开
             elif pvp == 5:
                 c.kuangzhanshi2(n, 0.65, 0.1, 0.26, 0, 0, *canshu)  # 1p 狂战士
                 # c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
@@ -6832,9 +6833,9 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很广
 
             elif pvp == 9:
-                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 9P 雪域师很水
+                c.nvQiGong(n, 0.66,0.1, 0.26, 0,0, 0, *canshu)  # 9P 雪域师很水
             elif pvp == 10:
-                c.nvQiGong(n, 0.77, 0.1, 0.26, 0.25, 0, 0, *canshu)  # 10p  智力不足
+                c.nvQiGong(n, 0.77, 0.1, 0.26, 0, 0, 0, *canshu)  # 10p  智力不足
 
             else:
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  #
@@ -6875,7 +6876,8 @@ if __name__ == '__main__':
             elif pvp == 7:
                 c.kuangzhanshi2(n, 0.47, 0.4, 0.26, 0, 0, *canshu)  # 士
             elif pvp == 9:
-                c.kuangzhanshi2(n, 0.48, 0.25, 0.26, 0, 0, *canshu)  # 1p  阿修罗，无敌师很猛丨
+                c.kuangzhanshi2(n, 0.71, 0.1, 0.26, 0.24,0, 0, *canshu)  # 1p  阿修罗，无敌师很猛丨
+
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 break
