@@ -5962,7 +5962,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')  # ：模拟按键按下
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(1.05 + move_seep)
+                    time.sleep(1.15 + move_seep)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     dt.press('e')
                     time.sleep(0.7)
@@ -6143,7 +6143,7 @@ class Caozuolei(Caozuolei1):
                         dt.press('up')
                         time.sleep(0.2)
                         dt.keyDown('right')  # ：模拟按键按下
-                        time.sleep(1.3 + move_seep1)
+                        time.sleep(1.15 + move_seep1)
                         dt.keyUp('right')  # ：模拟按键松开按键
 
                 elif j == 6:
@@ -6548,14 +6548,14 @@ if __name__ == '__main__':
 
     # time.sleep(1000)y
     # pvp = c.FuBen_INFO12()
-    pvp = 11  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    pvp = 10  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     # pvp = 2 # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
 
     print(pvp)
 
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
 
-    for aa in range(2, 3):  # qr打图设置ddd
+    for aa in range(3, 4):  # qr打图设置ddd
         # c.Set_Dict(1, '1测试q2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -6709,7 +6709,7 @@ if __name__ == '__main__':
             elif pvp == 9:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 无敌师很猛 0
             elif pvp == 10:
-                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 10p  智力不足
+                c.nvQiGong(n, 0.66, 0.24,0.26, 0.25,0, 0, *canshu)  # 10p  智力不足
             elif pvp == 11:
                 c.nvQiGong(n, 0.89, 0.1, 0.26, 0.25, 0, 0, *canshu)  # 10p  智力不足
 
@@ -6754,7 +6754,7 @@ if __name__ == '__main__':
             elif pvp == 9:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 乐乐师很猛
             elif pvp == 10:
-                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 10p  智力不足
+                c.nvQiGong(n, 0.66, 0.1,0.26, 0.25,0, 0, *canshu)  # 10p  智力不足
             elif pvp == 11:
                 c.nvQiGong(n, 0.66, 0.1, 0.26, 0.25,0, 0, *canshu)  # 10p  智力不足
 
@@ -6793,7 +6793,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.72, 0.26, 0, 0, *canshu)  # 8p 冒险师很坏
 
             elif pvp == 10:
-                c.kuangzhanshi2(n, 0.45, 0.1, 0.26, 0, 0, *canshu)  # 10p  睡眠不足♂ 丫
+                c.kuangzhanshi2(n, 0.68, 0, 0.26, 0.2,0 ,0, *canshu)  # 10p  睡眠不足♂ 丫
             elif pvp == 11:
                 c.kuangzhanshi2(n, 0.71, 0.1, 0.26, 0.2, 0,0, *canshu)  # 11p  睡眠不足♂ 丫
 
@@ -6832,7 +6832,8 @@ if __name__ == '__main__':
 
             elif pvp == 9:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 9P 雪域师很水
-
+            elif pvp == 10:
+                c.nvQiGong(n, 0.77, 0.1, 0.26, 0.25, 0, 0, *canshu)  # 10p  智力不足
 
             else:
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  #
