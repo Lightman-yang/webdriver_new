@@ -3232,6 +3232,9 @@ class Caozuolei(Caozuolei1):
                         dt.keyUp('right')  # ：模拟按键松开按键
                         dt.press('alt')
                         dt.press('alt')
+                    time.sleep(0.75)  # 按下两秒
+                    dt.press('g')
+                    time.sleep(0.75)  # 按下两秒
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -5974,7 +5977,7 @@ class Caozuolei(Caozuolei1):
                                 args=(sss, aa1, bb1, cc1, dd1, hh1, hh2,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
                     t3.start()  # 开始运行t1线程
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    time.sleep(0.7)
+                    time.sleep(0.89)
                     # self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     # print('<---')
 
@@ -6096,7 +6099,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.007)
                     dt.keyDown('gright')  # ：模拟按键按下
-                    time.sleep(0.57 + move_seep)
+                    time.sleep(0.57 +moveseepx_jia1)
 
                     dt.keyUp('right')  # ：模拟按键松开按
                     t31 = Thread(target=self.FuBen_INFO66,
@@ -6175,9 +6178,9 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(0.6 + move_seep)  # 按下19秒
+                    time.sleep(0.6 + move_seep1)  # 按下19秒
                     dt.press('a')
-                    time.sleep(0.7 + move_seep)
+                    time.sleep(0.7 + move_seep1)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     time.sleep(0.5)  # 按下两秒
@@ -6470,7 +6473,7 @@ if __name__ == '__main__':
 
     # time.sleep(1000)y
     # pvp = c.FuBen_INFO12()
-    pvp = 3  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    pvp = 9  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     # pvp = 2 # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
 
     print(pvp)
@@ -6478,7 +6481,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 5):  # qr打图设置ddd
+    for aa in range(1, 5):  # qr打图设置ddd
         # c.Set_Dict(1, '1测试q2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -6670,7 +6673,7 @@ if __name__ == '__main__':
             elif pvp == 8:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 冒险师很帅
             elif pvp == 9:
-                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 乐乐师很猛
+                c.nvQiGong(n, 0.67, 0.26, 0, 0, *canshu)  # 8p 乐乐师很猛
             elif pvp == 10:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 10p  智力不足
 
@@ -6707,7 +6710,8 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足金
             elif pvp == 8:
                 c.nvQiGong(n, 0.72, 0.26, 0, 0, *canshu)  # 8p 冒险师很坏
-
+            elif pvp == 9:
+                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 乐乐师很猛
             elif pvp == 10:
                 c.kuangzhanshi2(n, 0.45, 0.1, 0.26, 0, 0, *canshu)  # 10p  睡眠不足♂ 丫
 
@@ -6745,7 +6749,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很广
 
             elif pvp == 9:
-                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 9P 雪域师很水
+                c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 9P 雪域师很水
 
 
             else:
@@ -6786,7 +6790,7 @@ if __name__ == '__main__':
             elif pvp == 7:
                 c.kuangzhanshi2(n, 0.47, 0.4, 0.26, 0, 0, *canshu)  # 士
             elif pvp == 9:
-                c.kuangzhanshi2(n, 0.48, 0.25, 0.26, 0, 0, *canshu)  # 1p  阿修罗，无敌师很猛丨
+                c.kuangzhanshi2(n, 0.74, 0.15, 0.26, 0, 0, *canshu)  # 1p  阿修罗，无敌师很猛丨
             else:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  #
                 break
