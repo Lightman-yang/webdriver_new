@@ -3238,6 +3238,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.46 + move_seepy)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
                     # time.sleep(1.3)  # 按下19秒
+                    time.sleep(0.7)
                     self.FuBen_INFO66(7)
                     self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2, -5)
                     # self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2, -5)
@@ -5950,7 +5951,7 @@ class Caozuolei(Caozuolei1):
                     dt.press('left')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('left')  # ：模拟按键按下
-                    time.sleep(3.65 + move_seep)
+                    time.sleep(3.5 + move_seep)
                     dt.keyUp('left')  # ：模拟按键松开按键
 
                     time.sleep(0.2)
@@ -6092,11 +6093,16 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.65)  # 按下两秒
                     dt.press('e')
                     time.sleep(0.65)  # 按下两秒
-
-                    dt.press('right')
-                    time.sleep(0.007)
-                    dt.keyDown('gright')  # ：模拟按键按下
-                    time.sleep(0.57 + move_seep)
+                    if move_seepx >= 0.57:
+                        dt.press('right')
+                        time.sleep(0.007)
+                        dt.keyDown('gright')  # ：模拟按键按下
+                        time.sleep(0.77 + move_seep)
+                    else:
+                        dt.press('right')
+                        time.sleep(0.007)
+                        dt.keyDown('gright')  # ：模拟按键按下
+                        time.sleep(0.57 + move_seep)
 
                     dt.keyUp('right')  # ：模拟按键松开按
                     t31 = Thread(target=self.FuBen_INFO66,
@@ -6119,7 +6125,7 @@ class Caozuolei(Caozuolei1):
                         dt.keyDown('left')  # ：模拟按键按下
                         time.sleep(0.7)
                         dt.press('up')
-                        time.sleep(2.65 + move_seep)
+                        time.sleep(2.45 + move_seep)
                         dt.keyUp('left')  # ：模拟按键松开按键
 
                         time.sleep(0.5)
@@ -6175,9 +6181,9 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(0.6 + move_seep)  # 按下19秒
+                    time.sleep(0.77 + move_seep)  # 按下19秒
                     dt.press('a')
-                    time.sleep(0.7 + move_seep)
+                    time.sleep(0.1)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     time.sleep(0.5)  # 按下两秒
@@ -6613,7 +6619,7 @@ if __name__ == '__main__':
                 # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
 
             elif pvp == 3:
-                c.kuangzhanshi2(n, 0.53, 0.25, 0.26, 0, 0, *canshu)  # 1p  阿修罗，睡眠不足♂
+                c.kuangzhanshi2(n, 0.71, 0.11, 0.26, 0, 0, *canshu)  # 1p  阿修罗，睡眠不足♂
                 # c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 3p ll0110ll
             elif pvp == 4:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 4p 气功师很水 快递员
@@ -6729,7 +6735,7 @@ if __name__ == '__main__':
             elif pvp == 2:
                 c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 2p 十睡眠不足
             elif pvp == 3:
-                c.nvQiGong(n, 0.77, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
+                c.nvQiGong(n, 0.73, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
             elif pvp == 4:
                 # c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p l11l
                 c.kuangzhanshi2(n, 0.4, 0.4, 0.26, 0, 0, *canshu)  # 1p  阿修罗
