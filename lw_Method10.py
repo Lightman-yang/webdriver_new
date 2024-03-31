@@ -4899,6 +4899,45 @@ class Caozuolei(Caozuolei1):
         except Exception as e:
             print(e, 'FindStr', err)
             return '崩溃'
+
+    def Find_weitiao1(self, usr_string1, usr_color_format1,  usr_HH1=0.75,omg=0):  # 判断人物位置 X坐标轴，在0-800，小于350证明靠左位置 需要向右移动
+        print('Find_weitiao==', usr_string1, usr_color_format1,  usr_HH1)
+        usr_HH=usr_HH1
+        oo=0
+        while True:
+
+            # sleep(3)
+            zuobiao = self.FindStr(
+                x1=0,
+                y1=0,
+                x2=800,
+                y2=600,
+                string=usr_string1,  # "先驱者",  # "挑战者"
+                color_format=usr_color_format1,  # "#422",  ##380
+                sim=usr_HH,
+                isbackcolor=0,
+                err='Find_srt')
+            print(zuobiao, '当前位置数据')
+            if '崩溃' in str(zuobiao) or zuobiao == 0:
+
+                if oo == 30 or oo == 60:
+                    oo += 1
+                    self.Set_Dict(0, 'test3.txt')
+                    dt.press('9')
+                    continue
+                elif usr_HH==1:
+                     print('等于1了')
+                     return
+                else:
+                    oo += 1
+                    usr_HH+=0.01
+                    print('崩溃？？',usr_HH)
+                    continue
+            else:
+                print(zuobiao,'sim==',usr_HH)
+
+
+
     def Find_weitiao(self, usr_string1, usr_color_format1, usr_string2, usr_color_format2, usr_HH1=0.75,
                  usr_HH2=0.75,omg1=0): #判断人物位置 X坐标轴，在0-800，小于350证明靠左位置 需要向右移动
         print('Find_weitiao==',usr_string1, usr_color_format1, usr_string2, usr_color_format2, usr_HH1,usr_HH2,omg1)
@@ -6509,7 +6548,7 @@ if __name__ == '__main__':
     print(1)
     # c.Set_Dict(0, 'test3.txt')
     # canshu = c.excelboot01(103)
-    # c.Find_weitiao(*canshu)
+    # c.Find_weitiao1('高手', '#360', 0.85)
     # time.sleep(1000)
 
     c.lw.MoveWindow(c.hwnd, 1, 1, 0, 0)  # 移动窗口，抢两个零是xy，后两个是窗口高度和宽度，默认为0不生效
@@ -6546,14 +6585,14 @@ if __name__ == '__main__':
 
     # time.sleep(1000)y
     #pvp = c.FuBen_INFO12()
-    pvp = 9  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    pvp = 4  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     # pvp = 2 # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
 
     print(pvp)
 
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
 
-    for aa in range(0, 5):  # qr打图设置ddd
+    for aa in range(3, 5):  # qr打图设置ddd
         # c.Set_Dict(1, '1测试q2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -6696,7 +6735,8 @@ if __name__ == '__main__':
                 c.kuangzhanshi2(n, 0.53, 0.25, 0.26, 0, 0, *canshu)  # 1p  阿修罗，睡眠不足♂
                 # c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 3p ll0110ll
             elif pvp == 4:
-                c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 4p 气功师很水 快递员
+                c.nvQiGong(n, 0.66, 0,0.26, 0, 0, 0, *canshu)  # 4p 气功师很水 快递员
+
             elif pvp == 5:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p
             elif pvp == 6:
@@ -6740,7 +6780,8 @@ if __name__ == '__main__':
             #     break
             #     #c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 4p 快递员
             elif pvp == 4:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 气功师很丶
+                c.nvQiGong(n, 0.56, 0.1,0.26, 0,0, 0, *canshu)  # 4p 气功师很丶
+
             elif pvp == 5:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p 史上最菜气功
                 # break
@@ -6780,7 +6821,8 @@ if __name__ == '__main__':
             elif pvp == 3:
                 c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 3p 气功运气 2023 11 16
             elif pvp == 4:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 快递员
+                c.nvQiGong(n, 0.71,0.1, 0.26,0, 0, 0, *canshu)  # 4p 快递员
+
                 # break
             elif pvp == 5:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p 能量不足？
@@ -6820,7 +6862,8 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.77, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
             elif pvp == 4:
                 # c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p l11l
-                c.kuangzhanshi2(n, 0.56, 0.4, 0.26, 0, 0, *canshu)  # 1p  阿修罗
+
+                c.kuangzhanshi2(n, 0.66, 0.1, 0.26,0.24, 0, 0, *canshu)  # 1p  阿修罗
                 # c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p l11l
             elif pvp == 6:
                 c.nvQiGong(n, 0.69,0.1, 0.26,0, 0, 0, *canshu)  # 6p 拉梅师很开
@@ -6863,7 +6906,8 @@ if __name__ == '__main__':
                 # c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师很送
                 # break
             elif pvp == 4:
-                c.nvQiGong(n, 0.5, 0.26, 0, 0, *canshu)  # 4p 气功师很水i
+                c.nvQiGong(n, 0.66,0.1,0.26,0, 0, 0, *canshu)  # 4p 气功师很水i
+
             elif pvp == 6:
                 c.kuangzhanshi2(n, 0.69,0.2 ,0.26, 0.2, 0, 0, *canshu)  # 1p 狂战士
 
