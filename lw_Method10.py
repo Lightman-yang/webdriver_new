@@ -6073,7 +6073,7 @@ class Caozuolei(Caozuolei1):
                         dt.press('up')
                         time.sleep(0.2)
                         dt.keyDown('right')  # ：模拟按键按下
-                        time.sleep(1.3 + move_seep1)
+                        time.sleep(1.3 + move_seep)
                         dt.keyUp('right')  # ：模拟按键松开按键
 
                 elif j == 6:
@@ -6082,7 +6082,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.5)
                     dt.keyDown('right')  # ：模拟按键按下 向下
 
-                    time.sleep(0.8 + move_seep1)
+                    time.sleep(0.8 + move_seep1 )
 
                     dt.keyUp('up')  # ：模拟按键松开按键
                     time.sleep(0.4)
@@ -6095,8 +6095,8 @@ class Caozuolei(Caozuolei1):
 
                     dt.press('right')
                     time.sleep(0.007)
-                    dt.keyDown('gright')  # ：模拟按键按下
-                    time.sleep(0.57 + move_seep)
+                    dt.keyDown('right')  # ：模拟按键按下
+                    time.sleep(0.57 + move_seep1)
 
                     dt.keyUp('right')  # ：模拟按键松开按
                     t31 = Thread(target=self.FuBen_INFO66,
@@ -6175,9 +6175,9 @@ class Caozuolei(Caozuolei1):
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(0.6 + move_seep)  # 按下19秒
+                    time.sleep(0.6 + move_seep1)  # 按下19秒
                     dt.press('a')
-                    time.sleep(0.7 + move_seep)
+                    time.sleep(0.7 + move_seep1)
                     dt.keyUp('right')  # ：模拟按键松开按键
 
                     time.sleep(0.5)  # 按下两秒
@@ -6469,8 +6469,8 @@ if __name__ == '__main__':
     # c.nvQiGgdfyong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
     # time.sleep(1000)y
-    # pvp = c.FuBen_INFO12()
-    pvp = 3  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    pvp = c.FuBen_INFO12()
+    #pvp = 3  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     # pvp = 2 # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
 
     print(pvp)
@@ -6482,7 +6482,7 @@ if __name__ == '__main__':
         # c.Set_Dict(1, '1测试q2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
-            # if aa == 3 and pvp. == 1:# aa
+            # if aa == 3 and pvp. == 1:0# aa
             aa = 4
         # elif aa == 6 and pvp == 1:
         #     aa = 7gdfyhe
@@ -6507,7 +6507,7 @@ if __name__ == '__main__':
             sss1 = 30  # 快递员 气功师很水
             print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 5:
-            sss1 = 40  # 能量不足了 19129832 QQ ?
+            sss1 = 40  # 能量不足了 2532842 QQ ?
             print('pvp=', pvp, 'excel=>', sss1)
         elif pvp == 6:
             sss1 = 49  # 造就师很狂 ?
@@ -6660,7 +6660,7 @@ if __name__ == '__main__':
             elif pvp == 4:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p 气功师很丶
             elif pvp == 5:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p 史上最菜气功
+                c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 5p 史上最菜气功
                 # break
             elif pvp == 6:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 6p 狗头师很差
@@ -6737,7 +6737,7 @@ if __name__ == '__main__':
             elif pvp == 6:
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 拉梅师很开
             elif pvp == 5:
-                c.kuangzhanshi2(n, 0.2, 0.4, 0.23, 0, 0, *canshu)  # 1p 狂战士
+                c.kuangzhanshi2(n, 0.59, 0.1, 0.26, 0, 0, *canshu)  # 1p 狂战士
                 # c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
             elif pvp == 7:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足了
@@ -6779,7 +6779,8 @@ if __name__ == '__main__':
                 c.kuangzhanshi2(n, 0.4, 0.45, 0.26, 0, 0, *canshu)  # 1p 狂战士
                 # c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 梦想师很阔
             elif pvp == 5:
-                c.naiMa(n, 0.5, 0.26, 0, 0, *canshu)  # 5P 爷的太阳最混
+                c.kuangzhanshi2(n, 0.59, 0.1, 0.26, 0, 0, *canshu)  # 1p 狂战士
+                #c.naiMa(n, 0.5, 0.26, 0, 0, *canshu)  # 5P 爷的太阳最混
             elif pvp == 8:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
 
