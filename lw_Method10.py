@@ -6592,15 +6592,15 @@ if __name__ == '__main__':
     # c.nvQiGgdfyong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
     # time.sleep(1000)y
-    pvp = c.FuBen_INFO12()
-    #pvp = 4  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    # pvp = c.FuBen_INFO12()
+    pvp = 3  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     # pvp = 2 # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
 
     print(pvp)
 
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
 
-    for aa in range(5,7):  # qr打图设置ddd
+    for aa in range(0, 5):  # qr打图设置ddd
         # c.Set_Dict(1, '1测试q2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -6734,21 +6734,20 @@ if __name__ == '__main__':
 
             elif pvp == 2:
 
-                c.nvQiGong(n, 0.68,0.1, 0.26, 0,0, 0, *canshu)  # 2p 睡眠不足十
+                c.nvQiGong(n, 0.68, 0.1, 0.26, 0, 0, 0, *canshu)  # 2p 睡眠不足十
                 # aa1, bb1, cc1, dd1 = "先驱者", "#422", "师很", "#140"
                 # aa1, bb1, cc1, dd1="熟练者", "#410", "师很", "#140"
                 # c.nvQiGong(n, 0.54, 0.26, 0)  # 气功师该加强了
-
             elif pvp == 3:
-                c.kuangzhanshi2(n, 0.53, 0.25, 0.26, 0, 0, *canshu)  # 1p  阿修罗，睡眠不足♂
-                # c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 3p ll0110ll
+                c.kuangzhanshi2(n, 0.71, 0, 0.26, 0.11, 0, 0, *canshu)  # 睡眠不足♂
+
             elif pvp == 4:
-                c.nvQiGong(n, 0.66, 0,0.26, 0, 0, 0, *canshu)  # 4p 气功师很水 快递员
+                c.nvQiGong(n, 0.66, 0, 0.26, 0, 0, 0, *canshu)  # 4p 气功师很水 快递员
 
             elif pvp == 5:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p
             elif pvp == 6:
-                c.nvQiGong(n, 0.68,0.1, 0.26,0, 0, 0, *canshu)  # 6p 造就师很狂
+                c.nvQiGong(n, 0.68, 0.1, 0.26, 0, 0, 0, *canshu)  # 6p 造就师很狂
                 # c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 造就师很狂
             elif pvp == 7:
                 c.nvQiGong(n, 0.68, 0.26, 0, 0, *canshu)  # 7p 色彩不足S
@@ -6779,16 +6778,17 @@ if __name__ == '__main__':
                 # c.nvQiGong(n, 0.48, 0.2, 0)  # 1p 气功师很懒
                 c.nvQiGong(n, 0.61, 0.26, 0, 0, *canshu)  # 1p 气功师狠烂
             elif pvp == 2:
-                c.zhaohuan(n, 0.98,0.1, 0.26, 0,0, 0, *canshu)  # 2p 睡眠不足十
+                c.zhaohuan(n, 0.98, 0.1, 0.26, 0, 0, 0, *canshu)  # 2p 睡眠不足十
                 # break
                 # c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 2p ll1ll数据i
             elif pvp == 3:
-                c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师废了
+                c.nvQiGong(n, 0.58, 0, 0.26, 0, 0, 0, *canshu)  # 3p 气功师废了
+
             # elif pvp == 4:
             #     break
             #     #c.nvQiGong(n, 0.48, 0.26, 0, 0, *canshu)  # 4p 快递员
             elif pvp == 4:
-                c.nvQiGong(n, 0.56, 0.1,0.26, 0,0, 0, *canshu)  # 4p 气功师很丶
+                c.nvQiGong(n, 0.56, 0.1, 0.26, 0, 0, 0, *canshu)  # 4p 气功师很丶
 
             elif pvp == 5:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p 史上最菜气功
@@ -6826,17 +6826,18 @@ if __name__ == '__main__':
                 #
             elif pvp == 2:
 
-                c.nvQiGong(n, 0.68, 0.1,0.26,0, 0, 0, *canshu)  # 2p 睡眠不足丶
+                c.nvQiGong(n, 0.68, 0.1, 0.26, 0, 0, 0, *canshu)  # 2p 睡眠不足丶
             elif pvp == 3:
-                c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 3p 气功运气 2023 11 16
+                c.nvQiGong(n, 0.66, 0.1, 0.26, 0, 0, 0, *canshu)  # 3p 气功运气 2023 11 16
+
             elif pvp == 4:
-                c.nvQiGong(n, 0.71,0.1, 0.26,0, 0, 0, *canshu)  # 4p 快递员
+                c.nvQiGong(n, 0.71, 0.1, 0.26, 0, 0, 0, *canshu)  # 4p 快递员
 
                 # break
             elif pvp == 5:
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 5p 能量不足？
             elif pvp == 6:
-                c.nvQiGong(n, 0.75, 0.1,0.26,0, 0, 0, *canshu)  # 6p 建筑师很牛
+                c.nvQiGong(n, 0.75, 0.1, 0.26, 0, 0, 0, *canshu)  # 6p 建筑师很牛
 
             elif pvp == 7:
                 c.nvQiGong(n, 0.72, 0.26, 0, 0, *canshu)  # 7p 炼铁不足金
@@ -6867,16 +6868,17 @@ if __name__ == '__main__':
                 c.kuangzhanshi(n, 0.4, 0.23, 0, 0, *canshu)  # 1p 狂战士
             elif pvp == 2:
 
-                c.nvQiGong(n, 0.68,0.1, 0.26,0, 0, 0, *canshu)  # 2p 十睡眠不足
+                c.nvQiGong(n, 0.68, 0.1, 0.26, 0, 0, 0, *canshu)  # 2p 十睡眠不足
             elif pvp == 3:
-                c.nvQiGong(n, 0.77, 0.26, 0, 0, *canshu)  # 3p 气功该加强了
+                c.nvQiGong(n, 0.73, 0.1, 0.26, 0, 0, 0, *canshu)  # 3p 气功该加强了
+
             elif pvp == 4:
                 # c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p l11l
 
-                c.kuangzhanshi2(n, 0.66, 0.1, 0.26,0.24, 0, 0, *canshu)  # 1p  阿修罗
+                c.kuangzhanshi2(n, 0.66, 0.1, 0.26, 0.24, 0, 0, *canshu)  # 1p  阿修罗
                 # c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 4p l11l
             elif pvp == 6:
-                c.nvQiGong(n, 0.69,0.1, 0.26,0, 0, 0, *canshu)  # 6p 拉梅师很开
+                c.nvQiGong(n, 0.69, 0.1, 0.26, 0, 0, 0, *canshu)  # 6p 拉梅师很开
             elif pvp == 5:
                 c.kuangzhanshi2(n, 0.65, 0.1, 0.26, 0, 0, *canshu)  # 1p 狂战士
                 # c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
@@ -6909,15 +6911,16 @@ if __name__ == '__main__':
 
                 c.nanQiGong(n, 0, 0, *canshu)  # 1p  男气功
             elif pvp == 2:
-                c.zhaohuan(n, 0.98,0.1, 0.26,0, 0, 0, *canshu)  # 2p 睡眠不足十
+                c.zhaohuan(n, 0.98, 0.1, 0.26, 0, 0, 0, *canshu)  # 2p 睡眠不足十
 
                 # c.nvQiGong(n, 0.66, 0.26, 0, 0, *canshu)  # 2p SS睡眠不足SS
             elif pvp == 3:
-                c.kuangzhanshi2(n, 0.45, 0.47, 0.26, 0, 0, *canshu)
+
+                c.kuangzhanshi2(n, 0.55, 0.1, 0.26, 0.2, 0, 0, *canshu)
                 # c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 3p 气功师很送
                 # break
             elif pvp == 4:
-                c.nvQiGong(n, 0.66,0.1,0.26,0, 0, 0, *canshu)  # 4p 气功师很水i
+                c.nvQiGong(n, 0.66, 0.1, 0.26, 0, 0, 0, *canshu)  # 4p 气功师很水i
 
             elif pvp == 6:
                 c.kuangzhanshi2(n, 0.69,0.2 ,0.26, 0.2, 0, 0, *canshu)  # 1p 狂战士
