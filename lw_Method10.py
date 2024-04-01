@@ -947,6 +947,8 @@ class Caozuolei(Caozuolei1):
                         time.sleep(0.35)
                         dt.keyUp('right')  # ：模拟按键松开按键
                         print('FuBen_INFO66 sss2==', sss2)
+                        time.sleep(0.1)
+                        bs = 1
                         continue
 
                     except OSError as de:
@@ -999,6 +1001,7 @@ class Caozuolei(Caozuolei1):
                 dt.keyDown('right')  # ：模拟按键按下 向下
                 time.sleep(0.35)
                 dt.keyUp('right')  # ：模拟按键松开按键
+                time.sleep(0.1)
                 continue
             elif "开洞" in str(aa11) and "开洞" not in str(aa00) and '开府' not in str(aa12) or '开洞' not in str(aa00):
                 if sss2 == 7:
@@ -1007,6 +1010,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(0.35)
                     dt.keyUp('right')  # ：模拟按键松开按键
                     print('FuBen_INFO66 步骤一')
+                    time.sleep(0.1)
                     continue
                 elif "开洞" in str(aa11) or "开洞" in str(aa11) and '开洞' not in str(aa00):
                     print('??????????????????????????????????????????????')
@@ -1032,6 +1036,7 @@ class Caozuolei(Caozuolei1):
                         time.sleep(0.25)
                         dt.keyUp('right')  # ：模拟按键松开按键
                         print('FuBen_INFO66 步骤一')
+                        time.sleep(0.1)
                         continue
                     except OSError as de:
                         print(de, 'FuBen_INFO66 ==]')
@@ -1047,6 +1052,7 @@ class Caozuolei(Caozuolei1):
                 dt.keyDown('right')  # ：模拟按键按下 向下
                 time.sleep(0.25)
                 dt.keyUp('right')  # ：模拟按键松开按
+                time.sleep(0.1)
                 continue
             elif aa00 is None or aa11 is None or aa13 is None or aa12 is None:
                 if "开洞" in str(aa00):
@@ -3232,12 +3238,15 @@ class Caozuolei(Caozuolei1):
                         dt.keyUp('right')  # ：模拟按键松开按键
                         dt.press('alt')
                         dt.press('alt')
+                    time.sleep(0.75)  # 按下两秒
+                    dt.press('g')
+                    time.sleep(0.75)  # 按下两秒
                     dt.press('right')
                     time.sleep(0.013)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
                     time.sleep(0.46 + move_seepy)  # 按下19秒
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    # time.sleep(1.3)  # 按下19秒
+                    time.sleep(0.5)  # 按下19秒
                     self.FuBen_INFO66(7)
                     self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2, -5)
                     # self.forxunhuanC(sss, aa1, bb1, cc1, dd1, hh1, hh2, -5)
@@ -4839,8 +4848,8 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx")  # 只有C盘的用这个
-        # data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx")  # 只有C盘的用这个
+        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         # data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
@@ -6470,7 +6479,7 @@ if __name__ == '__main__':
 
     # time.sleep(1000)y
     # pvp = c.FuBen_INFO12()
-    pvp = 3  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    pvp = 7  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     # pvp = 2 # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
 
     print(pvp)
@@ -6478,7 +6487,7 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 5):  # qr打图设置ddd
+    for aa in range(1, 5):  # qr打图设置ddd
         # c.Set_Dict(1, '1测试q2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -6666,7 +6675,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.56, 0.26, 0, 0, *canshu)  # 6p 狗头师很差
 
             elif pvp == 7:
-                c.nvQiGong(n, 0.58, 0.26, 0, 0, *canshu)  # 7p 炼狱不足钢
+                c.nvQiGong(n, 0.68, 0.26, 0, 0, *canshu)  # 7p 炼狱不足钢
             elif pvp == 8:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 冒险师很帅
             elif pvp == 9:
@@ -6704,7 +6713,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 建筑师很牛
 
             elif pvp == 7:
-                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足金
+                c.nvQiGong(n, 0.77, 0.26, 0, 0, *canshu)  # 7p 炼铁不足金
             elif pvp == 8:
                 c.nvQiGong(n, 0.72, 0.26, 0, 0, *canshu)  # 8p 冒险师很坏
 
