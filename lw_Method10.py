@@ -2865,7 +2865,7 @@ class Caozuolei(Caozuolei1):
                     if ret_values[0] == 1:
                         j = 8
                         i = num
-                        print('测试', t13, 'break 返回')
+                        print('测试', t13, 'break 返回','i==',i)
                         break
                     # elif self.FuBen_INFO3() == 2:
                     elif ret_values[0] == 2:
@@ -6555,7 +6555,7 @@ if __name__ == '__main__':
 
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
 
-    for aa in range(3, 4):  # qr打图设置ddd
+    for aa in range(0, 4):  # qr打图设置ddd
         # c.Set_Dict(1, '1测试q2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -6709,7 +6709,7 @@ if __name__ == '__main__':
             elif pvp == 9:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 无敌师很猛 0
             elif pvp == 10:
-                c.nvQiGong(n, 0.66, 0.24,0.26, 0.25,0, 0, *canshu)  # 10p  智力不足
+                c.nvQiGong(n, 0.66, 0.1,0.26, 0.25,0, 0, *canshu)  # 10p  智力不足
             elif pvp == 11:
                 c.nvQiGong(n, 0.89, 0.1, 0.26, 0.25, 0, 0, *canshu)  # 10p  智力不足
 
