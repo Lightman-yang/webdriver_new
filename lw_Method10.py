@@ -4858,8 +4858,8 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx")  # 只有C盘的用这个
-        # data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx")  # 只有C盘的用这个
+        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         # data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
@@ -6592,15 +6592,15 @@ if __name__ == '__main__':
     # c.nvQiGgdfyong(n, 0.64, 0.4, 0, 0, *canshu)  # 3p 气功运气
 
     # time.sleep(1000)y
-    pvp = c.FuBen_INFO12()
-    #pvp = 3  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    # pvp = c.FuBen_INFO12()
+    pvp = 7  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     # pvp = 2 # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
 
     print(pvp)
 
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
 
-    for aa in range(0, 5):  # qr打图设置ddd
+    for aa in range(4, 5):  # qr打图设置ddd
         # c.Set_Dict(1, '1测试q2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
@@ -6750,7 +6750,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.68, 0.1, 0.26, 0, 0, 0, *canshu)  # 6p 造就师很狂
                 # c.nvQiGong(n, 0.59, 0.26, 0, 0, *canshu)  # 6p 造就师很狂
             elif pvp == 7:
-                c.nvQiGong(n, 0.68, 0.26, 0, 0, *canshu)  # 7p 色彩不足S
+                c.nvQiGong(n, 0.68, 0, 0.26, 0, 0, 0, *canshu)  # 7p 色彩不足S
             elif pvp == 8:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 力气师很大
             elif pvp == 9:
@@ -6797,7 +6797,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.58, 0,0.26,0, 0, 0, *canshu)  # 6p 狗头师很差
 
             elif pvp == 7:
-                c.nvQiGong(n, 0.68, 0.26, 0, 0, *canshu)  # 7p 炼狱不足钢
+                c.nvQiGong(n, 0.68, 0, 0.26, 0, 0, 0, *canshu)  # 7p 炼狱不足钢
             elif pvp == 8:
                 c.nvQiGong(n, 0.64, 0.26, 0, 0, *canshu)  # 8p 冒险师很帅
             elif pvp == 9:
@@ -6840,7 +6840,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.75, 0.1, 0.26, 0, 0, 0, *canshu)  # 6p 建筑师很牛
 
             elif pvp == 7:
-                c.nvQiGong(n, 0.72, 0.26, 0, 0, *canshu)  # 7p 炼铁不足金
+                c.nvQiGong(n, 0.77, 0.1, 0.26, 0, 0, 0, *canshu)  # 7p 炼铁不足金
             elif pvp == 8:
                 c.nvQiGong(n, 0.72, 0.26, 0, 0, *canshu)  # 8p 冒险师很坏
             elif pvp == 9:
@@ -6883,7 +6883,7 @@ if __name__ == '__main__':
                 c.kuangzhanshi2(n, 0.59, 0.1, 0.26,0.24, 0, 0, *canshu)  # 1p 狂战士
                 # c.naiMa(n, 0.56, 0.26, 0, 0, *canshu) #5P 爷的圣光最叼
             elif pvp == 7:
-                c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 7p 炼铁不足了
+                c.nvQiGong(n, 0.66, 0, 0.26, 0, 0, 0, *canshu)  # 7p 炼铁不足了
             elif pvp == 8:
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很广
 
@@ -6933,7 +6933,7 @@ if __name__ == '__main__':
                 c.nvQiGong(n, 0.6, 0.26, 0, 0, *canshu)  # 8p 铸造师很气
 
             elif pvp == 7:
-                c.kuangzhanshi2(n, 0.47, 0.4, 0.26, 0, 0, *canshu)  # 士
+                c.kuangzhanshi2(n, 0.71, 0.1, 0.26, 0.24, 0, 0, *canshu)  # 士
             elif pvp == 9:
                 c.kuangzhanshi2(n, 0.71, 0.1, 0.26, 0.24,0, 0, *canshu)  # 1p  阿修罗，无敌师很猛丨
 
