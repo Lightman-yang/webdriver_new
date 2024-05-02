@@ -3563,6 +3563,7 @@ class Caozuolei(Caozuolei1):
                     t3.start()  # 开始运行t1线程
 
                     dt.keyUp('right')  # ：模拟按键松开按键
+                    time.sleep(0.8)
                     # self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     # print('<---')
 
@@ -4858,8 +4859,8 @@ class Caozuolei(Caozuolei1):
         zzzzz1 = []
         # data =openpyxl.load_workbook(wu)
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
-        # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx")  # 只有C盘的用这个
-        data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
+        data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx")  # 只有C盘的用这个
+        #data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\light\webdriver_new\lw\game_name.xlsx")
         # data = openpyxl.load_workbook(r"C:\Users\Administrator\webdriver_new\lw\game_name.xlsx") #只有C盘的用这个
         # data = openpyxl.load_workbook(r"D:\webdriver_new\lw\game_name.xlsx")
@@ -5305,11 +5306,11 @@ class Caozuolei(Caozuolei1):
             elif (y == 0 and y1 == 4) or (y == 2 and y1 == 4):
                 # print('y=', y, ' y1=', y1, '测试1')
                 continue
-            elif y >= 349:  # 449 #423
+            elif y >= 437:  # 449 #423
                 dt.press('up')
                 print('y=', y, ' y1=', y1, '测试2')
                 return
-            elif y < 380:
+            elif y <= 357:
                 dt.press('down')
                 print('y=', y, ' y1=', y1, '测试3')
                 return
@@ -6088,10 +6089,11 @@ class Caozuolei(Caozuolei1):
                                 args=(sss, aa1, bb1, cc1, dd1, hh1, hh2,))  # 定义线程t2，线程任务为调用task2函数，task2函数无参数
                     t3.start()  # 开始运行t1线程
                     dt.keyUp('right')  # ：模拟按键松开按键
-                    time.sleep(0.7)
+                    time.sleep(0.78)
                     # self.forxunhuanY(sss, aa1, bb1, cc1, dd1, hh1, hh2)
                     # print('<---')
-
+                    # time.sleep(100)
+                    # print('等待100s')
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
                     dt.keyDown('right')  # ：模拟按键按下
@@ -6555,8 +6557,8 @@ if __name__ == '__main__':
     # dt.press('alt')
     print(1)
     # c.Set_Dict(0, 'test3.txt')
-    # canshu = c.excelboot01(103)
-    # c.Find_weitiao1('高手', '#360', 0.85)
+    # #canshu = c.excelboot01(103)
+    # c.Find_weitiao1('熟练者', '#81', 0.75)
     # time.sleep(1000)
 
     c.lw.MoveWindow(c.hwnd, 1, 1, 0, 0)  # 移动窗口，抢两个零是xy，后两个是窗口高度和宽度，默认为0不生效
@@ -6593,14 +6595,14 @@ if __name__ == '__main__':
 
     # time.sleep(1000)y
     # pvp = c.FuBen_INFO12()
-    pvp = 7  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
+    pvp = 10  # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
     # pvp = 2 # 1是1P 阳 |2是2p   |3p 是11011011 撒旦
 
     print(pvp)
 
     # x = [[150, 290, 1], [270, 280,g'd'f'ygg'd'f 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
 
-    for aa in range(4, 5):  # qr打图设置ddd
+    for aa in range(0, 4):  # qr打图设置ddd
         # c.Set_Dict(1, '1测试q2.txt')
         # c.Set_Dict(0, 'test3n.t1xt')f
         if aa == 11 and pvp == 1:  # aa
