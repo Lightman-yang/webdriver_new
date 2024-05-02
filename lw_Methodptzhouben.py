@@ -6059,6 +6059,7 @@ if __name__ == '__main__':
         # c.SY001()
         # c.JunhengzhongKuangZanShi(0.1)
         # c.JunhengzhongZhaoHuanShi().
+        c.JunhengzhongNSWSL(0,8)#纳瑟乌森林
         c.Junhengzhong()
         #c.Junhengzhong(8)
         # c.JunhengzhongNvQiGong()
