@@ -361,9 +361,9 @@ class Caozuolei1():
         for i in range(1, 10):
             aa = Caozuolei1().Find_Pic1(
                 x1=0,
-                y1=0,
-                x2=600,
-                y2=800,
+                y1=200,
+                x2=400,
+                y2=600,
                 pic_name='一键出售_1b1615.bmp',
                 delta_color='1b1615',
                 sim=0.99,
@@ -382,10 +382,10 @@ class Caozuolei1():
         print('普通门')
         for i in range(1, 10):
             aa = Caozuolei1().Find_Pic(
-                x1=200,
+                x1=0,
                 y1=200,
-                x2=1000,
-                y2=1000,
+                x2=400,
+                y2=600,
                 pic_name='门1.bmp',
                 delta_color='1b1615',
                 sim=0.45,

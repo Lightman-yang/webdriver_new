@@ -5272,14 +5272,42 @@ class Caozuolei(Caozuolei1):
                     print('111')
 
     def Junhengzhong(self,N):  # 普通风暴逆鳞地下城
-
+            dt.press('space')  # 单击空格操作
+            time.sleep(2.5)
             m=11+N
             for i in range(1, 30):
 
 
-                if i== 29:
-                    time.sleep(2)
-                    return
+
+                if i == 18 :
+
+                    time.sleep(4)
+                    print('等等')
+
+                    dt.press('right')
+                    time.sleep(0.0075)  # 按下两秒
+                    dt.keyDown('right')  # ：模拟按键按下
+                    time.sleep(random.randint(m, m + 2))
+                    dt.keyUp('right')  # ：模拟按键松开按键
+                    time.sleep(10)
+
+
+                    c.sellGoods_xy()  # 点击一键出售按钮
+                    print('等待3')
+                    time.sleep(1.5)  # 按下两秒
+                    dt.press('a')
+                    time.sleep(1)  # 按下两秒
+                    dt.press('space')
+                    time.sleep(1)
+                    dt.press('left')
+                    time.sleep(1)
+                    dt.press('space')
+                    time.sleep(random.randint(2, 3))
+                    dt.press('esc')
+                    time.sleep(random.randint(2, 3))
+                    dt.press('f10')
+                    time.sleep(0.75)
+                    continue
                 elif i >= 0:
                     time.sleep(4)
                     # dt.press('t')
@@ -5291,14 +5319,27 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('right')  # ：模拟按键松开按键
                     time.sleep(random.randint(2, 3))
                     dt.press('esc')
-                    time.sleep(random.randint(2, 3))
-                    dt.press('f10')
-                    time.sleep(0.75)
+                    if i == 29 or i > 29 :
+                        time.sleep(random.randint(8, 10))
+                        dt.press('esc')
+                        time.sleep(random.randint(2, 3))
+                        dt.press('f12')
+                        print('f12')
+                        time.sleep(5)
+                        return
+                    else:
+                        time.sleep(random.randint(2, 3))
+                        dt.press('f10')
+                        time.sleep(0.75)
+                        continue
                     continue
-                    # continue
 
                 else:
-                    print('111')
+                    time.sleep(8)
+                    dt.press('f12')
+                    time.sleep(4)
+                    print('ceshi')
+                    return
     def JunhengzhongNSWSL(self,N,A):  # 纳瑟乌森林
 
             m=11+N
@@ -6053,14 +6094,39 @@ if __name__ == '__main__':
 
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    for aa in range(0, 1):  # 打图设置ddddg
+    n=6
+    for aa in range(5, 9):  # 打图设置ddddg
         #dt.press('space')  # 单击空格操作
-        time.sleep(1)
-        # c.SY001()
-        # c.JunhengzhongKuangZanShi(0.1)
-        # c.JunhengzhongZhaoHuanShi().
-        c.JunhengzhongNSWSL(0,8)#纳瑟乌森林
-        c.Junhengzhong()
+        print(aa,n)
+        if aa<n:
+            time.sleep(3.5)  # 选一个任务
+            c.LeftClick(x[aa][0], x[aa][1])  # 441 , 310
+            time.sleep(0.015)
+            c.LeftClick(x[aa][0], x[aa][1])  # 单机两下鼠标左键0
+            time.sleep(1.8)
+            c.movingfigur_Down(0.95)  # 向下移动，移动一秒
+
+            time.sleep(0.5)  # 睡眠0.5秒
+            c.movingfigur_right(9)  # 向右移动， 移动8秒，
+            time.sleep(1)
+            # c.SY001()
+            # c.JunhengzhongKuangZanShi(0.1)
+            # c.JunhengzhongZhaoHuanShi()
+            # c.JunhengzhongNSWSL(0,8)#纳瑟乌森林
+            c.Junhengzhong(5)
+            print(33)
+            time.sleep(4)
+            # x11, y11 = Caozuolei().left + 378,Caozuolei().top + 452,
+            print('27')
+            c.KeyPress1(27)  # 案件esc建
+            # 425, 532 选人位置 424, 533
+            time.sleep(3)
+            # c.LeftClick(392,444)  # 单机鼠标左键
+            # c.LeftClick(399, 524)  # 单机鼠标左键
+            c.LeftClick(389, 514)  # 单机鼠标左键
+            continue
+        else:
+            print('结束')
         #c.Junhengzhong(8)
         # c.JunhengzhongNvQiGong()
         # c.Junhengzhong()
@@ -6070,8 +6136,8 @@ if __name__ == '__main__':
         # c.Set_Dict(1, '测试2.txt')
         # c.Set_Dict(0, 'test3.t1xt')
 
-        sleep(random.randint(0, 3))  # 随机睡眠一个小会儿
-        c.UnBind()  # 解除绑定
+    sleep(random.randint(0, 3))  # 随机睡眠一个小会儿
+    c.UnBind()  # 解除绑定
     '''  
         if aa == 11 and pvp == 1:  # aa
             # if aa == 3 and pvp. == 1:# aa
