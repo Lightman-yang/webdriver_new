@@ -5275,7 +5275,7 @@ class Caozuolei(Caozuolei1):
             dt.press('space')  # 单击空格操作
             time.sleep(2.5)
             m=11+N
-            for i in range(1, 30):
+            for i in range(1, 28):
 
 
 
@@ -5308,6 +5308,26 @@ class Caozuolei(Caozuolei1):
                     dt.press('f10')
                     time.sleep(0.75)
                     continue
+                elif i == 26 or i > 26:
+                    time.sleep(4)
+                    # dt.press('t')
+
+                    dt.press('right')
+                    time.sleep(0.0075)  # 按下两秒
+                    dt.keyDown('right')  # ：模拟按键按下
+                    time.sleep(random.randint(m, m + 2))
+                    dt.keyUp('right')  # ：模拟按键松开按键
+                    time.sleep(random.randint(2, 3))
+                    #dt.press('esc')
+
+                    time.sleep(random.randint(8, 10))
+                    # dt.press('esc')
+                    time.sleep(random.randint(2, 3))
+                    dt.press('f12')
+                    print('f12')
+                    time.sleep(5)
+                    return
+
                 elif i >= 0:
                     time.sleep(4)
                     # dt.press('t')
@@ -5319,20 +5339,13 @@ class Caozuolei(Caozuolei1):
                     dt.keyUp('right')  # ：模拟按键松开按键
                     time.sleep(random.randint(2, 3))
                     dt.press('esc')
-                    if i == 29 or i > 29 :
-                        time.sleep(random.randint(8, 10))
-                        dt.press('esc')
-                        time.sleep(random.randint(2, 3))
-                        dt.press('f12')
-                        print('f12')
-                        time.sleep(5)
-                        return
-                    else:
-                        time.sleep(random.randint(2, 3))
-                        dt.press('f10')
-                        time.sleep(0.75)
-                        continue
+
+
+                    time.sleep(random.randint(2, 3))
+                    dt.press('f10')
+                    time.sleep(0.75)
                     continue
+
 
                 else:
                     time.sleep(8)
@@ -6093,12 +6106,15 @@ if __name__ == '__main__':
     # x = [[150, 290, 1], [270, 280, 2], [380, 215, 3], [490, 215], 4, [719, 285, 5], [80, 501, 6]]
 
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
-         [350, 487, 8], [450, 487, 9], [550, 487, 10]]
-    n=6
-    for aa in range(0, 9):  # 打图设置ddddg
+         [350, 487, 8], [450, 487, 9], [550, 487, 10], [680, 487, 11], [67, 464, 12]]
+    n=12
+    for aa in range(11, 12):  # 打图设置ddddg
         #dt.press('space')  # 单击空格操作
         print(aa,n)
         if aa<n:
+            if aa==11:
+                dt.press('down')
+
             time.sleep(3.5)  # 选一个任务
             c.LeftClick(x[aa][0], x[aa][1])  # 441 , 310
             time.sleep(0.015)
