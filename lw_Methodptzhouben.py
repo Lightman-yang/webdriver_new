@@ -5273,7 +5273,7 @@ class Caozuolei(Caozuolei1):
 
     def Junhengzhong(self,N):  # 普通风暴逆鳞地下城
             dt.press('space')  # 单击空格操作
-            time.sleep(2.5)
+            time.sleep(1.5)
             m=11+N
             for i in range(1, 28):
 
@@ -5283,6 +5283,8 @@ class Caozuolei(Caozuolei1):
 
                     time.sleep(4)
                     print('等等')
+                    dt.press('t')
+                    time.sleep(1.5)
 
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
@@ -5310,7 +5312,8 @@ class Caozuolei(Caozuolei1):
                     continue
                 elif i == 26 or i > 26:
                     time.sleep(4)
-                    # dt.press('t')
+                    dt.press('t')
+                    time.sleep(1.5)
 
                     dt.press('right')
                     time.sleep(0.0075)  # 按下两秒
@@ -5330,6 +5333,8 @@ class Caozuolei(Caozuolei1):
 
                 elif i >= 0:
                     time.sleep(4)
+                    dt.press('t')
+                    time.sleep(1.5)
                     # dt.press('t')
 
                     dt.press('right')
