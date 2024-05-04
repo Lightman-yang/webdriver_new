@@ -5283,7 +5283,7 @@ class Caozuolei(Caozuolei1):
 
                     time.sleep(4)
                     print('等等')
-                    dt.press('t')
+                    dt.press('y')
                     time.sleep(1.5)
 
                     dt.press('right')
@@ -5312,7 +5312,7 @@ class Caozuolei(Caozuolei1):
                     continue
                 elif i == 26 or i > 26:
                     time.sleep(4)
-                    dt.press('t')
+                    dt.press('y')
                     time.sleep(1.5)
 
                     dt.press('right')
@@ -5333,7 +5333,7 @@ class Caozuolei(Caozuolei1):
 
                 elif i >= 0:
                     time.sleep(4)
-                    dt.press('t')
+                    dt.press('y')
                     time.sleep(1.5)
                     # dt.press('t')
 
@@ -5358,39 +5358,7 @@ class Caozuolei(Caozuolei1):
                     time.sleep(4)
                     print('ceshi')
                     return
-    def JunhengzhongNSWSL(self,N,A):  # 纳瑟乌森林
 
-            m=11+N
-            for i in range(1, 30):
-
-
-                if i== 29:
-                    time.sleep(2)
-                    return
-                elif i >= 0:
-                    time.sleep(2)
-                    dt.press('h')
-                    time.sleep(2)
-
-
-                    dt.press('right')
-                    time.sleep(0.0075)  # 按下两秒
-                    dt.keyDown('right')  # ：模拟按键按下
-                    time.sleep(A)  # 按下两秒
-                    dt.keyDown('up')  # ：模拟按键按下
-                    time.sleep(random.randint(m, m+2))
-                    dt.keyUp('right')  # ：模拟按键松开按键
-                    dt.keyUp('up')  # ：模拟按键松开按键
-                    time.sleep(random.randint(2, 3))
-                    dt.press('esc')
-                    time.sleep(random.randint(2, 3))
-                    dt.press('f10')
-                    time.sleep(0.75)
-                    continue
-                    # continue
-
-                else:
-                    print('111')
 
     def JunhengzhongNai(self):  # 均衡仲裁者地图
         for kk in range(1, 60):
@@ -6137,7 +6105,7 @@ if __name__ == '__main__':
             # c.SY001()
             # c.JunhengzhongKuangZanShi(0.1)
             # c.JunhengzhongZhaoHuanShi()
-            # c.JunhengzhongNSWSL(0,8)#纳瑟乌森林
+
             c.Junhengzhong(5)
             print(33)
             time.sleep(4)
