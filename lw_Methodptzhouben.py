@@ -6108,7 +6108,8 @@ if __name__ == '__main__':
     x = [[134, 231, 1], [274, 258, 2], [412, 244, 3], [556, 247, 4], [691, 256, 5], [67, 464, 6], [204, 466, 7],
          [350, 487, 8], [450, 487, 9], [550, 487, 10], [680, 487, 11], [67, 464, 12]]
     n=12
-    for aa in range(11, 12):  # 打图设置ddddg
+    reloadwo=0 #从哪里开始
+    for aa in range(0, 12):  # 打图设置ddddg
         #dt.press('space')  # 单击空格操作
         print(aa,n)
         if aa<n:
@@ -6125,6 +6126,9 @@ if __name__ == '__main__':
             time.sleep(0.5)  # 睡眠0.5秒
             c.movingfigur_right(9)  # 向右移动， 移动8秒，
             time.sleep(1)
+            if aa==reloadwo:
+               dt.press('up')
+               time.sleep(1)
             # c.SY001()
             # c.JunhengzhongKuangZanShi(0.1)
             # c.JunhengzhongZhaoHuanShi()
